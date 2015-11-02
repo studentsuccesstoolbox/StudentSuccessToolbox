@@ -1,0 +1,176 @@
+/* ACTION BUTTONS
+============================================================================= */
+
+.modal-buttons{
+    font-size: 1em;
+    
+}
+
+.btn-default{
+    background: $button-color none repeat scroll 0 0;
+    border: medium none;
+    border: 3px solid $button-font-color;
+    border-radius: 8px;
+    box-shadow: 0 0 0 2px $button-color;
+ 
+    color: $button-font-color;
+    font-size: 1.5em;
+    //padding: 0;
+    
+    transition: all 300ms ease-out 0s;
+    -moz-transition: all 300ms ease-out 0s;
+    -o-transition: all 300ms ease-out 0s;
+    -webkit-transition: all 300ms ease-out 0s;
+    text-transform: uppercase;
+   
+    &:hover, &:active {
+        background: $button-active-color;
+        border-color: $button-font-color;
+        box-shadow: 0 0 0 2px $button-active-color;
+        color: $button-font-color;
+    }
+    
+    &.disabled {
+        &:hover,&:active,&:focus{
+        background: $button-deactivated-color none repeat scroll 0 0;
+        border: 3px solid $font-color-dark-bg;
+        box-shadow: 0 0 0 2px $button-deactivated-color;
+        opacity:1;
+        }
+
+    }
+}
+
+
+//** button info: blue button
+.btn-info{
+    background: $button-info-color none repeat scroll 0 0;
+    border: medium none;
+    border: 3px solid $button-info-font-color;
+    border-radius: 8px;
+    box-shadow: 0 0 0 2px $button-info-color;
+ 
+    color: $button-info-font-color;
+    font-size: 1.5em;
+    //padding: 0;
+    
+    transition: all 300ms ease-out 0s;
+    -moz-transition: all 300ms ease-out 0s;
+    -o-transition: all 300ms ease-out 0s;
+    -webkit-transition: all 300ms ease-out 0s;
+    text-transform: uppercase;
+   
+}
+
+.btn-info:hover, .btn-info:active {
+    background: $button-info-active-color;
+    border-color: $button-info-font-color;
+    box-shadow: 0 0 0 2px $button-info-active-color;
+    color: $button-font-color;
+}
+
+.btn-info.disabled,.btn-default.disabled:hover,.btn-default.disabled:active,.btn-default.disabled:focus{
+    background: $button-deactivated-color none repeat scroll 0 0;
+    border: 3px solid $font-color-dark-bg;
+    box-shadow: 0 0 0 2px $button-deactivated-color;
+    opacity:1;
+    
+}
+
+
+.btn-lg {
+    font-size: 2.5em;
+    padding: 10px 0;
+    line-height: 1;
+}
+
+.btn-xlg {
+    font-size: 3em;
+    padding: 10px 0;
+    line-height: 1;
+}
+
+/* Gintaras for 3th tool*/
+
+.button-gray:hover {
+    background-color: #969696;    
+}
+
+
+//** Button links
+.btn-link {
+    color: $primary-color;
+    font-weight: normal;
+    border-radius: 0;
+    
+    &:hover, &:focus {
+        color: $button-active-color;
+        text-decoration: underline;
+    }
+}
+
+
+
+//** Button secondary
+.btn.btn-secondary {
+    border: 1px solid;
+    float: none;
+    background-color: $button-font-color;
+    color: $button-color;
+    padding: 3px;
+    font-size: 1.5em;
+    padding: 8px 0;
+    
+    &:hover, &:active {
+        color: $button-active-color;
+        text-decoration: underline;
+    }
+}
+
+
+.btn-option{
+    background-color: $button-deactivated-color;
+    border: medium none;
+    border-radius: 8px;
+    color: $font-color-dark-bg;
+    font-size: 1.6em;
+    font-variant: petite-caps;
+    line-height: normal;
+    margin: 0.5em 0 0 5px;
+    padding: 4px 20px;
+    transition: all 300ms ease-out 0s;
+}
+
+.btn-option:hover, .btn-option:focus, .btn-option:active {
+    background-color: $button-option-active-hover-color;
+    text-decoration: none;
+}
+
+.btn-option.btn-active{
+    background-color: $button-option-active-color;
+    border: medium none;
+    box-shadow: 0 0 2px $button-option-active-color
+}
+
+.btn-option.btn-active:hover, .btn-option.btn-active:focus, .btn-option.btn-active:active {
+    background-color: $button-option-active-color;
+    border: medium none;
+    color: $font-color-dark-bg;
+    cursor: default;
+    text-decoration: none;
+}
+
+
+
+//** Button blocks
+@media (max-width: $screen-xs-max) {
+    .btn-xs-block { display: block; width: 100%; }
+}
+
+@media (max-width: $screen-sm-max) {
+   .btn-sm-block { display: block; width: 100%; }
+}
+
+@media (max-width: $screen-md-max) {
+   .btn-md-block { display: block; width: 100%; }
+}

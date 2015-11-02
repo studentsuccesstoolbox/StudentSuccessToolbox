@@ -1,0 +1,49 @@
+<div class="modal-header ng-scope activity {{currentActivity.name}}">
+    <div class="row nopadding">
+	<div class="col-xs-3 col-md-2 text-right">
+		<i class="fa {{currentActivity.clsIcon}} fa-4x"></i>
+		<label for="name" class="control-label {{currentActivity.header}}">{{currentActivity.header}}</label>
+		<div class="label-hours">{{currentActivity.modelDaysValue}} hours</div>
+	</div>
+        <div class="col-xs-9 col-md-10">	
+            <rzslider
+                    rz-slider-floor="0"
+                    rz-slider-ceil="currentActivity.sliderMax"
+                    rz-slider-model="currentActivity.modelDaysValue"
+                    rz-slider-translate="formatHours"
+                    rz-slider-present-only="true"
+                    rz-slider-tpl-url="rzSliderTpl.html"
+                    class="square"></rzslider>
+        </div>
+        
+    </div>
+    <i ng-click="cancel()" class="fa fa-times fa-2x btn-close"></i>
+</div>
+
+<div class="modal-body activity">
+    <div class="row spacer-top-2x" ng-repeat="advanceItem in advanceItems track by $index">
+        <div class="col-xs-2 nopadding text-right">
+            <label for="name" class="control-label hidden-xs hidden-sm">{{advanceItem.label}}</label>
+            <label for="name" class="control-label visible-xs-block visible-sm-block">{{advanceItem.labelShort}}</label>
+        </div>
+	<div class="col-xs-10">		
+            <rzslider
+                rz-slider-floor="0"
+                rz-slider-ceil="advanceItem.sliderMax"
+                rz-slider-model="advanceItem.modelValue"
+                rz-slider-translate="formatHours"
+                rz-slider-tpl-url="app/views/partials/slider/defaultslider.html"></rzslider>
+        </div>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <div class="row modal-buttons spacer-bottom">
+        <div class="hidden-xs col-sm-8">
+            <a href="" ng-click="cancel()" class="btn btn-link">Cancel</a>
+        </div>
+        <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-4">
+            <button type="button" ng-click="ok()" class="btn btn-default btn-md btn-block">OK</button>
+        </div>
+    </div>
+</div>

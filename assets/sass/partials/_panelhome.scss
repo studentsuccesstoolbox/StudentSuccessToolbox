@@ -1,0 +1,72 @@
+.panel-default > .panel-heading.home {
+    background-color: transparent;
+    border: medium none;
+    color: inherit;
+    padding: 0;
+    width: 100%;
+}
+.panel.panel-default.home {
+    border: medium none;
+    width: 100%;
+	box-shadow: none;
+}
+#icon-ball, #icon-sleep, #icon-case, #icon-monitor {
+    font-size: 6.5em;
+	color: $activity-default;
+	height: 1em;
+    line-height: 1em;
+}
+	
+#icon-ball:before {
+	font-family: FontAwesome;
+	content: "\f1e3";
+}
+#icon-sleep:before {
+	font-family: FontAwesome;
+	content: "\f236";
+}
+#icon-monitor:before {
+	font-family: FontAwesome;
+	content: "\f108";
+}
+#icon-case:before {
+	font-family: FontAwesome;
+	content: "\f0b1";
+}
+#icon-ball {
+    margin: 0;
+    text-align: center;
+}
+#icon-sleep {
+    display: block;
+    float: left;
+    margin: -40px 0 0 5%;
+    text-align: center;
+    width: 40%;
+}
+#icon-monitor {
+    display: block;
+    float: right;
+    margin: -40px 5% 0 0;
+    text-align: center;
+    width: 40%;
+}
+#icon-case {
+    display: inline-block;
+    float: none;
+    margin: -30px auto 0;
+    text-align: center;
+    width: 100%;
+}
+ .text-right.button {
+    clear: both;
+    display: block;
+    float: none;
+    margin: 0 auto;
+    width: 70%;
+}
+.panel-body.home {
+    clear: both;
+    float: none;
+    width: 100%;
+}

@@ -1,0 +1,61 @@
+
+.icon-badge {
+    background-color: $secondary-color;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px $secondary-color;
+    border: 2px solid $font-color-dark-bg;
+    color: $font-color-dark-bg;
+    font-size: 1em;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 90px;
+    height: 90px;
+    z-index: 100;
+    padding-top: 8px;
+}
+
+.icon-badge.active{
+    background-color: $primary-color;
+    box-shadow: 0 0 0 2px $primary-color;
+    
+}
+
+.icon-badge.block {
+    position: relative;
+    display:block;
+}
+
+.icon-badge.inline-block {
+    position: relative;
+    display:inline-block;
+    margin-right:10px;
+    margin-bottom: 10px;
+}
+
+/* Fix Icon position to make it apper more centered*/
+.icon-badge.icon-fix{
+     padding-top: 10px;
+}
+
+/* Arrow */
+.block-arrow {
+    background: rgba(0, 0, 0, 0) url("../../assets/images/arrow.png") no-repeat scroll center top / 100% 100%;
+    height: 110px;
+    min-height: 80px;
+    
+    &.point-down {
+        position: absolute;
+        right: 0;
+        transform: rotate(35deg);
+        z-index: 100;
+    }
+}
+
+.arrow-txt {
+    color: #fff;
+    font-size: 2.4em;
+    font-style: italic;
+    position: relative;
+    top: 13px;
+}

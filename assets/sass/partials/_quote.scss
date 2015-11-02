@@ -1,0 +1,416 @@
+icon-badge/* QOUTE STYLE
+============================================================================= */
+
+
+
+.hr-dark {
+    border-color: #ddd;
+}
+
+blockquote {
+    background: $comment-bg-color none repeat scroll 0 0;
+    border: 4px solid $font-color-dark-bg;
+    border-radius: 10px;
+    box-shadow: 0 0 0 2px darken( $comment-bg-color, 20% );
+	float: left;
+}
+blockquote img {
+    border-radius: 8px;
+    float: left;
+}
+blockquote > p {
+    float: right;
+    font-size: 1.3em;
+    font-style: italic;
+    text-align: left;
+    width: 72%;
+}
+.comment:before {
+	content: "\f10d";
+    color: $comment-quote-color;
+    font-family: FontAwesome;
+    font-size: 1.5em;
+    font-style: normal;
+    margin: 0;
+    padding: 0 10px 0 0;
+}
+.comment:after {
+    content: "\f10e";
+    color: $comment-quote-color;
+    font-family: FontAwesome;
+    font-size: 1.5em;
+    font-style: normal;
+    margin: 0;
+    padding: 0 0 0 10px;
+}
+.author {
+    clear: right;
+    color: $comment-author-color;
+    font-family: comic sans ms;
+}
+
+//** Simple Quote
+blockquote.simple{
+    line-height: normal;
+    margin: 0;
+    padding: 0 0 0 5px;
+    background: none;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+
+    > p {
+    float: none;
+    color: $secondary-color;
+    font-family: comic sans ms;
+    font-size: 1.2em;
+    line-height: normal;
+    text-align: left;
+    width: auto;
+    }
+
+    > p .fa {
+        line-height: 0.5em;
+        color: #f1f1f1;
+    }
+    footer {
+       clear: both;
+       color: #777;
+       padding: 1em 0 0;
+   }
+}
+
+//** Student quotes
+
+.blockquote-student::before {
+    background: $quote-icon-font-color none repeat scroll 0 0;
+    border: 3px solid $quote-border-color;
+    border-radius: 50px;
+    bottom: -50px;
+    content: "";
+    display: block;
+    height: 80px;
+    left: 230px;
+    position: absolute;
+    width: 80px;
+    z-index: 10;
+}
+.blockquote-student::after {
+    background: $quote-icon-font-color none repeat scroll 0 0;
+    border: 3px solid $quote-border-color;
+    border-radius: 25px;
+    bottom: -70px;
+    content: "";
+    display: block;
+    height: 40px;
+    left: 200px;
+    position: absolute;
+    width: 40px;
+    z-index: 10;
+}
+.blockquote-student {
+    background: $quote-icon-font-color none repeat scroll 0 0;
+    border: 3px solid $quote-border-color;
+    border-radius: 240px / 200px;
+    box-shadow: none;
+    padding: 30px;
+    position: relative;
+    text-align: center;
+
+    .right {
+        margin-top: 30px;
+    }
+    .right::before {
+        bottom: auto;
+        left: auto;
+        right: 230px;
+        top: -50px;
+    }
+    .right::after {
+        left: auto;
+        right: 200px;
+        top: -70px;
+    }
+
+    > footer {
+        float: right;
+    }
+}
+
+//** Image border
+.student-comments{
+    .img-responsive {
+        border: 3px solid $font-color-dark-bg;
+        border-radius: 100%;
+        box-shadow: 0 0 0 3px $quote-img-border-color;
+    }
+
+    .fa-quote-left {
+        color: lighten($quote-border-color,6%);
+        font-size: 4em;
+        margin: 0 0 0 -20px;
+    }
+    blockquote p {
+        color: $secondary-color;
+        float: right;
+        font-family: comic sans ms;
+        font-size: 1.2em;
+        line-height: normal;
+        margin: 0;
+        padding: 0 0 0 5px;
+        width: 87%;
+    }
+}
+
+//** Primary Quote. Used in tool 3
+
+.quote-primary{
+    
+    blockquote{
+        background-color: #1a8099;
+        color: #fff;
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        box-shadow: 3px 2px 4px #cadce0;
+        margin: 0;
+        overflow: hidden;
+    }
+    
+    blockquote>p{
+        width: 90%;
+        position:initial;
+    }
+    
+    .fa-quote-left{
+        color: rgba(255,255,255,0.3);
+        position: absolute;
+        top: 0;
+    }
+    
+    .more-btn {
+        background: #fff none repeat scroll 0 0;
+        border: 3px solid #cadce0;
+        border-radius: 100%;
+        margin: 0 -20px 0 0;
+        padding: 0 8px 30px;
+        position: absolute;
+        right: 1em;
+        bottom: -35px;
+        z-index: 5;
+    }
+    
+    span.more-text {
+        display: none;
+    } 
+    span.more-text.show {
+        display: inline !important
+    }
+
+    @media (min-width: $screen-md-min) { 
+        .o-round {
+            background-color: #f9a029;
+            border: 4px solid #fff;
+            border-radius: 100%;
+            box-shadow: 3px 3px 4px #ddd;
+            position: absolute;
+            z-index: -1;
+            height: 70px;
+            width: 70px;
+            
+            top: auto;
+            left: -35px;
+            bottom: -45px;
+            right: auto;  
+        }
+        
+    }
+}
+//** Primary Quote with image to left
+.quote-primary-image{
+    @extend .quote-primary;
+    
+    img{
+        position: relative;
+        top: 2em; 
+        z-index: 4;
+        @media (max-width: $screen-sm-max) { 
+            top: 1em; 
+        }
+    }
+    
+    @media (min-width: $screen-md-min) { 
+        blockquote{
+            left: -1.5em;
+            width: 120%;
+        }
+    } 
+    
+    &.image-right{
+        
+        img{
+            @media (max-width: $screen-sm-max) { 
+                left: -1em;
+            }
+        }
+        @media (min-width: $screen-md-min) { 
+            blockquote{
+                left: -2.5em;
+                width: 120%;
+            }
+        }
+        
+        @media (min-width: $screen-md-min) { 
+            .o-round {
+                top: auto;
+                left: auto;
+                bottom: -45px;
+                right: -35px;;
+            }
+        }
+    }
+    
+    
+}
+
+//** Secondary Quote
+.quote-secondary {
+    @extend .quote-primary;
+    
+    blockquote{
+        background-color: #f0f0f0;
+        color: #08a7cd;
+        z-index: 1;
+        margin: 3em 0 0 0;
+    }
+    
+    .fa-quote-left{
+        color: rgba(0,0,0,0.1);
+    }
+    
+    .o-round {
+       top: 10px;
+       left: 0;
+       bottom:auto; 
+       right: auto;
+       
+    }
+}
+//** Secondary Quote with image to right
+.quote-secondary-image {
+    @extend .quote-secondary;
+    
+     img{
+        position: relative;
+        top: 1em; 
+        z-index: 4;
+        @media (max-width: $screen-sm-max) { 
+            top: -1em; 
+        }
+    }
+    
+    
+    @media (min-width: $screen-md-min) { 
+        blockquote{
+            width: 105%;
+        }
+        
+        .o-round {
+            top: 20px;
+            left: auto;
+            bottom:auto;
+            right: -40px;    
+        }
+    }
+    
+}
+
+.quote-dark-image-top-right{
+    @extend .quote-primary;
+    left: 0;
+    width: 100%;
+    margin-top: 6em;
+    @media (min-width: $screen-md-min) { 
+        width: 90%; 
+    }
+    
+    .comment {
+        float: none;
+        margin: 0 auto;
+        width: 95%;
+    }
+    
+    .comment:before {
+        color: rgba(255,255,255,0.4);
+        font-size: 1.8em;
+    }
+    
+    .comment:after {
+        color: rgba(255,255,255,0.4);
+        font-size: 1.8em;
+    }
+    
+    img{
+        position: absolute;
+        top: 0;
+        z-index: 4;
+        width : 10em;
+        right: 0;
+        @media (max-width: $screen-md-max) { 
+            top: -1em;
+        }
+    }
+}
+
+.quote-dark-image-bottom-left{
+    @extend .quote-dark-image-top-right;
+    margin-top: 0;
+    
+    @media (min-width: $screen-md-min) { 
+        width: 85%;
+        margin-left: 15%; 
+    }
+    
+    img{
+        top: 2em;
+        left: 5%;
+        width: 10em;
+        right: auto;
+        @media (max-width: $screen-md-max) { 
+            top: -1em;
+        }
+    }
+    
+}
+
+.quote-light-image-right{
+    @extend .quote-secondary-image;
+    
+    width: 100%;
+    margin:0;
+    
+    img{
+        position: absolute;
+        top: 1em;
+        z-index: 4;
+        width: 10em;
+        right: -6em;
+    }
+    &:hover blockquote {
+        background-color: #1a8099;
+        color: #fff;
+    }
+    
+    blockquote{
+        margin: 0;
+        width: 100%;
+    }
+    
+    blockquote>p {
+        float:none;
+        width: auto;
+        padding: 0 20px 0 20px;
+    }
+}

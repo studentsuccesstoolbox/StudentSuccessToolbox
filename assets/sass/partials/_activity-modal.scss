@@ -1,0 +1,111 @@
+//** work header color
+.modal-header.work  {
+    color: $work-color !important;
+}
+.modal-header.work .rz-pointer {
+    border: 4px solid $work-color;
+}
+
+//** household header color
+.modal-header.household {
+    color: $household-color !important;
+}
+.modal-header.household .rz-pointer {
+    border: 4px solid $household-color !important;
+}
+
+//** family header color
+.modal-header.family{
+    color: $family-color !important;
+}
+.modal-header.family .rz-pointer {
+    border: 4px solid $family-color !important;
+}
+
+//** hobbies header color
+.modal-header.indoor {
+    color: $indoor-color !important;
+}
+.modal-header.indoor .rz-pointer {
+    border: 4px solid $indoor-color !important; 
+}
+
+//** leisure header color
+.modal-header.outdoor {
+    color: $outdoor-color !important;
+}
+.modal-header.outdoor .rz-pointer {
+    border: 4px solid $outdoor-color !important;
+}
+
+//** sleep header color
+.modal-header.sleep {
+    color: $sleep-color !important;
+}
+.modal-header.sleep .rz-pointer {
+    border: 4px solid $sleep-color !important;
+}
+
+//** Modal Header for slider
+.modal-header.activity{
+    font-size: 1em;
+}
+
+
+.control-label.header{
+    margin-top: 1em;
+}
+
+.modal-header .control-label {
+    clear: both;
+    display: block;
+    font-size: 1.3em;
+    margin: 0;
+}
+
+.modal-header .label-hours {
+    clear: both;
+    font-size: 1em;
+}
+
+.modal-header rzslider {
+    margin-top: 50px;
+}
+
+//** Modal Body for slider
+.modal-body rzslider{
+    margin: 10px 0 20px 0;
+    
+}
+.modal-body .rz-pointer {
+    border: 3px solid $secondary-color;
+}
+
+.modal-body.activity{
+    font-size: 1em;
+}
+
+//** Modal Body for control slider
+.modal-body .control-label {
+    color: $third-color;
+    font-size: 1em;
+    font-weight: normal;
+    text-align: right;
+    padding-right:10px;
+}
+
+
+@media only screen and (max-width:$screen-tablet) {
+
+    /* days modal */
+    .modal-body .control-label {
+        font-size: 2em;
+        line-height: 0.6em;
+    }
+    
+    
+    .activity.modal-buttons {
+            margin: 70px 0;
+    }
+    
+}

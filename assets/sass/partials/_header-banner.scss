@@ -1,0 +1,94 @@
+//
+// Banner Headers
+// --------------------------------------------------
+
+//** Banner Header
+.q-head {
+    background-color: $secondary-color;
+    border: 2px solid $font-color-dark-bg;
+    border-radius: 8px;
+    box-shadow: 0 0 0 2px $secondary-color;
+    color: $font-color-dark-bg !important;
+    font-size: 1.5em;
+    line-height: 1.2em;
+    margin: 0 auto;
+    padding: 8px 1em 8px 2em;
+    position: relative;
+
+
+    h2{
+       color: $font-color-dark-bg !important;
+       font-weight: $regular;
+
+   }
+    h2.small{
+       font-size: 1em;
+   }
+
+   &.large{
+       padding-top: 14px;
+       padding-bottom: 14px;
+   }
+
+   &.active{
+       background-color: $primary-color;
+       box-shadow: 0 0 0 2px $primary-color;  
+   }
+
+   &.dark {
+       background-color: #1a8099;
+       box-shadow: 0 0 0 2px #1a8099;  
+   }
+
+   //** Icon badge position
+    .icon-badge {
+       margin: -25px 0 0 -100px;
+   }
+
+   .h-icon{
+        color: rgba(255, 255, 255, 0.5)
+   }
+   
+   .icon-badge.multi-row {
+        margin: -15px 0 0 -100px;
+    }
+
+    .img-badge-right {
+        position: absolute;
+        right: -10px;
+        top: -1.5em;
+        width: 6em;
+    }
+
+    .img-badge-left {
+        position: absolute;
+        left: -10px;
+        top: -50%;
+        width: 120px;
+    }
+    
+    @media(max-width:$screen-sm-max){
+        //-- Banner header for mobile
+        display: block;
+        float: left;
+        font-size: 1.5em;
+        line-height: normal;
+        padding: 8px 10px;
+        width: 100%;
+        border: none;
+        box-shadow: none;
+        
+        //-- Banner icon badge for mobile
+        .icon-badge {
+            background-color: transparent;
+            border: medium none;
+            box-shadow: none;
+            float: left;
+            height: auto;
+            margin: 0 15px 20px 0;
+            position: relative;
+            width: auto;
+            padding: 0;
+        }
+    }
+}

@@ -1,0 +1,257 @@
+/*.panel {
+    padding-top:1em;
+    padding-bottom: 1em;
+}*/
+
+.activity-panel{
+    background-image: url('../images/text-icons.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    min-height: 145px;
+    
+     p{
+        font-size: 1.5em;
+    } 
+}
+
+
+.feedback-block {
+    padding: 0 2em;
+}
+
+.text-icons {
+    position: absolute;
+    right: 2em;
+    top: 0;
+    z-index: 1;
+    @media (max-width: $screen-desktop) {
+        display: none;
+    }
+}
+
+
+//** Odd/Even panel. Used on questionnaire
+.panel {
+    .q-index{
+        font-size: 6em;
+        line-height: 0.9;
+        margin-right: 1em;
+        
+        @media(max-width: $screen-sm-max) {
+            font-size: 4em;
+        }
+        @media(max-width: $screen-xs-max) {
+            font-size: 2em;
+            line-height: 0.9;
+            margin-right: 0;
+        }
+    }
+    
+    &.flex-font{
+        font-size: 1em;
+        @media(max-width: $screen-sm-max) {
+            font-size: 0.9em;
+        }
+        @media(max-width: $screen-xs-max) {
+            font-size: 0.65em;
+        }
+    }
+    
+    &.panel-odd{
+        border-color: $panel-odd-border-color;
+        background: $panel-odd-color;
+        border-radius: 8px;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        margin-bottom: 0px;
+
+        .q-index{
+            color: $panel-index-odd-color;
+        }
+        
+        .q-icon{
+            color: $panel-index-odd-color;
+        }
+
+    }
+
+    &.panel-even{
+        border: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        margin-bottom: 0px;
+
+        .q-index{
+            color: $panel-index-even-color;
+        }
+        
+        .q-icon{
+            color: $panel-index-odd-color;
+        }
+    }
+    
+    .question {
+        font-size: 1.57em;
+        line-height: 1.3em;
+        padding-left: 36px;
+        
+        @media(max-width: $screen-xs-max) {
+            font-size: 1.3em;
+            line-height: 1.3em;
+            padding-left: 0;
+        }
+    }
+    
+    label.question {
+        font-size: 1.5em;
+        line-height: 1.3em;
+        padding-left: 36px;
+        color: #1a8099;
+        
+        :hover {
+            color: #08A7CD;
+        }
+    }
+    
+    //Large paragraph text with purple color
+    p.highlight{
+        font-size: 1.6em;
+        color: #1a8099;
+        line-height: 1.4em;
+        padding-left: 10px;
+        padding-top: 0.7em;
+    }
+}
+
+
+
+//** Question Panel index
+
+.panel-answer {
+    background: #f2f2f2 none repeat scroll 0 0;
+    border: 4px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 0 2px #bfbfbf;
+    padding-top:1em;
+    padding-bottom: 1em;
+    
+    p{
+        color: #333;
+        font-style: italic;
+        font-size: 1.6em;
+    }
+
+    .fa.btn-close {
+       top: 10px;
+       right: 30px;
+    }
+}
+
+
+//** Panel  details: used on tool1 results summary
+.panel-details {
+    background: $panel-default-color none repeat scroll 0 0;
+    border: 1px solid $panel-default-border-color;
+    border-radius: 8px;
+
+    .panel-heading {
+        background: transparent;
+        border-bottom: 1px solid $panel-default-border-color;
+    }
+
+    .panel-heading h4{
+        font-size: 1.7em
+    }
+
+    .panel-body {
+        font-size: 1.5em
+    }
+}
+
+
+
+//** Gintaras panels with shadow (tool 3)
+
+.panel-shadow {
+    border-radius: 8px;
+    box-shadow: 3px 2px 2px $panel-shadow-shadow-color;
+    border: 4px solid $panel-shadow-border-color;
+    
+    &.panel-icon {
+        padding: 2em 1em;
+        background-image: url("../images/hands-icon.jpg");
+        background-position: right bottom 20px;
+        background-repeat: no-repeat;
+    }
+}
+
+//** Panel tip
+.panel{
+    
+    &.panel-tip{
+        border: 5px solid #dff0d8;
+        border-radius: 10px;
+        box-shadow: 3px 2px 4px #cadce0;
+        display: table;
+        background: #f2f2f2 none repeat scroll 0 0;
+        background-color: #fff;
+        padding: 0;
+        margin:0;
+        width: 100%;
+        
+        .panel-header{
+            padding: 0.5em 0.5em;
+            background: #dff0d8 none repeat scroll 0 0;
+            color: #3c763d;
+            font-size: 1.8em;
+            
+            h3 {
+               font-size: 1.5em; 
+               padding: 0;
+               margin: 0;
+               color: #3c763d;
+               line-height: 1.4em;
+            }
+            
+        }
+        
+        .panel-body{
+            padding: 15px 15px 15px 45px;
+            font-size: 1.3em;
+            font-style: italic;
+            text-align: left;
+            line-height: 1.4em;
+        }       
+    }
+    
+    //** Panel Info */
+    &.panel-info {
+        border-radius: 8px;
+        box-shadow: 3px 2px 2px #cadce0;
+        border: 5px solid #f7f7f7;
+        background-color: #fff;
+        z-index: 1;
+        
+        .panel-body{
+            padding-right: 1em;
+            padding-left: 1em;
+            font-size: 1.5em;
+            font-style: italic;
+            line-height: 1.4em;
+            
+            .fa{
+                color: #ececec;
+            }            
+        }
+        
+        
+    }
+    
+    &.figure-bg {
+        background: url("../../assets/images/figures-bg.png") no-repeat scroll 90% bottom;
+    }
+    
+    
+}

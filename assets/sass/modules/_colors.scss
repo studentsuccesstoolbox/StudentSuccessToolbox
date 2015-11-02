@@ -1,0 +1,116 @@
+//** Primary Colors Orange Headers labels
+$primary-color: #f9a029;
+//$primary-color: #aad230;
+
+//** Secondary color blue
+$secondary-color: #08a7cd;
+//$secondary-color: #ed1a1a;
+
+//** Third color dark gray: Color most used
+$third-color: #7f7f7f;
+//$third-color: #a0238e;
+
+//** Fourth base color
+$fourth-color: #ddd;
+//$fourth-color: #32a5c5;
+
+//** Font color
+$font-color:#494949;
+$font-color-dark-bg:#fff;
+
+//** Misc colors
+$error-color: #a94442;
+$primary-active-color: desaturate(darken($primary-color, 12%), 0); //#d9891f;
+
+//** Activity colors
+$activity-default: $third-color;
+$freetime-color: $primary-color;
+$work-color:#084988;
+$family-color:#56a0e2;
+$household-color: #4580b6;
+$indoor-color: #3889d4;
+$outdoor-color: #296ba9;
+$indoor-color: #3889d4;
+$sleep-color: #7eb9ed;
+
+//** Button colors
+$button-color: $primary-color;
+$button-active-color:$primary-active-color;
+$button-hover-color: $button-active-color;
+$button-font-color: $font-color-dark-bg;
+
+$button-info-color: $secondary-color;
+$button-info-active-color: desaturate(darken($button-info-color, 12%), 0);;
+$button-info-hover-color: $button-info-active-color;
+$button-info-font-color: $font-color-dark-bg;
+
+$button-deactivated-color: lighten($third-color, 18%); //#afafaf
+$button-option-active-color: $secondary-color; //#08a7cd
+$button-option-active-hover-color: lighten($third-color, 4%);
+//$image-round-border: lighten($third-color,41%); 
+
+//** Comments color
+$comment-bg-color: lighten( $third-color, 45% ); //#f1f1f1;
+$comment-author-color: $secondary-color;
+$comment-quote-color: lighten($font-color,44%); //#bababa;
+$comment-quote-color-white: rgba(white,0.4); //rgba(255, 255, 255, 0.4);
+
+
+//** Student Comments color
+$quote-icon-font-color: lighten($font-color,70%);
+$quote-border-color: $fourth-color;
+$quote-img-border-color: lighten($font-color,61%);
+
+//** Star
+$star-active: $primary-color;
+$star-inactive: $fourth-color;
+$star-legend: $fourth-color;
+
+//** Sliders defaults
+$slider-default-bubble-font: $third-color;
+$slider-default-bubble: $third-color;
+$slider-default-bubble-bg: #fff;
+
+//** Free time aside
+$calc-border: lighten($third-color,41%); //#e8e8e8;
+$calc-bg-light: #fff;
+$calc-bg: lighten($third-color,43%); //#eeeeee;
+$calc-bg-dark: lighten($third-color,47%);//#f9f9f9;
+$calc-legend: $third-color;
+$calc-border2: $fourth-color;
+$calc-number-color: $secondary-color;
+$calc-total-color: $primary-color;
+
+//** footer
+$footer-bg-color: $secondary-color;
+$footer-font-color: $font-color-dark-bg;
+
+//** Form
+$form-input-bg-color: lighten($third-color, 46%);
+$form-input-border-color: $fourth-color;
+
+//** Modal
+$modal-header-bg-color: lighten($third-color, 47); //#f7f7f7;
+$modal-close-color: $button-color;
+$modal-close-hover-color: $button-active-color;
+
+//** Quote Animations
+$anim-quote-block-color: $secondary-color;
+$anim-quote-font-color: $font-color-dark-bg;
+$anim-quote-mainicon-color: lighten($third-color, 18%);//#afafaf
+
+//** Panels
+$panel-default-color: lighten(#7f7f7f, 45%); //#f2f2f2
+$panel-default-border-color: lighten(#7f7f7f, 26%);//#c2c2c2
+$panel-index-odd-color: lighten($third-color,18%); //#afafaf
+$panel-index-even-color: lighten($third-color,18%); //#afafaf
+$panel-odd-color: lighten(#7f7f7f, 45%); //#f2f2f2
+$panel-odd-border-color: $fourth-color; //#ddd
+$panel-shadow-border-color: #cadce0;
+$panel-shadow-shadow-color: lighten(#000000, 89); //#e3e3e3
+
+//** Section Nav
+$section-nav-color: lighten($third-color,41%); //#e8e8e8;
+$section-nav-active-color: $secondary-color; //#08a7cd;
+$section-nav-feedback-active-color: $primary-color; //#f9a029;
+$section-nav-final: lighten(#7f7f7f, 18%); //#adadad #afafaf

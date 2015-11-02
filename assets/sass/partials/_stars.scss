@@ -1,0 +1,34 @@
+.star-rating{
+    color: $star-active;
+    font-size: 5em;
+}
+
+.glyphicon-star-empty {
+    color: $star-inactive;
+}
+
+@media only screen and (min-width:$screen-phone) {
+	.stars-legend {
+		display: none;
+	}
+}
+
+@media only screen and (max-width:$screen-phone) {
+
+	.star-rating {
+		float: right;
+		width: 50%;
+	}
+	.stars-legend {
+		display: block;
+		text-align: right;
+		width: 50%;
+	}
+	.stars-legend legend {
+		border: medium none;
+		color: $star-active;
+		line-height: 2.45em;
+		padding: 0 1em 0 0;
+	}
+	
+}

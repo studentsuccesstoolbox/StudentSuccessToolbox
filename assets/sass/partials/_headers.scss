@@ -1,0 +1,253 @@
+
+/* Header Image */
+#header {
+    background: url("../images/header.jpg") no-repeat scroll 0 0;
+    height: 233px;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+
+.word {
+    display: block;
+    float: left;
+    line-height: 1;
+}
+
+.header-heading{
+    color: $font-color-dark-bg;
+    font-size: 1em;
+    margin: 42px 0 0 393px;
+    width: 340px;
+    float: left;
+}
+
+//** Sytling for header words: Am I ready for Study?
+.header-heading.am-i-ready {
+    margin: 38px 0 0 390px;
+}
+
+//Am I
+.am-i-ready span:nth-child(1) {
+    font-size: 5em;
+    letter-spacing: -5px;
+    font-weight: $bold;
+    margin: 0;
+    transform: scale(1, 1.5);
+    line-height: normal;
+}
+//Ready
+.am-i-ready span:nth-child(2) {
+    font-size: 3em;
+    font-weight: normal;
+    line-height: 1em;
+    margin: 0 0 0 15px;
+    transform: scale(1.2, 1);
+}
+//for Study
+.am-i-ready span:nth-child(3) {
+    clear: both;
+    font-size: 2.2em;
+    margin: -40px 0 0 140px;
+    transform: scale(1, 1.5);
+}
+//?
+.am-i-ready span:nth-child(4) {
+    float: right;
+    margin: -95px 10px 0 0;
+    position: relative;
+    transform: scale(1, 1.3);
+    font-size: 7.2em;
+    font-weight: 700;
+    left: 5px;
+}
+
+//** Sytling for header words: Do you have enough time?
+.header-heading.enough-time {
+    margin: 42px 0 0 393px;
+}
+//D0
+.enough-time span:nth-child(1) {
+    font-size: 6.2em;
+    font-weight: $bold;
+    letter-spacing: -7px;
+    margin: 0;
+    transform: scale(1, 1.5);
+}
+//You
+.enough-time span:nth-child(2) {
+    font-size: 2.5em;
+    font-weight: $bold;
+    margin: 5px 0 0 18px;
+}
+//Have
+.enough-time span:nth-child(3) {
+    font-size: 2.7em;
+    letter-spacing: -1px;
+    margin: 2px 0 0 8px;
+}
+//Enough
+.enough-time span:nth-child(4) {
+    font-size: 2.9em;
+    letter-spacing: -2px;
+    margin: -5px 0 0 25px;
+    transform: scale(1.2, 0.8);
+}
+//Time
+.enough-time span:nth-child(5) {
+    font-size: 3em;
+    font-weight: $bold;
+    margin: -7px 0 0 50px;
+    transform: scale(1.75, 1);
+}
+//?
+.enough-time span:nth-child(6) {
+    float: none;
+    font-size: 7.2em;
+    font-weight: 700;
+    left: 5px;
+    margin: -8px 0 0;
+    position: relative;
+    transform: scale(1, 1.3);
+}
+
+//** Sytling for header words: Your Feedback
+.header-heading.your-feedback {
+    margin: 48px 0 0 393px;
+}
+//Your
+.your-feedback span:nth-child(1) {
+    font-size: 6.2em;
+    font-weight: $bold;
+    letter-spacing: -7px;
+    //line-height: unset;
+    margin: -15px 0 0 -8px;
+    transform: scale(1, 1.5);
+}
+//Feedback
+.your-feedback span:nth-child(2) {
+    font-size: 2.9em;
+    letter-spacing: -1px;
+    line-height: 1;
+    margin: 40px 0 0;
+    transform: scale(1, 1.2);
+}
+
+//** Sytling for header words: Give us some feedback
+.header-heading.rate {
+    margin: 35px 0 0 382px;
+}
+.rate span:nth-child(1) {
+    font-size: 6.2em;
+    font-weight: $bold;
+    letter-spacing: -7px;
+    margin: 0;
+    transform: scale(1, 1.5);
+}
+.rate span:nth-child(2) {
+    font-size: 2.5em;
+    font-weight: $bold;
+    margin: 15px 0 0 10px;
+}
+.rate span:nth-child(3) {
+    font-size: 2.5em;
+    font-weight: $bold;
+    letter-spacing: normal;
+    margin: 14px 0 0 18px;
+    transform: scale(1.25, 1);
+}
+.rate span:nth-child(4) {
+    font-size: 2.9em;
+    letter-spacing: -2px;
+    margin: 0 0 0 10px;
+    transform: scale(1, 1.2);
+}
+
+//** Sytling for header words: Who can I ask
+
+.a-word {
+    font-size: 6.2em;
+    font-weight: 600;
+    letter-spacing: -7px;
+    line-height: normal;
+    margin: 0;
+    transform: scale(1, 1.5);
+}
+.b-word {
+    font-size: 2.5em;
+    font-weight: 600;
+    margin: 15px 0 0 35px;
+    transform: scale(1.5, 1);
+}
+.c-word {
+    float: right;
+    font-size: 2.2em;
+    font-weight: 600;
+    margin: 5px 0 0 31px;
+    transform: scale(1.3, 2);
+}
+.f-word {
+    float: right;
+    font-size: 7.2em;
+    font-weight: 700;
+    left: 5px;
+    margin: -55px 0 0 10px;
+    position: relative;
+    transform: scale(1, 1.5);
+}
+.a-word, .b-word, .c-word, .d-word, .e-word, .f-word {
+    display: block;
+    float: left;
+    line-height: 1;
+}
+
+
+//Mobile Heading
+.mob-heading {
+    background: $secondary-color none repeat scroll 0 0;
+    border-radius: 8px;
+    color: $font-color-dark-bg;
+    float: none;
+    margin: 10px auto;
+    padding: 10px 0;
+    text-align: center;
+}
+
+@media only screen and (max-width:$screen-tablet) {
+    #header {
+            background: rgba(0, 0, 0, 0) url("../images/header-sm.jpg") no-repeat scroll 0 0;
+            height: 233px;
+    }
+    
+}
+
+
+
+
+.center-block {
+	float: none;
+	margin: 0 auto;
+}
+
+.heading-text {
+    font-size: 1.5em;
+}
+.heading-text-big {
+    font-size: 1.4em;
+    font-style: italic;
+    font-weight: $bold;
+}
+
+/* feedback page -------------------------- */
+
+
+.interpret .heading {
+	margin: 2em 0;
+}
+.interpret h1 {
+    text-align: center;
+	margin: 0;
+}
+
+
+

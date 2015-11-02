@@ -1,0 +1,47 @@
+
+//** Modal header
+.modal-header {
+    background-color: $modal-header-bg-color;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    font-size: 1.6em;
+}
+
+.modal-body {
+    font-size: 1.5em;
+}
+
+//** Modal Close button
+.fa.btn-close {
+    color: $modal-close-color;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.fa.btn-close:hover {
+    color: $modal-close-hover-color;
+}
+
+
+/* error modal */
+.modal-header.error {
+    color: $error-color;
+}
+
+.modal-footer {
+    padding: 5px 15px 15px 15px;
+    text-align: inherit; 
+    border-top: none;
+}
+
+.modal-footer .btn-link{
+     font-size: 1.5em;
+}
+
+
+.alert strong {
+    background: $error-color none repeat scroll 0 0;
+    color: $font-color-dark-bg;
+    padding: 0 5px;
+}

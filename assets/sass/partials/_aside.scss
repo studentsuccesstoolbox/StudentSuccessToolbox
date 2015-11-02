@@ -1,0 +1,155 @@
+
+
+//** borders 
+.calc-content {
+    border: 1px solid $calc-border;
+    border-radius: 10px;
+    background-color: $calc-bg;
+    overflow: hidden;
+}
+	
+.calc-left {
+    border-right: 1px solid $calc-border;
+    background-color: $calc-bg-light;
+}
+
+//** aside background
+.results {
+    background-color: $calc-bg-dark;
+}
+
+/* Pie chart*/
+#chart-block {
+    margin: 2em 0 5em;
+}
+#chart-block legend {
+    text-align: center;
+	border: none;
+	font-size: 10px;
+}
+
+//** Result Numbers
+.chartnumbers .reset {
+    color: $calc-number-color;
+    display: inline-block;
+    font-size: 3.4em !important;
+    font-weight: $bold;
+    line-height: 1em;
+    margin: 0.3em 0;
+    transform: scale(1, 1.6);
+}
+
+//Minus and equal sign
+.chartnumbers .reset.min {
+    float: left;
+    font-size: 2.5em !important;
+    line-height: 2.2em;
+    margin: 0;
+    transform: none !important;
+}
+
+//Free time result
+.chartnumbers .reset.freeTime {
+    color: $calc-total-color;
+}
+
+.chartnumbers > div {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.chartnumbers legend {
+    border: medium none;
+    bottom: -8%;
+    clear: both;
+    color: $calc-legend;
+    display: block;
+    float: none;
+    //font-family: open sans;
+    font-size: 10px;
+}
+
+
+// Chart tip
+.row.charttip {
+    background-color: $calc-bg;
+    margin: 2em -15px 0;
+    padding: 0 0 2em;
+}
+
+
+
+
+@media only screen and (min-width:$screen-desktop) and (max-width:$screen-lg-desktop) {
+
+	.chartnumbers .reset.min {
+		line-height: 1.8em;
+	}
+	/*.chartnumbers .col-xs-12 > div {
+		margin: 0;
+	}*/
+	.chartnumbers .reset {
+		font-size: 3em !important;
+	}
+}
+
+@media (max-width: $screen-sm-max) {
+    .calc-left .col-xs-9 {
+        float: left;
+        margin: 0 0 25px;
+    }
+    
+    .calc-content {
+        background-color: $calc-bg-light;
+    }
+    
+    .calc-left, .row.calc-content{
+        border: none;
+        padding: 0;
+    }
+    
+    //** Aside Background
+    .results {
+            background-color: transparent;
+    }
+
+    .total-result {
+        background: $calc-bg-light none repeat scroll 0 0;
+        border: 4px solid $calc-border2;
+        border-radius: 100%;
+        height: 11em;
+        margin: 0 0 20px !important;
+        width: 11em;
+        display: inline-block;
+    }
+    
+    .total-result .reset {
+        font-size: 5em !important;
+        margin: 0.3em 0 3px;
+        transform: scale(1, 1.2);
+    }
+    .total-result legend, .chartnumbers legend {
+        font-size: 1em;
+    }
+    
+    .chartnumbers {
+        background-color: $calc-bg-dark;
+        padding: 15px 0;
+    }
+    .chartnumbers .reset.min {
+        font-size: 3em !important;
+        line-height: 2.5em;
+    }
+    .reset.min.minus {
+        margin: 0 -10px 0 10px;
+        width: 10px;
+    }
+    .chartnumbers .reset {
+        font-size: 5em !important;
+        /*margin: 0.3em 0;*/
+        transform: scale(1, 1.2);
+    }
+    .row.charttip {
+        background-color: transparent;
+    }
+}

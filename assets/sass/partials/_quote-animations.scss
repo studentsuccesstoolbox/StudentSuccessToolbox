@@ -1,0 +1,395 @@
+/* ANIMATIONS
+============================================================================= */
+
+.anim-quotes {
+    background: #ddd none repeat scroll 0 0;
+    border-radius: 8px;
+    float: left;
+    height: 320px;
+    width: 100%;
+	overflow: hidden;
+}
+
+.anim-block {
+   background: $anim-quote-block-color none repeat scroll 0 0;
+    border: 1px solid $anim-quote-block-color;
+    border-radius: 8px;
+    color: $anim-quote-font-color;
+    height: 60%;
+    margin: 13% auto 0;
+    width: 60%;
+	position: absolute;
+
+}
+
+.anim-quotes .fa.fa-user::before {
+    display: block;
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.anim-quotes .fa.fa-user {
+    color: #afafaf;
+    display: inline;
+    font-size: 18em;
+    position: relative;
+    top: 25%;
+	
+    animation-delay: 0s;
+    animation-name: cssAnimationUser;
+
+    animation-direction: alternate;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-play-state: running, running;
+    animation-timing-function: ease-in, ease;
+}
+
+
+	
+@keyframes cssAnimationUser {
+0% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+}
+
+
+.a-first:after {
+	color: $anim-quote-font-color;
+	font-family: FontAwesome;
+	content: "\f0c0";
+    float: right;
+    font-size: 5em;
+    position: relative;
+    right: -0.5em;
+    top: -3.6em;
+}
+
+.a-second:after {
+	color: $anim-quote-font-color;
+	font-family: FontAwesome;
+	content: "\f02d";
+    float: right;
+    font-size: 5em;
+    position: relative;
+    right: -0.5em;
+    top: -3.6em;
+}
+.a-three:after {
+	color: $anim-quote-font-color;
+	font-family: FontAwesome;
+	content: "\f073";
+    float: right;
+    font-size: 5em;
+    position: relative;
+    right: -0.5em;
+    top: -3.6em;
+}
+
+
+.a-four:after {
+	color: $anim-quote-font-color;
+	font-family: FontAwesome;
+	content: "\f05d";
+    float: right;
+    font-size: 6em;
+    position: relative;
+    right: -0.5em;
+    top: -3em;
+}
+ 
+
+.anim-txt {
+    font-size: 2em;
+    height: 100%;
+    line-height: 1.2em;
+    padding: 1.2em 0.5em;
+    text-align: center;
+}
+
+/*     .anim-block {
+    -webkit-animation: cssAnimation 0.5s linear 1s alternate;
+    -moz-animation: cssAnimation 0.5s linear 1s alternate;
+    -o-animation: cssAnimation 0.5s linear 1s alternate;
+
+	position: relative;
+    }
+	
+ 	@keyframes cssAnimation {
+	  0% {
+		left: 500px;
+		top: 0;
+	  }
+
+	  100% {
+		left: 0px;
+		top: 0;
+	  }
+	}  
+    @-webkit-keyframes cssAnimation {
+    from { -webkit-transform: rotate(0deg) scale(0.5) skew(0deg) translate(-500px); background-position: -500px; }
+    to { -webkit-transform: rotate(0deg) scale(1) skew(0deg) translate(0px); background-position: 0px; }
+    }
+    @-moz-keyframes cssAnimation {
+    from { -moz-transform: rotate(0deg) scale(0.5) skew(0deg) translate(-500px); background-position: -500px; }
+    to { -moz-transform: rotate(0deg) scale(1) skew(0deg) translate(0px); background-position: 0px; }
+    }
+    @-o-keyframes cssAnimation {
+    from { -o-transform: rotate(0deg) scale(0.5) skew(0deg) translate(-500px); background-position: -500px; }
+    to { -o-transform: rotate(0deg) scale(1) skew(0deg) translate(0px); background-position: 0px; }
+    } 
+ */
+ 
+ 	
+
+
+	.a-first{
+		transform: translateX(-100%);
+		transition: all 1s ease-in-out;
+	left: 18%;
+    top: 0;		
+		animation-delay: 0s, 1s, 4s;
+		animation-name: cssAnimationHead, swingHead, outHead;
+		
+		animation-direction: alternate;
+		animation-duration: 1s, 1s, 0.5s;
+		animation-fill-mode: forwards;
+		animation-iteration-count: 1;
+		animation-play-state: running, running;
+		animation-timing-function: ease-in, ease;
+	}
+	
+@keyframes cssAnimationHead {
+0% {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.5) translate3d(-100%, -300%, 0px);
+}
+100% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1) translate3d(0%, 0px, 0px);
+}
+}
+@keyframes swingHead {
+0% {
+    transform: translateX(0%) translateY(0px);
+}
+15% {
+    transform: translateX(10%) translateY(0px);
+}
+30% {
+    transform: translateX(-5%) translateY(0px);
+}
+50% {
+    transform: translateX(5%) translateY(0px);
+}
+65% {
+    transform: translateX(-2%) translateY(0px);
+}
+80% {
+    transform: translateX(1%) translateY(0px);
+}
+100% {
+    transform: translateX(0%) translateY(0px);
+}
+}
+@keyframes outHead {
+0% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1) translate3d(0%, 0px, 0px);
+}
+100% {
+    opacity: 1;
+    transform: rotate(0deg) scale(0.57) translate3d(80%, -75%, 0px);
+}
+}
+
+	.a-second{
+		transform: translateX(-300%);
+		transition: all 1s ease-in-out;
+    left: 18%;
+    top: 77%;		
+		animation-delay: 5s;
+		animation-name: cssAnimationHeadsecond, swingHeadsecond, outHeadsecond;
+		
+		animation-direction: alternate;
+		animation-duration: 1s, 1s, 0.5s;
+		animation-fill-mode: forwards;
+		animation-iteration-count: 1;
+		animation-play-state: running, running;
+		animation-timing-function: ease-in, ease;
+		opacity: 0;
+	}
+
+	
+@keyframes cssAnimationHeadsecond {
+0% {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.5) translate3d(-200%, -300%, 0px);
+}
+100% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1) translate3d(0%, 0px, 0px);
+}
+}
+@keyframes swingHeadsecond {
+0% {
+    transform: translateX(0%) translateY(0px);
+}
+15% {
+    transform: translateX(10%) translateY(0px);
+}
+30% {
+    transform: translateX(-5%) translateY(0px);
+}
+50% {
+    transform: translateX(5%) translateY(0px);
+}
+65% {
+    transform: translateX(-2%) translateY(0px);
+}
+80% {
+    transform: translateX(1%) translateY(0px);
+}
+100% {
+    transform: translateX(0%) translateY(0px);
+}
+}
+@keyframes outHeadsecond {
+0% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1) translate3d(0%, 0px, 0px);
+}
+100% {
+    opacity: 1;
+    transform: rotate(0deg) scale(0.57) translate3d(80%, -175%, 0px);
+}
+}
+
+	.a-three{
+		transform: translateX(-100%);
+		transition: all 1s ease-in-out;
+    left: 20%;
+    top: 163%;		
+		animation-delay: 6s;
+		animation-name: cssAnimationHeadthree, swingHeadthree, outHeadthree;
+		
+		animation-direction: alternate;
+		animation-duration: 1s, 1s, 0.5s;
+		animation-fill-mode: forwards;
+		animation-iteration-count: 1;
+		animation-play-state: running, running;
+		animation-timing-function: ease-in, ease;
+		opacity: 0;
+	}
+
+	
+@keyframes cssAnimationHeadthree {
+0% {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.5) translate3d(-200%, -300%, 0px);
+}
+100% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1) translate3d(0%, 0px, 0px);
+}
+}
+@keyframes swingHeadthree {
+0% {
+    transform: translateX(0%) translateY(0px);
+}
+15% {
+    transform: translateX(10%) translateY(0px);
+}
+30% {
+    transform: translateX(-5%) translateY(0px);
+}
+50% {
+    transform: translateX(5%) translateY(0px);
+}
+65% {
+    transform: translateX(-2%) translateY(0px);
+}
+80% {
+    transform: translateX(1%) translateY(0px);
+}
+100% {
+    transform: translateX(0%) translateY(0px);
+}
+}
+@keyframes outHeadthree {
+0% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1) translate3d(0%, 0px, 0px);
+}
+100% {
+    opacity: 1;
+    transform: rotate(0deg) scale(0.57) translate3d(-80%, -555%, 0px);
+}
+}
+
+	.a-four{
+		transform: translateX(-100%);
+		transition: all 1s ease-in-out;
+    left: 20%;
+    top: 240%;		
+		animation-delay: 7s;
+		animation-name: cssAnimationHeadfour, swingHeadfour, outHeadfour;
+		
+		animation-direction: alternate;
+		animation-duration: 1s, 1s, 0.5s;
+		animation-fill-mode: forwards;
+		animation-iteration-count: 1;
+		animation-play-state: running, running;
+		animation-timing-function: ease-in, ease;
+		opacity: 0;
+	}
+
+	
+@keyframes cssAnimationHeadfour {
+0% {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.5) translate3d(-200%, -300%, 0px);
+}
+100% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1) translate3d(0%, 0px, 0px);
+}
+}
+@keyframes swingHeadfour {
+0% {
+    transform: translateX(0%) translateY(0px);
+}
+15% {
+    transform: translateX(10%) translateY(0px);
+}
+30% {
+    transform: translateX(-5%) translateY(0px);
+}
+50% {
+    transform: translateX(5%) translateY(0px);
+}
+65% {
+    transform: translateX(-2%) translateY(0px);
+}
+80% {
+    transform: translateX(1%) translateY(0px);
+}
+100% {
+    transform: translateX(0%) translateY(0px);
+}
+}
+@keyframes outHeadfour {
+0% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1) translate3d(0%, 0px, 0px);
+}
+100% {
+    opacity: 1;
+    transform: rotate(0deg) scale(0.57) translate3d(-80%, -655%, 0px);
+}
+}
