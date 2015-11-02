@@ -59,22 +59,24 @@
     -o-transition: all 300ms ease-out 0s;
     -webkit-transition: all 300ms ease-out 0s;
     text-transform: uppercase;
-   
-}
-
-.btn-info:hover, .btn-info:active {
-    background: $button-info-active-color;
-    border-color: $button-info-font-color;
-    box-shadow: 0 0 0 2px $button-info-active-color;
-    color: $button-font-color;
-}
-
-.btn-info.disabled,.btn-default.disabled:hover,.btn-default.disabled:active,.btn-default.disabled:focus{
-    background: $button-deactivated-color none repeat scroll 0 0;
-    border: 3px solid $font-color-dark-bg;
-    box-shadow: 0 0 0 2px $button-deactivated-color;
-    opacity:1;
     
+    &:hover, &:active {
+        background: $button-info-active-color;
+        border-color: $button-info-font-color;
+        box-shadow: 0 0 0 2px $button-info-active-color;
+        color: $button-font-color;
+    }
+
+    &.disabled{ 
+        &:hover,&:active,&:focus{
+            background: $button-deactivated-color none repeat scroll 0 0;
+            border: 3px solid $font-color-dark-bg;
+            box-shadow: 0 0 0 2px $button-deactivated-color;
+            opacity:1;
+        }
+
+    }
+   
 }
 
 
@@ -91,7 +93,6 @@
 }
 
 /* Gintaras for 3th tool*/
-
 .button-gray:hover {
     background-color: #969696;    
 }
@@ -127,7 +128,14 @@
     }
 }
 
+.btn.btn-nav {
+    @extend .btn.btn-secondary;
+    font-size: 1.5em;
+    padding: 8px 20px;
+    
+}
 
+/* Options button */
 .btn-option{
     background-color: $button-deactivated-color;
     border: medium none;
@@ -139,27 +147,30 @@
     margin: 0.5em 0 0 5px;
     padding: 4px 20px;
     transition: all 300ms ease-out 0s;
+    
+    &:hover, 
+    &:focus, 
+    &:active {
+        background-color: $button-option-active-hover-color;
+        text-decoration: none;
+    }
+    
+    &.btn-active{
+        background-color: $button-option-active-color;
+        border: medium none;
+        box-shadow: 0 0 2px $button-option-active-color;
+            
+        &:hover, 
+        &:focus, 
+        &:active {
+            background-color: $button-option-active-color;
+            border: medium none;
+            color: $font-color-dark-bg;
+            cursor: default;
+            text-decoration: none;
+        }
+    }
 }
-
-.btn-option:hover, .btn-option:focus, .btn-option:active {
-    background-color: $button-option-active-hover-color;
-    text-decoration: none;
-}
-
-.btn-option.btn-active{
-    background-color: $button-option-active-color;
-    border: medium none;
-    box-shadow: 0 0 2px $button-option-active-color
-}
-
-.btn-option.btn-active:hover, .btn-option.btn-active:focus, .btn-option.btn-active:active {
-    background-color: $button-option-active-color;
-    border: medium none;
-    color: $font-color-dark-bg;
-    cursor: default;
-    text-decoration: none;
-}
-
 
 
 //** Button blocks

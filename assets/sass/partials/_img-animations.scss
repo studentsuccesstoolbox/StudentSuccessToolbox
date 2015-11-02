@@ -1,0 +1,146 @@
+
+.flip-card {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.3s linear;
+    float: left;
+
+    &:hover {
+      transform: rotateY(180deg);
+    }
+
+    .face {  
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+    }
+
+    .back {
+      position: absolute;
+      display: block;
+      transform: rotateY(180deg);
+      padding: 10px;
+      color: white;
+      text-align: center;
+      top: 0;
+      border-radius: 100%;
+    }
+
+    .back img {
+        box-shadow: none;
+        left: 0;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+    }
+
+    .back-title {
+        float: left;
+        font-size: 2em;
+        line-height: 1em;
+        margin: 35% 0;
+        position: relative;
+        vertical-align: middle;
+        z-index: 2;
+    }
+  
+}
+
+
+/*.student-name p {
+    font-size: 1.3em;
+    line-height: 1.2em;
+    margin: 0;
+    padding: 5px 10px;
+}
+
+.icon-badge.icon-speaker {
+    bottom: -8px;
+    font-size: 3.4em;
+    height: 52px;
+    line-height: 1px;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: auto;
+    width: 52px;
+}
+
+.icon-badge.icon-speaker:hover, .icon-badge.icon-speaker:active, .icon-badge.icon-speaker:focus {
+    background-color: $button-info-active-color;
+    box-shadow: 0 0 0 2px $button-info-active-color;
+}
+
+@media screen and (max-width: $screen-md) {
+    #f1_card {
+        width: auto;
+    }
+    .face.back {
+        margin: 0 0 0 -30px;
+    }
+    .back-title {
+        margin: 30% 0 0 -30px;
+        font-size: 2.5em;
+    }
+    .panel.student-name {
+        top: auto;
+        bottom: 0;    
+    }
+    .icon-badge.icon-speaker {
+        float: right;
+        font-size: 5em;
+        margin: 5px;
+        height: auto;
+        line-height: 1px;
+        padding: 0 12px;
+        position: absolute;
+        top: auto;
+        width: auto;
+        bottom: -18px;
+        right: 3%;
+    }
+}
+
+@media screen and (min-width: $screen-md) {
+    .nopadding2 {
+       margin: 0!important;
+       padding: 0!important;
+   }
+}
+
+@media screen and (min-width: $screen-md) and (max-width: $screen-lg) {
+    .back-title {
+        margin: 20% 0;
+    }  
+}  
+
+@media screen and (max-width: 450px) {
+    #f1_card {
+        margin: 0 0 0 10%;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    #f1_card {
+        margin: 0;
+    }
+}
+
+@media(max-width:$screen-xs){
+    .icon-badge.icon-speaker {
+        bottom: -8px;
+        font-size: 4em;
+        height: auto;
+        line-height: 1px;
+        padding: 0 12px;
+        position: absolute;
+        right: 0;
+        top: auto;
+        width: auto;
+    }
+    .col-xs-7.student-name {
+        clear: both;
+        width: 100%;
+    }
+}*/

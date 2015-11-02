@@ -55524,8 +55524,10 @@ angular.module('sstTool4App').controller('defaultController', ["$scope", "$modal
      * @param {boolean} errorModal
      * @returns {undefined}
      */
-    $scope.openModal = function(template,size) {
-        
+    $scope.openModal = function(template,size,$event) {
+        if($event){
+            $event.preventDefault();
+        }
         $modal.open({
             templateUrl: template?'app/views/partials/modals/'+template:'app/views/partials/modals/errorModal.html',
             windowTemplateUrl : 'app/views/partials/modalWindow.html',

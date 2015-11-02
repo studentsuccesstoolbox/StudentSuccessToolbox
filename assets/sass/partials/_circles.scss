@@ -1,0 +1,91 @@
+ 
+.circle-color {        
+    border-radius: 100%;
+    color: #fff;
+    display: block;
+    font-size: 1.3em;
+    font-style: normal;
+    font-weight: 600;
+    height: 59px;
+    line-height: 59px;
+    margin: 0 auto;
+    padding: 0 !important;
+    position: relative;
+    text-align: center;
+    top: -3px;
+    width: 59px;
+    
+    &.green {
+        background-color: #a5b638;
+    }
+    
+    &.orange {
+        background-color: $button-color;
+    }
+    &.red{
+        background-color: #d9534f;
+    }
+    
+}
+
+.green-title-bg {
+    background-color: #a5b638;
+    padding: 1px 5px;
+}
+
+.green-text {
+    color: #a5b638;
+}
+
+.orange-title-bg {
+    background-color: $button-color;
+    padding: 1px 18px;
+}
+
+.orange-title {
+    color: $button-color;
+}
+
+.red-title-bg {
+    background-color: #d9534f;
+    padding: 1px 8px;
+}
+
+.red-title {
+    color: #d9534f;
+}
+
+.custom-radio {
+    height: 1em;
+}
+    
+.radio-green-bg {
+    background: transparent none repeat scroll 0 0;
+    border: 10px solid rgba(165,182,56,0.3);
+    border-radius: 100%;
+    display: inline-table;
+    line-height: 1em;
+    padding: 3px 4px 6px 5px;
+    width: 50px;
+}
+
+.radio-orange-bg {
+    background: transparent none repeat scroll 0 0;
+    border: 10px solid rgba(249,160,41,0.3);
+    border-radius: 100%;
+    display: inline-table;
+    line-height: 1em;
+    padding: 3px 4px 6px 5px;
+    width: 50px;
+}
+
+.radio-red-bg {
+    background: transparent none repeat scroll 0 0;
+    border: 10px solid rgba(217, 83, 79, 0.3);
+    border-radius: 100%;
+    display: inline-table;
+    line-height: 1em;
+    padding: 3px 4px 6px 5px;
+    width: 50px;
+}
+

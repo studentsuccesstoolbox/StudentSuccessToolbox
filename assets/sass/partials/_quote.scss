@@ -364,6 +364,14 @@ blockquote.simple{
     }
 }
 
+.quote-dark-image-right{
+    @extend .quote-dark-image-top-right;
+    margin-top: 0;
+    blockquote {
+        width:90%;
+    }
+}
+
 .quote-dark-image-bottom-left{
     @extend .quote-dark-image-top-right;
     margin-top: 0;
@@ -398,7 +406,8 @@ blockquote.simple{
         width: 10em;
         right: -6em;
     }
-    &:hover blockquote {
+    
+    a:hover  blockquote {
         background-color: #1a8099;
         color: #fff;
     }
@@ -412,5 +421,13 @@ blockquote.simple{
         float:none;
         width: auto;
         padding: 0 20px 0 20px;
+    }
+}
+
+.quote-light-image-left{
+     @extend .quote-light-image-right;
+     img{
+        left: -8em; 
+        right: auto;
     }
 }

@@ -13,29 +13,66 @@
     height: 90px;
     z-index: 100;
     padding-top: 8px;
-}
-
-.icon-badge.active{
-    background-color: $primary-color;
-    box-shadow: 0 0 0 2px $primary-color;
     
-}
+    &.active{
+        background-color: $primary-color;
+        box-shadow: 0 0 0 2px $primary-color;
 
-.icon-badge.block {
-    position: relative;
-    display:block;
-}
+    }
 
-.icon-badge.inline-block {
-    position: relative;
-    display:inline-block;
-    margin-right:10px;
-    margin-bottom: 10px;
-}
+    &.block {
+        position: relative;
+        display:block;
+    }
 
-/* Fix Icon position to make it apper more centered*/
-.icon-badge.icon-fix{
-     padding-top: 10px;
+    &.inline-block {
+        position: relative;
+        display:inline-block;
+        /*margin-right:10px;
+        margin-bottom: 10px;*/
+    }
+
+    &.icon-lg-gray {
+        background-color: #afafaf;
+        border-radius: 100%;
+        box-shadow: 0 0 0 2px #afafaf;
+        font-size: 2em;
+        height: 180px;
+        padding-top: 0;
+        width: 180px;
+        margin: 0 auto;
+        .fa-fix1 {
+            line-height: 160px;
+        }
+        .fa-fix2 {
+            line-height: 170px;
+        }
+        .fa-fix3 {
+            line-height: 180px;
+        }
+    }
+
+    /* Fix Icon position to make it apper more centered*/
+    &.icon-fix{
+         padding-top: 10px;
+    }
+    
+    &.icon-xs{
+        padding-top: 2px;
+        height: 32px;
+        width: 32px;
+    }
+    
+    &.icon-sm{
+        padding-top: 3px;
+        height: 52px;
+        width: 52px;
+    }
+    
+    &.icon-lg{
+        height: 180px;
+        width: 180px;
+    }
 }
 
 /* Arrow */
@@ -48,6 +85,17 @@
         position: absolute;
         right: 0;
         transform: rotate(35deg);
+        z-index: 100;
+    }
+    .block-arrow-two {
+        height: 90px;
+        left: 40%;
+        min-height: 80px;
+        position: absolute;
+        right: 50%;
+        top: -15%;
+        transform: rotate(5deg);
+        width: 220px;
         z-index: 100;
     }
 }

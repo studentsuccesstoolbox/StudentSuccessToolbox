@@ -13,91 +13,96 @@
 </div>
 
 
-<div id="contentFirst" class="container shadow">
-    <div class="row spacer-top-3x spacer-bottom-3x">
-        <div class="row">
-            <div class="col-md-offset-2 col-md-8 spacer-xs-top-2x spacer-xs-bottom-4x">
-                <div class="q-head custom-head">
-                    <h2 class="text-center">{{q.description}}</h2>
-                </div>
+<div  class="container shadow">
+    
+    <div class="row spacer-top-3x">
+        <div class="col-md-offset-2 col-md-8">
+            <div class="q-head large">
+                <h2 class="text-center nopadding">{{q.description}}</h2>
             </div>
         </div>
-        <div class="row hidden-sm hidden-xs">
-            <div class="col-md-offset-2 col-md-8 spacer-xs-top-2x spacer-xs-bottom-4x">
-                <div class="panel panel-tip"> 
-                    <div class="panel-header row">
-                        <div class="col-xs-12 col-sm-11 col-md-12 nopadding">
-                            <h3 class="text-center">Tick which applies to you:</h3>
-                        </div> 
-                    </div>
-                    <div class="col-sm-12 col-lg-12 panel-body panel-body-spacer">
-                        <p class="col-md-offset-0 col-md-offset-0 col-md-4 col-lg-4 panel-body-custom-title text-center green-title"><span class="panel-body-custom-title-bg green-title-bg">Yes</span><span> I can do this</span></p>
-                        <p class="col-md-offset-0 col-md-offset-0 col-md-4 col-lg-4 panel-body-custom-title text-center orange-title"><span class="panel-body-custom-title-bg orange-title-bg">?</span><span> I may need help</span></p>
-                        <p class="col-md-offset-0 col-md-offset-0 col-md-4 col-lg-4 panel-body-custom-title text-center red-title"><span class="panel-body-custom-title-bg red-title-bg">No</span><span> I cannot do this</span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="row spacer-xs-bottom-4x">
-            <div class="col-md-12">
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-offset-0 question question-title spacer-xs-bottom-2x nomargin-lg">
-                            <h2>{{q.label}}</h2>
-                        </div>
-                        <div class="hidden-sm hidden-xs question-title-col col-md-2 col-lg-2 question text-center nomargin-lg nopadding-md nopadding-lg">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 faq-radio panel-body-custom-title-bg custom-title-bg nopadding green-title-bg">Yes</div>
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 faq-radio panel-body-custom-title-bg custom-title-bg nopadding orange-title-bg">?</div>
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 faq-radio panel-body-custom-title-bg custom-title-bg nopadding red-title-bg">No</div>
-                        </div>
-                        
-                        <div class="hidden-lg hidden-md question-title-col col-xs-12 col-sm-12 question text-center nomargin-lg nopadding-md nopadding-lg">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 faq-radio panel-body-custom-title-bg custom-title-bg nopadding green-title-bg">Yes<br>I can do this</div>
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 faq-radio panel-body-custom-title-bg custom-title-bg nopadding orange-title-bg">?<br>I may need help</div>
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 faq-radio panel-body-custom-title-bg custom-title-bg nopadding red-title-bg">No<br>I cannot do this</div>
-                        </div>
-                        
-                    </div>
-                </div>   
-                
-                <div ng-repeat="question in q.questions track by $index">
-                    <div class="panel" ng-class-odd="'panel-odd'" ng-class-even="'panel-even'">
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-xs-12 col-md-10 question spacer-xs-bottom-2x nomargin-lg">
-                                    {{question.question}}
-                                </div>
-                                <div class="nopadding-md nopadding-lg nomargin-lg col-xs-12 col-sm-12 col-md-2 col-lg-2 question text-center spacer-xs-bottom">
-                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 nopadding" ng-repeat="opt in question.options">
-                                       <label for="question-{{$parent.$index}}-{{opt.value}}" ng-class="{yes:'radio-green-bg', notsure:'radio-orange-bg', no:'radio-red-bg'}[opt.value]">
-                                            <input name="questionGroup{{$parent.$index}}" id="question-{{$parent.$index}}-{{opt.value}}" type="radio" class="faq-radio nopadding" ng-click="answer(question,opt)" ng-model="question.selected" ng-value="opt">
-                                       </label>
-                                     </div>
-                                </div>
-                            </div>                    
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-
     </div>
     
-    <div class="row spacer-xs-bottom-4x">                
-        <div class="col-md-12">
-            <div class="col-md-4 reset-width spacer-xs-top-3x">
-                <button class="btn btn-info btn-lg btn-block" aria-label="" title="check your computer skills" ng-click="back()">Back</button>
-            </div>
-            <div class="col-md-offset-4 col-md-4 reset-width spacer-xs-top-3x spacer-xs-bottom-4x spacer-lg-bottom">
-                <button class="btn btn-default btn-lg btn-block" aria-label="Next page" ng-click="checkQuestionsAnswered(q.questions)?openNext():openModal('questionErrorModal.html')">Next</button>
-            </div>
-
-            <div class="col-xs-12 col-md-4 reset-width spacer-bottom-4x">
-                <a href="#/" class="col-xs-5 col-md-5 btn btn-secondary btn-lg btn-custom" title="go to home button">Home</a>
-                <a href="#resources" class="col-xs-5 col-md-5 btn btn-secondary btn-lg btn-custom pull-right" title="go to resources button">Resources</a>
+    <div class="row spacer-top-3x hidden-sm hidden-xs">
+        <div class="col-md-offset-2 col-md-8 spacer-xs-top-2x spacer-xs-bottom-4x">
+            
+            <div class="panel panel-tip"> 
+                <div class="panel-header row">
+                    <div class="col-xs-12 col-sm-11 col-md-12 nopadding">
+                        <h3 class="text-center">Tick which applies to you:</h3>
+                    </div> 
+                </div>
+                <div class="col-sm-12 col-lg-12 panel-body panel-body-spacer">
+                    <p class="col-md-offset-0 col-md-offset-0 col-md-4 col-lg-4 panel-body-custom-title text-center green-title">
+                        <span class="panel-body-custom-title-bg green-title-bg">Yes</span><span> I can do this</span>
+                    </p>
+                    <p class="col-md-offset-0 col-md-offset-0 col-md-4 col-lg-4 panel-body-custom-title text-center orange-title">
+                        <span class="panel-body-custom-title-bg orange-title-bg">?</span><span> I may need help</span>
+                    </p>
+                    <p class="col-md-offset-0 col-md-offset-0 col-md-4 col-lg-4 panel-body-custom-title text-center red-title">
+                        <span class="panel-body-custom-title-bg red-title-bg">No</span><span> I cannot do this</span>
+                    </p>
+                </div>
             </div>
         </div>
-    </div>    
+    </div>
+        
+    <div class="row spacer-top-3x">
+        <div class="col-md-12">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-offset-0 question question-title spacer-xs-bottom-2x nomargin-lg">
+                        <h2>{{q.label}}</h2>
+                    </div>
+                    <div class="hidden-sm hidden-xs question-title-col col-md-2 col-lg-2 question text-center nomargin-lg nopadding-md nopadding-lg">
+                        <div class="col-xs-4 faq-radio panel-body-custom-title-bg custom-title-bg nopadding green-title-bg">Yes</div>
+                        <div class="col-xs-4 faq-radio panel-body-custom-title-bg custom-title-bg nopadding orange-title-bg">?</div>
+                        <div class="col-xs-4 faq-radio panel-body-custom-title-bg custom-title-bg nopadding red-title-bg">No</div>
+                    </div>
+
+                    <div class="hidden-lg hidden-md question-title-col col-xs-12 col-sm-12 question text-center nomargin-lg nopadding-md nopadding-lg">
+                        <div class="col-xs-4 green-text"><span class="circle-color green">Yes</span><br>I can do this</div>
+                        <div class="col-xs-4 faq-radio panel-body-custom-title-bg custom-title-bg nopadding orange-title-bg">?<br>I may need help</div>
+                        <div class="col-xs-4 faq-radio panel-body-custom-title-bg custom-title-bg nopadding red-title-bg">No<br>I cannot do this</div>
+                    </div>
+
+                </div>
+            </div>   
+
+            <div ng-repeat="question in q.questions track by $index">
+                <div class="panel" ng-class-odd="'panel-odd'" ng-class-even="'panel-even'">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-10 question spacer-xs-bottom-2x nomargin-lg">
+                                {{question.question}}
+                            </div>
+                            <div class="nopadding-md nopadding-lg nomargin-lg col-xs-12 col-sm-12 col-md-2 col-lg-2 question text-center spacer-xs-bottom">
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 nopadding" ng-repeat="opt in question.options">
+                                   <label for="question-{{$parent.$index}}-{{opt.value}}" ng-class="{yes:'radio-green-bg', notsure:'radio-orange-bg', no:'radio-red-bg'}[opt.value]">
+                                        <input name="questionGroup{{$parent.$index}}" id="question-{{$parent.$index}}-{{opt.value}}" type="radio" class="faq-radio nopadding" ng-click="answer(question,opt)" ng-model="question.selected" ng-value="opt">
+                                   </label>
+                                 </div>
+                            </div>
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <div class="row spacer-top-3x">                
+        <div class="col-md-4">
+            <a class="btn btn-info btn-lg btn-block" aria-label="" title="check your computer skills" ng-click="back()">Back</a>
+        </div>
+        <div class="col-md-offset-4 col-md-4">
+            <button class="btn btn-default btn-lg btn-block" aria-label="" title="What technology do colleges provide" ng-click="checkQuestionsAnswered(q.questions)?openNext():openModal('questionErrorModal.html')">Next</button> 
+        </div>
+    </div>
+    <div class="row spacer-top spacer-xs-bottom-4x"> 
+        <div class="col-xs-12 col-md-4">
+            <a href="#/" class=" btn btn-nav btn-lg" title="go to home button">Home</a>
+            <a href="#resources" class="btn btn-nav btn-lg pull-right" title="go to resources button">Resources</a>
+        </div>
+    </div>   
+        
 </div>

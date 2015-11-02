@@ -19,6 +19,7 @@ $bootstrap-sass-asset-helper: false;
 @import "partials/quote";
 @import "partials/panelhome";
 @import "partials/panel";
+@import "partials/panel-accordion";
 @import "partials/modal";
 @import "partials/aside";
 @import "partials/misc";
@@ -30,6 +31,8 @@ $bootstrap-sass-asset-helper: false;
 @import "partials/section-nav";
 @import "partials/badges";
 @import "partials/header-banner";
+@import "partials/img-animations";
+@import "partials/_circles";
 // ...
 
 // Third-party
