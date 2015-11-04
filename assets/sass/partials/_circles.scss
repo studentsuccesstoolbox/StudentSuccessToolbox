@@ -26,66 +26,67 @@
         background-color: #d9534f;
     }
     
-}
-
-.green-title-bg {
-    background-color: #a5b638;
-    padding: 1px 5px;
+    &.inline{
+        float: left;
+    }
+    
 }
 
 .green-text {
     color: #a5b638;
 }
 
-.orange-title-bg {
-    background-color: $button-color;
-    padding: 1px 18px;
-}
-
-.orange-title {
+.orange-text {
     color: $button-color;
 }
 
-.red-title-bg {
-    background-color: #d9534f;
-    padding: 1px 8px;
-}
-
-.red-title {
+.red-text {
     color: #d9534f;
 }
-
-.custom-radio {
-    height: 1em;
-}
-    
-.radio-green-bg {
+  
+.radio-circle-bg {
     background: transparent none repeat scroll 0 0;
     border: 10px solid rgba(165,182,56,0.3);
     border-radius: 100%;
-    display: inline-table;
+    display: block;
     line-height: 1em;
-    padding: 3px 4px 6px 5px;
+    padding: 5px;
     width: 50px;
+    height: 50px;
+    text-align: center;
+    
+    &.green{
+        border: 10px solid rgba(165,182,56,0.3);
+    }
+    
+    &.orange{
+        border: 10px solid rgba(249,160,41,0.3);
+    }
+    
+    &.red{
+        border: 10px solid rgba(217, 83, 79, 0.3);
+    }
 }
 
-.radio-orange-bg {
-    background: transparent none repeat scroll 0 0;
-    border: 10px solid rgba(249,160,41,0.3);
-    border-radius: 100%;
-    display: inline-table;
-    line-height: 1em;
-    padding: 3px 4px 6px 5px;
-    width: 50px;
+.radio-circle-group {
+    
+    float:right;
+    
+    div:not(:first-child){
+        margin-left: 9px;
+    }
+    
+    @media (max-width: $screen-sm-max) {
+        width:100%;
+        margin: 15px 0 0 0;
+        
+        .radio-circle-bg{
+            margin: 0 auto;
+        }
+        
+        div {
+            width: 33.33333%;
+            margin-left: 0 !important;
+        }
+    }
 }
-
-.radio-red-bg {
-    background: transparent none repeat scroll 0 0;
-    border: 10px solid rgba(217, 83, 79, 0.3);
-    border-radius: 100%;
-    display: inline-table;
-    line-height: 1em;
-    padding: 3px 4px 6px 5px;
-    width: 50px;
-}
-

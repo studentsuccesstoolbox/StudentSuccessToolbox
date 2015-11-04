@@ -367,9 +367,24 @@ blockquote.simple{
 .quote-dark-image-right{
     @extend .quote-dark-image-top-right;
     margin-top: 0;
+    
     blockquote {
         width:90%;
     }
+    
+    @media (max-width: $screen-md-max) { 
+        padding-top:9em;
+    
+        img{
+            top: 0;
+            right: 0;
+        }
+        
+        blockquote {
+            width:100%;
+        }
+    }
+     
 }
 
 .quote-dark-image-bottom-left{
@@ -381,13 +396,17 @@ blockquote.simple{
         margin-left: 15%; 
     }
     
+    @media (max-width: $screen-md-max) { 
+        margin-top:9em;
+    }
+    
     img{
         top: 2em;
         left: 5%;
         width: 10em;
         right: auto;
         @media (max-width: $screen-md-max) { 
-            top: -1em;
+            top: 0;
         }
     }
     
@@ -399,12 +418,21 @@ blockquote.simple{
     width: 100%;
     margin:0;
     
+    @media (max-width: $screen-md-max) { 
+        padding-top:9em;
+    }
+    
     img{
         position: absolute;
         top: 1em;
         z-index: 4;
         width: 10em;
         right: -6em;
+        @media (max-width: $screen-md-max) { 
+            top: 0;
+            right: 0;
+            left: auto;
+        }
     }
     
     a:hover  blockquote {
@@ -429,5 +457,10 @@ blockquote.simple{
      img{
         left: -8em; 
         right: auto;
+        @media (max-width: $screen-md-max) { 
+            top: 0;
+            left: 0;
+        }
     }
+    
 }

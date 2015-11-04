@@ -10,7 +10,7 @@ angular.module('sstTool4App').factory('navigateQuestionaireService',function(){
     
     obj.next = function (currentQuestionaireId){
         var questionnaireId = false;
-        var $questionsIds = Object.keys(questionnaire);
+        var $questionsIds = Object.keys(tool4Questionnaire);
         for(var i = 0; i < $questionsIds.length; i++){
             if($questionsIds[i] === currentQuestionaireId){
                 var nextIndex = i+1;
@@ -25,7 +25,7 @@ angular.module('sstTool4App').factory('navigateQuestionaireService',function(){
     
     obj.previous = function (currentQuestionaireId){
         var questionnaireId = false;
-        var $questionsIds = Object.keys(questionnaire);
+        var $questionsIds = Object.keys(tool4Questionnaire);
         for(var i = 0; i < $questionsIds.length; i++){
             if($questionsIds[i] === currentQuestionaireId){
                 var previousIndex = i-1;
@@ -40,7 +40,7 @@ angular.module('sstTool4App').factory('navigateQuestionaireService',function(){
     
     obj.atIndex = function (index){
         var questionnaireId = false;
-        var $questionsIds = Object.keys(questionnaire);
+        var $questionsIds = Object.keys(tool4Questionnaire);
         
         if(index < $questionsIds.length){
            questionnaireId = $questionsIds[index];

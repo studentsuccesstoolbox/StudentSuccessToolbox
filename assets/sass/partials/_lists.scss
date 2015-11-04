@@ -1,0 +1,29 @@
+
+
+ul.info-list {
+    padding: 2em 2em 2em 3em;
+    list-style: none;
+    line-height: 1.5em;
+    
+    li{
+        padding-bottom: 0.8em;
+        font-size: 1.2em;
+    }
+    
+    a {
+        font-size: 1.5em;
+        line-height: 1em;
+        margin-bottom: 0.3em;
+        margin-left: 2px; /* Fix for inline-block margin*/
+    }
+        
+    li:before {    
+        font-family: 'FontAwesome';
+        content: "\f105";
+        margin: 0 5px 0 -20px;
+        color: #f9a029;
+        font-size: 1.7em;
+
+    }
+    
+}

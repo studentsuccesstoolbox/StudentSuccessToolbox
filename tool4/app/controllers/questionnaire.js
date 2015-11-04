@@ -64,13 +64,15 @@ angular.module('sstTool4App').controller('questionnaireController',function($sco
         var questionsIDs = Object.keys(tool4Questionnaire);
         
         var sectionData = $scope.calculateWeight();
-        
+         
         if(questionsID == questionsIDs[0]){
+            //Section 1
             if(sectionData[0] < 3){
                 $location.path('further-help'); 
                 return;
             }
         }else if(questionsID == questionsIDs[2]){
+            //Section 3
             if(sectionData[1] >= 7 && sectionData[2] >= 6){
                 $location.path('college-supports-available-to-you');
                 return;
@@ -78,8 +80,8 @@ angular.module('sstTool4App').controller('questionnaireController',function($sco
         }
         
         var nextQuestionaireId = navigateQuestionaireService.next(questionsID);
-
         if(nextQuestionaireId){
+            //Section 1 or 2
             $location.path('check-your-computer-skills/'+nextQuestionaireId); 
         }else{
             $location.path('further-help'); 
@@ -111,7 +113,6 @@ angular.module('sstTool4App').controller('questionnaireController',function($sco
      */
     $scope.checkQuestionsAnswered = function(questions){
         var allQuestionsAnwsered = true;
-        console.log(questions);
         for(var i = 0; i < questions.length; i++){
             if(questions[i].selected == ''){
                 allQuestionsAnwsered = false;

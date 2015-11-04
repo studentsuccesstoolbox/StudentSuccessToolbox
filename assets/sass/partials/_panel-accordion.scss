@@ -13,7 +13,7 @@
         color: #fff !important;
         line-height: 1.2em;
         margin: 0 auto;
-        padding: 4px 1em 4px 2em;
+        padding: 0 1em 0 2em;
         position: relative;
     }
     &.panel-open .accordion-heading {
@@ -24,6 +24,7 @@
     .accordion-title a{
         color: #fff !important;
         font-weight: 400;
+        font-size: 1.3em;
     }
     
     .accordion-title > a:hover, 
