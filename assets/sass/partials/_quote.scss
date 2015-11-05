@@ -327,111 +327,186 @@ blockquote.simple{
     
 }
 
-.quote-dark-image-top-right{
-    @extend .quote-primary;
-    left: 0;
-    width: 100%;
-    margin-top: 6em;
-    @media (min-width: $screen-md-min) { 
-        width: 90%; 
-    }
-    
-    .comment {
-        float: none;
-        margin: 0 auto;
-        width: 95%;
-    }
-    
-    .comment:before {
-        color: rgba(255,255,255,0.4);
-        font-size: 1.8em;
-    }
-    
-    .comment:after {
-        color: rgba(255,255,255,0.4);
-        font-size: 1.8em;
-    }
-    
-    img{
-        position: absolute;
-        top: 0;
-        z-index: 4;
-        width : 10em;
-        right: 0;
-        @media (max-width: $screen-md-max) { 
-            top: -1em;
-        }
-    }
-}
 
-.quote-dark-image-right{
-    @extend .quote-dark-image-top-right;
-    margin-top: 0;
+.quote-dark{
     
-    blockquote {
-        width:90%;
-    }
-    
-    @media (max-width: $screen-md-max) { 
-        padding-top:9em;
-    
-        img{
-            top: 0;
-            right: 0;
+    blockquote{
+        background-color: #1a8099;
+        color: #fff;
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        padding: 1em 3em 1em 3em;
+        box-shadow: 3px 2px 4px #cadce0;
+        margin: 0;
+        overflow: hidden;
+        
+        .comment:before {
+            content: "\f10d";
+            font-family: FontAwesome;
+            color: #76B3C2;
+            font-size: 1.8em;
+            font-style: normal;
+            margin: 0;
+            padding: 0 10px 0 0;
         }
         
-        blockquote {
-            width:100%;
+        .comment:after {
+            content: "\f10e";
+            font-family: FontAwesome;
+            color: #76B3C2;
+            font-size: 1.8em;
+            font-style: normal;
+            margin: 0;
+            padding: 0 0 0 10px;
         }
-    }
-     
-}
-
-.quote-dark-image-bottom-left{
-    @extend .quote-dark-image-top-right;
-    margin-top: 0;
-    
-    @media (min-width: $screen-md-min) { 
-        width: 85%;
-        margin-left: 15%; 
-    }
-    
-    @media (max-width: $screen-md-max) { 
-        margin-top:9em;
-    }
-    
-    img{
-        top: 2em;
-        left: 5%;
-        width: 10em;
-        right: auto;
-        @media (max-width: $screen-md-max) { 
-            top: 0;
+        
+        &>p{
+            width: 100%;
+            position:initial;
         }
     }
     
-}
-
-.quote-light-image-right{
-    @extend .quote-secondary-image;
-    
-    width: 100%;
-    margin:0;
-    
-    @media (max-width: $screen-md-max) { 
-        padding-top:9em;
+    //Link hover 
+    a:hover  blockquote {
+        background-color: #f0f0f0;
+        color: #08a7cd;
     }
     
-    img{
+    
+    //Read more button
+    .more-btn {
+        background: #fff none repeat scroll 0 0;
+        border: 3px solid #cadce0;
+        border-radius: 100%;
+        margin: 0 -20px 0 0;
+        padding: 0 8px 30px;
         position: absolute;
-        top: 1em;
-        z-index: 4;
-        width: 10em;
-        right: -6em;
+        right: 1em;
+        bottom: -35px;
+        z-index: 5;
+    }
+    
+    span.more-text {
+        display: none;
+    } 
+    span.more-text.show {
+        display: inline !important
+    }
+    
+    /*Image position*/
+    &.image-left{
+
+        @media (min-width: $screen-md-min) { 
+             padding-left: 8em; 
+        }
+
         @media (max-width: $screen-md-max) { 
+            padding-top:9em;
+        }
+
+        img{
+            position: absolute;
+            z-index: 4;
+            top: 2em;
+            left: 0;
+            width: 10em;
+            right: auto;
+            @media (max-width: $screen-md-max) { 
+                top: 0;
+            }
+        }
+    }
+    
+    &.image-right{
+
+        @media (min-width: $screen-md-min) { 
+             padding-right: 8em; 
+        }
+
+        @media (max-width: $screen-md-max) { 
+            padding-top:9em;
+        }
+
+        img{
+            position: absolute;
+            z-index: 4;
+            top: 2em;
+            right: 0;
+            width: 10em;
+            left: auto;
+            @media (max-width: $screen-md-max) { 
+                top: 0;
+            }
+        }
+    }
+    
+    &.image-top-right{
+        
+        padding-top: 5em;
+        
+        @media (min-width: $screen-md-min) { 
+             padding-right: 5em; 
+        }
+
+        @media (max-width: $screen-md-max) { 
+            padding-top:9em;
+        }
+
+        img{
+            position: absolute;
+            z-index: 4;
             top: 0;
             right: 0;
+            width: 10em;
             left: auto;
+            @media (max-width: $screen-md-max) { 
+                top: 0;
+            }
+        }
+    }
+    
+    &.image-top-left{
+        
+        padding-top: 5em;
+        
+        @media (min-width: $screen-md-min) { 
+             padding-left: 5em; 
+        }
+
+        @media (max-width: $screen-md-max) { 
+            padding-top:9em;
+        }
+
+        img{
+            position: absolute;
+            z-index: 4;
+            top: 0;
+            left: 0;
+            width: 10em;
+            right: auto;
+            @media (max-width: $screen-md-max) { 
+                top: 0;
+            }
+        }
+    }
+    
+}
+
+
+.quote-light{
+    @extend .quote-dark;
+    
+    blockquote{
+        background-color: #f0f0f0;
+        color: #08a7cd;
+        
+        .comment:before {
+            color: $comment-quote-color;
+        }
+
+        .comment:after {
+            color: $comment-quote-color;
         }
     }
     
@@ -440,27 +515,5 @@ blockquote.simple{
         color: #fff;
     }
     
-    blockquote{
-        margin: 0;
-        width: 100%;
-    }
-    
-    blockquote>p {
-        float:none;
-        width: auto;
-        padding: 0 20px 0 20px;
-    }
-}
-
-.quote-light-image-left{
-     @extend .quote-light-image-right;
-     img{
-        left: -8em; 
-        right: auto;
-        @media (max-width: $screen-md-max) { 
-            top: 0;
-            left: 0;
-        }
-    }
     
 }

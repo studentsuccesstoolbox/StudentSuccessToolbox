@@ -1,5 +1,315 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 /**
+ * Sudent Success Toolbox - Tool 2
+ * The objective of this tool app, is to help prospective students think about the amount 
+ * of time they spend on different activities during a typical week and how much study 
+ * they might be able to realistically undertake in their ‘free time’ whilst balancing 
+ * other life, work and family commitments. 
+ * 
+ * @author Paul Schweppe
+ */
+
+$ = require('jquery');
+
+angular = require('angular');
+require('angular-chart.js');
+
+var sstExampleApp = angular.module('sstExampleApp', [require('angular-ui-bootstrap')
+                        ,require('angular-route')
+                        ,require('angular-sanitize')
+                        ,require('angular-animate')
+                        ,require('angular-aria')
+                        ,'chart.js'
+                        ,'rzModule'
+                        ]);
+                 
+require('./filters');
+require('./directives');
+require('./controllers');
+
+sstExampleApp.config(['ChartJsProvider', function (ChartJsProvider) {
+    // Configure all charts
+    ChartJsProvider.setOptions({
+        // Boolean - Whether to animate the chart
+        animation: true,
+        tooltipFillColor: "rgba(249,160,41,1)",
+        scaleFontFamily: "'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+        scaleFontStyle: "normal",
+        scaleFontColor: "#494949",
+        scaleFontSize: 18,
+        tooltipFontSize: 18,
+        tooltipTitleFontSize: 24,
+        tooltipCaretSize: 10,
+        tooltipCornerRadius: 10,
+        tooltipXOffset: 10,
+        
+        //Boolean - Whether to show lines for each scale point
+        scaleShowLine : true,
+
+        //Boolean - Whether we show the angle lines out of the radar
+        angleShowLineOut : true,
+
+        //Boolean - Whether to show labels on the scale
+        scaleShowLabels : true,
+
+        // Boolean - Whether the scale should begin at zero
+        scaleBeginAtZero : true,
+    
+        //String - Point label font declaration
+        pointLabelFontFamily : "'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+
+        //String - Point label font weight
+        pointLabelFontStyle : "normal",
+
+        //Number - Point label font size in pixels
+        pointLabelFontSize : 12,
+
+        //String - Point label font colour
+        pointLabelFontColor : "#08a7cd",
+        
+        //Boolean - Whether to show a stroke for datasets
+        datasetStroke : false,
+    });
+  }]);
+},{"./controllers":3,"./directives":4,"./filters":7,"angular":20,"angular-animate":9,"angular-aria":11,"angular-chart.js":12,"angular-route":14,"angular-sanitize":16,"angular-ui-bootstrap":17,"jquery":22}],2:[function(require,module,exports){
+/* 
+ * Controller for Home Page
+ * Not much happening here
+ * @author Paul Schweppe
+ * 
+ */
+angular.module('sstExampleApp').controller('exampleController', ["$scope", "$modal", function($scope,$modal) {
+    
+    $scope.iconCls = 'fa-exclamation'
+    
+    $scope.example1 = 24;
+    
+    $scope.example2 = 50;
+    
+    //Slider Hours translate
+    $scope.translate = function(value){
+        return value+' ';
+    };
+    
+    /**
+     * Chart config
+     */
+    $scope.labels = ['label 1','label 2','label 3','label 4','label 6','label 7'];
+    $scope.data = [200,300,100,50,150,230];
+
+    $scope.colours = ['#084988','#56a0e2','#4580b6','#3889d4','#296ba9','#7eb9ed'];
+    $scope.radarData = [$scope.data];
+    $scope.chartOptions = {scaleShowLabels : false};
+    
+    $scope.series = ['Series A'];
+    
+    $scope.chartColours= [{
+        fillColor: 'rgba(249, 160, 41, 0.2)',
+        strokeColor: 'rgba(8, 167, 205, 0.8)',
+        highlightFill: 'rgba(47, 132, 71, 0.8)',
+        highlightStroke: 'rgba(47, 132, 71, 0.8)',
+        pointStrokeColor: "#fff",
+        pointHighlightFill: 'rgba(249, 160, 41, 1.0)',
+        pointHighlightStroke: "rgba(220,220,220,1)",
+    }];
+
+    /**
+     * 
+     * @param {string} size Options are lg, sm or blank
+     * @param {boolean} errorModal
+     * @returns {undefined}
+     */
+    $scope.openExampleModal = function(size,errorModal) {
+        $modal.open({
+            templateUrl: errorModal?'app/views/partials/modals/errorModal.html':'app/views/partials/modals/exampleModal.html',
+            windowTemplateUrl : 'app/views/partials/modalWindow.html',
+            size: size,
+            controller: ["$scope", "$modalInstance", "iconCls", function($scope, $modalInstance,iconCls){
+		$scope.iconCls = iconCls;
+  
+                $scope.ok = function(){
+                    $modalInstance.close();
+                };
+                $scope.cancel = function(event){
+                    if(event){
+                        event.preventDefault();
+                    }
+                    $modalInstance.dismiss();
+                };
+            }],
+            //Used to pass in values from current scope
+            resolve: {
+                iconCls: function(){
+                        return $scope.iconCls;
+                }
+            }
+        });
+    };
+    
+}]);
+},{}],3:[function(require,module,exports){
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+'use strict';
+ 
+require('./example');
+
+},{"./example":2}],4:[function(require,module,exports){
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+'use strict';
+ 
+require('./readmore');
+},{"./readmore":5}],5:[function(require,module,exports){
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ * Created by Joyce Cam on 30/12/2014.
+ *
+ * Simple and easy-to-implement angular read more directive.
+ *
+ */
+ 
+angular.module('sstExampleApp').directive('readMore', function() {
+  return {
+    restrict: 'A',
+    transclude: true,
+    replace: true,
+    template: '<p></p>',
+    scope: {
+      moreText: '@',
+      lessText: '@',
+      words: '@',
+      ellipsis: '@',
+      char: '@',
+      limit: '@',
+      content: '@'
+    },
+    link: function(scope, elem, attr, ctrl, transclude) {
+      /*var moreText = angular.isUndefined(scope.moreText) ? ' <a class="read-more">Read More...</a>' : ' <a class="read-more">' + scope.moreText + '</a>',
+        lessText = angular.isUndefined(scope.lessText) ? ' <a class="read-less">Less ^</a>' : ' <a class="read-less">' + scope.lessText + '</a>',
+        ellipsis = angular.isUndefined(scope.ellipsis) ? '' : scope.ellipsis,
+        limit = angular.isUndefined(scope.limit) ? 150 : scope.limit;*/
+
+    var $moreBtn = angular.isUndefined(scope.moreText) ? $('<span class="more-btn"><a class="btn btn-link read-more">more</a></span>') : '<a class="read-more">' + scope.moreText + '</a>',
+        $lessBtn = angular.isUndefined(scope.lessText) ? $('<span class="more-btn"><a class="btn btn-link read-less">less</a></span') : ' <a class="read-less">' + scope.lessText + '</a>',
+        $ellipsis = angular.isUndefined(scope.ellipsis) ? '' : $('<span class="read-ellipsis">'+scope.ellipsis+'</span>'),
+        limit = angular.isUndefined(scope.limit) ? 150 : scope.limit;
+
+      attr.$observe('content', function(str) {
+        readmore(str);
+      });
+
+      transclude(scope.$parent, function(clone, scope) {
+        readmore(clone.text().trim());
+      });
+
+      function readmore(text) {
+
+        var text = text,
+          orig = text,
+          regex = /\s+/gi,
+          charCount = text.length,
+          wordCount = text.trim().replace(regex, ' ').split(' ').length,
+          countBy = 'char',
+          count = charCount,
+          foundWords = [],
+          markup = text,
+          more = '';
+
+        if (!angular.isUndefined(attr.words)) {
+          countBy = 'words';
+          count = wordCount;
+        }
+
+        if (countBy === 'words') { // Count words
+
+          foundWords = text.split(/\s+/);
+
+          if (foundWords.length > limit) {
+            text = foundWords.slice(0, limit).join(' ')
+            more = foundWords.slice(limit, count).join(' ');
+          }else{
+              elem.append(text);
+              return;
+          }
+
+        } else { // Count characters
+
+          if (count > limit) {
+            text = orig.slice(0, limit);
+            more = orig.slice(limit, count);
+          }else{
+               elem.append(text);
+              return;
+          }
+          
+
+        }
+        
+        var $moreContainer = $('<span class="more-text"></span').append(more);
+            
+        $lessBtn.find('.read-less').on('click', function() {
+            $moreBtn.find('.read-more').show();
+            $moreContainer.hide().removeClass('show');
+            if($ellipsis){
+                $ellipsis.show();
+            }
+        });
+
+        $moreContainer.append($lessBtn);
+
+        $moreBtn.find('.read-more').on('click', function() {
+            $(this).hide();
+            $moreContainer.addClass('show').slideDown();
+            if($ellipsis){
+                $ellipsis.hide();
+            }
+        });
+
+        elem.append(text)
+                .append($ellipsis)
+                .append($moreBtn)
+                .append($moreContainer);
+
+      }
+    }
+  };
+});
+
+
+},{}],6:[function(require,module,exports){
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+angular.module('sstExampleApp').filter('encodeURIComponent', function() {
+    return window.encodeURIComponent;
+});
+
+
+},{}],7:[function(require,module,exports){
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+'use strict';
+ 
+require('./encodeURIComponent');
+},{"./encodeURIComponent":6}],8:[function(require,module,exports){
+/**
  * @license AngularJS v1.4.5
  * (c) 2010-2015 Google, Inc. http://angularjs.org
  * License: MIT
@@ -3862,11 +4172,11 @@ angular.module('ngAnimate', [])
 
 })(window, window.angular);
 
-},{}],2:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 require('./angular-animate');
 module.exports = 'ngAnimate';
 
-},{"./angular-animate":1}],3:[function(require,module,exports){
+},{"./angular-animate":8}],10:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.5
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -4261,11 +4571,11 @@ ngAriaModule.directive('ngShow', ['$aria', function($aria) {
 
 })(window, window.angular);
 
-},{}],4:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 require('./angular-aria');
 module.exports = 'ngAria';
 
-},{"./angular-aria":3}],5:[function(require,module,exports){
+},{"./angular-aria":10}],12:[function(require,module,exports){
 (function (factory) {
   'use strict';
   if (typeof exports === 'object') {
@@ -4623,7 +4933,7 @@ module.exports = 'ngAria';
   }
 }));
 
-},{"angular":13,"chart.js":14}],6:[function(require,module,exports){
+},{"angular":20,"chart.js":21}],13:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.5
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -5616,11 +5926,11 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 
 })(window, window.angular);
 
-},{}],7:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 require('./angular-route');
 module.exports = 'ngRoute';
 
-},{"./angular-route":6}],8:[function(require,module,exports){
+},{"./angular-route":13}],15:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.5
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -6305,15 +6615,15 @@ angular.module('ngSanitize').filter('linky', ['$sanitize', function($sanitize) {
 
 })(window, window.angular);
 
-},{}],9:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 require('./angular-sanitize');
 module.exports = 'ngSanitize';
 
-},{"./angular-sanitize":8}],10:[function(require,module,exports){
+},{"./angular-sanitize":15}],17:[function(require,module,exports){
 require('./ui-bootstrap-tpls');
 module.exports = 'ui.bootstrap';
 
-},{"./ui-bootstrap-tpls":11}],11:[function(require,module,exports){
+},{"./ui-bootstrap-tpls":18}],18:[function(require,module,exports){
 /*
  * angular-ui-bootstrap
  * http://angular-ui.github.io/bootstrap/
@@ -12150,7 +12460,7 @@ angular.module("template/typeahead/typeahead-popup.html", []).run(["$templateCac
     "");
 }]);
 !angular.$$csp() && angular.element(document).find('head').prepend('<style type="text/css">.ng-animate.item:not(.left):not(.right){-webkit-transition:0s ease-in-out left;transition:0s ease-in-out left}</style>');
-},{}],12:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.5
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -40839,11 +41149,11 @@ $provide.value("$locale", {
 })(window, document);
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
-},{}],13:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 require('./angular');
 module.exports = angular;
 
-},{"./angular":12}],14:[function(require,module,exports){
+},{"./angular":19}],21:[function(require,module,exports){
 /*!
  * Chart.js
  * http://chartjs.org/
@@ -44321,7 +44631,7 @@ module.exports = angular;
 
 
 }).call(this);
-},{}],15:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.1.4
  * http://jquery.com/
@@ -53533,7 +53843,7 @@ return jQuery;
 
 }));
 
-},{}],16:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 /**
  * Sudent Success Toolbox - Tool 2
  * The objective of this tool app, is to help prospective students think about the amount 
@@ -53660,7 +53970,7 @@ if($data){
     questionnaire = $data;
 }
 
-},{"./controllers":18,"./data":23,"./filters":27,"./services":29,"angular":13,"angular-animate":2,"angular-aria":4,"angular-chart.js":5,"angular-route":7,"angular-sanitize":9,"angular-ui-bootstrap":10,"jquery":15}],17:[function(require,module,exports){
+},{"./controllers":25,"./data":30,"./filters":34,"./services":36,"angular":20,"angular-animate":9,"angular-aria":11,"angular-chart.js":12,"angular-route":14,"angular-sanitize":16,"angular-ui-bootstrap":17,"jquery":22}],24:[function(require,module,exports){
 /* 
  * Controller for Home Page
  * Not much happening here
@@ -53686,7 +53996,7 @@ angular.module('sstTool1App').controller('homeController', ["$scope", function($
 }]);
 
 
-},{}],18:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -53699,7 +54009,7 @@ require('./questionnaire');
 require('./interpret');
 require('./results');
 require('./rate');
-},{"./home":17,"./interpret":19,"./questionnaire":20,"./rate":21,"./results":22}],19:[function(require,module,exports){
+},{"./home":24,"./interpret":26,"./questionnaire":27,"./rate":28,"./results":29}],26:[function(require,module,exports){
 /* 
  * Controller for Home Page
  * Not much happening here
@@ -53759,7 +54069,7 @@ angular.module('sstTool1App').controller('interpretController', ["$scope", "$rou
 }]);
 
 
-},{}],20:[function(require,module,exports){
+},{}],27:[function(require,module,exports){
 /* 
  * Controller for Questionaire
  *
@@ -53835,7 +54145,7 @@ angular.module('sstTool1App').controller('questionnaireController',["$scope", "$
 
 
 
-},{}],21:[function(require,module,exports){
+},{}],28:[function(require,module,exports){
 /* 
  * Controller for Home Page
  * Not much happening here
@@ -53853,7 +54163,7 @@ angular.module('sstTool1App').controller('rateController', ["$scope", function($
 }]);
 
 
-},{}],22:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 /* 
  * Controller for Results Page
  * Not much happening here
@@ -54022,7 +54332,7 @@ angular.module('sstTool1App').controller('resultsController', ["$scope", "naviga
 }]);
 
 
-},{}],23:[function(require,module,exports){
+},{}],30:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -54032,7 +54342,7 @@ angular.module('sstTool1App').controller('resultsController', ["$scope", "naviga
  
 require('./questionnaire');
 require('./interpret');
-},{"./interpret":24,"./questionnaire":25}],24:[function(require,module,exports){
+},{"./interpret":31,"./questionnaire":32}],31:[function(require,module,exports){
 /**
  * Data use to calcualate the interpret based on free time. Must start with 
  * the smallest to higher 'greaterThen' value
@@ -54062,7 +54372,7 @@ interpretFeedback = [{
 
 
 
-},{}],25:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 /* 
  * Activity Items config.This is an array of objects that creates and activity slider 
  * Config Options:
@@ -54552,7 +54862,7 @@ questionnaire = {
     }
 };
 
-},{}],26:[function(require,module,exports){
+},{}],33:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -54563,16 +54873,9 @@ angular.module('sstTool1App').filter('encodeURIComponent', function() {
 });
 
 
-},{}],27:[function(require,module,exports){
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-'use strict';
- 
-require('./encodeURIComponent');
-},{"./encodeURIComponent":26}],28:[function(require,module,exports){
+},{}],34:[function(require,module,exports){
+arguments[4][7][0].apply(exports,arguments)
+},{"./encodeURIComponent":33,"dup":7}],35:[function(require,module,exports){
 /**
  * Services for validation and showing any errors in a modal. 
  * Checks that the activity time does not exceed 168.
@@ -54619,7 +54922,7 @@ angular.module('sstTool1App').factory('errorModalService',["$modal", function($m
     return obj;
     
 }]);
-},{}],29:[function(require,module,exports){
+},{}],36:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -54629,7 +54932,7 @@ angular.module('sstTool1App').factory('errorModalService',["$modal", function($m
  
 require('./navigateQuestionaire');
 require('./errorModal');
-},{"./errorModal":28,"./navigateQuestionaire":30}],30:[function(require,module,exports){
+},{"./errorModal":35,"./navigateQuestionaire":37}],37:[function(require,module,exports){
 /**
  * Calculates how much free time is remaining and
  * updates the chart values
@@ -54688,7 +54991,7 @@ angular.module('sstTool1App').factory('navigateQuestionaireService',function(){
 
 
 
-},{}],31:[function(require,module,exports){
+},{}],38:[function(require,module,exports){
 /**
  * Sudent Success Toolbox - Tool 2
  * The objective of this tool app, is to help prospective students think about the amount 
@@ -54753,7 +55056,7 @@ respondToSizingMessage = function(e) {
 // we have to listen for 'message'
 window.addEventListener('message', respondToSizingMessage, false);
 
-},{"./controllers":34,"./data":39,"./directives":41,"./filters":45,"./services":49,"angular":13,"angular-animate":2,"angular-aria":4,"angular-chart.js":5,"angular-route":7,"angular-sanitize":9,"angular-ui-bootstrap":10,"jquery":15}],32:[function(require,module,exports){
+},{"./controllers":41,"./data":46,"./directives":48,"./filters":52,"./services":56,"angular":20,"angular-animate":9,"angular-aria":11,"angular-chart.js":12,"angular-route":14,"angular-sanitize":16,"angular-ui-bootstrap":17,"jquery":22}],39:[function(require,module,exports){
 /* 
  * Controller for Free Time Page
  *
@@ -54904,7 +55207,7 @@ angular.module('sstTool2App').controller('freeTimeController',["$scope", "$rootS
 
 
 
-},{}],33:[function(require,module,exports){
+},{}],40:[function(require,module,exports){
 /* 
  * Controller for Home Page
  * Not much happening here
@@ -54916,7 +55219,7 @@ angular.module('sstTool2App').controller('homeController', ["$scope", function($
 }]);
 
 
-},{}],34:[function(require,module,exports){
+},{}],41:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -54928,7 +55231,7 @@ require('./home');
 require('./free-time');
 require('./interpret');
 require('./rate');
-},{"./free-time":32,"./home":33,"./interpret":35,"./rate":36}],35:[function(require,module,exports){
+},{"./free-time":39,"./home":40,"./interpret":42,"./rate":43}],42:[function(require,module,exports){
 /* 
  * Controller for Home Page
  * Not much happening here
@@ -54950,7 +55253,7 @@ angular.module('sstTool2App').controller('interpretController', ["$scope", "calc
 }]);
 
 
-},{}],36:[function(require,module,exports){
+},{}],43:[function(require,module,exports){
 /* 
  * Controller for Home Page
  * Not much happening here
@@ -54968,7 +55271,7 @@ angular.module('sstTool2App').controller('rateController', ["$scope", function($
 }]);
 
 
-},{}],37:[function(require,module,exports){
+},{}],44:[function(require,module,exports){
 /* 
  * Activity Items config.This is an array of objects that creates and activity slider 
  * Config Options:
@@ -55039,7 +55342,7 @@ activityItems = [{
             ,'hexColor' : '7eb9ed'
         }];
 
-},{}],38:[function(require,module,exports){
+},{}],45:[function(require,module,exports){
 /* 
  * Advance Selection: Config for advance selection. Eg days of the week. These sliders values 
  * will be added together to give the activity value.  
@@ -55087,7 +55390,7 @@ advanceItems = [{
             ,'modelValue' : 0
             ,'sliderMax' : 24
         }];
-},{}],39:[function(require,module,exports){
+},{}],46:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -55098,7 +55401,7 @@ advanceItems = [{
 require('./activityItems');
 require('./advanceItems');
 require('./interpret');
-},{"./activityItems":37,"./advanceItems":38,"./interpret":40}],40:[function(require,module,exports){
+},{"./activityItems":44,"./advanceItems":45,"./interpret":47}],47:[function(require,module,exports){
 /**
  * Data use to calcualate the interpret based on free time. Must start with 
  * the smallest to higher 'greaterThen' value
@@ -55177,7 +55480,7 @@ interpretFeedback = [{
 
 
 
-},{}],41:[function(require,module,exports){
+},{}],48:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -55187,7 +55490,7 @@ interpretFeedback = [{
  
 require('./limitNumberTo');
 require('./staticInclude');
-},{"./limitNumberTo":42,"./staticInclude":43}],42:[function(require,module,exports){
+},{"./limitNumberTo":49,"./staticInclude":50}],49:[function(require,module,exports){
 /* 
  * Directive to limit the number entered into a input box.
  * 
@@ -55225,7 +55528,7 @@ angular.module('sstTool2App').directive("limitNumberTo", [function() {
 }]);
 
 
-},{}],43:[function(require,module,exports){
+},{}],50:[function(require,module,exports){
 /**
  * Includes a template onto page without creating a new scope.
  * Supports template markers
@@ -55253,7 +55556,7 @@ angular.module('sstTool2App').directive('staticInclude', ["$http", "$templateCac
 }]);
 
 
-},{}],44:[function(require,module,exports){
+},{}],51:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -55264,9 +55567,9 @@ angular.module('sstTool2App').filter('encodeURIComponent', function() {
 });
 
 
-},{}],45:[function(require,module,exports){
-arguments[4][27][0].apply(exports,arguments)
-},{"./encodeURIComponent":44,"dup":27}],46:[function(require,module,exports){
+},{}],52:[function(require,module,exports){
+arguments[4][7][0].apply(exports,arguments)
+},{"./encodeURIComponent":51,"dup":7}],53:[function(require,module,exports){
 /**
  * Calculates how much free time is remaining and
  * updates the chart values
@@ -55304,7 +55607,7 @@ angular.module('sstTool2App').factory('calculateFreeTimeService',["errorModalSer
 }]);
 
 
-},{}],47:[function(require,module,exports){
+},{}],54:[function(require,module,exports){
 /**
  * Initializes the Chart. 
  * @TODO: Not sure if using a services for this is the best approach
@@ -55343,7 +55646,7 @@ angular.module('sstTool2App').factory('chartInit',function(){
 });
 
 
-},{}],48:[function(require,module,exports){
+},{}],55:[function(require,module,exports){
 /**
  * Services for validation and showing any errors in a modal. 
  * Checks that the activity time does not exceed 168.
@@ -55383,7 +55686,7 @@ angular.module('sstTool2App').factory('errorModalService',["$modal", function($m
     return obj;
     
 }]);
-},{}],49:[function(require,module,exports){
+},{}],56:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -55394,7 +55697,7 @@ angular.module('sstTool2App').factory('errorModalService',["$modal", function($m
 require('./calculateFreeTime');
 require('./chartInit');
 require('./errorModal');
-},{"./calculateFreeTime":46,"./chartInit":47,"./errorModal":48}],50:[function(require,module,exports){
+},{"./calculateFreeTime":53,"./chartInit":54,"./errorModal":55}],57:[function(require,module,exports){
 /**
  * Sudent Success Toolbox - Tool 2
  * The objective of this tool app, is to help prospective students think about the amount 
@@ -55485,7 +55788,7 @@ sstTool4App.config(["$routeProvider", function($routeProvider) {
             controller: 'defaultController'
     	});  	
 }]);
-},{"./controllers":53,"./data":55,"./directives":58,"./filters":61,"./services":63,"angular":13,"angular-animate":2,"angular-aria":4,"angular-route":7,"angular-sanitize":9,"angular-ui-bootstrap":10,"jquery":15}],51:[function(require,module,exports){
+},{"./controllers":60,"./data":62,"./directives":65,"./filters":68,"./services":70,"angular":20,"angular-animate":9,"angular-aria":11,"angular-route":14,"angular-sanitize":16,"angular-ui-bootstrap":17,"jquery":22}],58:[function(require,module,exports){
 /* 
  * Controller for Home Page
  * Not much happening here
@@ -55559,7 +55862,7 @@ angular.module('sstTool4App').controller('defaultController', ["$scope", "$modal
     
     
 }]);
-},{}],52:[function(require,module,exports){
+},{}],59:[function(require,module,exports){
 /* 
  * Controller for Home Page
  * Not much happening here
@@ -55571,7 +55874,7 @@ angular.module('sstTool4App').controller('homeController', ["$scope", function($
 }]);
 
 
-},{}],53:[function(require,module,exports){
+},{}],60:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -55583,7 +55886,7 @@ require('./home');
 require('./default');
 require('./questionnaire');
 
-},{"./default":51,"./home":52,"./questionnaire":54}],54:[function(require,module,exports){
+},{"./default":58,"./home":59,"./questionnaire":61}],61:[function(require,module,exports){
 /* 
  * Controller for Questionaire
  *
@@ -55803,7 +56106,7 @@ angular.module('sstTool4App').controller('questionnaireController',["$scope", "$
 
 
 
-},{}],55:[function(require,module,exports){
+},{}],62:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -55812,7 +56115,7 @@ angular.module('sstTool4App').controller('questionnaireController',["$scope", "$
 'use strict';
  
 require('./tool4Questionnaire');
-},{"./tool4Questionnaire":56}],56:[function(require,module,exports){
+},{"./tool4Questionnaire":63}],63:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -56316,7 +56619,7 @@ tool4Questionnaire = {
             }]
         }
 };
-},{}],57:[function(require,module,exports){
+},{}],64:[function(require,module,exports){
 'use strict';
 angular.module('ngAudio', [])
 .directive('ngAudio', ['$compile', '$q', 'ngAudio', function($compile, $q, ngAudio) {
@@ -56810,7 +57113,7 @@ angular.module('ngAudio', [])
     }
 });
 
-},{}],58:[function(require,module,exports){
+},{}],65:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -56820,7 +57123,7 @@ angular.module('ngAudio', [])
  
 require('./readmore');
 require('./angular.audio');
-},{"./angular.audio":57,"./readmore":59}],59:[function(require,module,exports){
+},{"./angular.audio":64,"./readmore":66}],66:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -56942,7 +57245,7 @@ angular.module('sstTool4App').directive('readMore', function() {
 });
 
 
-},{}],60:[function(require,module,exports){
+},{}],67:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -56953,9 +57256,9 @@ angular.module('sstTool4App').filter('encodeURIComponent', function() {
 });
 
 
-},{}],61:[function(require,module,exports){
-arguments[4][27][0].apply(exports,arguments)
-},{"./encodeURIComponent":60,"dup":27}],62:[function(require,module,exports){
+},{}],68:[function(require,module,exports){
+arguments[4][7][0].apply(exports,arguments)
+},{"./encodeURIComponent":67,"dup":7}],69:[function(require,module,exports){
 /**
  * Services for validation and showing any errors in a modal. 
  * Checks that the activity time does not exceed 168.
@@ -57002,9 +57305,9 @@ angular.module('sstTool4App').factory('errorModalService',["$modal", function($m
     return obj;
     
 }]);
-},{}],63:[function(require,module,exports){
-arguments[4][29][0].apply(exports,arguments)
-},{"./errorModal":62,"./navigateQuestionaire":64,"dup":29}],64:[function(require,module,exports){
+},{}],70:[function(require,module,exports){
+arguments[4][36][0].apply(exports,arguments)
+},{"./errorModal":69,"./navigateQuestionaire":71,"dup":36}],71:[function(require,module,exports){
 /**
  * Calculates how much free time is remaining and
  * updates the chart values
@@ -57063,7 +57366,7 @@ angular.module('sstTool4App').factory('navigateQuestionaireService',function(){
 
 
 
-},{}]},{},[16,31,50]);
+},{}]},{},[23,38,57,1]);
 
 /**  
  * jsPDF - PDF Document creation from JavaScript
