@@ -35,17 +35,25 @@ p {
     position: relative;
     z-index: 10;
     line-height: 1.4em;
-}
+    
+    &.hl-primary{
+        color: $primary-color;
+    }
+    
+    &.hl-secondary{
+        color: $secondary-color;
+    }
 
-p.large {
+    &.large {
     font-size: 2em;
+    }
+
+    &.medium {
+        font-size: 1.4em;
+    }
 }
 
 
-
-p.medium {
-    font-size: 1.4em;
-}
 
 .first-word {
     font-size: 1.8em;

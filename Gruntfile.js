@@ -4,7 +4,7 @@ module.exports = function(grunt) {
       pkg: grunt.file.readJSON('package.json'),
       browserify: {
         dist: {
-          src: ['tool1/app/app.js','tool2/app/app.js','tool3/app/app.js','tool4/app/app.js','example/app/app.js'],
+          src: ['tool1/app/app.js','tool2/app/app.js','tool3/app/app.js','tool4/app/app.js','example/app/app.js','tool5/app/app.js'],
           dest: 'dist/bundle.js'
           // Note: The entire `browserify-shim` config is inside `package.json`.
         }

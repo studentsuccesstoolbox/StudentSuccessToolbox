@@ -58029,7 +58029,397 @@ angular.module('sstTool4App').factory('navigateQuestionaireService',function(){
 
 
 
-},{}]},{},[23,38,57,69,1]);
+},{}],84:[function(require,module,exports){
+/**
+ * Sudent Success Toolbox - Tool 5
+ * The objective of this tool app, is to help prospective students think about the amount 
+ * of time they spend on different activities during a typical week and how much study 
+ * they might be able to realistically undertake in their ‘free time’ whilst balancing 
+ * other life, work and family commitments. 
+ * 
+ * @author Paul Schweppe
+ */
+
+$ = require('jquery');
+
+var angular = require('angular');
+
+
+var sstTool5App = angular.module('sstTool5App', [require('angular-ui-bootstrap')
+                        ,require('angular-route')
+                        ,require('angular-sanitize')
+                        ,require('angular-animate')
+                        ,require('angular-aria')
+                        ]);
+
+require('./filters');
+require('./directives');
+require('./controllers');
+
+/*Route Options*/
+sstTool5App.config(["$routeProvider", function($routeProvider) {
+    $routeProvider
+    	.when('/', {
+    		templateUrl: 'app/views/templates/home.html',
+                controller: 'defaultController'
+    	})
+        .when('/what-stage-are-you-at/', {
+    		templateUrl: 'app/views/templates/what-stage-are-you-at.html',
+                controller: 'defaultController'
+    	})
+
+        .when('/assignment-plan/', {
+    		templateUrl: 'app/views/templates/assignment-plan.html',
+                controller: 'defaultController'
+    	})
+        
+        .when('/developing-a-plan/', {
+    		templateUrl: 'app/views/templates/developing-a-plan.html',
+                controller: 'defaultController'
+    	})
+        
+        .when('/find-resources/', {
+    		templateUrl: 'app/views/templates/find-resources.html',
+                controller: 'defaultController'
+    	})
+        
+        .when('/evaluate/', {
+    		templateUrl: 'app/views/templates/evaluate.html',
+                controller: 'defaultController'
+    	})
+        
+        .when('/use-assignment/', {
+    		templateUrl: 'app/views/templates/use-assignment.html',
+                controller: 'defaultController'
+    	})
+        
+	.when('/resources/', {
+            templateUrl: 'app/views/templates/resources.html',
+            controller: 'defaultController'
+    	})
+        
+        .when('/summary/', {
+    		templateUrl: 'app/views/templates/summary.html',
+                controller: 'defaultController'
+    	})
+        
+        .when('/submiting/', {
+    		templateUrl: 'app/views/templates/submiting.html',
+                controller: 'defaultController'
+    	})
+        
+        .when('/beginer-library/', {
+    		templateUrl: 'app/views/templates/library/beginer-library.html',
+                controller: 'defaultController'
+    	})
+        
+        .when('/experience-library/', {
+    		templateUrl: 'app/views/templates/library/experience-library.html',
+                controller: 'defaultController'
+    	})
+        
+        .when('/complete-beginner/complete-beginner/', {
+    		templateUrl: 'app/views/templates/complete_beginner/complete-beginner.html',
+                controller: 'defaultController'
+    	})
+        
+        .when('/complete-beginner/my-first-assignment/', {
+    		templateUrl: 'app/views/templates/complete_beginner/my-first-assignment.html',
+                controller: 'defaultController'
+    	})
+        
+        .when('/complete-beginner/where-to-start/', {
+    		templateUrl: 'app/views/templates/complete_beginner/where-to-start.html',
+                controller: 'defaultController'
+    	}) 
+        
+        .when('/complete-beginner/starting-an-assignment/', {
+    		templateUrl: 'app/views/templates/complete_beginner/starting-an-assignment.html',
+                controller: 'defaultController'
+    	})
+        
+        .when('/completely-confident/completely-confident/', {
+    		templateUrl: 'app/views/templates/completely_confident/completely-confident.html',
+                controller: 'defaultController'
+    	})
+        
+        .when('/completely-confident/starting-an-assignment/', {
+    		templateUrl: 'app/views/templates/completely_confident/starting-an-assignment.html',
+                controller: 'defaultController'
+    	})
+        
+        .when('/completely-confident/my-first-assignment/', {
+    		templateUrl: 'app/views/templates/completely_confident/my-first-assignment.html',
+                controller: 'defaultController'
+    	})
+        
+        .when('/completely-confident/where-to-start/', {
+    		templateUrl: 'app/views/templates/completely_confident/where-to-start.html',
+                controller: 'defaultController'
+    	})    
+        
+        .when('/some-experience/some-experience/', {
+    		templateUrl: 'app/views/templates/some_experience/some-experience.html',
+                controller: 'defaultController'
+    	})
+        
+        .when('/some-experience/starting-an-assignment/', {
+    		templateUrl: 'app/views/templates/some_experience/starting-an-assignment.html',
+                controller: 'defaultController'
+    	})
+        
+        .when('/some-experience/my-first-assignment/', {
+    		templateUrl: 'app/views/templates/some_experience/my-first-assignment.html',
+                controller: 'defaultController'
+    	})
+        
+        .when('/some-experience/where-to-start/', {
+    		templateUrl: 'app/views/templates/some_experience/where-to-start.html',
+                controller: 'defaultController'
+    	})       
+        
+        .when('/willing-beginner/willing-beginner/', {
+    		templateUrl: 'app/views/templates/willing_beginner/willing-beginner.html',
+                controller: 'defaultController'
+    	})
+        
+        .when('/willing-beginner/starting-an-assignment/', {
+    		templateUrl: 'app/views/templates/willing_beginner/starting-an-assignment.html',
+                controller: 'defaultController'
+    	})
+        
+        .when('/willing-beginner/my-first-assignment/', {
+    		templateUrl: 'app/views/templates/willing_beginner/my-first-assignment.html',
+                controller: 'defaultController'
+    	})
+        
+        .when('/willing-beginner/where-to-start/', {
+    		templateUrl: 'app/views/templates/willing_beginner/where-to-start.html',
+                controller: 'defaultController'
+    	})
+           
+        //Rate
+        .when('/rate/', {
+    		templateUrl: 'app/views/templates/rate.html',
+            controller: 'defaultController'
+    	});  	
+}]);
+},{"./controllers":87,"./directives":88,"./filters":91,"angular":20,"angular-animate":9,"angular-aria":11,"angular-route":14,"angular-sanitize":16,"angular-ui-bootstrap":17,"jquery":22}],85:[function(require,module,exports){
+/* 
+ * Controller for Home Page
+ * Not much happening here
+ * @author Paul Schweppe
+ * 
+ */
+angular.module('sstTool5App').controller('defaultController', ["$scope", "$modal", function($scope,$modal) {
+    
+    //Slider Hours translate
+    $scope.translate = function(value){
+        return value;
+    };
+    
+    /**
+     * 
+     * @param {string} size Options are lg, sm or blank
+     * @param {boolean} errorModal
+     * @returns {undefined}
+     */
+    $scope.openModal = function(template,size,$event) {
+        if($event){
+            $event.preventDefault();
+        }
+        $modal.open({
+            templateUrl: template?'app/views/partials/modals/'+template:'app/views/partials/modals/errorModal.html',
+            windowTemplateUrl : 'app/views/partials/modalWindow.html',
+            size: size,
+            controller: ["$scope", "$modalInstance", "iconCls", function($scope, $modalInstance,iconCls){
+		$scope.iconCls = iconCls;
+  
+                $scope.ok = function(){
+                    $modalInstance.close();
+                };
+                $scope.cancel = function(event){
+                    if(event){
+                        event.preventDefault();
+                    }
+                    $modalInstance.dismiss();
+                };
+            }],
+            //Used to pass in values from current scope
+            resolve: {
+                iconCls: function(){
+                        return $scope.iconCls;
+                }
+            }
+        });
+        
+        return false;
+    };
+    
+    
+    
+}]);
+},{}],86:[function(require,module,exports){
+/* 
+ * Controller for Home Page
+ * Not much happening here
+ * @author Paul Schweppe
+ * 
+ */
+angular.module('sstTool5App').controller('homeController', ["$scope", function($scope) {
+    
+}]);
+
+
+},{}],87:[function(require,module,exports){
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+'use strict';
+ 
+require('./home');
+require('./default');
+
+},{"./default":85,"./home":86}],88:[function(require,module,exports){
+arguments[4][4][0].apply(exports,arguments)
+},{"./readmore":89,"dup":4}],89:[function(require,module,exports){
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ * Created by Joyce Cam on 30/12/2014.
+ *
+ * Simple and easy-to-implement angular read more directive.
+ *
+ */
+ 
+angular.module('sstTool5App').directive('readMore', function() {
+  return {
+    restrict: 'A',
+    transclude: true,
+    replace: true,
+    template: '<p></p>',
+    scope: {
+      moreText: '@',
+      lessText: '@',
+      words: '@',
+      ellipsis: '@',
+      char: '@',
+      limit: '@',
+      content: '@'
+    },
+    link: function(scope, elem, attr, ctrl, transclude) {
+      /*var moreText = angular.isUndefined(scope.moreText) ? ' <a class="read-more">Read More...</a>' : ' <a class="read-more">' + scope.moreText + '</a>',
+        lessText = angular.isUndefined(scope.lessText) ? ' <a class="read-less">Less ^</a>' : ' <a class="read-less">' + scope.lessText + '</a>',
+        ellipsis = angular.isUndefined(scope.ellipsis) ? '' : scope.ellipsis,
+        limit = angular.isUndefined(scope.limit) ? 150 : scope.limit;*/
+
+    var $moreBtn = angular.isUndefined(scope.moreText) ? $('<span class="more-btn"><a class="btn btn-link read-more">more</a></span>') : '<a class="read-more">' + scope.moreText + '</a>',
+        $lessBtn = angular.isUndefined(scope.lessText) ? $('<span class="more-btn"><a class="btn btn-link read-less">less</a></span') : ' <a class="read-less">' + scope.lessText + '</a>',
+        $ellipsis = angular.isUndefined(scope.ellipsis) ? '' : $('<span class="read-ellipsis">'+scope.ellipsis+'</span>'),
+        limit = angular.isUndefined(scope.limit) ? 150 : scope.limit;
+
+      attr.$observe('content', function(str) {
+        readmore(str);
+      });
+
+      transclude(scope.$parent, function(clone, scope) {
+        readmore(clone.text().trim());
+      });
+
+      function readmore(text) {
+
+        var text = text,
+          orig = text,
+          regex = /\s+/gi,
+          charCount = text.length,
+          wordCount = text.trim().replace(regex, ' ').split(' ').length,
+          countBy = 'char',
+          count = charCount,
+          foundWords = [],
+          markup = text,
+          more = '';
+
+        if (!angular.isUndefined(attr.words)) {
+          countBy = 'words';
+          count = wordCount;
+        }
+
+        if (countBy === 'words') { // Count words
+
+          foundWords = text.split(/\s+/);
+
+          if (foundWords.length > limit) {
+            text = foundWords.slice(0, limit).join(' ')
+            more = foundWords.slice(limit, count).join(' ');
+          }else{
+              elem.append(text);
+              return;
+          }
+
+        } else { // Count characters
+
+          if (count > limit) {
+            text = orig.slice(0, limit);
+            more = orig.slice(limit, count);
+          }else{
+               elem.append(text);
+              return;
+          }
+          
+
+        }
+        
+        var $moreContainer = $('<span class="more-text"></span').append(more);
+            
+        $lessBtn.find('.read-less').on('click', function() {
+            $moreBtn.find('.read-more').show();
+            $moreContainer.hide().removeClass('show');
+            if($ellipsis){
+                $ellipsis.show();
+            }
+        });
+
+        $moreContainer.append($lessBtn);
+
+        $moreBtn.find('.read-more').on('click', function() {
+            $(this).hide();
+            $moreContainer.addClass('show').slideDown();
+            if($ellipsis){
+                $ellipsis.hide();
+            }
+        });
+
+        elem.append(text)
+                .append($ellipsis)
+                .append($moreBtn)
+                .append($moreContainer);
+
+      }
+    }
+  };
+});
+
+
+},{}],90:[function(require,module,exports){
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+angular.module('sstTool5App').filter('encodeURIComponent', function() {
+    return window.encodeURIComponent;
+});
+
+
+},{}],91:[function(require,module,exports){
+arguments[4][7][0].apply(exports,arguments)
+},{"./encodeURIComponent":90,"dup":7}]},{},[23,38,57,69,1,84]);
 
 /**  
  * jsPDF - PDF Document creation from JavaScript
