@@ -153,3 +153,65 @@
         background-color: transparent;
     }
 }
+
+//** Tool 3 Aside Arrows
+.aside-arrows {
+    display: block;
+    position: relative;
+    max-width: 350px;
+    overflow: hidden;
+    max-height: 560px;
+    margin: 0 auto;
+    
+    .aside-arrow {
+        color: #fff;
+        font-size: 1.5em;
+        text-align: center;
+    
+        &.top {
+            background-image: url("../images/side-arrow-top.png");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 250px;
+            margin: 0 auto;
+            padding: 2.3em 2em 2em 0.5em;
+            position: relative;
+            float: right;
+            width: 230px;
+        }
+        &.middle {
+            background-image: url("../images/side-arrow-middle.png");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 250px;
+            float: left;
+            argin: 0 auto;
+            padding: 3.2em 1em 2em 2.8em;
+            position: relative;
+            top: -77px;
+            width: 230px;
+        }
+        &.bottom {
+            background-image: url("../images/side-arrow-bottom.png");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 199px;
+            margin: 0 auto;
+            padding: 3em 1.5em 2em;
+            position: relative;
+            float: right;
+            right: 5%;
+            top: -159px;
+            width: 199px;
+        }
+    }
+}
+
+
+
+
+
+//** end Gintaras tool3

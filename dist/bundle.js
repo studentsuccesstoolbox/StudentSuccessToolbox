@@ -55707,6 +55707,669 @@ require('./errorModal');
  * 
  * @author Paul Schweppe
  */
+
+$ = require('jquery');
+
+var angular = require('angular');
+
+
+var sstTool3App = angular.module('sstTool3App', [require('angular-ui-bootstrap')
+                        ,require('angular-route')
+                        ,require('angular-sanitize')
+                        ,require('angular-animate')
+                        ,require('angular-aria')
+                        ]);
+
+require('./data');
+require('./filters');
+require('./directives');
+require('./controllers');
+
+/*Route Options*/
+sstTool3App.config(["$routeProvider", function($routeProvider) {
+    $routeProvider
+    	.when('/', {
+    		templateUrl: 'app/views/templates/home.html',
+                controller: 'defaultController'
+    	})
+    	.when('/hub', {
+    		templateUrl: 'app/views/templates/hub.html',
+                controller: 'defaultController'
+    	})
+        //Friends
+        .when('/hub/friends/', {
+    		templateUrl: 'app/views/templates/friends/support.html',
+                controller: 'defaultController'
+    	})
+        .when('/hub/friends/how-can-they-help/', {
+    		templateUrl: 'app/views/templates/friends/how-can-they-help.html',
+                controller: 'defaultController'
+    	})
+        //Family
+        .when('/hub/family/', {
+    		templateUrl: 'app/views/templates/family/support.html',
+                controller: 'defaultController'
+    	})
+        .when('/hub/family/how-can-they-help/', {
+    		templateUrl: 'app/views/templates/family/how-can-they-help.html',
+                controller: 'defaultController'
+    	})
+        //Employer
+        .when('/hub/employer/', {
+    		templateUrl: 'app/views/templates/employer/support.html',
+                controller: 'defaultController'
+    	})
+        .when('/hub/employer/how-can-they-help/', {
+    		templateUrl: 'app/views/templates/employer/how-can-they-help.html',
+                controller: 'defaultController'
+    	})
+        //University
+        .when('/hub/university/', {
+    		templateUrl: 'app/views/templates/university/support.html',
+                controller: 'defaultController'
+    	})
+        .when('/hub/university/how-can-they-help/', {
+    		templateUrl: 'app/views/templates/university/how-can-they-help.html',
+                controller: 'defaultController'
+    	})
+         //Other Students
+        .when('/hub/other-students/', {
+    		templateUrl: 'app/views/templates/other-students/support.html',
+                controller: 'defaultController'
+    	})
+        .when('/hub/other-students/how-can-they-help/', {
+    		templateUrl: 'app/views/templates/other-students/how-can-they-help.html',
+                controller: 'defaultController'
+    	})
+        //Others
+        .when('/hub/others/', {
+    		templateUrl: 'app/views/templates/others/support.html',
+                controller: 'defaultController'
+    	})
+        .when('/hub/others/how-can-they-help/', {
+    		templateUrl: 'app/views/templates/others/how-can-they-help.html',
+                controller: 'defaultController'
+    	})
+        //Don't want to ask
+        .when('/hub/dont-want-to-ask/', {
+    		templateUrl: 'app/views/templates/dont-want-to-ask.html',
+                controller: 'defaultController'
+    	})
+        //No one to ask
+        .when('/hub/no-one-to-ask/', {
+    		templateUrl: 'app/views/templates/no-one-to-ask.html',
+                controller: 'defaultController'
+    	})
+        //No one to ask second
+        .when('/hub/no-one-to-ask-second/', {
+    		templateUrl: 'app/views/templates/no-one-to-ask-second.html',
+                controller: 'defaultController'
+    	})
+        //No one to ask third
+        .when('/hub/no-one-to-ask-third/', {
+    		templateUrl: 'app/views/templates/no-one-to-ask-third.html',
+                controller: 'defaultController'
+    	})
+        //Questions
+        .when('/hub/questions/', {
+    		templateUrl: 'app/views/templates/questions.html',
+                controller: 'questionsController'
+    	})
+        //Rate
+        .when('/hub/rate/', {
+    		templateUrl: 'app/views/templates/rate.html',
+                controller: 'defaultController'
+
+    	});  	
+}]);
+},{"./controllers":60,"./data":63,"./directives":65,"./filters":68,"angular":20,"angular-animate":9,"angular-aria":11,"angular-route":14,"angular-sanitize":16,"angular-ui-bootstrap":17,"jquery":22}],58:[function(require,module,exports){
+/* 
+ * Controller for Home Page
+ * Not much happening here
+ * @author Paul Schweppe
+ * 
+ */
+angular.module('sstTool3App').controller('defaultController', ["$scope", "$modal", function($scope,$modal) {
+    
+    $scope.areasViewed = areasViewed; 
+    
+    $scope.resetAreasViewed = function(){
+        $.each( $scope.areasViewed, function( key, value ) {
+            value = false;
+        });  
+    };
+    
+    
+    
+    /**
+     * 
+     * @param {string} size Options are lg, sm or blank
+     * @param {boolean} errorModal
+     * @returns {undefined}
+     */
+    $scope.openModal = function(template,size) {
+        
+        $modal.open({
+            templateUrl: template?'app/views/partials/modals/'+template:'app/views/partials/modals/errorModal.html',
+            windowTemplateUrl : 'app/views/partials/modalWindow.html',
+            size: size,
+            controller: ["$scope", "$modalInstance", "iconCls", function($scope, $modalInstance,iconCls){
+		$scope.iconCls = iconCls;
+  
+                $scope.ok = function(){
+                    $modalInstance.close();
+                };
+                $scope.cancel = function(event){
+                    if(event){
+                        event.preventDefault();
+                    }
+                    $modalInstance.dismiss();
+                };
+            }],
+            //Used to pass in values from current scope
+            resolve: {
+                iconCls: function(){
+                        return $scope.iconCls;
+                }
+            }
+        });
+        
+        return false;
+    };
+    
+}]);
+},{}],59:[function(require,module,exports){
+/* 
+ * Controller for Home Page
+ * Not much happening here
+ * @author Paul Schweppe
+ * 
+ */
+angular.module('sstTool3App').controller('homeController', ["$scope", function($scope) {
+    
+}]);
+
+
+},{}],60:[function(require,module,exports){
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+'use strict';
+ 
+require('./home');
+require('./default');
+require('./questions');
+
+},{"./default":58,"./home":59,"./questions":61}],61:[function(require,module,exports){
+/** 
+ * Controller for questions page
+ * 
+ * @author Paul Schweppe
+ * 
+ */
+angular.module('sstTool3App').controller('questionsController', ["$scope", "$anchorScroll", "$location", "$modal", function($scope,$anchorScroll,$location,$modal) {
+    
+    //Sets scope questions
+    $scope.questions = questions;
+      
+    //Answers to select from
+    $scope.answersFrom = [
+                {id:'friends',name:'Friends'}
+                ,{id:'family',name:'Family'}
+                ,{id:'employer',name:'Employer'}
+                ,{id:'university',name:'University'}
+                ,{id:'students',name:'Other Students'}
+                ,{id:'others',name:'Others'}];
+    
+    //Answer value
+    $scope.answer = {header:'',response:false};
+    
+    //Question selected by user
+    $scope.selectedQuestion = false;
+    
+    //Answer select by user
+    $scope.selectedAnswer = {id:false,name:''};
+    
+    //Function to set the answer.
+    $scope.setAnswer = function(key){
+        $.each($scope.answersFrom, function(){
+            if(key === this.id){
+               $scope.selectedAnswer = this; 
+            }
+        });
+        //$scope.selectedAnswer = key;
+    };
+    
+    /**
+     * Watches for changes to the selectedAnswer value.
+     * If change then sets the value of the answer.
+     */
+    $scope.$watch('selectedAnswer', function() {
+        if($scope.selectedAnswer.id !== false){
+            if($scope.selectedQuestion){
+                $scope.answer = $scope.selectedQuestion.answers[$scope.selectedAnswer.id];
+                $scope.gotoAnswer();
+            }else{
+                //Select a question error modal
+                $scope.openModal('questionErrorModal.html');
+            }
+        }
+    }, true);
+    
+    /**
+     * Watches for changes to the selectedQuestion value.
+     * If an answersFrom is already selected it will change the answer value
+     */
+    $scope.$watch('selectedQuestion', function() {
+       if($scope.selectedAnswer.id !== false){
+           $scope.answer = $scope.selectedQuestion.answers[$scope.selectedAnswer.id];
+       }
+    }, true);
+    
+    /**
+     * Scroll to the Answer
+     * @returns {undefined}
+     */
+    $scope.gotoAnswer = function() {
+
+        var old = $location.hash();
+        $location.hash('answer');
+        $anchorScroll();
+        $location.hash(old);
+    };
+    
+    /**
+     * Scroll to the options
+     * @returns {undefined}
+     */
+    $scope.gotoOptions = function() {
+
+        var old = $location.hash();
+        $location.hash('options');
+        $anchorScroll();
+        $location.hash(old);
+    };
+    
+    /**
+     * Scroll to the Questions
+     * Sets answer to empty object
+     * @returns {undefined}
+     */
+    $scope.gotoQuestion = function() {
+        $scope.answer = {header:'',response:false};
+        var old = $location.hash();
+        $location.hash('questions');
+        $anchorScroll();
+        $location.hash(old);
+    };
+    
+    /**
+     * Opens a default modal
+     * 
+     * @param {string} template name
+     * @param {string} size Options are lg, sm or blank
+     * @returns {undefined}
+     */
+    $scope.openModal = function(template,size) {
+        
+        $modal.open({
+            templateUrl: template?'app/views/partials/modals/'+template:'app/views/partials/modals/errorModal.html',
+            windowTemplateUrl : 'app/views/partials/modalWindow.html',
+            size: size,
+            controller: ["$scope", "$modalInstance", "iconCls", function($scope, $modalInstance,iconCls){
+		$scope.iconCls = iconCls;
+  
+                $scope.ok = function(){
+                    $modalInstance.close();
+                };
+                $scope.cancel = function(event){
+                    if(event){
+                        event.preventDefault();
+                    }
+                    $modalInstance.dismiss();
+                };
+            }],
+            //Used to pass in values from current scope
+            resolve: {
+                iconCls: function(){
+                        return $scope.iconCls;
+                }
+            }
+        });
+        
+        return false;
+    };
+}]);
+
+
+},{}],62:[function(require,module,exports){
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+areasViewed = {
+                friend: false
+                ,family:false
+                ,employer:false
+                ,university:false
+                ,students:false
+                ,others:false
+                ,wontAsk: false
+                ,noOneToAsk:false
+                ,questions:false
+            };
+
+},{}],63:[function(require,module,exports){
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+'use strict';
+ 
+require('./areasViewed');
+require('./questions');
+},{"./areasViewed":62,"./questions":64}],64:[function(require,module,exports){
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+
+questions = [{
+        question: 'I am not sure I will be able for this course'
+        ,answers: {
+            friends: {
+                header:'Friends'
+                ,response:'Your friends, particularly those who have been to higher education, may be able to let you know what to expect. This might help you assess the workload involved and whether it is something you can take on.'
+            }
+            ,family: {
+                header:'Family'
+                ,response:'Your family may be able to remind you of other courses you have successfully completed. This may give you the confidence to give this course a try.'
+            }
+            ,employer:{
+                header:'Employer'
+                ,response:'You may have developed skills in your job (time management, organisational) which will stand to you when doing this course. What does your employer think you are good at? Will these skills help you complete the course?'
+            }
+            ,university: {
+                header:'University'
+                ,response:'Talking to those who provide the course about your suitability for it is a good idea. They will be able to let you know about any specific entry requirements.'
+            }
+            ,students: {
+                header:'Other Students'
+                ,response:'Avail of opportunities to speak with other students in advance of starting the course. Attending open days is a good way of doing this. You will get a sense of the background other students might have and whether it is very similar or very different to your own.However, speaking to the course providers is the best way to find out about the course requirements.'
+            }
+            ,others:{
+                header:'Other\'s'
+                ,response:'Sometimes speaking with an independent careers advisor can help you make a decision about your suitability for a course of study. '
+            }
+        }
+    },{
+        question: 'I am struggling with the technology on this course'
+        ,answers: {
+            friends: {
+                header:'Friends'
+                ,response:'If you have a friend who is really good with technology they may be able to help you. However, be careful who you share your access user name and password with. It might be best to check with the course provider to make sure you are not missing an important piece of information which would make using the technology easier.'
+            }
+            ,family: {
+                header:'Family'
+                ,response:'If you have a family member who is good with technology they may be able to help you. However, be careful who you share your access user name and password with. It might be best to check with the course provider to make sure you are not missing an important piece of information which would make using the technology easier.'
+            }
+            ,employer:{
+                header:'Employer'
+                ,response:'Your employer may have a fire wall in place which prevents you from using your work computer for activities outside work. While there may be someone in work who is good at solving problems with technology you may be better off going directly to the course provider and explaining your problems to them.'
+            }
+            ,university: {
+                header:'University'
+                ,response:'Your university is the best place to start. Normally there is a technical support area (sometimes called Information Systems Support) dedicated to help students who experience problems with technology. Find out from your contact person how to access this support. Sometimes this is done through the library. Make sure that your registration is complete and correct. This can often impact on your ability to access online resources.'
+            }
+            ,students: {
+                header:'Other Students'
+                ,response:'Other students may be a good source of help with technology problems as they may have experienced similar problems themselves. However be careful not to share your user name and password with anyone.'
+            }
+            ,others:{
+                header:'Other\'s'
+                ,response:'Your university is likely to be the best source of support for problems with technology.'
+            }
+        }
+    },{
+        question: 'I have no idea how to go about writing an assignment.'
+        ,answers: {
+            friends: {
+                header:'Friends'
+                ,response:'Friends who are good readers or good at writing may be a good source of advice around writing an assignment. However, it is important that you develop this skill yourself. No one expects your first assignment to be perfect.'
+            }
+            ,family: {
+                header:'Family'
+                ,response:'Family members who are good readers or good at writing may be a good source of advice around writing an assignment. However, it is important for you to try this task for yourself. Practice makes perfect.'
+            }
+            ,employer:{
+                header:'Employer'
+                ,response:'It is unlikely your employer will be well placed to assist you with assignment writing. However, they will certainly benefit once your written communication skills improve. Your university may be the best source of help in this regard.'
+            }
+            ,university: {
+                header:'University'
+                ,response:'Your tutor is the best source of support regarding assignment writing skills. They will explain what is required in the assignment. Make sure to clearly answer the question you are asked.'
+            }
+            ,students: {
+                header:'Other Students'
+                ,response:'It may be useful to brainstorm assignment ideas with other students. However, be careful not to directly copy what others are doing. Your tutor needs to see that you have understood the assignment task and answered it in your own unique way.'
+            }
+            ,others:{
+                header:'Other\'s'
+                ,response:'There are many books available on essay writing. You should be able to borrow one from your university or local library. Your university is also likely to have other sources of help with assignment writing. Talk to your tutor about this task.'
+            }
+        }
+    },{
+        question: 'My assignment is due next week and I’m not sure what I’ve written is ok.'
+        ,answers: {
+            friends: {
+                header:'Friends'
+                ,response:'Asking someone you know and trust to read over your assignment is a very good idea. If and when they give you feedback, rather than trying to defend what you have done, simply listen to what they have to say. Make a note of it. Take time to reflect on it and see if you can use it to improve your assignment.'
+            }
+            ,family: {
+                header:'Family'
+                ,response:'Asking someone you know and trust to read over your assignment is a very good idea. If and when they give you feedback, rather than trying to defend what you have done, simply listen to what they have to say. Make a note of it. Take time to reflect on it and see if you can use it to improve your assignment.'
+            }
+            ,employer:{
+                header:'Employer'
+                ,response:'Your employer is unlikely to have the time to read your written work. It may be better to ask a close friend or family member to do this.'
+            }
+            ,university: {
+                header:'University'
+                ,response:'Your university may provide a proof reading service for assignments, though this is unlikely. They may be able to direct you to someone who provides this service but this would normally be someone outside the university who would charge for the service.'
+            }
+            ,students: {
+                header:'Other Students'
+                ,response:'It may be best if you do not use other students in your class to proof read your assignments as this may cause difficulties with ownership of ideas etc. It may be better to ask close friends or family members who are good at reading, and have the time, for help with this task.'
+            }
+            ,others:{
+                header:'Other\'s'
+                ,response:'Try reading your assignment out loud, to yourself. This can be very revealing and help improve your writing.'
+            }
+        }
+    },{
+        question: 'I have to work overtime unexpectedly so I just won’t get my assignment done on time.'
+        ,answers: {
+            friends: {
+                header:'Friends'
+                ,response:'Friends may be unable to help with this issue unless they are in a position to take over some of your other responsibilities (for example caring responsibilities) while you focus on your assignment.'
+            }
+            ,family: {
+                header:'Family'
+                ,response:'Family may be unable to help with this issue unless they are in a position to take over some of your other responsibilities (for example caring responsibilities) while you focus on your assignment.'
+            }
+            ,employer:{
+                header:'Employer'
+                ,response:'If your employer needs you to work overtime it is unlikely they will be in a position to change this just because you have an assignment due. However, they may be in a position to give you a letter confirming your requirement to work overtime. This in turn might help you get an extension on the due date for the assignment from your university.'
+            }
+            ,university: {
+                header:'University'
+                ,response:'If you are running into time difficulties with an assignment you should talk to your course provider. Find out what your options are for late submission. Make sure you are aware of any possible penalties and how to avoid them.'
+            }
+            ,students: {
+                header:'Other Students'
+                ,response:'Be careful about taking advice from other students regarding any matter that can impact on your mark. The best people to ask about this question are those who officially provide the course i.e. relevant university staff. Their contact details should be available in communications you have had from the course or on the official website.'
+            }
+            ,others:{
+                header:'Other\'s'
+                ,response:'Your university is the best place to get advice regarding this issue.'
+            }
+        }
+    }
+];
+},{}],65:[function(require,module,exports){
+arguments[4][4][0].apply(exports,arguments)
+},{"./readmore":66,"dup":4}],66:[function(require,module,exports){
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ * Created by Joyce Cam on 30/12/2014.
+ *
+ * Simple and easy-to-implement angular read more directive.
+ *
+ */
+ 
+angular.module('sstTool3App').directive('readMore', function() {
+  return {
+    restrict: 'A',
+    transclude: true,
+    replace: true,
+    template: '<p></p>',
+    scope: {
+      moreText: '@',
+      lessText: '@',
+      words: '@',
+      ellipsis: '@',
+      char: '@',
+      limit: '@',
+      content: '@'
+    },
+    link: function(scope, elem, attr, ctrl, transclude) {
+      /*var moreText = angular.isUndefined(scope.moreText) ? ' <a class="read-more">Read More...</a>' : ' <a class="read-more">' + scope.moreText + '</a>',
+        lessText = angular.isUndefined(scope.lessText) ? ' <a class="read-less">Less ^</a>' : ' <a class="read-less">' + scope.lessText + '</a>',
+        ellipsis = angular.isUndefined(scope.ellipsis) ? '' : scope.ellipsis,
+        limit = angular.isUndefined(scope.limit) ? 150 : scope.limit;*/
+
+    var $moreBtn = angular.isUndefined(scope.moreText) ? $('<span class="more-btn"><a class="btn btn-link read-more">more</a></span>') : '<a class="read-more">' + scope.moreText + '</a>',
+        $lessBtn = angular.isUndefined(scope.lessText) ? $('<span class="more-btn"><a class="btn btn-link read-less">less</a></span') : ' <a class="read-less">' + scope.lessText + '</a>',
+        $ellipsis = angular.isUndefined(scope.ellipsis) ? '' : $('<span class="read-ellipsis">'+scope.ellipsis+'</span>'),
+        limit = angular.isUndefined(scope.limit) ? 150 : scope.limit;
+
+      attr.$observe('content', function(str) {
+        readmore(str);
+      });
+
+      transclude(scope.$parent, function(clone, scope) {
+        readmore(clone.text().trim());
+      });
+
+      function readmore(text) {
+
+        var text = text,
+          orig = text,
+          regex = /\s+/gi,
+          charCount = text.length,
+          wordCount = text.trim().replace(regex, ' ').split(' ').length,
+          countBy = 'char',
+          count = charCount,
+          foundWords = [],
+          markup = text,
+          more = '';
+
+        if (!angular.isUndefined(attr.words)) {
+          countBy = 'words';
+          count = wordCount;
+        }
+
+        if (countBy === 'words') { // Count words
+
+          foundWords = text.split(/\s+/);
+
+          if (foundWords.length > limit) {
+            text = foundWords.slice(0, limit).join(' ')
+            more = foundWords.slice(limit, count).join(' ');
+          }else{
+              elem.append(text);
+              return;
+          }
+
+        } else { // Count characters
+
+          if (count > limit) {
+            text = orig.slice(0, limit);
+            more = orig.slice(limit, count);
+          }else{
+               elem.append(text);
+              return;
+          }
+          
+
+        }
+        
+        var $moreContainer = $('<span class="more-text"></span').append(more);
+            
+        $lessBtn.find('.read-less').on('click', function() {
+            $moreBtn.find('.read-more').show();
+            $moreContainer.hide().removeClass('show');
+            if($ellipsis){
+                $ellipsis.show();
+            }
+        });
+
+        $moreContainer.append($lessBtn);
+
+        $moreBtn.find('.read-more').on('click', function() {
+            $(this).hide();
+            $moreContainer.addClass('show').slideDown();
+            if($ellipsis){
+                $ellipsis.hide();
+            }
+        });
+
+        elem.append(text)
+                .append($ellipsis)
+                .append($moreBtn)
+                .append($moreContainer);
+
+      }
+    }
+  };
+});
+
+
+},{}],67:[function(require,module,exports){
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+angular.module('sstTool3App').filter('encodeURIComponent', function() {
+    return window.encodeURIComponent;
+});
+
+
+},{}],68:[function(require,module,exports){
+arguments[4][7][0].apply(exports,arguments)
+},{"./encodeURIComponent":67,"dup":7}],69:[function(require,module,exports){
+/**
+ * Sudent Success Toolbox - Tool 2
+ * The objective of this tool app, is to help prospective students think about the amount 
+ * of time they spend on different activities during a typical week and how much study 
+ * they might be able to realistically undertake in their ‘free time’ whilst balancing 
+ * other life, work and family commitments. 
+ * 
+ * @author Paul Schweppe
+ */
                         
 $ = require('jquery');
 
@@ -55788,7 +56451,7 @@ sstTool4App.config(["$routeProvider", function($routeProvider) {
             controller: 'defaultController'
     	});  	
 }]);
-},{"./controllers":60,"./data":62,"./directives":65,"./filters":68,"./services":70,"angular":20,"angular-animate":9,"angular-aria":11,"angular-route":14,"angular-sanitize":16,"angular-ui-bootstrap":17,"jquery":22}],58:[function(require,module,exports){
+},{"./controllers":72,"./data":74,"./directives":77,"./filters":80,"./services":82,"angular":20,"angular-animate":9,"angular-aria":11,"angular-route":14,"angular-sanitize":16,"angular-ui-bootstrap":17,"jquery":22}],70:[function(require,module,exports){
 /* 
  * Controller for Home Page
  * Not much happening here
@@ -55862,7 +56525,7 @@ angular.module('sstTool4App').controller('defaultController', ["$scope", "$modal
     
     
 }]);
-},{}],59:[function(require,module,exports){
+},{}],71:[function(require,module,exports){
 /* 
  * Controller for Home Page
  * Not much happening here
@@ -55874,7 +56537,7 @@ angular.module('sstTool4App').controller('homeController', ["$scope", function($
 }]);
 
 
-},{}],60:[function(require,module,exports){
+},{}],72:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -55886,7 +56549,7 @@ require('./home');
 require('./default');
 require('./questionnaire');
 
-},{"./default":58,"./home":59,"./questionnaire":61}],61:[function(require,module,exports){
+},{"./default":70,"./home":71,"./questionnaire":73}],73:[function(require,module,exports){
 /* 
  * Controller for Questionaire
  *
@@ -56106,7 +56769,7 @@ angular.module('sstTool4App').controller('questionnaireController',["$scope", "$
 
 
 
-},{}],62:[function(require,module,exports){
+},{}],74:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -56115,7 +56778,7 @@ angular.module('sstTool4App').controller('questionnaireController',["$scope", "$
 'use strict';
  
 require('./tool4Questionnaire');
-},{"./tool4Questionnaire":63}],63:[function(require,module,exports){
+},{"./tool4Questionnaire":75}],75:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -56619,7 +57282,7 @@ tool4Questionnaire = {
             }]
         }
 };
-},{}],64:[function(require,module,exports){
+},{}],76:[function(require,module,exports){
 'use strict';
 angular.module('ngAudio', [])
 .directive('ngAudio', ['$compile', '$q', 'ngAudio', function($compile, $q, ngAudio) {
@@ -57113,7 +57776,7 @@ angular.module('ngAudio', [])
     }
 });
 
-},{}],65:[function(require,module,exports){
+},{}],77:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -57123,7 +57786,7 @@ angular.module('ngAudio', [])
  
 require('./readmore');
 require('./angular.audio');
-},{"./angular.audio":64,"./readmore":66}],66:[function(require,module,exports){
+},{"./angular.audio":76,"./readmore":78}],78:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -57245,7 +57908,7 @@ angular.module('sstTool4App').directive('readMore', function() {
 });
 
 
-},{}],67:[function(require,module,exports){
+},{}],79:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -57256,9 +57919,9 @@ angular.module('sstTool4App').filter('encodeURIComponent', function() {
 });
 
 
-},{}],68:[function(require,module,exports){
+},{}],80:[function(require,module,exports){
 arguments[4][7][0].apply(exports,arguments)
-},{"./encodeURIComponent":67,"dup":7}],69:[function(require,module,exports){
+},{"./encodeURIComponent":79,"dup":7}],81:[function(require,module,exports){
 /**
  * Services for validation and showing any errors in a modal. 
  * Checks that the activity time does not exceed 168.
@@ -57305,9 +57968,9 @@ angular.module('sstTool4App').factory('errorModalService',["$modal", function($m
     return obj;
     
 }]);
-},{}],70:[function(require,module,exports){
+},{}],82:[function(require,module,exports){
 arguments[4][36][0].apply(exports,arguments)
-},{"./errorModal":69,"./navigateQuestionaire":71,"dup":36}],71:[function(require,module,exports){
+},{"./errorModal":81,"./navigateQuestionaire":83,"dup":36}],83:[function(require,module,exports){
 /**
  * Calculates how much free time is remaining and
  * updates the chart values
@@ -57366,7 +58029,7 @@ angular.module('sstTool4App').factory('navigateQuestionaireService',function(){
 
 
 
-},{}]},{},[23,38,57,1]);
+},{}]},{},[23,38,57,69,1]);
 
 /**  
  * jsPDF - PDF Document creation from JavaScript
