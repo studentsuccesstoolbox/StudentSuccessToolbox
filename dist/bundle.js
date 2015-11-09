@@ -58068,28 +58068,34 @@ sstTool5App.config(["$routeProvider", function($routeProvider) {
                 controller: 'defaultController'
     	})
 
-        .when('/assignment-plan/', {
-    		templateUrl: 'app/views/templates/assignment-plan.html',
-                controller: 'defaultController'
-    	})
-        
+       
         .when('/developing-a-plan/', {
     		templateUrl: 'app/views/templates/developing-a-plan.html',
                 controller: 'defaultController'
     	})
         
-        .when('/find-resources/', {
-    		templateUrl: 'app/views/templates/find-resources.html',
+        .when('/developing-a-plan/starting-an-assignment/', {
+    		templateUrl: 'app/views/templates/developing-a-plan/starting-an-assignment.html',
                 controller: 'defaultController'
     	})
         
-        .when('/evaluate/', {
-    		templateUrl: 'app/views/templates/evaluate.html',
+        .when('/developing-a-plan/assignment-plan/', {
+    		templateUrl: 'app/views/templates/developing-a-plan/assignment-plan.html',
                 controller: 'defaultController'
     	})
         
-        .when('/use-assignment/', {
-    		templateUrl: 'app/views/templates/use-assignment.html',
+        .when('/developing-a-plan/find-resources/', {
+    		templateUrl: 'app/views/templates/developing-a-plan/find-resources.html',
+                controller: 'defaultController'
+    	})
+        
+        .when('/developing-a-plan/evaluate/', {
+    		templateUrl: 'app/views/templates/developing-a-plan/evaluate.html',
+                controller: 'defaultController'
+    	})
+        
+        .when('/developing-a-plan/use-assignment/', {
+    		templateUrl: 'app/views/templates/developing-a-plan/use-assignment.html',
                 controller: 'defaultController'
     	})
         
@@ -58132,11 +58138,6 @@ sstTool5App.config(["$routeProvider", function($routeProvider) {
     		templateUrl: 'app/views/templates/complete_beginner/where-to-start.html',
                 controller: 'defaultController'
     	}) 
-        
-        .when('/complete-beginner/starting-an-assignment/', {
-    		templateUrl: 'app/views/templates/complete_beginner/starting-an-assignment.html',
-                controller: 'defaultController'
-    	})
         
         .when('/completely-confident/completely-confident/', {
     		templateUrl: 'app/views/templates/completely_confident/completely-confident.html',

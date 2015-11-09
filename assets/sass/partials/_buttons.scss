@@ -68,8 +68,13 @@
     }
 
     &.disabled{ 
+        background: $button-deactivated-color;
+        border: 3px solid $font-color-dark-bg;
+        box-shadow: 0 0 0 2px $button-deactivated-color;
+       opacity:1;
+       
         &:hover,&:active,&:focus{
-            background: $button-deactivated-color none repeat scroll 0 0;
+            background: $button-deactivated-color;
             border: 3px solid $font-color-dark-bg;
             box-shadow: 0 0 0 2px $button-deactivated-color;
             opacity:1;

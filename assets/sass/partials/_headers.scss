@@ -202,6 +202,61 @@
 }
 
 
+
+#header.tool5 {
+    background: url("../images/header-tool5.jpg") no-repeat scroll 0 0;
+    height: 180px;
+    margin-left: -20px;
+    margin-right: -20px;
+    
+    .header-heading {
+        color: #fff;
+        float: left;
+        font-size: 1em;
+        margin: 25px 0 0 320px;
+        width: 340px;
+    }
+    
+    .a-word {
+        font-size: 6.2em;
+        font-weight: 600;
+        letter-spacing: -7px;
+        line-height: normal;
+        margin: 0;
+        transform: scale(1, 1.5);
+    }
+    .b-word {
+        float: none !important;
+        font-size: 2em;
+        font-weight: 600;
+        margin: 28px 0 0 150px;
+        transform: scale(1.2, 1.4);
+    }
+    .c-word {
+        float: none !important;
+        font-size: 1em;
+        font-weight: 600;
+        margin: 0;
+        transform: scale(1, 1.4);
+    }
+    .f-word {
+        float: right;
+        font-size: 7.2em;
+        font-weight: 700;
+        left: 5px;
+        margin: -55px 0 0 10px;
+        position: relative;
+        transform: scale(1, 1.5);
+    }
+    .a-word, .b-word, .c-word, .d-word, .e-word, .f-word {
+        display: block;
+        float: left;
+        line-height: 1;
+    }
+
+}
+
+
 //Mobile Heading
 .mob-heading {
     background: $secondary-color none repeat scroll 0 0;

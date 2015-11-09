@@ -20,6 +20,19 @@
 <!-- apply our angular app -->
 <body ng-app="sstTool5App">
 
+    <div class="container shadow">
+        <header>
+            <div id="header" class="tool5">
+                    <!-- institution logo here -->
+                    <h1 class="header-heading my-first-assignment hidden-xs">
+                        <p class="a-word">My</p>
+                        <p class="b-word">First<span class="c-word">Assignment</span></p> 
+
+                    </h1>
+            </div>
+        </header>
+    </div>
+    
     <!-- inject our views using ng-view -->
     <!-- each angular controller applies a different class here -->
     <div class="page {{ pageClass }}" ng-view autoscroll="true"></div>

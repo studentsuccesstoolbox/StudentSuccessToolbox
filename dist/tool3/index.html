@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic,700,700italic' rel='stylesheet' type='text/css'>
+        
+	<!-- CSS -->	
+	<link rel="stylesheet" href="../assets/css/main.css">
+
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="../bundle.min.js"></script>
+ 
+</head>
+
+<!-- apply our angular app -->
+<body ng-app="sstTool3App">
+
+    <!-- inject our views using ng-view -->
+    <!-- each angular controller applies a different class here -->
+    <div class="page {{ pageClass }}" ng-view autoscroll="true"></div>
+    
+	<footer class="container shadow">
+		<div class="row">
+			<div id="footerSocial"><a href="/" title="Institute Facebook Page"><div class="footer-soc fb"></div></a><a href="/" title="Institute Twitter Page"><div class="footer-soc tw"></div></a><a href="/" title="Institute Linkedin Page"><div class="footer-soc ln"></div></a></div>
+			<div id="footerMenu">
+				<ul>
+					<li><a href="/" title="Leave Feedback">Leave Feedback</a></li>
+					<li><a href="/" title="Other Tools">Other Tools</a></li>
+					<li><a href="/" title="Visit Us">Visit Us</a></li>
+					<li><a href="/" title="Privacy Policy">Privacy Policy</a></li>
+					<li><a href="/" title="Terms & Conditions">Terms & Conditions</a></li>
+				</ul>
+			</div>
+			<img src="../assets/images/clock.gif" class="footer-clock" alt="">
+			<hr>
+			<img src="../assets/images/institution_logos.png" class="footer-logos" alt="">
+		</div>
+	</footer>	
+</body>
+</html>

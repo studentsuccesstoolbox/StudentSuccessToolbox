@@ -1,0 +1,66 @@
+<div class="container shadow">
+    <header>
+        <div id="header" class="">
+                <!-- institution logo here -->
+                <h1 class="header-heading rate hidden-xs">
+                    <span class="word">Give</span> 
+                    <span class="word">us</span> 
+                    <span class="word">some</span> 
+                    <span class="word">feedback</span>
+                </h1>
+        </div>
+        <h1 class="visible-xs-block mob-heading" >Give us some feedback</h1>
+    </header>
+</div>
+
+<div class="container shadow">
+    <div class="row spacer-top-3x">
+        <div class="col-md-offset-1 col-md-10">
+            <div class="activity-panel">
+                <p class="heading-text">
+                    <span class="heading-text-big">Please</span> give us your feedback on the usefulness of this tool by 
+                    <strong>clicking</strong> on the stars below and <strong>sending</strong> us your comments and suggestions 
+                    for improvement.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1 class="nopadding">How useful was this tool?</h1>
+        </div>
+    </div>
+    <div class="row stars spacer-top">
+        <div class="col-md-12 text-center">
+            <rating ng-model="starRating" max="5" class="star-rating"></rating>
+			<span class="stars-legend">
+                            <legend>Poor</legend>
+                            <legend>No good</legend>
+                            <legend>Average</legend>
+                            <legend>Good</legend>
+                            <legend>Excellent</legend>
+                        </span>
+        </div>
+    </div>
+    <div class="row spacer-top-3x">
+        <div class="col-md-12 text-center">
+            <h1 class="nopadding">Send us your feedback</h1>
+        </div>
+    </div>
+    <div class="row spacer-top-2x">
+        <div class="col-md-offset-3 col-md-6">
+            <form id="feedbackForm" name="feedbackForm" enctype="" method="post" action="">
+                <input id="firstname" type="text" class="form-control" type="text" placeholder="First Name">
+                <textarea placeholder="Your comment" ng-model="feedbackComment" class="form-control" rows="8"></textarea>
+            </form>
+        </div>
+    </div>
+    <div class="row buttons spacer-top spacer-bottom-3x">
+            <div class="col-md-offset-3 col-md-6 text-sm-right">
+                <a ng-href="mailto:info@fluid-rock.com?subject=Feedback%20From%20Tool%202&body=Comment:{{feedbackComment|encodeURIComponent}}%0D%0ARating:{{starRating}} stars" 
+                   class="btn btn-default btn-md btn-xs-block" title="submit rate and comment button">
+                    Submit
+                </a>
+            </div>
+    </div>
+</div>

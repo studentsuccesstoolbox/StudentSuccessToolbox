@@ -1,0 +1,110 @@
+<div class="container shadow">
+    <header>
+        <div id="header" class="">
+                <!-- institution logo here -->
+                <h1 class="header-heading who-can-i-ask hidden-xs">
+                    <span class="a-word">My</span>
+                    <span class="b-word">computer</span> 
+                    <span class="c-word">skills</span>
+                </h1>
+        </div>
+        <h1 class="visible-xs-block mob-heading" >My computer skills</h1>
+    </header>
+</div>
+
+
+<div class="container shadow">
+    
+    <div class="row spacer-top-3x">
+        <div class="col-md-offset-2 col-md-8">
+            <div class="q-head large">
+                <h2 class="text-center nopadding">Student Stories?</h2>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row spacer-top-3x">   
+        <div class="col-xs-12 col-md-offset-1 col-md-10">
+            <div class="quote-dark image-left">
+                <img class="img-responsive img-rounded" alt="DCU student photo" src="../assets/images/student1.jpg">
+                <blockquote>
+                    <p class="comment">Meet some of my fellow students to find out how they used computers for learning and how they got help.</p>
+                </blockquote>                   
+            </div>
+        </div>
+    </div>
+
+        
+    <div class="row spacer-top-5x">
+        <div class="col-xs-12 col-md-offset-1 col-md-10"> 
+            <div class="col-md-3 text-center">
+                <div class="row">
+                    <a class="flip-card" href="#" ng-click="openModal('story1.html','',$event);" title="David story">
+                        <div class="front face">
+                            <img class="img-responsive img-rounded" src="../assets/images/student2.jpg" alt="student photo">
+                        </div>
+                        <div class="back face center">
+                            <span class="back-title"> Click to read more</span>
+                            <img class="img-responsive img-rounded" src="../assets/images/student2-bg.jpg" alt="student photo">                        
+                        </div>
+                    </a>
+                </div>
+                <div class="row">
+                    <div class=" panel panel-odd student-name">
+                        <a href="#" title="David story audio"  ng-click='audio.sound1.paused ? playAudio(audio.sound1) : audio.sound1.pause()'>
+                          <span class="icon-badge icon-speaker icon-sm block pull-right">
+                              <i class="fa fa-volume-down fa-3x"></i>
+                          </span>
+                        </a>
+                        <div class="panel-body">
+                            <p class="text-left">
+                                <strong><em>David</em></strong>
+                                <br>Student D
+                            </p>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-3 col-md-5 nopadding">
+                                <button ng-click='audio.sound1.paused ? playAudio(audio.sound1) : audio.sound1.pause()' class="btn btn-xs spacer-top">
+                                    <i ng-class="audio.sound1.paused ?'fa fa-play' : 'fa fa-pause'"></i>
+                                </button>
+                                <button ng-click='audio.sound1.restart()' class="btn btn-xs spacer-top">
+                                    <i class="fa fa-stop"></i>
+                                </button>
+                            </div>
+
+                            <div class="col-xs-9 col-md-7 nopadding">
+                                <rzslider   
+                                    rz-slider-floor="0.00"
+                                    rz-slider-ceil=audio.sound1.duration
+                                    rz-slider-model=audio.sound1.currentTime
+                                    rz-slider-translate="translate"
+                                    rz-slider-tpl-url="app/views/partials/slider/audioslider.html"
+                                    class="audio"
+                                    >
+                                </rzslider>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row spacer-top-3x">                
+        <div class="col-md-4">
+            <a class="btn btn-info btn-lg btn-block" aria-label="" title="Back to what technology do colleges provide" href="#what-technology-do-colleges-provide">Back</a>
+        </div>
+        <div class="col-md-offset-4 col-md-4 spacer-xs-top spacer-md-top-0">
+            <a class="btn btn-default btn-lg btn-block" aria-label="" title="Check your computer skills" href="#check-your-computer-skills">Next</a> 
+        </div>
+    </div> 
+    
+    <div class="row spacer-top spacer-xs-bottom-4x">
+        <div class="col-xs-12 col-md-4">
+            <a href="#/" class="btn btn-nav  btn-lg" title="go to home button">Home</a>
+            <a href="#resources" class="btn btn-nav  btn-lg pull-right" title="go to resources button">Resources</a>
+        </div>
+    </div> 
+    
+</div>

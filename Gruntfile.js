@@ -50,20 +50,40 @@ module.exports = function(grunt) {
             
             {expand: true, src: ['tool1/index.html'], dest: 'dist/'},
             
-            {expand: true, src: ['tool1/app/views/**'], dest: 'dist/'}
+            {expand: true, src: ['tool1/app/views/**'], dest: 'dist/'},
+            
+            {expand: true, src: ['tool2/index.html'], dest: 'dist/'},
+            
+            {expand: true, src: ['tool2/app/views/**'], dest: 'dist/'},
+            
+            {expand: true, src: ['tool3/index.html'], dest: 'dist/'},
+            
+            {expand: true, src: ['tool3/app/views/**'], dest: 'dist/'},
+            
+            {expand: true, src: ['tool4/index.html'], dest: 'dist/'},
+            
+            {expand: true, src: ['tool4/app/views/**'], dest: 'dist/'},
+            
+            {expand: true, src: ['tool5/index.html'], dest: 'dist/'},
+            
+            {expand: true, src: ['tool5/app/views/**'], dest: 'dist/'},
+            
+            {expand: true, src: ['example/index.html'], dest: 'dist/'},
+            
+            {expand: true, src: ['example/app/views/**'], dest: 'dist/'}
           ]
         }
       },
       'string-replace': {
         dist: {
           files: {
-            'dist/': 'tool1/index.html'
+            'dist/': ['dist/tool1/index.html','dist/tool2/index.html','dist/tool3/index.html','dist/tool4/index.html','dist/tool5/index.html']
           },
           options: {
             replacements: [
               // place files inline example
               {
-                pattern: '<script src="../bundle.js"></script>',
+                pattern: '<script src="../dist/bundle.js"></script>',
                 replacement: '<script src="../bundle.min.js"></script>'
               },
               {

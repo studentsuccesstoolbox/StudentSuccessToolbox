@@ -1,0 +1,31 @@
+<div class="modal-header error">
+    <div class="row nopadding">
+        <div class="col-xs-1 text-right">
+            <i class="fa fa-exclamation fa-2x"></i>
+        </div>
+        <div class="col-xs-11">
+            <label for="name" class="control-label">Notice</label>
+        </div>
+    </div>
+    <i ng-click="cancel()" class="fa fa-times btn-close"></i>
+</div>
+
+<div class="modal-body error">
+    <div class="row spacer-top-2x spacer-bottom">
+        <div class="col-md-12 col-lg-12">
+            <div class="alert alert-danger">
+                <p>
+                    Please select a <strong>question</strong> first.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <div class="row modal-buttons spacer-bottom">
+        <div class="col-xs-offset-1 col-xs-10 col-sm-offset-8 col-sm-4">
+            <button type="button" ng-click="ok()" class="btn btn-default btn-md btn-block">OK</button>
+        </div>
+    </div>
+</div>
