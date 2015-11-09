@@ -53,6 +53,24 @@ p {
     }
 }
 
+span{
+   &.hl-primary{
+        color: $primary-color;
+    }
+    
+    &.hl-secondary{
+        color: $secondary-color;
+    }
+
+    &.large {
+    font-size: 2em;
+    }
+
+    &.medium {
+        font-size: 1.4em;
+    } 
+}
+
 
 
 .first-word {

@@ -1,0 +1,549 @@
+//** tool5 home navigation
+       
+.navigation-table2 {
+    height: 400px;
+}
+
+.navigation-cell2{
+    border-radius: 100%;
+    box-shadow: 0 0 0 4px #fff inset;
+    clear: both;
+    display: table;
+    overflow: hidden;
+    transition: all 300ms ease-out 0s;
+    height: 55%;
+    padding: 2.3em 0 0;
+    position: relative;
+    z-index: 10;
+    width: 21%;
+    text-align: center;
+    transition: all 300ms ease-out 0s;
+    -moz-transition: all 300ms ease-out 0s;
+    -o-transition: all 300ms ease-out 0s;
+    -webkit-transition: all 300ms ease-out 0s;
+}
+
+.section-c-conf {
+    float: right;
+    margin: -1em 0 0;
+    background: #38b6b2 none repeat scroll 0 0;
+    border: 4px solid #38b6b2;
+}
+.section-c-begin {
+    clear: right;
+    margin: -4.5em 0 0;
+    background: #c87676 none repeat scroll 0 0;
+    border: 4px solid #c87676;
+}
+.section-s-exp {
+    clear: none;
+    margin: -6em 0 0 2.5em;
+    background: $secondary-color none repeat scroll 0 0;
+    border: 4px solid $secondary-color;
+}
+.section-w-begin {
+    margin: -3.5em 0 0 9em;
+    background: #a5b638 none repeat scroll 0 0;
+    border: 4px solid #a5b638;
+}
+
+.section-c-conf:hover, .section-c-conf:active, .section-c-conf:focus {
+    background: #1f9995 none repeat scroll 0 0;
+    border: 4px solid #1f9995;
+ }
+.section-c-begin:hover, .section-c-begin:active, .section-c-begin:focus {
+    background: #af5b5b none repeat scroll 0 0;
+    border: 4px solid #af5b5b;
+ }
+.section-s-exp:hover, .section-s-exp:active, .section-s-exp:focus {
+    background: #00809f none repeat scroll 0 0;
+    border: 4px solid #00809f;
+ } 
+.section-w-begin:hover, .section-w-begin:active, .section-w-begin:focus {
+    background: #8b9c21 none repeat scroll 0 0;
+    border: 4px solid #8b9c21;
+ }
+
+.navigation-table2 a {
+    color: $font-color-dark-bg;
+    border-radius: 100%;
+    font-size: 2.2em;
+    line-height: 1.2em;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
+
+.navigation-table2 a:hover, .navigation-table2 a:focus, .navigation-table2 a:active {
+    text-decoration: none;
+}
+ 
+#triangle-small {
+   background-image: linear-gradient(to right top, transparent 50%, #ddd 50%), linear-gradient(to left top, transparent 50%, #ddd 50%);
+   background-position: left top, right top;
+   background-repeat: no-repeat;
+   background-size: 50.2% 100%;
+   height: 480px;
+   margin: 6em auto;
+   width: 93%;
+}
+
+@media only screen and (min-width:$screen-md) and (max-width:1199px) {
+    .navigation-table2 {
+       height: 350px;
+   }
+    .navigation-cell2 {
+        clear: both;
+        float: left;
+        height: 55%;
+        padding: 2.5em 0 0;
+        position: relative;
+        width: 26% !important;
+    }
+    .navigation-table2 a {
+        font-size: 1.8em;
+    }
+    .section-c-begin {
+        clear: right;
+        margin: -5.5em 0 0;
+    }
+    .section-c-conf {
+        float: right;
+        margin: 1em 0 0;
+    }
+    .section-s-exp {
+        clear: none;
+        margin: -5.8em 0 0;
+    }
+    .section-w-begin {
+        margin: -3em 0 0 7em;
+    }
+}
+
+@media only screen and (min-width:$screen-sm) and (max-width:$screen-md) {
+    .navigation-cell2 {
+        height: 42%;
+        padding: 2.6em 0 0;
+        width: 25%;
+    }
+    .navigation-table2 a {
+        font-size: 1.5em;
+        line-height: 1.2em;
+    }
+    .section-c-conf {
+        float: right;
+        margin: 1em 0 0;
+    }
+    .section-w-begin {
+        margin: -3.5em 0 0 8em;
+    }
+    .section-s-exp {
+        clear: none;
+        margin: -6em 0 0 0.8em;
+    }
+}
+
+@media only screen and (max-width:$screen-sm) {
+    .navigation-cell.btn-w-begin a, .navigation-cell.btn-c-conf a, .navigation-cell.btn-s-exp a, .navigation-cell.btn-c-begin a, .navigation-cell.section-w-begin a, .navigation-cell.section-c-conf a, .navigation-cell.section-s-exp a, .navigation-cell.section-c-begin a {
+        font-size: 3em!important;
+    }
+   
+    .section-c-begin, .section-c-conf, .section-s-exp, .section-w-begin {
+        box-shadow: 0 0 0 4px #fff inset;
+    }
+    
+    .section-c-conf {
+        background: #38b6b2 none repeat scroll 0 0;
+        border: 4px solid #38b6b2;
+    }
+    .section-c-begin {
+        background: #c87676 none repeat scroll 0 0;
+        border: 4px solid #c87676;
+    }
+    .section-s-exp {
+        background: $secondary-color none repeat scroll 0 0;
+        border: 4px solid $secondary-color;
+    }
+    .section-w-begin {
+        background: #a5b638 none repeat scroll 0 0;
+        border: 4px solid #a5b638;
+    } 
+}
+
+
+
+@media only screen and (max-width:610px) {
+    .navigation-cell.btn-w-begin a, .navigation-cell.btn-c-conf a, .navigation-cell.btn-s-exp a, .navigation-cell.btn-c-begin a, .navigation-cell.section-w-begin a, .navigation-cell.section-c-conf a, .navigation-cell.section-s-exp a, .navigation-cell.section-c-begin a {
+        font-size: 2em!important;
+    }
+    .col-xs-12.navigation-cell a {
+        line-height: normal !important;
+        padding: 0.5em 0;
+        vertical-align: middle;
+    }
+}
+
+
+
+ //** tool5 second navigation
+ 
+
+.navigation-table {
+    display: table;
+}
+.navigation-cell{
+    display: table-cell;
+}
+
+.col-sm-12 .navigation-cell a {
+    color: #fff;
+    border-radius: 100%;
+    display: table-cell;
+    font-size: 2.7em;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
+.col-xs-12.navigation-cell a {
+    color: #fff;
+    clear: none;
+    border-radius: 50px;
+    display: table-cell;
+    font-size: 4em;
+    line-height: 100px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.col-sm-12 .navigation-cell a:hover, .col-xs-12.navigation-cell a:hover, .col-sm-12 .navigation-cell a:focus, .col-xs-12.navigation-cell a:focus, .col-sm-12 .navigation-cell a:active, .col-xs-12.navigation-cell a:active {
+    text-decoration: none;
+}
+
+.navigation-cell-centre {
+    background: #ccc none repeat scroll 0 0;
+    border-radius: 100%;
+    height: 80%;
+    left: 10%;
+    position: absolute;
+    top: 10%;
+    width: 80%;
+    z-index: 1;
+}
+
+.navigation-arrow-one {
+    background: url("../../assets/images/arrow.png") no-repeat scroll left bottom / contain ;
+    bottom: 30px;
+    left: -18px;
+    transform: rotate(35deg);
+}
+
+.navigation-arrow-two {
+    background: url("../../assets/images/arrow.png") no-repeat scroll 0 0 / contain ;
+    bottom: 90px;
+    right: 60px;
+    transform: rotate(130deg);
+}
+
+.navigation-arrow-three {
+    background: url("../../assets/images/arrow.png") no-repeat scroll 0 0 / contain ;
+    bottom: 70px;
+    left: 87px;
+    transform: rotate(215deg);
+}
+
+.navigation-arrow-four {
+    background: url("../../assets/images/arrow.png") no-repeat scroll 0 0 / 90% auto;
+    bottom: -110px;
+    left: 180px;
+    transform: rotate(245deg);
+}
+
+.navigation-cell.navigation-arrow-one, .navigation-cell.navigation-arrow-two, .navigation-cell.navigation-arrow-three, .navigation-cell.navigation-arrow-four {
+    z-index: 2;
+}
+
+//** triangle background
+
+#triangle {
+    background-image: linear-gradient(to right top, transparent 50%, #ddd 50%), linear-gradient(to left top, transparent 50%, #ddd 50%);
+    background-position: left top, right top;
+    background-repeat: no-repeat;
+    background-size: 50.2% 100%;
+    height: 700px;
+    margin: 3em auto;
+    width: 93%;
+}
+
+//** end triangle background
+
+.navigation-cell  {
+    height: 33.333%;
+    position: relative;
+    z-index: 10;
+    
+    &.section-use, &.section-evaluate, &.section-plan,  &.section-find {
+        display: table;
+        border-radius: 100%;
+        box-shadow: 0 0 0 4px #fff inset;
+        margin: -8px;
+        overflow: hidden;
+        background: $button-deactivated-color none repeat scroll 0 0;
+        border: 4px solid $button-deactivated-color; 
+        transition: all 300ms ease-out 0s;
+        -moz-transition: all 300ms ease-out 0s;
+        -o-transition: all 300ms ease-out 0s;
+        -webkit-transition: all 300ms ease-out 0s;
+    }
+    
+    &.section-start {
+        display: table;
+        border-radius: 100%;
+        box-shadow: 0 0 0 4px #fff inset;
+        overflow: hidden;
+        margin: -8px;
+    }
+}
+
+ .section-start-active {
+    background: $primary-color none repeat scroll 0 0!important;
+    border: 2px solid #fff!important;
+    box-shadow: 0 0 0 2px $primary-color !important;
+ }
+ 
+  .section-plan-active {
+    background: $secondary-color none repeat scroll 0 0!important;
+    border: 2px solid #fff!important;
+    box-shadow: 0 0 0 2px $secondary-color !important;
+ }
+ 
+  .section-find-active {
+    background: #a5b638 none repeat scroll 0 0!important;
+    border: 2px solid #fff!important;
+    box-shadow: 0 0 0 2px #a5b638 !important;
+ }
+ 
+  .section-evaluate-active {
+    background: #c87676 none repeat scroll 0 0!important;
+    border: 2px solid #fff!important;
+    box-shadow: 0 0 0 2px #c87676 !important;
+ }
+ 
+  .section-use-active {
+    background: #38b6b2 none repeat scroll 0 0!important;
+    border: 2px solid #fff!important;
+    box-shadow: 0 0 0 2px #38b6b2 !important;
+ }
+ 
+
+ .section-start {
+    background: $primary-color none repeat scroll 0 0;
+    border: 4px solid $primary-color;
+    transition: all 300ms ease-out 0s;
+    -moz-transition: all 300ms ease-out 0s;
+    -o-transition: all 300ms ease-out 0s;
+    -webkit-transition: all 300ms ease-out 0s;
+ }
+.section-start:hover, .section-start:active, .section-start:focus {
+    background: $button-deactivated-color none repeat scroll 0 0;
+    border: 4px solid $button-deactivated-color;
+ }
+ .section-use:hover, .section-use:active, .section-use:focus {
+    background: #38b6b2 none repeat scroll 0 0;
+    border: 4px solid #38b6b2;
+ }
+ .section-evaluate:hover, .section-evaluate:active, .section-evaluate:focus {
+    background: #c87676 none repeat scroll 0 0;
+    border: 4px solid #c87676;
+ }
+.section-plan:hover, .section-plan:active, .section-plan:focus, .section-plan-active {
+    background: $secondary-color none repeat scroll 0 0;
+    border: 4px solid $secondary-color;
+ }
+ 
+.section-find:hover, .section-find:active, .section-find:focus {
+    background: #a5b638 none repeat scroll 0 0;
+    border: 4px solid #a5b638;
+ }
+ 
+.img-software-side {
+    background: rgba(0, 0, 0, 0) url("../../assets/images/software-side.jpg") no-repeat scroll 0 0 / 94% 100%;
+    height: 670px;
+    margin: -6px 0 -6px -10px;
+    width: 254px;
+}
+
+
+ 
+@media only screen and (min-width:$screen-lg) {
+    .navigation-table {
+        height: 635px;
+        display: table;
+    }
+    .software-block {
+        border: 6px solid;
+    }
+ 
+}
+
+@media only screen and (min-width:$screen-md) and (max-width:$screen-lg) {
+    .navigation-table {
+        height: 635px;
+        display: table;
+    }
+    .software-block {
+        border: 6px solid;
+    }
+
+}
+
+@media only screen and (min-width:$screen-sm) and (max-width:$screen-md) {
+    .navigation-table {
+        height: 635px;
+        display: table;
+    }
+}
+
+@media only screen and (max-width:$screen-sm) {
+    .navigation-table .col-xs-12.navigation-cell {
+        border-radius: 50px;
+        height: 100px;
+        margin-bottom: 2em !important;
+        display: table;
+    }
+}
+
+//** tool 5 custom panels
+
+.panel-heading-custom h4 {
+    font-size: 1.2em;
+}
+
+//** tool5 progress bar
+
+.section-nav.simple-progress-b li.active.start-active span.title {
+    font-size: 2em;
+    font-weight: bold;
+    color: $primary-color;
+}
+
+.section-nav.simple-progress-b li.active.start-active span.connector {
+    background: $primary-color none repeat scroll 0 0;
+}
+
+.section-nav.simple-progress-b li.active.plan-active span.title {
+    font-size: 2em;
+    font-weight: bold;
+    color: $secondary-color;
+}
+
+.section-nav.simple-progress-b li.active.plan-active span.connector {
+    background: $secondary-color none repeat scroll 0 0;
+}
+
+.section-nav.simple-progress-b li.active.find-active span.connector {
+    background: #a5b638 none repeat scroll 0 0;
+}
+
+.section-nav.simple-progress-b li.active.find-active span.title {
+    font-size: 2em;
+    font-weight: bold;
+    color: #a5b638;
+}
+
+.section-nav.simple-progress-b li.active.evaluate-active span.connector {
+    background: #c87676 none repeat scroll 0 0;
+}
+
+.section-nav.simple-progress-b li.active.evaluate-active span.title {
+    font-size: 2em;
+    font-weight: bold;
+    color: #c87676;
+}
+
+.section-nav.simple-progress-b li.active.use-active span.connector {
+    background: #38b6b2 none repeat scroll 0 0;
+}
+
+.section-nav.simple-progress-b li.active.use-active span.title {
+    font-size: 2em;
+    font-weight: bold;
+    color: #38b6b2;
+}
+
+
+.simple-progress-b .ng-scope.active {
+    margin-top: -2px;
+}
+
+.section-nav.simple-progress-b li span.connector-line {
+    bottom: 0.8em;
+    height: 0.4em;
+}
+
+.section-nav.simple-progress-b li.final {
+    margin-top: -12px;
+}
+
+
+
+@media only screen and (max-width:$screen-md) {
+
+    .section-nav.simple-progress-b li.active.start-active span.connector::after {
+        color: $primary-color;
+    }
+    
+    .section-nav.simple-progress-b li.active.start-active span.connector {
+        background: $font-color-dark-bg none repeat scroll 0 0;
+        border: 5px solid $primary-color;
+    }
+    
+    .section-nav.simple-progress-b li.active.plan-active span.connector::after {
+        color: $primary-color;
+    }
+    
+    .section-nav.simple-progress-b li.active.plan-active span.connector {
+        background: $font-color-dark-bg none repeat scroll 0 0;
+        border: 5px solid $primary-color;
+    }
+    
+    .section-nav.simple-progress-b li.active.find-active span.connector::after {
+        color: $primary-color;
+    }
+    
+    .section-nav.simple-progress-b li.active.find-active span.connector {
+        background: $font-color-dark-bg none repeat scroll 0 0;
+        border: 5px solid $primary-color;
+    }
+    
+    .section-nav.simple-progress-b li.active.evaluate-active span.connector::after {
+        color: $primary-color;
+    }
+    
+    .section-nav.simple-progress-b li.active.evaluate-active span.connector {
+        background: $font-color-dark-bg none repeat scroll 0 0;
+        border: 5px solid $primary-color;
+    }
+    
+    .section-nav.simple-progress-b li.active.use-active span.connector::after {
+        color: $primary-color;
+    }
+    
+    .section-nav.simple-progress-b li.active.use-active span.connector {
+        background: $font-color-dark-bg none repeat scroll 0 0;
+        border: 5px solid $primary-color;
+    }
+
+    .section-nav.simple-progress-b li span.connector-line {
+        bottom: 1.5em;
+        height: 0.8em;
+    }
+    .section-nav.simple-progress-b li.final {
+        margin-top: -3px;
+    }
+}
+
+
+//** end tool5 progress bar

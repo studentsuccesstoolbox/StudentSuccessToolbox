@@ -491,6 +491,61 @@ blockquote.simple{
         }
     }
     
+    &.small{
+        blockquote{
+            padding: 1em 2em 1em 2em;
+        }
+        img{
+            width: 7em;
+        }
+        
+        /*Image position*/
+        &.image-left{
+
+            @media (min-width: $screen-md-min) { 
+                 padding-left: 5em; 
+            }
+
+            @media (max-width: $screen-md-max) { 
+                padding-top:6em;
+            }
+        }
+        
+        &.image-right{
+            @media (min-width: $screen-md-min) { 
+                 padding-right: 5em; 
+            }
+
+            @media (max-width: $screen-md-max) { 
+                padding-top:6em;
+            }
+        }
+        
+        &.image-top-right{
+            padding-top: 3em;
+
+            @media (min-width: $screen-md-min) { 
+                 padding-right: 3em; 
+            }
+
+            @media (max-width: $screen-md-max) { 
+                padding-top:6em;
+            }
+        }
+        
+        &.image-top-left{
+            padding-top: 3em;
+
+            @media (min-width: $screen-md-min) { 
+                 padding-left: 3em; 
+            }
+
+            @media (max-width: $screen-md-max) { 
+                padding-top:6em;
+            }
+        }
+    }
+    
 }
 
 
