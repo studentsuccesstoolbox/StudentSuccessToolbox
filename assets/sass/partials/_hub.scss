@@ -220,32 +220,32 @@
  
 .pos-12 {
     position:absolute;
-    top: 5%;
+    top: 3%;
     left:50%;
 }
 
 .pos-2 {
     position:absolute;
     top: 20%;
-    right: 10%;
+    right: 6%;
 }
 
 .pos-4 {
     position:absolute;
     bottom: 20%;
-    right: 10%;
+    right: 6%;
 }
 
 .pos-6 {
     position:absolute;
-    bottom: 5%;
+    bottom: 3%;
     left: 50%;
 }
 
 .pos-8 {
     position:absolute;
     bottom: 20%;
-    left: 10%;
+    left: 6%;
     .hub-button {
         margin-left: 0 !important;
         margin-right: -75px;
@@ -255,7 +255,7 @@
 .pos-10 {
     position:absolute;
     top: 20%;
-    left: 10%;
+    left: 6%;
     .hub-button {
         margin-left: 0 !important;
         margin-right: -75px;
@@ -270,8 +270,98 @@
    
 }
 
-.hub-nav .hub-button {
-     @media(max-width:$screen-sm-max){
+.hub-button {
+    
+    $hub-width:  130px;
+    $hub-height:  130px;
+    
+    @media(min-width:$screen-md-min) and (max-width:$screen-md-max){
+        width: $hub-width;
+        height: $hub-height;
+        margin-left: -($hub-width / 2);
+        
+        p{
+           font-size: 1.6em; 
+        }
+        
+        &:after {
+            height: ($hub-width + 6);
+            width: ($hub-height + 6);
+        }
+        
+        //Others
+        &.button-others:before {
+            font-size: 8em;
+        }
+        
+        //Friends
+        &.button-friends:before {
+            font-size: 8em;
+            top: 10px;
+        }
+        
+         //family
+        &.button-family:before {
+            font-size: 8em;
+            top: 10px;
+        }
+        
+         //family
+        &.button-students:before {
+            font-size: 8em;
+            top: 10px;
+        }
+        
+        &.button-me {
+            background-color: #a6a6a6;
+            border: medium none;
+            margin-top: -($hub-width / 2);
+            margin-left: -($hub-width / 2);
+            
+            p{
+                bottom: 0.4em;
+                font-size: 2em;
+                font-weight: 400;
+            }
+            &:before {
+                font-size: 8em;
+                top: 10px;
+            }
+
+        }
+        
+        //Employer
+        &.button-employer:before {
+            font-size: 8em;
+            top: 10px;
+        }
+    
+        //University
+        &.button-university:before {
+            font-size: 8em;
+            top: 5px;
+        }
+        
+        .shadow-container{
+            width: $hub-width;
+            height: $hub-height;
+
+            .transparent-shadow{
+                background-color: rgba(255, 255, 255, 0.25);
+                border-radius: 100%;
+                width: 100px;
+                height: 100px;
+                position:relative;
+                left: 30px;
+                top: 40px;
+
+
+            }
+        }
+
+    }
+    
+     @media(max-width:$screen-phone){
         width: 80px;
         height: 80px;
         margin-left: -40px;
