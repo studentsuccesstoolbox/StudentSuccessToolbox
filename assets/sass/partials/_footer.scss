@@ -1,102 +1,122 @@
 /* FOOTER
 ============================================================================= */
 
-footer .row {
-    background: $footer-bg-color none repeat scroll 0 0;
-	border-radius: 10px;
+.tool-footer {
+    background: $footer-bg-color;
+    border-radius: 10px;
     border-top: medium none !important;
     color: $footer-font-color;
-	margin: 1em 0;
-	overflow: hidden;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    
+    ul {
+        list-style: outside none none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    
+    li {
+        float: left;
+        display: inline-block;
+        float: none;
+        font-size: 1.2em;
+        line-height: 4.5em;
+        margin: 0 5px;
+    }
+    
+    footer li a:hover {
+        text-decoration: underline;
+            color: $footer-font-color;
+            opacity: 1;
+    }
+    
+    a {
+        color: $footer-font-color;
+	opacity: 0.7;
+	transition: all 300ms ease-out 0s;
+	-moz-transition: all 300ms ease-out 0s;
+	-o-transition: all 300ms ease-out 0s;
+	-webkit-transition: all 300ms ease-out 0s;
+        
+        &:hover,
+        &:active, 
+        &:focus {
+            color: $footer-font-color;
+            opacity: 1;
+        }
+    }
+    
+    
+    .footer-social {
+        margin: 1em auto;
+        position: relative;
+        width: 200px;
+        overflow: auto;
+        
+        .footer-soc {
+            border: 2px solid $footer-font-color;
+            border-radius: 100%;
+            float: left;
+            font-size: 2.1em;
+            height: 45px;
+            line-height: 35px;
+            margin: 0 5px 0 0;
+            padding: 0;
+            text-align: center;
+            width: 45px;
+           
+        }
+        
+        .fa{
+             vertical-align: middle;
+        }
+        
+    }
+    
+    .footer-cc{
+       margin: 1em;
+       
+       img{
+            width: 140px;
+            margin: 0 auto;
+            display: block;
+        } 
+    }
+    
+    .sst-logo{
+        float:left;
+        margin: 1em 1em 1em 0;
+        img{
+            width: 110px;
+        }
+
+    }
+    
+    .institution-logo{
+        float:left;
+        border: 1px solid #39BEDD;
+        border-radius: 10px;
+        width: 110px;
+        height: 110px;
+        overflow:hidden;
+        margin: 1em 0 1em 0;
+        
+        img{
+            width: 110px;
+        }
+    }
+    
 }
-footer ul {
-    list-style: outside none none;
-}
-footer li {
-    float: left;
-}
+
 a {
 	transition: all 300ms ease-out 0s;
 	-moz-transition: all 300ms ease-out 0s;
 	-o-transition: all 300ms ease-out 0s;
 	-webkit-transition: all 300ms ease-out 0s;
 }
-footer a {
-    color: $footer-font-color;
-	opacity: 0.7;
-}
-.footer-clock {
-    float: right;
-    margin: -30px -20px 0 0;
-    opacity: 0.5;
-}
-.footer-soc {
-    border: 2px solid $footer-font-color;
-    border-radius: 100%;
-    float: left;
-    font-size: 2.1em;
-    height: 45px;
-    line-height: 35px;
-    margin: 0 5px 0 0;
-    padding: 0;
-    text-align: center;
-    width: 45px;
-}
-#footerSocial {
-    margin: 1em;
-	float: left;
-}
 
-#footerMenu {
-    float: left;
-    width: 70%;
-}
-footer ul {
-    list-style: outside none none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-footer li {
-    display: inline-block;
-    float: none;
-    font-size: 1.2em;
-    line-height: 4.5em;
-    margin: 0 5px;
-}
-footer li a:hover {
-    text-decoration: underline;
-	color: $footer-font-color;
-	opacity: 1;
-}
-#footerSocial > a:hover, #footerSocial > a:active, #footerSocial > a:focus, 
-#footerSocialBtn > a:hover, #footerSocialBtn > a:active, #footerSocialBtn > a:focus {
-	color: $footer-font-color;
-	opacity: 1;
-}
-.footer-soc.fb:before{
-	font-family: FontAwesome;
-	content: "\f09a";
-	vertical-align: middle;
-}
-.footer-soc.tw:before {
-	font-family: FontAwesome;
-	content: "\f099";
-	vertical-align: middle;
-}
-.footer-soc.ln:before {
-	font-family: FontAwesome;
-	content: "\f0e1";
-}
-footer hr {
-    clear: both;
-    opacity: 0.5;
-	margin: 0;
-}
-.footer-logos {
-    display: block;
-    margin: 5px auto;
-}
+
 
 @media only screen and (max-width: $screen-desktop) {
     

@@ -62,80 +62,144 @@
     left: 5px;
 }
 
-//** Sytling for header words: Do you have enough time?
-.header-heading.enough-time {
-    margin: 42px 0 0 393px;
-}
-//D0
-.enough-time span:nth-child(1) {
-    font-size: 6.2em;
-    font-weight: $bold;
-    letter-spacing: -7px;
-    margin: 0;
-    transform: scale(1, 1.5);
-}
-//You
-.enough-time span:nth-child(2) {
-    font-size: 2.5em;
-    font-weight: $bold;
-    margin: 5px 0 0 18px;
-}
-//Have
-.enough-time span:nth-child(3) {
-    font-size: 2.7em;
-    letter-spacing: -1px;
-    margin: 2px 0 0 8px;
-}
-//Enough
-.enough-time span:nth-child(4) {
-    font-size: 2.9em;
-    letter-spacing: -2px;
-    margin: -5px 0 0 25px;
-    transform: scale(1.2, 0.8);
-}
-//Time
-.enough-time span:nth-child(5) {
-    font-size: 3em;
-    font-weight: $bold;
-    margin: -7px 0 0 50px;
-    transform: scale(1.75, 1);
-}
-//?
-.enough-time span:nth-child(6) {
-    float: none;
-    font-size: 7.2em;
-    font-weight: 700;
-    left: 5px;
-    margin: -8px 0 0;
-    position: relative;
-    transform: scale(1, 1.3);
-}
+#header.tool2 {
+    background: url("../images/header-tool2.jpg") no-repeat scroll 0 0;
+    height: 233px;
+    margin-left: -20px;
+    margin-right: -20px;
 
-//** Sytling for header words: Your Feedback
-.header-heading.your-feedback {
-    margin: 48px 0 0 393px;
-}
-//Your
-.your-feedback span:nth-child(1) {
-    font-size: 6.2em;
-    font-weight: $bold;
-    letter-spacing: -7px;
-    //line-height: unset;
-    margin: -15px 0 0 -8px;
-    transform: scale(1, 1.5);
-}
-//Feedback
-.your-feedback span:nth-child(2) {
-    font-size: 2.9em;
-    letter-spacing: -1px;
-    line-height: 1;
-    margin: 40px 0 0;
-    transform: scale(1, 1.2);
-}
+    //** Sytling for header words: How much work is it?
+    .header-heading.how-much-work {
+        margin: 42px 0 0 390px;
+    }
 
-//** Sytling for header words: Give us some feedback
-.header-heading.rate {
-    margin: 35px 0 0 382px;
+    //How
+    .how-much-work span:nth-child(1) {
+        font-size: 6em;
+        letter-spacing: -9px;
+        font-weight: $bold;
+        margin: 0;
+        transform: scale(1, 1.5);
+    }
+    //Much
+    .how-much-work span:nth-child(2) {
+        font-size: 2.5em;
+        font-weight: normal;
+        margin: 15px 0 0 15px;
+    }
+    //Work
+    .how-much-work span:nth-child(3) {
+        font-size: 2.2em;
+        font-weight: normal;
+        margin: -5px 0 0 38px;
+        overflow: hidden;
+        transform: scale(1.3, 1);
+        width: 40%;
+        letter-spacing: -1px;
+    }
+    //Is
+    .how-much-work span:nth-child(4) {
+        font-size: 2.5em;
+        margin: -5px 0 0 25px;
+        transform: scale(1.5, 1);
+        font-weight: $bold;
+    }
+    //It
+    .how-much-work span:nth-child(5) {
+        font-size: 2.5em;
+        margin: -5px 0 0 25px;
+        transform: scale(1.5, 1);
+        font-weight: $bold;
+    }
+    //?
+    .how-much-work span:nth-child(6) {
+        float: right;
+        margin: -75px 28px 0 0;
+        position: relative;
+        transform: scale(1, 1.3);
+        font-size: 7.2em;
+        font-weight: 700;
+        left: 5px;
+    }
+
+
+    //** Sytling for header words: Do you have enough time?
+    .header-heading.enough-time {
+        margin: 42px 0 0 393px;
+    }
+    //D0
+    .enough-time span:nth-child(1) {
+        font-size: 6.2em;
+        font-weight: $bold;
+        letter-spacing: -7px;
+        margin: 0;
+        transform: scale(1, 1.5);
+    }
+    //You
+    .enough-time span:nth-child(2) {
+        font-size: 2.5em;
+        font-weight: $bold;
+        margin: 5px 0 0 18px;
+    }
+    //Have
+    .enough-time span:nth-child(3) {
+        font-size: 2.7em;
+        letter-spacing: -1px;
+        margin: 2px 0 0 8px;
+    }
+    //Enough
+    .enough-time span:nth-child(4) {
+        font-size: 2.9em;
+        letter-spacing: -2px;
+        margin: -5px 0 0 25px;
+        transform: scale(1.2, 0.8);
+    }
+    //Time
+    .enough-time span:nth-child(5) {
+        font-size: 3em;
+        font-weight: $bold;
+        margin: -7px 0 0 50px;
+        transform: scale(1.75, 1);
+    }
+    //?
+    .enough-time span:nth-child(6) {
+        float: none;
+        font-size: 7.2em;
+        font-weight: 700;
+        left: 5px;
+        margin: -8px 0 0;
+        position: relative;
+        transform: scale(1, 1.3);
+    }
+
+
+    //** Sytling for header words: Your Feedback
+    .header-heading.your-feedback {
+        margin: 48px 0 0 393px;
+    }
+    //Your
+    .your-feedback span:nth-child(1) {
+        font-size: 6.2em;
+        font-weight: $bold;
+        letter-spacing: -7px;
+        //line-height: unset;
+        margin: -15px 0 0 -8px;
+        transform: scale(1, 1.5);
+    }
+    //Feedback
+    .your-feedback span:nth-child(2) {
+        font-size: 2.9em;
+        letter-spacing: -1px;
+        line-height: 1;
+        margin: 40px 0 0;
+        transform: scale(1, 1.2);
+    }
+
+    //** Sytling for header words: Give us some feedback
+    .header-heading.rate {
+        margin: 35px 0 0 382px;
+    }
+
 }
 .rate span:nth-child(1) {
     font-size: 6.2em;

@@ -1,6 +1,6 @@
 <div class="container shadow">
     <header>
-        <div id="header" class="">
+        <div id="header" class="tool2">
                 <!-- institution logo here -->
                 <h1 class="header-heading your-feedback hidden-xs">
                     <span class="word">Your</span> 
@@ -31,30 +31,33 @@
         </div>
     </div>
     
-   <div class="row student-comments spacer-top-3x">
-        <div class="col-md-12 left">
-            <div class="col-md-7">
-                    <blockquote class="blockquote-student">
-                       <i class="fa fa-quote-left"></i><p>{{interpretFeedback.studentQuote1}}</p>
-                            <footer>Student from <cite title="Source Title">DCU</cite></footer>
-                    </blockquote>
+    <div class="row spacer-top-3x">   
+        <div class="col-xs-12 col-md-offset-1 col-md-10">
+            <div class="quote-dark image-left">
+                <img class="img-responsive img-rounded" alt="student photo" ng-src="{{interpretFeedback.studentImage1}}">
+                <blockquote>
+                    <p class="comment">
+                        {{interpretFeedback.studentQuote1}}</p>
+                     <footer>Mary</footer>
+                </blockquote>                   
             </div>
-            <div class="col-md-5">
-                    <img ng-src="{{interpretFeedback.studentImage2}}" class="img-responsive pull-right">
-            </div>
-        </div>
-        <div class="col-md-12 right">
-                <div class="col-md-5">
-                        <img ng-src="{{interpretFeedback.studentImage1}}" class="img-responsive pull-left">
-                </div>
-                <div class="col-md-7">				
-                        <blockquote class="blockquote-student right">
-                           <i class="fa fa-quote-left"></i><p>{{interpretFeedback.studentQuote2}}</p>
-                                <footer>Student from <cite title="Source Title">DCU</cite></footer>
-                        </blockquote>
-                </div>
         </div>
     </div>
+    
+    <div class="row spacer-top-3x">   
+        <div class="col-xs-12 col-md-offset-1 col-md-10">
+            <div class="quote-light image-right">
+                <img class="img-responsive img-rounded" alt="student photo" ng-src="{{interpretFeedback.studentImage2}}">
+                <blockquote>
+                    <p class="comment">
+                        {{interpretFeedback.studentQuote2}}</p>
+                    <footer>John</footer>
+                </blockquote>  
+            </div>
+        </div>
+    </div>
+    
+   
     <div class="row modal-buttons spacer-top-3x spacer-bottom-3x">
         <div class="col-xs-offset-1 col-xs-10 col-sm-offset-4 col-sm-4">
             <a href="#rate" type="button" ng-click="ok()" class="btn btn-default btn-lg btn-block">RATE</a>

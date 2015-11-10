@@ -120,13 +120,13 @@ blockquote.simple{
     .right {
         margin-top: 30px;
     }
-    .right::before {
+    &.right::before {
         bottom: auto;
         left: auto;
         right: 230px;
         top: -50px;
     }
-    .right::after {
+    &.right::after {
         left: auto;
         right: 200px;
         top: -70px;
@@ -394,6 +394,12 @@ blockquote.simple{
         display: inline !important
     }
     
+    footer{
+        color: #fff;
+        text-align: right;
+        font-style: italic;
+    }
+    
     /*Image position*/
     &.image-left{
 
@@ -568,6 +574,11 @@ blockquote.simple{
     a:hover  blockquote {
         background-color: #1a8099;
         color: #fff;
+    }
+    
+    footer{
+        color: #282828;
+        text-align: right;
     }
     
     

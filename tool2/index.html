@@ -21,22 +21,46 @@
     <!-- inject our views using ng-view -->
     <!-- each angular controller applies a different class here -->
     <div class="page {{ pageClass }}" ng-view autoscroll="true"></div>
-	<footer class="container shadow">
-		<div class="row">
-                    <div id="footerSocial"><a href="/" title="Institute Facebook Page"><div class="footer-soc fb"></div></a><a href="/" title="Institute Twitter Page"><div class="footer-soc tw"></div></a><a href="/" title="Institute Linkedin Page"><div class="footer-soc ln"></div></a></div>
-                    <div id="footerMenu">
-                            <ul>
-                                    <li><a href="/" title="Leave Feedback">Leave Feedback</a></li>
-                                    <li><a href="/" title="Other Tools">Other Tools</a></li>
-                                    <li><a href="/" title="Visit Us">Visit Us</a></li>
-                                    <li><a href="/" title="Privacy Policy">Privacy Policy</a></li>
-                                    <li><a href="/" title="Terms & Conditions">Terms & Conditions</a></li>
-                            </ul>
-                    </div>
-                    <img src="../assets/images/clock.gif" class="footer-clock" alt="">
-                    <hr>
-                    <img src="../assets/images/institution_logos.png" class="footer-logos" alt="">
-		</div>
-	</footer>
+    
+    <footer class="container shadow">
+        <div class="tool-footer row">
+            <div class="col-md-3">
+                <div class="footer-social">
+                    <a href="/" title="Institute Facebook Page">
+                        <div class="footer-soc "><i class="fa fa-facebook fa-fw"></i></div>
+                    </a>
+                    <a href="/" title="Google hangout Page">
+                        <div class="footer-soc "><i class="fa fa-google-plus fa-fw"></i></div>
+                    </a>
+                    <a href="/" title="Institute Linkedin Page">
+                        <div class="footer-soc "><i class="fa fa-linkedin fa-fw"></i></div>
+                    </a>
+                    <a href="/" title="Institute Twitter Page">
+                        <div class="footer-soc "><i class="fa fa-twitter fa-fw"></i></div>
+                    </a>    
+                </div>
+                <div class="footer-cc">
+                    <a href=""><img src="../assets/images/by-nc.eu.png" alt="Creative Commons"/></a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="footer-menu">
+                    <ul>
+                        <li><a href="/" title="Privacy Policy">Privacy Policy</a></li>
+                        <li><a href="/" title="Terms & Conditions">How to Cite this Tool</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="sst-logo">
+                    <a href=""><img src="../assets/images/logo_white.png" alt="Student Success Toolbox" /></a>
+                </div>
+                <div class="institution-logo">
+                    <a href=""><img src="" alt="Place institution logo here"/></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
 </body>
 </html>

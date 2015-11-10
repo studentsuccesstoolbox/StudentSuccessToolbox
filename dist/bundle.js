@@ -53907,12 +53907,14 @@ sstTool1App.config(["$routeProvider", function($routeProvider) {
 		
     }])
     .run( ["$rootScope", "$location", function($rootScope, $location) {
+        //Get questionnaire data from localstorage
+        
         $data = sstTool1App.retrieveObject('QNR');
 
         if($data){
             questionnaire = $data;
         }else{
-            
+            //If questionnaire data is not set redirect to home page
             questionnaire = $.extend(true, {}, questionnaireTool1);
             $location.path( "/" );
         }
@@ -53965,25 +53967,15 @@ sstTool1App.config(['ChartJsProvider', function (ChartJsProvider) {
 
 sstTool1App.saveObject = function(object,key){
     localStorage.setItem(('sstTool1'+key), JSON.stringify(object));
-}
+};
 
 sstTool1App.retrieveObject = function(key){
     return JSON.parse(localStorage.getItem(('sstTool1'+key)));
-}
+};
 
 sstTool1App.removeObject = function(key){
     localStorage.removeItem(('sstTool1'+key));
-}
-
-$data = sstTool1App.retrieveObject('QNR');
-
-/*if($data){
-    questionnaire = $data;
-}else{
-    
-    questionnaire = $.extend(true, {}, questionnaireTool1);
-}*/
-
+};
 },{"./controllers":25,"./data":30,"./filters":34,"./services":36,"angular":20,"angular-animate":9,"angular-aria":11,"angular-chart.js":12,"angular-route":14,"angular-sanitize":16,"angular-ui-bootstrap":17,"jquery":22}],24:[function(require,module,exports){
 /* 
  * Controller for Home Page
