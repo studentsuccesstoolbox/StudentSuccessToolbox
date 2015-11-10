@@ -18,6 +18,21 @@
 <!-- apply our angular app -->
 <body ng-app="sstTool1App" data-spy="scroll" data-target=".scrollspy">
 
+    <div class="container shadow">
+        <header>
+            <div id="header" class="">
+                    <!-- institution logo here -->
+                    <h1 class="header-heading am-i-ready hidden-xs">
+                        <span class="word">Am I</span>
+                        <span class="word">Ready</span> 
+                        <span class="word">for Study</span>
+                        <span class="word">?</span>
+                    </h1>
+            </div>
+            <h1 class="visible-xs-block mob-heading" >Am I Ready for Study?</h1>
+        </header>
+    </div>
+    
     <!-- inject our views using ng-view -->
     <!-- each angular controller applies a different class here -->
     <div class="page {{ pageClass }}" ng-view autoscroll="true"></div>

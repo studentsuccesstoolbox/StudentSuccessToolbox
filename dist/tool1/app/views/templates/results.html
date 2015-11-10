@@ -1,17 +1,3 @@
-<div class="container shadow">
-    <header>
-        <div id="header" class="">
-                <!-- institution logo here -->
-                <h1 class="header-heading am-i-ready hidden-xs">
-                    <span class="word">Am I</span>
-                    <span class="word">Ready</span> 
-                    <span class="word">for Study</span>
-                    <span class="word">?</span>
-                </h1>
-        </div>
-        <h1 class="visible-xs-block mob-heading" >Am I Ready for Study?</h1>
-    </header>
-</div>
 
 <div class="container shadow">
     <div class="row row spacer-top-3x">
@@ -58,22 +44,35 @@
                     <div class="panel-heading">
                        <h4>Summary</h4>
                     </div>
-                    <div class="panel-body">
-                       {{interpretFeedback.narratorFeedback}}
+                    <div class="panel-body" ng-bind-html="interpretFeedback.narratorFeedback">
+                       
                     </div>
 		 </div>
 	 </div> 
    </div>
     <div class="row spacer-top-3x">
         <div class="col-md-12">
-             <div class="panel panel-details summary">
-                <div class="panel-heading">
-                    <h4>Useful Resources</h4>
+
+            <div class="panel panel-tip"> 
+                <div class="panel-header row">
+                    <div class="col-xs-12 col-sm-11 col-md-12 nopadding">
+                        <h3 class="text-center">Useful Resources</h3>
+                    </div> 
                 </div>
-                <div class="panel-body">
-                    Here are some links to useful resources that will help you "Get Ready to Study".
+                <div class="col-sm-12 col-lg-12 panel-body panel-body-spacer">
+                    <p>Here are some links to useful resources that will help you "Get Ready to Study".</p>
+                    <ul class="custom-list list-unstyled">
+                        <li><a href="" title=""><i class="fa fa-angle-right"></i> Resource link here</a> Resource description here.</li>
+                        <li><a href="" title=""><i class="fa fa-angle-right"></i> Resource link here</a> Resource description here.</li>
+                        <li><a href="" title=""><i class="fa fa-angle-right"></i> Resource link here</a> Resource description here.</li>
+                        <li><a href="" title=""><i class="fa fa-angle-right"></i> Resource link here</a> Resource description here.</li>
+                        <li><a href="" title=""><i class="fa fa-angle-right"></i> Resource link here</a> Resource description here.</li>
+                        <li><a href="" title=""><i class="fa fa-angle-right"></i> Resource link here</a> Resource description here.</li>
+                        <li><a href="" title=""><i class="fa fa-angle-right"></i> Resource link here</a> Resource description here.</li>
+                    </ul>
                 </div>
-            </div> 
+            </div>
+     
         </div>
     </div>     
     <div class="row spacer-top-3x spacer-bottom-3x">

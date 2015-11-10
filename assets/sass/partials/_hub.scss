@@ -270,6 +270,7 @@
    
 }
 
+/* For desktop (md) Circles need to be smaller so that they to not overlap. */
 .hub-button {
     
     $hub-width:  130px;
@@ -349,11 +350,11 @@
             .transparent-shadow{
                 background-color: rgba(255, 255, 255, 0.25);
                 border-radius: 100%;
-                width: 100px;
-                height: 100px;
+                width: 180px;
+                height: 180px;
                 position:relative;
-                left: 30px;
-                top: 40px;
+                left: 50px;
+                top: 60px;
 
 
             }
@@ -361,6 +362,7 @@
 
     }
     
+    /* Mobile Screen size: Circles need to be smaller */
      @media(max-width:$screen-phone){
         width: 80px;
         height: 80px;

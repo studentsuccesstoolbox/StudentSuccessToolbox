@@ -7,7 +7,7 @@
 }
 
 .btn-default{
-    background: $button-color none repeat scroll 0 0;
+    background-color: $button-color;
     border: medium none;
     border: 3px solid $button-font-color;
     border-radius: 8px;
@@ -31,8 +31,9 @@
     }
     
     &.disabled {
+        background-color: $button-deactivated-color;
         &:hover,&:active,&:focus{
-        background: $button-deactivated-color none repeat scroll 0 0;
+        background-color: $button-deactivated-color;
         border: 3px solid $font-color-dark-bg;
         box-shadow: 0 0 0 2px $button-deactivated-color;
         opacity:1;

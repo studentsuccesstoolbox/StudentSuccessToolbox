@@ -401,7 +401,7 @@ blockquote.simple{
              padding-left: 8em; 
         }
 
-        @media (max-width: $screen-md-max) { 
+        @media (max-width: $screen-md) { 
             padding-top:9em;
         }
 
@@ -412,7 +412,7 @@ blockquote.simple{
             left: 0;
             width: 10em;
             right: auto;
-            @media (max-width: $screen-md-max) { 
+            @media (max-width: $screen-md) { 
                 top: 0;
             }
         }
@@ -424,7 +424,7 @@ blockquote.simple{
              padding-right: 8em; 
         }
 
-        @media (max-width: $screen-md-max) { 
+        @media (max-width: $screen-md) { 
             padding-top:9em;
         }
 
@@ -435,7 +435,7 @@ blockquote.simple{
             right: 0;
             width: 10em;
             left: auto;
-            @media (max-width: $screen-md-max) { 
+            @media (max-width: $screen-md) { 
                 top: 0;
             }
         }
@@ -449,7 +449,7 @@ blockquote.simple{
              padding-right: 5em; 
         }
 
-        @media (max-width: $screen-md-max) { 
+        @media (max-width: $screen-md) { 
             padding-top:9em;
         }
 
@@ -460,7 +460,7 @@ blockquote.simple{
             right: 0;
             width: 10em;
             left: auto;
-            @media (max-width: $screen-md-max) { 
+            @media (max-width: $screen-md) { 
                 top: 0;
             }
         }
@@ -474,7 +474,7 @@ blockquote.simple{
              padding-left: 5em; 
         }
 
-        @media (max-width: $screen-md-max) { 
+        @media (max-width: $screen-md) { 
             padding-top:9em;
         }
 
@@ -485,7 +485,7 @@ blockquote.simple{
             left: 0;
             width: 10em;
             right: auto;
-            @media (max-width: $screen-md-max) { 
+            @media (max-width: $screen-md) { 
                 top: 0;
             }
         }
@@ -506,7 +506,7 @@ blockquote.simple{
                  padding-left: 5em; 
             }
 
-            @media (max-width: $screen-md-max) { 
+            @media (max-width: $screen-md) { 
                 padding-top:6em;
             }
         }
@@ -516,7 +516,7 @@ blockquote.simple{
                  padding-right: 5em; 
             }
 
-            @media (max-width: $screen-md-max) { 
+            @media (max-width: $screen-md) { 
                 padding-top:6em;
             }
         }
@@ -528,7 +528,7 @@ blockquote.simple{
                  padding-right: 3em; 
             }
 
-            @media (max-width: $screen-md-max) { 
+            @media (max-width: $screen-md) { 
                 padding-top:6em;
             }
         }
@@ -540,7 +540,7 @@ blockquote.simple{
                  padding-left: 3em; 
             }
 
-            @media (max-width: $screen-md-max) { 
+            @media (max-width: $screen-md) { 
                 padding-top:6em;
             }
         }

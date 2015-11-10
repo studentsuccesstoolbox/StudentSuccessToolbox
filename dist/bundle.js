@@ -53854,7 +53854,7 @@ return jQuery;
  * @author Paul Schweppe
  */
 
-require('jquery');
+$ = require('jquery');
 
 //Does not work. Issues in jspdf with require. Hopefully fixed in later versions
 //jsPDF = require('jspdf');
@@ -53905,7 +53905,18 @@ sstTool1App.config(["$routeProvider", function($routeProvider) {
     	}); 
 		
 		
-}]);
+    }])
+    .run( ["$rootScope", "$location", function($rootScope, $location) {
+        $data = sstTool1App.retrieveObject('QNR');
+
+        if($data){
+            questionnaire = $data;
+        }else{
+            
+            questionnaire = $.extend(true, {}, questionnaireTool1);
+            $location.path( "/" );
+        }
+    }]);
 
 sstTool1App.config(['ChartJsProvider', function (ChartJsProvider) {
     // Configure all charts
@@ -53923,6 +53934,8 @@ sstTool1App.config(['ChartJsProvider', function (ChartJsProvider) {
         tooltipCornerRadius: 10,
         tooltipXOffset: 10,
         
+        maintainAspectRatio: true,
+        
         //Boolean - Whether to show lines for each scale point
         scaleShowLine : true,
 
@@ -53935,9 +53948,7 @@ sstTool1App.config(['ChartJsProvider', function (ChartJsProvider) {
         // Boolean - Whether the scale should begin at zero
         scaleBeginAtZero : true,
     
-        //String - Point label font declaration
-        pointLabelFontFamily : "'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
-
+       
         //String - Point label font weight
         pointLabelFontStyle : "normal",
 
@@ -53948,7 +53959,7 @@ sstTool1App.config(['ChartJsProvider', function (ChartJsProvider) {
         pointLabelFontColor : "#08a7cd",
         
         //Boolean - Whether to show a stroke for datasets
-        datasetStroke : false,
+        datasetStroke : false
     });
   }]);
 
@@ -53966,9 +53977,12 @@ sstTool1App.removeObject = function(key){
 
 $data = sstTool1App.retrieveObject('QNR');
 
-if($data){
+/*if($data){
     questionnaire = $data;
-}
+}else{
+    
+    questionnaire = $.extend(true, {}, questionnaireTool1);
+}*/
 
 },{"./controllers":25,"./data":30,"./filters":34,"./services":36,"angular":20,"angular-animate":9,"angular-aria":11,"angular-chart.js":12,"angular-route":14,"angular-sanitize":16,"angular-ui-bootstrap":17,"jquery":22}],24:[function(require,module,exports){
 /* 
@@ -53981,16 +53995,19 @@ angular.module('sstTool1App').controller('homeController', ["$scope", function($
     
     $scope.resetQuestionaire = function(){
         angular.module('sstTool1App').removeObject('QNR');
+        //questionnaire = questionnaireTool1;
+        
+        questionnaire = $.extend(true, {}, questionnaireTool1);
         
         //Reset all answers
-        for (var key in questionnaire) {
+        /*for (var key in questionnaire) {
             if (questionnaire.hasOwnProperty(key)) {
                 var section = questionnaire[key];
                 for (var i = 0; i < section.questions.length; i++) {
                     section.questions[i].selected = '';
                 }
             }
-        }
+        }*/
         
     }
 }]);
@@ -54080,12 +54097,13 @@ angular.module('sstTool1App').controller('questionnaireController',["$scope", "$
     
     var questionsID = $routeParams.qId;
     $scope.questionnaire = questionnaire;
+    
     $scope.sectionWidth = Math.floor((100 / (Object.keys(questionnaire).length + 1)))+'%';
     
     if(questionnaire.hasOwnProperty(questionsID)){
         $scope.q = questionnaire[questionsID];
     }  
-    console.log($scope.q);
+
     $scope.currentSectionIndex = 0;
     $scope.startingQuestionIndex = 1;
     for (var key in questionnaire) {
@@ -54387,7 +54405,7 @@ interpretFeedback = [{
  * 
  */
 
-questionnaire = {
+questionnaireTool1 = {
     'study-experience' : {
             'label' : 'Study Experience'
             ,'description' : 'Answer the questions below about your previous study experience, then click CONTINUE to receive personal feedback…'

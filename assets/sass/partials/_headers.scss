@@ -256,6 +256,57 @@
 
 }
 
+#header.tool4 {
+    background: url("../images/header-tool4.jpg") no-repeat scroll 0 0;
+    height: 180px;
+    margin-left: -20px;
+    margin-right: -20px;
+    
+    .header-heading {
+        color: #fff;
+        float: left;
+        font-size: 1em;
+        margin: 32px 0 0 280px;
+        width: 340px;
+    }
+    
+    .a-word {
+        font-size: 6.2em;
+        font-weight: 600;
+        letter-spacing: -7px;
+        line-height: normal;
+        margin: 0;
+        transform: scale(1, 1.5);
+    }
+    .b-word {
+        font-size: 2.5em;
+        font-weight: 600;
+        margin: 15px 0 0 35px;
+        transform: scale(1.2, 1.4);
+    }
+    .c-word {
+        float: right;
+        font-size: 2.2em;
+        font-weight: 600;
+        margin: 10px 0 0 80px;
+        transform: scale(2.7, 1.6);
+    }
+    .f-word {
+        float: right;
+        font-size: 7.2em;
+        font-weight: 700;
+        left: 5px;
+        margin: -55px 0 0 10px;
+        position: relative;
+        transform: scale(1, 1.5);
+    }
+    .a-word, .b-word, .c-word, .d-word, .e-word, .f-word {
+        display: block;
+        float: left;
+        line-height: 1;
+    }
+}
+
 
 //Mobile Heading
 .mob-heading {

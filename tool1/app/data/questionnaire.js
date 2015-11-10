@@ -12,7 +12,7 @@
  * 
  */
 
-questionnaire = {
+questionnaireTool1 = {
     'study-experience' : {
             'label' : 'Study Experience'
             ,'description' : 'Answer the questions below about your previous study experience, then click CONTINUE to receive personal feedback…'

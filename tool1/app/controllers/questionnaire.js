@@ -8,12 +8,13 @@ angular.module('sstTool1App').controller('questionnaireController',function($sco
     
     var questionsID = $routeParams.qId;
     $scope.questionnaire = questionnaire;
+    
     $scope.sectionWidth = Math.floor((100 / (Object.keys(questionnaire).length + 1)))+'%';
     
     if(questionnaire.hasOwnProperty(questionsID)){
         $scope.q = questionnaire[questionsID];
     }  
-    console.log($scope.q);
+
     $scope.currentSectionIndex = 0;
     $scope.startingQuestionIndex = 1;
     for (var key in questionnaire) {

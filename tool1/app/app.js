@@ -8,7 +8,7 @@
  * @author Paul Schweppe
  */
 
-require('jquery');
+$ = require('jquery');
 
 //Does not work. Issues in jspdf with require. Hopefully fixed in later versions
 //jsPDF = require('jspdf');
@@ -59,7 +59,20 @@ sstTool1App.config(function($routeProvider) {
     	}); 
 		
 		
-});
+    })
+    .run( function($rootScope, $location) {
+        //Get questionnaire data from localstorage
+        
+        $data = sstTool1App.retrieveObject('QNR');
+
+        if($data){
+            questionnaire = $data;
+        }else{
+            //If questionnaire data is not set redirect to home page
+            questionnaire = $.extend(true, {}, questionnaireTool1);
+            $location.path( "/" );
+        }
+    });
 
 sstTool1App.config(['ChartJsProvider', function (ChartJsProvider) {
     // Configure all charts
@@ -77,6 +90,8 @@ sstTool1App.config(['ChartJsProvider', function (ChartJsProvider) {
         tooltipCornerRadius: 10,
         tooltipXOffset: 10,
         
+        maintainAspectRatio: true,
+        
         //Boolean - Whether to show lines for each scale point
         scaleShowLine : true,
 
@@ -89,9 +104,7 @@ sstTool1App.config(['ChartJsProvider', function (ChartJsProvider) {
         // Boolean - Whether the scale should begin at zero
         scaleBeginAtZero : true,
     
-        //String - Point label font declaration
-        pointLabelFontFamily : "'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
-
+       
         //String - Point label font weight
         pointLabelFontStyle : "normal",
 
@@ -102,24 +115,18 @@ sstTool1App.config(['ChartJsProvider', function (ChartJsProvider) {
         pointLabelFontColor : "#08a7cd",
         
         //Boolean - Whether to show a stroke for datasets
-        datasetStroke : false,
+        datasetStroke : false
     });
   }]);
 
 sstTool1App.saveObject = function(object,key){
     localStorage.setItem(('sstTool1'+key), JSON.stringify(object));
-}
+};
 
 sstTool1App.retrieveObject = function(key){
     return JSON.parse(localStorage.getItem(('sstTool1'+key)));
-}
+};
 
 sstTool1App.removeObject = function(key){
     localStorage.removeItem(('sstTool1'+key));
-}
-
-$data = sstTool1App.retrieveObject('QNR');
-
-if($data){
-    questionnaire = $data;
-}
+};
