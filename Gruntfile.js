@@ -4,7 +4,7 @@ module.exports = function(grunt) {
       pkg: grunt.file.readJSON('package.json'),
       browserify: {
         dist: {
-          src: ['tool1/app/app.js','tool2/app/app.js','tool3/app/app.js','tool4/app/app.js','example/app/app.js','tool5/app/app.js'],
+          src: ['tool1/app/app.js','tool2/app/app.js','tool3/app/app.js','tool4/app/app.js','example/app/app.js','tool5/app/app.js','tool8/app/app.js'],
           dest: 'dist/bundle.js'
           // Note: The entire `browserify-shim` config is inside `package.json`.
         }
@@ -68,6 +68,10 @@ module.exports = function(grunt) {
             
             {expand: true, src: ['tool5/app/views/**'], dest: 'dist/'},
             
+            {expand: true, src: ['tool8/index.html'], dest: 'dist/'},
+            
+            {expand: true, src: ['tool8/app/views/**'], dest: 'dist/'},
+            
             {expand: true, src: ['example/index.html'], dest: 'dist/'},
             
             {expand: true, src: ['example/app/views/**'], dest: 'dist/'}
@@ -77,7 +81,7 @@ module.exports = function(grunt) {
       'string-replace': {
         dist: {
           files: {
-            'dist/': ['dist/tool1/index.html','dist/tool2/index.html','dist/tool3/index.html','dist/tool4/index.html','dist/tool5/index.html']
+            'dist/': ['dist/tool1/index.html','dist/tool2/index.html','dist/tool3/index.html','dist/tool4/index.html','dist/tool5/index.html','dist/tool8/index.html']
           },
           options: {
             replacements: [

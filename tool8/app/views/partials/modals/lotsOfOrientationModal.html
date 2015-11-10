@@ -1,0 +1,30 @@
+<div class="modal-header">
+    <div class="row nopadding">
+        <div class="col-xs-1">
+                <i class="fa {{iconCls}} fa-2x"></i>
+        </div>
+        <div class="col-xs-10">
+            <label for="name" class="text-center control-label header">You already have..</label>
+        </div>
+    </div>
+    <i ng-click="cancel()" class="fa fa-times fa-1x btn-close"></i>		
+</div>
+
+<div class="modal-body">
+    <div class="row spacer-top-2x spacer-bottom">
+        <div class="col-xs-12">
+             As you already have an online orientation you do not need this guide to aid you in creating one. If you wish to explore the guide to see if there are any ideas or approaches to creating an orientation that you could use to augment your existing orientation please proceed.
+        </div>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <div class="row modal-buttons spacer-bottom">
+        <div class="hidden-xs col-sm-8">  
+            <a ng-click="cancel()" class="btn btn-link">Cancel</a>
+        </div>
+        <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-4">
+            <a ng-click="ok()" class="btn btn-default btn-md btn-block" href="#/before-we-start-response-lots-of-orientation/" title="Lots of Orientation">Continue</a>
+        </div>
+    </div>
+</div>
