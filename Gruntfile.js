@@ -14,7 +14,7 @@ module.exports = function(grunt) {
           //separator: ';',
         },
         dist: {
-          src: ['dist/bundle.js', 'libs/jspdf.min.js', 'libs/rzslider.js'],
+          src: ['dist/bundle.js', 'libs/jspdf.min.js', 'libs/rzslider.js','libs/sharedControllers.js'],
           dest: 'dist/bundle.js'
         }
       },
@@ -70,7 +70,9 @@ module.exports = function(grunt) {
             
             {expand: true, src: ['example/index.html'], dest: 'dist/'},
             
-            {expand: true, src: ['example/app/views/**'], dest: 'dist/'}
+            {expand: true, src: ['example/app/views/**'], dest: 'dist/'},
+            
+            {expand: true, src: ['tool1/app/views/**'], dest: 'dist/'}
           ]
         }
       },
@@ -149,6 +151,6 @@ module.exports = function(grunt) {
     
     grunt.registerTask('sass-watch', ['watch']);
     
-    
+    grunt.registerTask('js', ['browserify','concat','ngAnnotate']);
 
 };
