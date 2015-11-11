@@ -6,3 +6,4 @@
 'use strict';
  
 require('./areasViewed');
+require('./differentOptions');

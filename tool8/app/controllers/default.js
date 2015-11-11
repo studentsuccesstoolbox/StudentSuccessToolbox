@@ -14,6 +14,19 @@ angular.module('sstTool8App').controller('defaultController', function($scope,$m
         });  
     };
     
+    $scope.differentOptionsT8 = differentOptionsT8;
+    
+    $scope.resetDifferentOptionsT8 = function(){
+        $.each( differentOptionsT8, function( key, value ) {
+            differentOptionsT8[key] = false;
+        });  
+    };
+    
+    $scope.resetGatheredData = function(){
+        $scope.resetAreasViewedT8();
+        $scope.resetDifferentOptionsT8();
+    };
+    
     $scope.audio = {
         sound1 : ngAudio.load('../assets/audio/audio.mp3'),
         sound2 : ngAudio.load('../assets/audio/audio.mp3'),

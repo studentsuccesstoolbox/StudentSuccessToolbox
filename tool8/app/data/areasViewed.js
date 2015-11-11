@@ -5,10 +5,10 @@
  */
 
 areasViewedT8 = {
-                reduceanxiety: false,
-                setexpectations: false,
-                positiverolemodel: false,
-                socialising: false,
-                campustour: false,
-                studyskills: false
-            };
+    reduceanxiety: false,
+    setexpectations: false,
+    positiverolemodel: false,
+    socialising: false,
+    campustour: false,
+    studyskills: false
+};
