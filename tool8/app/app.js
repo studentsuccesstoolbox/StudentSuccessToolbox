@@ -72,6 +72,14 @@ sstTool8App.config(function($routeProvider) {
     		templateUrl: 'app/views/templates/elements-of-an-online-orientation.html',
                 controller: 'defaultController'
     	})
+        .when('/online-orientation-summary/', {
+    		templateUrl: 'app/views/templates/online-orientation-summary.html',
+                controller: 'defaultController'
+    	})
+        .when('/review-your-online-orientation-plan/', {
+    		templateUrl: 'app/views/templates/review-your-online-orientation-plan.html',
+                controller: 'defaultController'
+    	})
 	.when('/resources/', {
             templateUrl: 'app/views/templates/resources.html',
             controller: 'defaultController'
