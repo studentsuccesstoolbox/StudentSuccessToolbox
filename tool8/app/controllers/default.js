@@ -8,13 +8,20 @@ angular.module('sstTool8App').controller('defaultController', function($scope,$m
     
     $scope.areasViewedT8 = areasViewedT8;
     
+
+    
     $scope.resetAreasViewedT8 = function(){
-        $.each( areasViewedT8, function( key, value ) {
-            areasViewedT8[key] = false;
-        });  
+        //// ALFR :: rewite this!
+        ////$.each( areasViewedT8, function( key, value ) {
+        ////    areasViewedT8[key] = false;
+        ////});  
     };
        
     $scope.q_your_online_orientation = tool8Questionnaire['your-online-orientation'];
+    
+    $scope.t8Subsections = areasViewedT8;
+    
+    $scope.sectionWidthT8 = Math.floor((100 / (Object.keys(areasViewedT8).length)))+'%';
     
     /**
      * Resets the full questionnaire page
