@@ -22,6 +22,7 @@ var sstTool1App = angular.module('sstTool1App', [require('angular-ui-bootstrap')
                         ,require('angular-animate')
                         ,require('angular-aria')
                         ,'chart.js'
+                        ,'sharedControllers'
                         ]);
                  
 require('./data');
@@ -53,12 +54,7 @@ sstTool1App.config(function($routeProvider) {
     		templateUrl: 'app/views/templates/results.html',
                 controller: 'resultsController'
     	})
-        .when('/rate', {
-    		templateUrl: 'app/views/templates/rate.html',
-                controller: 'rateController'
-    	}); 
-		
-		
+	
     })
     .run( function($rootScope, $location) {
         //Get questionnaire data from localstorage
@@ -72,6 +68,8 @@ sstTool1App.config(function($routeProvider) {
             questionnaire = $.extend(true, {}, questionnaireTool1);
             $location.path( "/" );
         }
+        
+        $rootScope.ratings = tool1Rating.ratings;
     });
 
 sstTool1App.config(['ChartJsProvider', function (ChartJsProvider) {

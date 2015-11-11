@@ -8,4 +8,3 @@
 require('./home');
 require('./free-time');
 require('./interpret');
-require('./rate');

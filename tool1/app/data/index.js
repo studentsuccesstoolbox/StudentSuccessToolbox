@@ -7,3 +7,4 @@
  
 require('./questionnaire');
 require('./interpret');
+require('./tool1Rating');

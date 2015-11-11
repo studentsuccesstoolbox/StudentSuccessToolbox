@@ -18,6 +18,7 @@ var sstTool3App = angular.module('sstTool3App', [require('angular-ui-bootstrap')
                         ,require('angular-sanitize')
                         ,require('angular-animate')
                         ,require('angular-aria')
+                        ,'sharedControllers'
                         ]);
 
 require('./data');
@@ -115,10 +116,9 @@ sstTool3App.config(function($routeProvider) {
     		templateUrl: 'app/views/templates/questions.html',
                 controller: 'questionsController'
     	})
-        //Rate
-        .when('/hub/rate/', {
-    		templateUrl: 'app/views/templates/rate.html',
-                controller: 'defaultController'
-
-    	});  	
+        ;
+}).run( function($rootScope, $location) {
+        //Get questionnaire data from localstorage
+        $rootScope.ratings = tool3Rating.ratings;
+       
 });

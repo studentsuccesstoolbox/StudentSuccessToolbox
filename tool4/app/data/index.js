@@ -6,3 +6,4 @@
 'use strict';
  
 require('./tool4Questionnaire');
+require('./tool4Rating');

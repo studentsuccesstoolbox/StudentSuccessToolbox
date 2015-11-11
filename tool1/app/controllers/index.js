@@ -9,4 +9,3 @@ require('./home');
 require('./questionnaire');
 require('./interpret');
 require('./results');
-require('./rate');

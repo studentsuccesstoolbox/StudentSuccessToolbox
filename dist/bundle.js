@@ -53868,6 +53868,7 @@ var sstTool1App = angular.module('sstTool1App', [require('angular-ui-bootstrap')
                         ,require('angular-animate')
                         ,require('angular-aria')
                         ,'chart.js'
+                        ,'sharedControllers'
                         ]);
                  
 require('./data');
@@ -53899,12 +53900,7 @@ sstTool1App.config(["$routeProvider", function($routeProvider) {
     		templateUrl: 'app/views/templates/results.html',
                 controller: 'resultsController'
     	})
-        .when('/rate', {
-    		templateUrl: 'app/views/templates/rate.html',
-                controller: 'rateController'
-    	}); 
-		
-		
+	
     }])
     .run( ["$rootScope", "$location", function($rootScope, $location) {
         //Get questionnaire data from localstorage
@@ -53918,6 +53914,8 @@ sstTool1App.config(["$routeProvider", function($routeProvider) {
             questionnaire = $.extend(true, {}, questionnaireTool1);
             $location.path( "/" );
         }
+        
+        $rootScope.ratings = tool1Rating.ratings;
     }]);
 
 sstTool1App.config(['ChartJsProvider', function (ChartJsProvider) {
@@ -53976,7 +53974,7 @@ sstTool1App.retrieveObject = function(key){
 sstTool1App.removeObject = function(key){
     localStorage.removeItem(('sstTool1'+key));
 };
-},{"./controllers":25,"./data":30,"./filters":34,"./services":36,"angular":20,"angular-animate":9,"angular-aria":11,"angular-chart.js":12,"angular-route":14,"angular-sanitize":16,"angular-ui-bootstrap":17,"jquery":22}],24:[function(require,module,exports){
+},{"./controllers":25,"./data":29,"./filters":34,"./services":36,"angular":20,"angular-animate":9,"angular-aria":11,"angular-chart.js":12,"angular-route":14,"angular-sanitize":16,"angular-ui-bootstrap":17,"jquery":22}],24:[function(require,module,exports){
 /* 
  * Controller for Home Page
  * Not much happening here
@@ -54017,8 +54015,7 @@ require('./home');
 require('./questionnaire');
 require('./interpret');
 require('./results');
-require('./rate');
-},{"./home":24,"./interpret":26,"./questionnaire":27,"./rate":28,"./results":29}],26:[function(require,module,exports){
+},{"./home":24,"./interpret":26,"./questionnaire":27,"./results":28}],26:[function(require,module,exports){
 /* 
  * Controller for Home Page
  * Not much happening here
@@ -54156,24 +54153,6 @@ angular.module('sstTool1App').controller('questionnaireController',["$scope", "$
 
 
 },{}],28:[function(require,module,exports){
-/* 
- * Controller for Home Page
- * Not much happening here
- * @author Paul Schweppe
- * 
- */
-angular.module('sstTool1App').controller('rateController', ["$scope", function($scope) {
-
-    $scope.starRating = 3;
-    $scope.feedbackComment = '';
-    
-    $scope.sendFeedback = function(){
-        
-    }
-}]);
-
-
-},{}],29:[function(require,module,exports){
 /* 
  * Controller for Results Page
  * Not much happening here
@@ -54342,7 +54321,7 @@ angular.module('sstTool1App').controller('resultsController', ["$scope", "naviga
 }]);
 
 
-},{}],30:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -54352,7 +54331,8 @@ angular.module('sstTool1App').controller('resultsController', ["$scope", "naviga
  
 require('./questionnaire');
 require('./interpret');
-},{"./interpret":31,"./questionnaire":32}],31:[function(require,module,exports){
+require('./tool1Rating');
+},{"./interpret":30,"./questionnaire":31,"./tool1Rating":32}],30:[function(require,module,exports){
 /**
  * Data use to calcualate the interpret based on free time. Must start with 
  * the smallest to higher 'greaterThen' value
@@ -54382,7 +54362,7 @@ interpretFeedback = [{
 
 
 
-},{}],32:[function(require,module,exports){
+},{}],31:[function(require,module,exports){
 /* 
  * Activity Items config.This is an array of objects that creates and activity slider 
  * Config Options:
@@ -54872,6 +54852,112 @@ questionnaireTool1 = {
     }
 };
 
+},{}],32:[function(require,module,exports){
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+tool1Rating = {
+    'ratings' : {
+            'subject' : 'Feedback From Tool 1'
+            ,'description' : 'Rating'
+            ,'questions' :[{
+                'question':'I found this resource useful'
+                ,'response' : ''
+                ,selected : ''
+                ,options: [{
+                  'label': 'Strongly disagree'
+                  ,'value': 'Strongly disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Disagree'
+                  ,'value': 'Disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Partly agree'
+                  ,'value': 'Partly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Agree'
+                  ,'value': 'Agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Strongly agree'
+                  ,'value': 'Strongly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                }]
+            },
+            {
+                'question':'I felt more prepared than I was before'
+                ,'response' : ''
+                ,selected : ''
+                ,options: [{
+                  'label': 'Strongly disagree'
+                  ,'value': 'Strongly disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Disagree'
+                  ,'value': 'Disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Partly agree'
+                  ,'value': 'Partly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Agree'
+                  ,'value': 'Agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Strongly agree'
+                  ,'value': 'Strongly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                }]
+            }
+            ,{
+                'question':'I will follow some/all of the advice'
+                ,'response' : ''
+                ,selected : ''
+                ,options: [{
+                  'label': 'Strongly disagree'
+                  ,'value': 'Strongly disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Disagree'
+                  ,'value': 'Disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Partly agree'
+                  ,'value': 'Partly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Agree'
+                  ,'value': 'Agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Strongly agree'
+                  ,'value': 'Strongly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                }]
+            }]
+    }
+};
 },{}],33:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
@@ -55024,7 +55110,8 @@ var sstTool2App = angular.module('sstTool2App', [require('angular-ui-bootstrap')
                         ,require('angular-animate')
                         ,require('angular-aria')
                         ,'chart.js'
-                        ,'rzModule']);
+                        ,'rzModule'
+                        ,'sharedControllers']);
                  
 require('./data');
 require('./directives');
@@ -55051,10 +55138,11 @@ sstTool2App.config(["$routeProvider", "$httpProvider", function($routeProvider, 
     		templateUrl: 'app/views/templates/interpret.html',
                 controller: 'interpretController'
     	})
-        .when('/rate', {
-    		templateUrl: 'app/views/templates/rate.html',
-                controller: 'rateController'
-    	}); 
+        ; 
+}]).run( ["$rootScope", "$location", function($rootScope, $location) {
+        //Get questionnaire data from localstorage
+        $rootScope.ratings = tool2Rating.ratings;
+       
 }]);
 
 
@@ -55066,7 +55154,7 @@ respondToSizingMessage = function(e) {
 // we have to listen for 'message'
 window.addEventListener('message', respondToSizingMessage, false);
 
-},{"./controllers":41,"./data":46,"./directives":48,"./filters":52,"./services":56,"angular":20,"angular-animate":9,"angular-aria":11,"angular-chart.js":12,"angular-route":14,"angular-sanitize":16,"angular-ui-bootstrap":17,"jquery":22}],39:[function(require,module,exports){
+},{"./controllers":41,"./data":45,"./directives":48,"./filters":52,"./services":56,"angular":20,"angular-animate":9,"angular-aria":11,"angular-chart.js":12,"angular-route":14,"angular-sanitize":16,"angular-ui-bootstrap":17,"jquery":22}],39:[function(require,module,exports){
 /* 
  * Controller for Free Time Page
  *
@@ -55240,8 +55328,7 @@ angular.module('sstTool2App').controller('homeController', ["$scope", function($
 require('./home');
 require('./free-time');
 require('./interpret');
-require('./rate');
-},{"./free-time":39,"./home":40,"./interpret":42,"./rate":43}],42:[function(require,module,exports){
+},{"./free-time":39,"./home":40,"./interpret":42}],42:[function(require,module,exports){
 /* 
  * Controller for Home Page
  * Not much happening here
@@ -55264,24 +55351,6 @@ angular.module('sstTool2App').controller('interpretController', ["$scope", "calc
 
 
 },{}],43:[function(require,module,exports){
-/* 
- * Controller for Home Page
- * Not much happening here
- * @author Paul Schweppe
- * 
- */
-angular.module('sstTool2App').controller('rateController', ["$scope", function($scope) {
-    //$scope.pageClass = pageTransition;
-    $scope.starRating = 3;
-    $scope.feedbackComment = '';
-    
-    $scope.sendFeedback = function(){
-        
-    }
-}]);
-
-
-},{}],44:[function(require,module,exports){
 /* 
  * Activity Items config.This is an array of objects that creates and activity slider 
  * Config Options:
@@ -55352,7 +55421,7 @@ activityItems = [{
             ,'hexColor' : '7eb9ed'
         }];
 
-},{}],45:[function(require,module,exports){
+},{}],44:[function(require,module,exports){
 /* 
  * Advance Selection: Config for advance selection. Eg days of the week. These sliders values 
  * will be added together to give the activity value.  
@@ -55400,7 +55469,7 @@ advanceItems = [{
             ,'modelValue' : 0
             ,'sliderMax' : 24
         }];
-},{}],46:[function(require,module,exports){
+},{}],45:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -55411,7 +55480,8 @@ advanceItems = [{
 require('./activityItems');
 require('./advanceItems');
 require('./interpret');
-},{"./activityItems":44,"./advanceItems":45,"./interpret":47}],47:[function(require,module,exports){
+require('./tool2Rating');
+},{"./activityItems":43,"./advanceItems":44,"./interpret":46,"./tool2Rating":47}],46:[function(require,module,exports){
 /**
  * Data use to calcualate the interpret based on free time. Must start with 
  * the smallest to higher 'greaterThen' value
@@ -55490,6 +55560,112 @@ interpretFeedback = [{
 
 
 
+},{}],47:[function(require,module,exports){
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+tool2Rating = {
+    'ratings' : {
+            'subject' : 'Feedback From Tool 2'
+            ,'description' : 'Rating'
+            ,'questions' :[{
+                'question':'I found this resource useful'
+                ,'response' : ''
+                ,selected : ''
+                ,options: [{
+                  'label': 'Strongly disagree'
+                  ,'value': 'Strongly disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Disagree'
+                  ,'value': 'Disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Partly agree'
+                  ,'value': 'Partly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Agree'
+                  ,'value': 'Agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Strongly agree'
+                  ,'value': 'Strongly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                }]
+            },
+            {
+                'question':'I felt more prepared than I was before'
+                ,'response' : ''
+                ,selected : ''
+                ,options: [{
+                  'label': 'Strongly disagree'
+                  ,'value': 'Strongly disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Disagree'
+                  ,'value': 'Disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Partly agree'
+                  ,'value': 'Partly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Agree'
+                  ,'value': 'Agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Strongly agree'
+                  ,'value': 'Strongly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                }]
+            }
+            ,{
+                'question':'I will follow some/all of the advice'
+                ,'response' : ''
+                ,selected : ''
+                ,options: [{
+                  'label': 'Strongly disagree'
+                  ,'value': 'Strongly disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Disagree'
+                  ,'value': 'Disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Partly agree'
+                  ,'value': 'Partly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Agree'
+                  ,'value': 'Agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Strongly agree'
+                  ,'value': 'Strongly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                }]
+            }]
+    }
+};
 },{}],48:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
@@ -55728,6 +55904,7 @@ var sstTool3App = angular.module('sstTool3App', [require('angular-ui-bootstrap')
                         ,require('angular-sanitize')
                         ,require('angular-animate')
                         ,require('angular-aria')
+                        ,'sharedControllers'
                         ]);
 
 require('./data');
@@ -55825,14 +56002,13 @@ sstTool3App.config(["$routeProvider", function($routeProvider) {
     		templateUrl: 'app/views/templates/questions.html',
                 controller: 'questionsController'
     	})
-        //Rate
-        .when('/hub/rate/', {
-    		templateUrl: 'app/views/templates/rate.html',
-                controller: 'defaultController'
-
-    	});  	
+        ;
+}]).run( ["$rootScope", "$location", function($rootScope, $location) {
+        //Get questionnaire data from localstorage
+        $rootScope.ratings = tool3Rating.ratings;
+       
 }]);
-},{"./controllers":60,"./data":63,"./directives":65,"./filters":68,"angular":20,"angular-animate":9,"angular-aria":11,"angular-route":14,"angular-sanitize":16,"angular-ui-bootstrap":17,"jquery":22}],58:[function(require,module,exports){
+},{"./controllers":60,"./data":63,"./directives":66,"./filters":69,"angular":20,"angular-animate":9,"angular-aria":11,"angular-route":14,"angular-sanitize":16,"angular-ui-bootstrap":17,"jquery":22}],58:[function(require,module,exports){
 /* 
  * Controller for Home Page
  * Not much happening here
@@ -56083,7 +56259,8 @@ areasViewed = {
  
 require('./areasViewed');
 require('./questions');
-},{"./areasViewed":62,"./questions":64}],64:[function(require,module,exports){
+require('./tool3Rating');
+},{"./areasViewed":62,"./questions":64,"./tool3Rating":65}],64:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -56234,8 +56411,114 @@ questions = [{
     }
 ];
 },{}],65:[function(require,module,exports){
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+tool3Rating = {
+    'ratings' : {
+            'subject' : 'Feedback From Tool 3'
+            ,'description' : 'Rating'
+            ,'questions' :[{
+                'question':'I found this resource useful'
+                ,'response' : ''
+                ,selected : ''
+                ,options: [{
+                  'label': 'Strongly disagree'
+                  ,'value': 'Strongly disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Disagree'
+                  ,'value': 'Disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Partly agree'
+                  ,'value': 'Partly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Agree'
+                  ,'value': 'Agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Strongly agree'
+                  ,'value': 'Strongly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                }]
+            },
+            {
+                'question':'I felt more prepared than I was before'
+                ,'response' : ''
+                ,selected : ''
+                ,options: [{
+                  'label': 'Strongly disagree'
+                  ,'value': 'Strongly disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Disagree'
+                  ,'value': 'Disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Partly agree'
+                  ,'value': 'Partly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Agree'
+                  ,'value': 'Agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Strongly agree'
+                  ,'value': 'Strongly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                }]
+            }
+            ,{
+                'question':'I will follow some/all of the advice'
+                ,'response' : ''
+                ,selected : ''
+                ,options: [{
+                  'label': 'Strongly disagree'
+                  ,'value': 'Strongly disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Disagree'
+                  ,'value': 'Disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Partly agree'
+                  ,'value': 'Partly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Agree'
+                  ,'value': 'Agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Strongly agree'
+                  ,'value': 'Strongly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                }]
+            }]
+    }
+};
+},{}],66:[function(require,module,exports){
 arguments[4][4][0].apply(exports,arguments)
-},{"./readmore":66,"dup":4}],66:[function(require,module,exports){
+},{"./readmore":67,"dup":4}],67:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -56357,7 +56640,7 @@ angular.module('sstTool3App').directive('readMore', function() {
 });
 
 
-},{}],67:[function(require,module,exports){
+},{}],68:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -56368,9 +56651,9 @@ angular.module('sstTool3App').filter('encodeURIComponent', function() {
 });
 
 
-},{}],68:[function(require,module,exports){
+},{}],69:[function(require,module,exports){
 arguments[4][7][0].apply(exports,arguments)
-},{"./encodeURIComponent":67,"dup":7}],69:[function(require,module,exports){
+},{"./encodeURIComponent":68,"dup":7}],70:[function(require,module,exports){
 /**
  * Sudent Success Toolbox - Tool 2
  * The objective of this tool app, is to help prospective students think about the amount 
@@ -56393,6 +56676,7 @@ var sstTool4App = angular.module('sstTool4App', [require('angular-ui-bootstrap')
                         ,require('angular-aria')
                         ,'ngAudio'
                         ,'rzModule'
+                        ,'sharedControllers'
                         ]);
 
 require('./data');
@@ -56453,15 +56737,13 @@ sstTool4App.config(["$routeProvider", function($routeProvider) {
 	.when('/resources/', {
             templateUrl: 'app/views/templates/resources.html',
             controller: 'defaultController'
-    	})
-        
-        //Rate
-        .when('/rate/', {
-    		templateUrl: 'app/views/templates/rate.html',
-            controller: 'defaultController'
     	});  	
+}]).run( ["$rootScope", "$location", function($rootScope, $location) {
+        //Get questionnaire data from localstorage
+        $rootScope.ratings = tool4Rating.ratings;
+       
 }]);
-},{"./controllers":72,"./data":74,"./directives":77,"./filters":80,"./services":82,"angular":20,"angular-animate":9,"angular-aria":11,"angular-route":14,"angular-sanitize":16,"angular-ui-bootstrap":17,"jquery":22}],70:[function(require,module,exports){
+},{"./controllers":73,"./data":75,"./directives":79,"./filters":82,"./services":84,"angular":20,"angular-animate":9,"angular-aria":11,"angular-route":14,"angular-sanitize":16,"angular-ui-bootstrap":17,"jquery":22}],71:[function(require,module,exports){
 /* 
  * Controller for Home Page
  * Not much happening here
@@ -56535,7 +56817,7 @@ angular.module('sstTool4App').controller('defaultController', ["$scope", "$modal
     
     
 }]);
-},{}],71:[function(require,module,exports){
+},{}],72:[function(require,module,exports){
 /* 
  * Controller for Home Page
  * Not much happening here
@@ -56547,7 +56829,7 @@ angular.module('sstTool4App').controller('homeController', ["$scope", function($
 }]);
 
 
-},{}],72:[function(require,module,exports){
+},{}],73:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -56559,7 +56841,7 @@ require('./home');
 require('./default');
 require('./questionnaire');
 
-},{"./default":70,"./home":71,"./questionnaire":73}],73:[function(require,module,exports){
+},{"./default":71,"./home":72,"./questionnaire":74}],74:[function(require,module,exports){
 /* 
  * Controller for Questionaire
  *
@@ -56779,7 +57061,7 @@ angular.module('sstTool4App').controller('questionnaireController',["$scope", "$
 
 
 
-},{}],74:[function(require,module,exports){
+},{}],75:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -56788,7 +57070,8 @@ angular.module('sstTool4App').controller('questionnaireController',["$scope", "$
 'use strict';
  
 require('./tool4Questionnaire');
-},{"./tool4Questionnaire":75}],75:[function(require,module,exports){
+require('./tool4Rating');
+},{"./tool4Questionnaire":76,"./tool4Rating":77}],76:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -57292,7 +57575,113 @@ tool4Questionnaire = {
             }]
         }
 };
-},{}],76:[function(require,module,exports){
+},{}],77:[function(require,module,exports){
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+tool4Rating = {
+    'ratings' : {
+            'subject' : 'Feedback From Tool 4'
+            ,'description' : 'Rating'
+            ,'questions' :[{
+                'question':'I found this resource useful'
+                ,'response' : ''
+                ,selected : ''
+                ,options: [{
+                  'label': 'Strongly disagree'
+                  ,'value': 'Strongly disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Disagree'
+                  ,'value': 'Disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Partly agree'
+                  ,'value': 'Partly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Agree'
+                  ,'value': 'Agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Strongly agree'
+                  ,'value': 'Strongly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                }]
+            },
+            {
+                'question':'I felt more prepared than I was before'
+                ,'response' : ''
+                ,selected : ''
+                ,options: [{
+                  'label': 'Strongly disagree'
+                  ,'value': 'Strongly disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Disagree'
+                  ,'value': 'Disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Partly agree'
+                  ,'value': 'Partly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Agree'
+                  ,'value': 'Agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Strongly agree'
+                  ,'value': 'Strongly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                }]
+            }
+            ,{
+                'question':'I will follow some/all of the advice'
+                ,'response' : ''
+                ,selected : ''
+                ,options: [{
+                  'label': 'Strongly disagree'
+                  ,'value': 'Strongly disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Disagree'
+                  ,'value': 'Disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Partly agree'
+                  ,'value': 'Partly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Agree'
+                  ,'value': 'Agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Strongly agree'
+                  ,'value': 'Strongly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                }]
+            }]
+    }
+};
+},{}],78:[function(require,module,exports){
 'use strict';
 angular.module('ngAudio', [])
 .directive('ngAudio', ['$compile', '$q', 'ngAudio', function($compile, $q, ngAudio) {
@@ -57786,7 +58175,7 @@ angular.module('ngAudio', [])
     }
 });
 
-},{}],77:[function(require,module,exports){
+},{}],79:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -57796,7 +58185,7 @@ angular.module('ngAudio', [])
  
 require('./readmore');
 require('./angular.audio');
-},{"./angular.audio":76,"./readmore":78}],78:[function(require,module,exports){
+},{"./angular.audio":78,"./readmore":80}],80:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -57918,7 +58307,7 @@ angular.module('sstTool4App').directive('readMore', function() {
 });
 
 
-},{}],79:[function(require,module,exports){
+},{}],81:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -57929,9 +58318,9 @@ angular.module('sstTool4App').filter('encodeURIComponent', function() {
 });
 
 
-},{}],80:[function(require,module,exports){
+},{}],82:[function(require,module,exports){
 arguments[4][7][0].apply(exports,arguments)
-},{"./encodeURIComponent":79,"dup":7}],81:[function(require,module,exports){
+},{"./encodeURIComponent":81,"dup":7}],83:[function(require,module,exports){
 /**
  * Services for validation and showing any errors in a modal. 
  * Checks that the activity time does not exceed 168.
@@ -57978,9 +58367,9 @@ angular.module('sstTool4App').factory('errorModalService',["$modal", function($m
     return obj;
     
 }]);
-},{}],82:[function(require,module,exports){
+},{}],84:[function(require,module,exports){
 arguments[4][36][0].apply(exports,arguments)
-},{"./errorModal":81,"./navigateQuestionaire":83,"dup":36}],83:[function(require,module,exports){
+},{"./errorModal":83,"./navigateQuestionaire":85,"dup":36}],85:[function(require,module,exports){
 /**
  * Calculates how much free time is remaining and
  * updates the chart values
@@ -58039,7 +58428,7 @@ angular.module('sstTool4App').factory('navigateQuestionaireService',function(){
 
 
 
-},{}],84:[function(require,module,exports){
+},{}],86:[function(require,module,exports){
 /**
  * Sudent Success Toolbox - Tool 5
  * The objective of this tool app, is to help prospective students think about the amount 
@@ -58060,9 +58449,11 @@ var sstTool5App = angular.module('sstTool5App', [require('angular-ui-bootstrap')
                         ,require('angular-sanitize')
                         ,require('angular-animate')
                         ,require('angular-aria')
+                        ,'sharedControllers'
                         ]);
 
 require('./filters');
+require('./data');
 require('./directives');
 require('./controllers');
 
@@ -58209,13 +58600,13 @@ sstTool5App.config(["$routeProvider", function($routeProvider) {
                 controller: 'defaultController'
     	})
            
-        //Rate
-        .when('/rate/', {
-    		templateUrl: 'app/views/templates/rate.html',
-            controller: 'defaultController'
-    	});  	
+        ;  	
+}]).run( ["$rootScope", "$location", function($rootScope, $location) {
+        //Get questionnaire data from localstorage
+        $rootScope.ratings = tool5Rating.ratings;
+       
 }]);
-},{"./controllers":87,"./directives":88,"./filters":91,"angular":20,"angular-animate":9,"angular-aria":11,"angular-route":14,"angular-sanitize":16,"angular-ui-bootstrap":17,"jquery":22}],85:[function(require,module,exports){
+},{"./controllers":89,"./data":90,"./directives":92,"./filters":95,"angular":20,"angular-animate":9,"angular-aria":11,"angular-route":14,"angular-sanitize":16,"angular-ui-bootstrap":17,"jquery":22}],87:[function(require,module,exports){
 /* 
  * Controller for Home Page
  * Not much happening here
@@ -58270,7 +58661,7 @@ angular.module('sstTool5App').controller('defaultController', ["$scope", "$modal
     
     
 }]);
-},{}],86:[function(require,module,exports){
+},{}],88:[function(require,module,exports){
 /* 
  * Controller for Home Page
  * Not much happening here
@@ -58282,7 +58673,7 @@ angular.module('sstTool5App').controller('homeController', ["$scope", function($
 }]);
 
 
-},{}],87:[function(require,module,exports){
+},{}],89:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -58293,9 +58684,124 @@ angular.module('sstTool5App').controller('homeController', ["$scope", function($
 require('./home');
 require('./default');
 
-},{"./default":85,"./home":86}],88:[function(require,module,exports){
+},{"./default":87,"./home":88}],90:[function(require,module,exports){
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+'use strict';
+ 
+require('./tool5Rating');
+},{"./tool5Rating":91}],91:[function(require,module,exports){
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+tool5Rating = {
+    'ratings' : {
+            'subject' : 'Feedback From Tool 5'
+            ,'description' : 'Rating'
+            ,'questions' :[{
+                'question':'I found this resource useful'
+                ,'response' : ''
+                ,selected : ''
+                ,options: [{
+                  'label': 'Strongly disagree'
+                  ,'value': 'Strongly disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Disagree'
+                  ,'value': 'Disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Partly agree'
+                  ,'value': 'Partly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Agree'
+                  ,'value': 'Agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Strongly agree'
+                  ,'value': 'Strongly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                }]
+            },
+            {
+                'question':'I felt more prepared than I was before'
+                ,'response' : ''
+                ,selected : ''
+                ,options: [{
+                  'label': 'Strongly disagree'
+                  ,'value': 'Strongly disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Disagree'
+                  ,'value': 'Disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Partly agree'
+                  ,'value': 'Partly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Agree'
+                  ,'value': 'Agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Strongly agree'
+                  ,'value': 'Strongly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                }]
+            }
+            ,{
+                'question':'I will follow some/all of the advice'
+                ,'response' : ''
+                ,selected : ''
+                ,options: [{
+                  'label': 'Strongly disagree'
+                  ,'value': 'Strongly disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Disagree'
+                  ,'value': 'Disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Partly agree'
+                  ,'value': 'Partly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Agree'
+                  ,'value': 'Agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Strongly agree'
+                  ,'value': 'Strongly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                }]
+            }]
+    }
+};
+},{}],92:[function(require,module,exports){
 arguments[4][4][0].apply(exports,arguments)
-},{"./readmore":89,"dup":4}],89:[function(require,module,exports){
+},{"./readmore":93,"dup":4}],93:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -58417,7 +58923,7 @@ angular.module('sstTool5App').directive('readMore', function() {
 });
 
 
-},{}],90:[function(require,module,exports){
+},{}],94:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -58428,9 +58934,9 @@ angular.module('sstTool5App').filter('encodeURIComponent', function() {
 });
 
 
-},{}],91:[function(require,module,exports){
+},{}],95:[function(require,module,exports){
 arguments[4][7][0].apply(exports,arguments)
-},{"./encodeURIComponent":90,"dup":7}]},{},[23,38,57,69,1,84]);
+},{"./encodeURIComponent":94,"dup":7}]},{},[23,38,57,70,1,86]);
 
 /**  
  * jsPDF - PDF Document creation from JavaScript
@@ -60023,3 +60529,57 @@ function throttle(func, wait, options) {
  * @property {bool} leading
  * @property {bool} trailing
  */
+
+angular.module('sharedControllers', [])
+    .config(["$routeProvider", function($routeProvider) {
+        $routeProvider
+            .when('/rate', {
+                    templateUrl: '../shared/views/templates/rate.html',
+                    controller: 'rateController'
+            }); 	
+    }])
+    .controller('rateController', ["$rootScope", "$scope", "$window", function($rootScope,$scope,$window) {
+
+        //FeedBack Form values
+        $scope.feedbackComment = '';
+        $scope.feedbackName = '';
+
+        //Sets scope rating questions
+        $scope.ratings = $rootScope.ratings;
+
+        //Function to set the answer.
+        $scope.answer = function(question,option){
+            question.response = option.answer;
+            question.selected = option;
+        };
+
+
+        /**
+         * Feedback Action. Creates a mailto link 
+         * and opens it. Change to use a better sending
+         * mechanism
+         * 
+         */
+        $scope.sendFeedback = function(){
+            var subject= $scope.ratings.subject?$scope.ratings.subject:'Feedback';
+            var body = "Feedback Questions: \n";
+
+            $.each($scope.ratings.questions,function(key,question){
+                if(question.selected){
+                    body += question.question+': '+question.selected.value+"\n";
+                }else{
+                    body += question.question+': Not answered'+"\n";
+                }
+            });
+
+            body += "\nName: "+$scope.feedbackName+"\n";
+            body += "\nComment: \n"+$scope.feedbackComment+"\n";
+
+            var $mailTo = 'mailto:info@fluid-rock.com?'
+                           +'subject='+encodeURIComponent(subject)
+                           +'&body='+encodeURIComponent(body);
+
+            $window.location = $mailTo;
+
+    };
+}]);

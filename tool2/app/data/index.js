@@ -8,3 +8,4 @@
 require('./activityItems');
 require('./advanceItems');
 require('./interpret');
+require('./tool2Rating');

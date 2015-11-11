@@ -5,6 +5,4 @@
  */
 'use strict';
  
-require('./areasViewed');
-require('./questions');
-require('./tool3Rating');
+require('./tool5Rating');

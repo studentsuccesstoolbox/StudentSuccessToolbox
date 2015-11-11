@@ -66,6 +66,10 @@
     &.red{
         border: 10px solid rgba(217, 83, 79, 0.3);
     }
+    
+    &.center{
+        margin: 0 auto;
+    }
 }
 
 .radio-circle-group {
@@ -89,4 +93,9 @@
             margin-left: 0 !important;
         }
     }
+}
+
+/* Used in the rating label*/
+.text-label{
+    min-height: 40px;
 }

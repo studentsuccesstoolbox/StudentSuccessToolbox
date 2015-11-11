@@ -20,6 +20,7 @@ var sstTool4App = angular.module('sstTool4App', [require('angular-ui-bootstrap')
                         ,require('angular-aria')
                         ,'ngAudio'
                         ,'rzModule'
+                        ,'sharedControllers'
                         ]);
 
 require('./data');
@@ -80,11 +81,9 @@ sstTool4App.config(function($routeProvider) {
 	.when('/resources/', {
             templateUrl: 'app/views/templates/resources.html',
             controller: 'defaultController'
-    	})
-        
-        //Rate
-        .when('/rate/', {
-    		templateUrl: 'app/views/templates/rate.html',
-            controller: 'defaultController'
     	});  	
+}).run( function($rootScope, $location) {
+        //Get questionnaire data from localstorage
+        $rootScope.ratings = tool4Rating.ratings;
+       
 });

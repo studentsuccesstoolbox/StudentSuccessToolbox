@@ -20,7 +20,8 @@ var sstTool2App = angular.module('sstTool2App', [require('angular-ui-bootstrap')
                         ,require('angular-animate')
                         ,require('angular-aria')
                         ,'chart.js'
-                        ,'rzModule']);
+                        ,'rzModule'
+                        ,'sharedControllers']);
                  
 require('./data');
 require('./directives');
@@ -47,10 +48,11 @@ sstTool2App.config(function($routeProvider, $httpProvider) {
     		templateUrl: 'app/views/templates/interpret.html',
                 controller: 'interpretController'
     	})
-        .when('/rate', {
-    		templateUrl: 'app/views/templates/rate.html',
-                controller: 'rateController'
-    	}); 
+        ; 
+}).run( function($rootScope, $location) {
+        //Get questionnaire data from localstorage
+        $rootScope.ratings = tool2Rating.ratings;
+       
 });
 
 

@@ -18,9 +18,11 @@ var sstTool5App = angular.module('sstTool5App', [require('angular-ui-bootstrap')
                         ,require('angular-sanitize')
                         ,require('angular-animate')
                         ,require('angular-aria')
+                        ,'sharedControllers'
                         ]);
 
 require('./filters');
+require('./data');
 require('./directives');
 require('./controllers');
 
@@ -167,9 +169,9 @@ sstTool5App.config(function($routeProvider) {
                 controller: 'defaultController'
     	})
            
-        //Rate
-        .when('/rate/', {
-    		templateUrl: 'app/views/templates/rate.html',
-            controller: 'defaultController'
-    	});  	
+        ;  	
+}).run( function($rootScope, $location) {
+        //Get questionnaire data from localstorage
+        $rootScope.ratings = tool5Rating.ratings;
+       
 });
