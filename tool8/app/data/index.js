@@ -6,4 +6,4 @@
 'use strict';
  
 require('./areasViewed');
-require('./differentOptions');
+require('./tool8Questionnaire');

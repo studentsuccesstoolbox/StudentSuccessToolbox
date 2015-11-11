@@ -13,18 +13,23 @@ angular.module('sstTool8App').controller('defaultController', function($scope,$m
             areasViewedT8[key] = false;
         });  
     };
+       
+    $scope.q_your_online_orientation = tool8Questionnaire['your-online-orientation'];
     
-    $scope.differentOptionsT8 = differentOptionsT8;
-    
-    $scope.resetDifferentOptionsT8 = function(){
-        $.each( differentOptionsT8, function( key, value ) {
-            differentOptionsT8[key] = false;
-        });  
+    /**
+     * Resets the full questionnaire page
+     * @returns {undefined}
+     */
+    $scope.resetQuestionnaireT8 = function(){
+        for(var i = 0; i < $scope.q_your_online_orientation.questions.length; i++){
+            $scope.q_your_online_orientation.questions[i].response  = '';
+            $scope.q_your_online_orientation.questions[i].selected  = '';
+        }
     };
-    
+   
     $scope.resetGatheredData = function(){
         $scope.resetAreasViewedT8();
-        $scope.resetDifferentOptionsT8();
+        $scope.resetQuestionnaireT8();
     };
     
     $scope.audio = {

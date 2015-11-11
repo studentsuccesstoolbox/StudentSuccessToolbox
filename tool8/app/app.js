@@ -65,39 +65,17 @@ sstTool8App.config(function($routeProvider) {
     	})
         .when('/different-options/', {
     		templateUrl: 'app/views/templates/different-options.html',
-                controller: 'defaultController'
+                controller: 'questionnaireT8Controller'
     	})
 
         .when('/elements-of-an-online-orientation/', {
     		templateUrl: 'app/views/templates/elements-of-an-online-orientation.html',
                 controller: 'defaultController'
     	})
-        .when('/student-stories/', {
-    		templateUrl: 'app/views/templates/student-stories.html',
-                controller: 'defaultController'
-    	})
-	.when('/check-your-computer-skills/', {
-    		templateUrl: 'app/views/templates/check-your-computer-skills.html',
-                controller: 'defaultController'
-    	})	
-        .when('/check-your-computer-skills/:qId', {
-            templateUrl: 'app/views/templates/check-your-computer-skills/questionnaire.html',
-            controller: 'questionnaireController'
-    	})
-	.when('/further-help/', {
-            templateUrl: 'app/views/templates/further-help.html',
-            controller: 'defaultController'
-    	})
-        .when('/college-supports-available-to-you/', {
-            templateUrl: 'app/views/templates/college-supports-available-to-you.html',
-            controller: 'defaultController'
-    	})
-        
 	.when('/resources/', {
             templateUrl: 'app/views/templates/resources.html',
             controller: 'defaultController'
     	})
-        
         //Rate
         .when('/rate/', {
     		templateUrl: 'app/views/templates/rate.html',

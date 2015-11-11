@@ -19,17 +19,52 @@
                             </th>
                             <th></th>
                             <th>
-                                Y/N
+                                <div class="col-xs-4 green-text"><span class="circle-color green inline">Yes</span></div>
+                                <div class="col-xs-4 red-text"><span class="circle-color red inline">No</span></div>
                             </th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        <tr>
-                            <th scope="row">Location</th>
-                            <td>Will you build your online orientation in your institutional Virtual Learning Environment (VLE), e.g. Moodle or Blackboard?</td>
-                            <td></td>
+            <!--           
+            <div ng-repeat="question in q.questions track by $index">
+                <div class="panel" ng-class-odd="'panel-odd'" ng-class-even="'panel-even'">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-9 question">
+                                {{question.question}}
+                            </div>
+                            <div class="col-md-3 nopadding">
+                                <div class="radio-circle-group">
+                                    <div class="pull-left" ng-repeat="opt in question.options">
+                                       <label for="question-{{$parent.$index}}-{{opt.value}}" class="radio-circle-bg" ng-class="{yes:'green', notsure:'orange', no:'red'}[opt.value]">
+                                            <input name="questionGroup{{$parent.$index}}" id="question-{{$parent.$index}}-{{opt.value}}" type="radio" class="faq-radio" ng-click="answer(question,opt)" ng-model="question.selected" ng-value="opt">
+                                       </label>
+                                     </div>
+                                </div>
+                            </div>
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+            -->           
+                        
+                        
+                        
+                        <tr ng-repeat="question in q_your_online_orientation.questions track by $index">
+                            <th scope="row">{{question.toolCategory}}</th>
+                            <td>{{question.question}}</td>
+                            <td>
+                                <div class="radio-circle-group">
+                                    <div class="pull-left" ng-repeat="opt in question.options">
+                                       <label for="question-{{$parent.$index}}-{{opt.value}}" class="radio-circle-bg" ng-class="{yes:'green', no:'red'}[opt.value]">
+                                            <input name="questionGroup{{$parent.$index}}" id="question-{{$parent.$index}}-{{opt.value}}" type="radio" class="faq-radio" ng-click="answer(question,opt)" ng-model="question.selected" ng-value="opt">
+                                       </label>
+                                     </div>
+                                </div>
+                            </td>
                         </tr>
+                        <!--
                         <tr>
                             <th scope="row"></th>
                             <td>Will you build your online orientation within your institutional website?</td>
@@ -65,6 +100,7 @@
                             <td>Are there existing institutional resources that you can use in you online orientation?</td>
                             <td></td>
                         </tr>
+                        -->
                     </tbody>
                 </table>
             </div>
