@@ -40,9 +40,9 @@
                         </div>
                         <div class="col-md-7 spacer-xs-top spacer-md-top-0">
                             <div class="col-xs-1"></div>
-                            <div class="col-xs-2 text-center" ng-repeat="opt in question.options">
+                            <div class="col-xs-2 text-center" ng-repeat="opt in question.options" >
                                <label class="text-label visible-xs visible-sm">{{opt.label}}</label>
-                               <label for="question-{{$parent.$index}}-{{opt.value}}" class="radio-circle-bg center" ng-class="{yes:'green', notsure:'orange', no:'red'}[opt.value]">
+                               <label for="question-{{$parent.$index}}-{{opt.value}}" class="radio-circle-bg center" ng-class="{'active':question.selected.value==opt.value}">
                                     <input name="questionGroup{{$parent.$index}}" id="question-{{$parent.$index}}-{{opt.value}}" type="radio" class="" ng-click="answer(question,opt)" ng-model="question.selected" ng-value="opt">
                                </label>
                              </div>

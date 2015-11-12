@@ -1,4 +1,10 @@
- 
+
+$color-green: #3c763d;
+
+$color-red: #d9534f;
+
+$color-orange: $button-color;
+
 .circle-color {        
     border-radius: 100%;
     color: #fff;
@@ -16,14 +22,14 @@
     width: 59px;
     
     &.green {
-        background-color: #a5b638;
+        background-color: $color-green;
     }
     
     &.orange {
-        background-color: $button-color;
+        background-color: $color-orange;
     }
     &.red{
-        background-color: #d9534f;
+        background-color: $color-red;
     }
     
     &.inline{
@@ -33,20 +39,20 @@
 }
 
 .green-text {
-    color: #a5b638;
+    color: $color-green;
 }
 
 .orange-text {
-    color: $button-color;
+    color: $color-orange;
 }
 
 .red-text {
-    color: #d9534f;
+    color: $color-red;
 }
   
 .radio-circle-bg {
     background: transparent none repeat scroll 0 0;
-    border: 10px solid rgba(165,182,56,0.3);
+    border: 10px solid lighten($color-green, 20);
     border-radius: 100%;
     display: block;
     line-height: 1em;
@@ -55,17 +61,32 @@
     height: 50px;
     text-align: center;
     
+    &.active{
+        border: 10px solid $color-green;
+    }
+    
     &.green{
-        border: 10px solid rgba(165,182,56,0.3);
+        border: 10px solid lighten($color-green, 20);
+        &.active{
+            border: 10px solid $color-green;
+        }
     }
     
     &.orange{
-        border: 10px solid rgba(249,160,41,0.3);
+        border: 10px solid lighten($color-orange, 20);
+         &.active{
+            border: 10px solid $color-orange;
+        }
     }
     
+    
     &.red{
-        border: 10px solid rgba(217, 83, 79, 0.3);
+        border: 10px solid lighten($color-red, 20);
+         &.active{
+            border: 10px solid $color-red;
+        }
     }
+    
     
     &.center{
         margin: 0 auto;
@@ -91,6 +112,20 @@
         div {
             width: 33.33333%;
             margin-left: 0 !important;
+        }
+    }
+    
+    .active .radio-circle-bg{
+        &.green{
+            border: 10px solid $color-green;
+        }
+
+        &.orange{
+            border: 10px solid $color-orange;
+        }
+
+        &.red{
+            border: 10px solid $color-red;
         }
     }
 }
