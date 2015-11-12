@@ -80,6 +80,22 @@ sstTool8App.config(function ($routeProvider) {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/set-expectations.html',
                 controller: 'defaultController'
             })
+            .when('/elements-of-an-online-orientation/positive-role-model/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/positive-role-model.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/socialising/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/socialising.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/campus-tour/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/campus-tour.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/study-skills/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills.html',
+                controller: 'defaultController'
+            })
             .when('/online-orientation-summary/', {
                 templateUrl: 'app/views/templates/online-orientation-summary.html',
                 controller: 'defaultController'
