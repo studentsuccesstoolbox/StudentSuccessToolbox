@@ -30,7 +30,7 @@ module.exports = function(grunt) {
         },
       uglify: {
         options: {
-          banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+          //banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
           //,mangle: false //uglify breaks angular
         },
         dist: {
@@ -72,7 +72,7 @@ module.exports = function(grunt) {
             
             {expand: true, src: ['example/app/views/**'], dest: 'dist/'},
             
-            {expand: true, src: ['tool1/app/views/**'], dest: 'dist/'}
+            {expand: true, src: ['shared/views/**'], dest: 'dist/'}
           ]
         }
       },
