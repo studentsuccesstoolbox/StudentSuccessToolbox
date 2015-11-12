@@ -3,18 +3,18 @@
     <div class="row row spacer-top-3x">   
         <div class="col-md-12">
             <ul class="section-nav">
-                <li ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? 'active':''" ng-style="{'width':sectionWidthT8}">
-                    <span ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val+'/')" class='title' ng-style="{'color':section.colourActive}">{{section.title}}</span>
+                <li ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? 'active' : ''" ng-style="{'width':sectionWidthT8}">
+                    <span ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val + '/')" class='title' ng-style="{'color':section.colourActive}">{{section.title}}</span>
                     <span class='connector-line'>&nbsp;</span>
-                    <span ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val+'/')" class='connector' ng-style="{'background':section.colourActive}">&nbsp;</span>
+                    <span ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val + '/')" class='connector' ng-style="{'background':section.colourActive}">&nbsp;</span>
                 </li>
             </ul>
         </div>
     </div>
-        
+
     <div class="row spacer-top-3x">
         <div class="col-md-offset-2 col-md-8">
-            <div ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? '':'hidden'" class="q-head large" ng-style="{'background':section.colourActive}">
+            <div ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? '' : 'hidden'" class="q-head large" ng-style="{'background':section.colourActive}">
                 <h2 ng-if="currentSection.toLowerCase().indexOf(section.val) >= 0" class="text-center nopadding">{{section.title}}</h2>
             </div>
         </div>
@@ -26,11 +26,11 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-xs-1 text-center nopadding">
-                            
+
                         </div>
                         <div class="col-xs-11">
                             <h2 class="spacer-top">
-                                Why focus on reducing anxiety?
+                                Why focus on expectation setting?
                             </h2>
                         </div>
                     </div>
@@ -40,7 +40,7 @@
                         </div>
                         <div class="col-xs-11">
                             <p class="spacer-top-halfx">
-                                High Anxiety = Early Exit
+                                Mismatched expectations = Early Exit
                             </p>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                         </div>
                         <div class="col-xs-11">
                             <p class="spacer-top-halfx">
-                                High Anxiety = More start of year queries
+                                Unrealistic expectations = Early Exit
                             </p>
                         </div>
                     </div>
@@ -60,7 +60,7 @@
                         </div>
                         <div class="col-xs-11">
                             <p class="spacer-top-halfx">
-                                Early experiences set the tone
+                                Mismatched expectations = More start of year queries
                             </p>
                         </div>
                     </div>
@@ -70,21 +70,21 @@
                         </div>
                         <div class="col-xs-11">
                             <p class="spacer-top-halfx">
-                                Unresolved ‘Entry-Shock’ causes ongoing conflict
+                                Unresolved mismatched expectations cause ongoing conflict
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-        
+
+
         <div class="col-xs-12 col-md-6">
             <div class="panel panel-info">
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-xs-1 text-center nopadding">
-                            
+
                         </div>
                         <div class="col-xs-11">
                             <h2 class="spacer-top">
@@ -98,7 +98,11 @@
                         </div>
                         <div class="col-xs-11">
                             <p class="spacer-top-halfx">
-                                Provide accurate but reassuring messages
+                                Provide explicit, accurate messages relating to
+                            <ul>
+                                <li>What students can expect from the institution and/or programme</li>
+                                <li>What the institution and/or programme expects of students</li>
+                            </ul>
                             </p>
                         </div>
                     </div>
@@ -108,7 +112,7 @@
                         </div>
                         <div class="col-xs-11">
                             <p class="spacer-top-halfx">
-                                Demonstrate that anxieties are typical in new students
+                                Facilitate students in recognising what their (perhaps unconscious) expectations are
                             </p>
                         </div>
                     </div>
@@ -128,7 +132,7 @@
                         </div>
                         <div class="col-xs-11">
                             <p class="spacer-top-halfx">
-                                Focus attention on how success can and is achieved by students
+                                Present a set of positive expectations that new students should have about their studies
                             </p>
                         </div>
                     </div>

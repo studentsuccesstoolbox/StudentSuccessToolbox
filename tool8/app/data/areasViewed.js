@@ -5,39 +5,59 @@
  */
 
 /*
-areasViewedT8 = {
-    reduceanxiety: false,
-    setexpectations: false,
-    positiverolemodel: false,
-    socialising: false,
-    campustour: false,
-    studyskills: false
-};
-*/
+ areasViewedT8 = {
+ reduceanxiety: false,
+ setexpectations: false,
+ positiverolemodel: false,
+ socialising: false,
+ campustour: false,
+ studyskills: false
+ };
+ */
 
-areasViewedT8 = {
-    reduceanxiety : {
-        viewed : false,
-        title : "Reduce Anxiety"
-    },
-    setexpectations : {
-        viewed : false,
-        title : "Set Expectations"
-    },
-    positiverolemodel : {
-        viewed : false,
-        title : "Positive Role Model"
-    },
-    socialising : {
-        viewed : false,
-        title : "Socialising"
-    },
-    campustour : {
-        viewed : false,
-        title : "Campus Tour"
-    },
-    studyskills : {
-        viewed : false,
-        title : "Study Skills"
-    }
-}
+areasViewedT8 =
+        [
+            {
+                val: "reduce-anxiety",
+                viewed: false,
+                title: "Reduce Anxiety",
+                colourActive : "#a6b639",
+                //colourInActive : "#ff0"
+            },
+            {
+                val: "set-expectations",
+                viewed: false,
+                title: "Set Expectations",
+                colourActive : "#c77675",
+                //colourInActive : "#f0f"
+            },
+            {
+                val: "positive-role-model",
+                viewed: false,
+                title: "Positive Role Model",
+                colourActive : "#38b6b2",
+                //colourInActive : "#0f0"
+            },
+            {
+                val: "socialising",
+                viewed: false,
+                title: "Socialising",
+                colourActive : "#f9a02a",
+                //colourInActive : "#f00"
+            },
+            {
+                val: "campus-tour",
+                viewed: false,
+                title: "Campus Tour",
+                colourActive : "#3873b7",
+                //colourInActive : ""
+            },
+            {
+                val: "study-skills",
+                viewed: false,
+                title: "Study Skills",
+                colourActive : "#09a7ce",
+                colourInActive : ""
+            }
+        ]
+

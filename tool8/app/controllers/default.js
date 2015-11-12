@@ -4,7 +4,7 @@
  * @author Paul Schweppe
  * 
  */
-angular.module('sstTool8App').controller('defaultController', function($scope,$modal,ngAudio) {
+angular.module('sstTool8App').controller('defaultController', function($scope,$modal,ngAudio,$location) {
     
     $scope.areasViewedT8 = areasViewedT8;
     
@@ -22,6 +22,12 @@ angular.module('sstTool8App').controller('defaultController', function($scope,$m
     $scope.t8Subsections = areasViewedT8;
     
     $scope.sectionWidthT8 = Math.floor((100 / (Object.keys(areasViewedT8).length)))+'%';
+    
+    $scope.currentSection = $location.path();
+    
+    $scope.jumpToUrlT8 = function(pathToJumpTo){
+        $location.path(pathToJumpTo);
+    };
     
     /**
      * Resets the full questionnaire page
