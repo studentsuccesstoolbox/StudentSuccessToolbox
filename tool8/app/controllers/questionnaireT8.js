@@ -4,6 +4,7 @@
  * @author Paul Schweppe
  */
 
+// ALFR :: TODO - REMOVE THIS AND HAVE THE DEFAULT SCOPE DEAL WITH IT AS IT IS USED EVEREYWHERE IN THIS TOOL!
 angular.module('sstTool8App').controller('questionnaireT8Controller',function($scope,$routeParams,$location,$modal) {
     
     //Sets questionnaire to scope
