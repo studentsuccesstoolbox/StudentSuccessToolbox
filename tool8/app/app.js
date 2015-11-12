@@ -67,13 +67,40 @@ sstTool8App.config(function ($routeProvider) {
                 templateUrl: 'app/views/templates/different-options.html',
                 controller: 'questionnaireT8Controller'
             })
-
             .when('/elements-of-an-online-orientation/', {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation.html',
                 controller: 'defaultController'
             })
             .when('/elements-of-an-online-orientation/reduce-anxiety/', {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/reduce-anxiety.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/reduce-anxiety/video1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/reduce-anxiety/video1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/reduce-anxiety/video2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/reduce-anxiety/video2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/reduce-anxiety/text1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/reduce-anxiety/text1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/reduce-anxiety/text2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/reduce-anxiety/text2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/reduce-anxiety/activity1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/reduce-anxiety/activity1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/reduce-anxiety/activity2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/reduce-anxiety/activity2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/reduce-anxiety/online-orientation-summary/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/reduce-anxiety/online-orientation-summary.html',
                 controller: 'defaultController'
             })
             .when('/elements-of-an-online-orientation/set-expectations/', {
@@ -94,6 +121,34 @@ sstTool8App.config(function ($routeProvider) {
             })
             .when('/elements-of-an-online-orientation/study-skills/', {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/study-skills/video1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/video1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/study-skills/video2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/video2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/study-skills/text1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/text1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/study-skills/text2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/text2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/study-skills/activity1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/activity1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/study-skills/activity2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/activity2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/study-skills/online-orientation-summary/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/online-orientation-summary.html',
                 controller: 'defaultController'
             })
             .when('/online-orientation-summary/', {
