@@ -8,8 +8,6 @@ angular.module('sstTool8App').controller('defaultController', function($scope,$m
     
     $scope.areasViewedT8 = areasViewedT8;
     
-
-    
     $scope.resetAreasViewedT8 = function(){
         //// ALFR :: rewite this!
         ////$.each( areasViewedT8, function( key, value ) {
@@ -18,6 +16,7 @@ angular.module('sstTool8App').controller('defaultController', function($scope,$m
     };
        
     $scope.q_your_online_orientation = tool8Questionnaire['your-online-orientation'];
+    $scope.q_online_orientation_anxiety = tool8Questionnaire['online-orientation-anxiety'];
     
     $scope.t8Subsections = areasViewedT8;
     
@@ -37,6 +36,11 @@ angular.module('sstTool8App').controller('defaultController', function($scope,$m
         for(var i = 0; i < $scope.q_your_online_orientation.questions.length; i++){
             $scope.q_your_online_orientation.questions[i].response  = '';
             $scope.q_your_online_orientation.questions[i].selected  = '';
+        }
+        
+        for(var i = 0; i < $scope.q_online_orientation_anxiety.questions.length; i++){
+            $scope.q_online_orientation_anxiety.questions[i].response  = '';
+            $scope.q_online_orientation_anxiety.questions[i].selected  = '';
         }
     };
    
