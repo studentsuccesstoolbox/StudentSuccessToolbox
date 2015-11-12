@@ -41,8 +41,8 @@
                             <td>
                                 <div class="radio-circle-group">
                                     <div class="pull-left" ng-repeat="opt in question.options">
-                                       <label for="question-{{$parent.$index}}-{{opt.value}}" class="radio-circle-bg" ng-class="{yes:'green', no:'red'}[opt.value]">
-                                            <input name="questionGroup{{$parent.$index}}" id="question-{{$parent.$index}}-{{opt.value}}" type="radio" class="faq-radio" ng-model="question.selected" ng-value="opt">
+                                       <label for="question-{{$parent.$index}}-{{opt.value}}" class="radio-circle-bg disabled" ng-class="{yes:'green', no:'red'}[opt.value]">
+                                           <input disabled="disabled" name="questionGroup{{$parent.$index}}" id="question-{{$parent.$index}}-{{opt.value}}" type="radio" class="faq-radio" ng-model="question.selected" ng-value="opt">
                                        </label>
                                      </div>
                                 </div>
