@@ -25,32 +25,7 @@
                         </tr>
                     </thead>
 
-                    <tbody>
-            <!--           
-            <div ng-repeat="question in q.questions track by $index">
-                <div class="panel" ng-class-odd="'panel-odd'" ng-class-even="'panel-even'">
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-md-9 question">
-                                {{question.question}}
-                            </div>
-                            <div class="col-md-3 nopadding">
-                                <div class="radio-circle-group">
-                                    <div class="pull-left" ng-repeat="opt in question.options">
-                                       <label for="question-{{$parent.$index}}-{{opt.value}}" class="radio-circle-bg" ng-class="{yes:'green', notsure:'orange', no:'red'}[opt.value]">
-                                            <input name="questionGroup{{$parent.$index}}" id="question-{{$parent.$index}}-{{opt.value}}" type="radio" class="faq-radio" ng-click="answer(question,opt)" ng-model="question.selected" ng-value="opt">
-                                       </label>
-                                     </div>
-                                </div>
-                            </div>
-                        </div>                    
-                    </div>
-                </div>
-            </div>
-            -->           
-                        
-                        
-                        
+                    <tbody>                        
                         <tr ng-repeat="question in q_your_online_orientation.questions track by $index">
                             <th scope="row">{{question.toolCategory}}</th>
                             <td>{{question.question}}</td>
@@ -64,43 +39,6 @@
                                 </div>
                             </td>
                         </tr>
-                        <!--
-                        <tr>
-                            <th scope="row"></th>
-                            <td>Will you build your online orientation within your institutional website?</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Technology</th>
-                            <td>Do you have access to equipment and software that you can use to produce video content for your online orientation?</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th scope="row"></th>
-                            <td>Do you have access to equipment and software that you can use to produce audio content for your online orientation?</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th scope="row"></th>
-                            <td>Do you have access to e-learning platform software, e.g. Articulate, that you can use to produce content for your online orientation?</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th scope="row"></th>
-                            <td>Do you have access to presentation tools, e.g. Powerpoint or Prezi, that you can use to produce content for your online orientation?</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Existing Resources</th>
-                            <td>Can you locate open educational resources that you can use in your online orientation?</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th scope="row"></th>
-                            <td>Are there existing institutional resources that you can use in you online orientation?</td>
-                            <td></td>
-                        </tr>
-                        -->
                     </tbody>
                 </table>
             </div>
