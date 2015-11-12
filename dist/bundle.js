@@ -53859,7 +53859,7 @@ $ = require('jquery');
 //Does not work. Issues in jspdf with require. Hopefully fixed in later versions
 //jsPDF = require('jspdf');
 
-var angular = require('angular');
+angular = require('angular');
 require('angular-chart.js');
 
 var sstTool1App = angular.module('sstTool1App', [require('angular-ui-bootstrap')
@@ -56686,7 +56686,7 @@ require('./services');
 require('./controllers');
 
 /*Route Options*/
-sstTool4App.config(["$routeProvider", function($routeProvider) {
+sstTool4App.config(["$routeProvider", "$httpProvider", function($routeProvider,$httpProvider) {
     $routeProvider
     	.when('/', {
     		templateUrl: 'app/views/templates/home.html',
@@ -60530,13 +60530,34 @@ function throttle(func, wait, options) {
  * @property {bool} trailing
  */
 
+  function Decorate($provide) {
+      
+    $provide.decorator('accordionGroupDirective', function($delegate) {
+      var directive = $delegate[0];
+
+      directive.templateUrl = "../shared/views/partials/accordion/accordion-group.html";
+
+      return $delegate;
+    });
+    
+  }
+
 angular.module('sharedControllers', [])
-    .config(["$routeProvider", function($routeProvider) {
+    .config(["$httpProvider", "$routeProvider", "$provide", function($httpProvider,$routeProvider,$provide) {
+        Decorate($provide);
+
         $routeProvider
             .when('/rate', {
                     templateUrl: '../shared/views/templates/rate.html',
                     controller: 'rateController'
-            }); 	
+            })
+            .when('/404', {
+                    templateUrl: '../shared/views/templates/404.html',
+                    controller: 'defaultController'
+            }).otherwise('/404', {
+                    templateUrl: '../shared/views/templates/404.html',
+                    controller: 'defaultController'
+            });
     }])
     .controller('rateController', ["$rootScope", "$scope", "$window", function($rootScope,$scope,$window) {
 
@@ -60581,5 +60602,51 @@ angular.module('sharedControllers', [])
 
             $window.location = $mailTo;
 
+        };
+    }]);
+/* 
+ * Controller for Home Page
+ * Not much happening here
+ * @author Paul Schweppe
+ * 
+ */
+angular.module('sharedControllers').controller('defaultController', ["$scope", "$modal", function($scope,$modal) {
+    
+    
+    /**
+     * 
+     * @param {string} size Options are lg, sm or blank
+     * @param {boolean} errorModal
+     * @returns {undefined}
+     */
+    $scope.openModal = function(template,size) {
+        
+        $modal.open({
+            templateUrl: template?'../shared/views/partials/modals/'+template:'../shared/views/partials/modals/errorModal.html',
+            windowTemplateUrl : '../shared/views/partials/modalWindow.html',
+            size: size,
+            controller: ["$scope", "$modalInstance", "iconCls", function($scope, $modalInstance,iconCls){
+		$scope.iconCls = iconCls;
+  
+                $scope.ok = function(){
+                    $modalInstance.close();
+                };
+                $scope.cancel = function(event){
+                    if(event){
+                        event.preventDefault();
+                    }
+                    $modalInstance.dismiss();
+                };
+            }],
+            //Used to pass in values from current scope
+            resolve: {
+                iconCls: function(){
+                        return $scope.iconCls;
+                }
+            }
+        });
+        
+        return false;
     };
+    
 }]);

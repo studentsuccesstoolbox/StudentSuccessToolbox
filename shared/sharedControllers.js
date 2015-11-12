@@ -1,11 +1,20 @@
 
 angular.module('sharedControllers', [])
-    .config(function($routeProvider) {
+    .config(function($httpProvider,$routeProvider,$provide) {
+        Decorate($provide);
+
         $routeProvider
             .when('/rate', {
                     templateUrl: '../shared/views/templates/rate.html',
                     controller: 'rateController'
-            }); 	
+            })
+            .when('/404', {
+                    templateUrl: '../shared/views/templates/404.html',
+                    controller: 'defaultController'
+            }).otherwise('/404', {
+                    templateUrl: '../shared/views/templates/404.html',
+                    controller: 'defaultController'
+            });
     })
     .controller('rateController', function($rootScope,$scope,$window) {
 
@@ -50,5 +59,5 @@ angular.module('sharedControllers', [])
 
             $window.location = $mailTo;
 
-    };
-});
+        };
+    });

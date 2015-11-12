@@ -30,7 +30,7 @@ require('./services');
 require('./controllers');
 
 /*Route Options*/
-sstTool4App.config(function($routeProvider) {
+sstTool4App.config(function($routeProvider,$httpProvider) {
     $routeProvider
     	.when('/', {
     		templateUrl: 'app/views/templates/home.html',

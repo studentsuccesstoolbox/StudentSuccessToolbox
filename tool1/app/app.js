@@ -13,7 +13,7 @@ $ = require('jquery');
 //Does not work. Issues in jspdf with require. Hopefully fixed in later versions
 //jsPDF = require('jspdf');
 
-var angular = require('angular');
+angular = require('angular');
 require('angular-chart.js');
 
 var sstTool1App = angular.module('sstTool1App', [require('angular-ui-bootstrap')
