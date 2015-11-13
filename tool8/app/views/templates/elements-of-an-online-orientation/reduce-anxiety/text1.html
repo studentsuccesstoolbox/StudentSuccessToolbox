@@ -1,0 +1,39 @@
+<div class="container shadow">
+
+    <div class="row row spacer-top-3x">   
+        <div class="col-md-12">
+            <ul class="section-nav">
+                <li ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? 'active':''" ng-style="{'width':sectionWidthT8}">
+                    <span ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val+'/')" class='title' ng-style="{'color':section.colourActive}">{{section.title}}</span>
+                    <span class='connector-line'>&nbsp;</span>
+                    <span ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val+'/')" class='connector' ng-style="{'background':section.colourActive}">&nbsp;</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+        
+    <div class="row spacer-top-3x">
+        <div class="col-md-offset-2 col-md-8">
+            <div ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? '':'hidden'" class="q-head large" ng-style="{'background':section.colourActive}">
+                <h2 ng-if="currentSection.toLowerCase().indexOf(section.val) >= 0" class="text-center nopadding">{{section.title}} / Text #1</h2>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row spacer-top-3x">
+        <div class="col-md-offset-2 col-md-8">
+            <div class="row spacer-bottom-2x"></div>
+            If you have any fears and anxieties about coming to, or returning to, higher education then you should know that we know these fears and anxieties exist, and we take their existence into account. You do not have to be anxious, as you are not alone. All new students have similar anxieties, to one degree or another, whether it be about taking up this course of education or returning to education after many years away from the educational system or just that you are going to become part of a new (learning) community. These fears are normal and perfectly understandable but know that you are not alone in having them, that we take these into consideration and most definitely do not let them stop you from pursuing your educational goals. Completing this course will take effort, planning and hard work, but it is doable. And you are the one who is going to do it.
+        </div>
+    </div>    
+    
+
+    <div class="row spacer-top-3x spacer-xs-bottom-3x">
+        <div class="col-md-5">
+            <a href="#/" class="btn btn-info btn-lg btn-block" title="Back to home" aria-label="">Back to home</a>
+        </div>
+        <div ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? '' : 'hidden'" class="col-md-offset-3 col-md-4 spacer-xs-top-3x spacer-md-top-0">
+            <a ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val + '/text2/')" class="btn btn-default btn-lg btn-block" title="Next" aria-label="Next">Next</a>	
+        </div>
+    </div> 
+</div>
