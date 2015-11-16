@@ -26,22 +26,71 @@
     </div>
         
     <div class="row spacer-top-3x">
-        <div class="col-md-12 col-lg-10 col-md-offset-0 col-lg-offset-1 software-block">           
-            <div class="spacer-md-top spacer-lg-top col-xs-offset-2 col-xs-8 col-sm-offset-0 col-sm-12 col-md-offset-0 col-md-9 col-lg-offset-0 col-lg-9 navigation-table hidden-xs">
+        <div class="col-md-offset-1 col-md-6"> 
+            <div class="row round-nav">
+                <div class="round-nav-button-bg"></div>
+
+                <div class="pos-12">
+                    <a href="#/round-nav/others" title="how can help others" ng-class="{'viewed':areasViewed.others}" ng-click="areasViewed.others = true" tabindex="0">
+                       <div class="round-nav-button">
+                           <p>Plan</p>    
+                       </div>
+                    </a>
+                </div>
+                
+                <div class="pos-3">
+                    <a href="#/round-nav/friends" title="how can help friends- button" ng-class="{'viewed':areasViewed.friends}" ng-click="areasViewed.friends = true" tabindex="0">
+                        <div class="round-nav-button ">
+                            <p>Find</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="pos-6">
+                    <a href="#/round-nav/family" title="how can help family- button" ng-class="{'viewed':areasViewed.family}" ng-click="areasViewed.family = true" tabindex="0">
+                        <div class="round-nav-button">
+                            <p>Evaluate</p>
+                        </div>
+                    </a>
+
+                </div>
+                        
+
+                <div class="pos-9">
+                    <a href="#/round-nav/other-students" title="how can help students- button" ng-class="{'viewed':areasViewed.students}" ng-click="areasViewed.students = true" tabindex="0">
+                        <div class="round-nav-button">
+                            <p>Use</p>               
+                        </div>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="quote-light image-top-right">
+                <blockquote class="quote-primary">                                     
+                    <p class="comment">Text from tutor</p>
+                </blockquote>
+                <img class="img-responsive img-rounded" alt="DCU student photo" src="../assets/images/tutor-img.jpg">
+            </div>
+        </div>
+    </div>
+            
+    <div class="row spacer-top-3x">
+        <div class="col-offset-md-2 col-md-8">           
+            <div class="colacer-lg-top-md-offset-0 navigation-table hidden-xs">
                 <div class="col-sm-4 navigation-cell nopadding navigation-arrow-four"></div>
                 <div class="col-sm-4 nopadding navigation-cell section-plan"><a href="#/developing-a-plan/assignment-plan/" title="Assignment Plan">Plan</a></div>
                 <div class="col-sm-4 nopadding navigation-cell navigation-arrow-one"></div>
                 <div class="col-sm-4 navigation-cell nopadding section-use"><a title="Use Assignment" href="#/developing-a-plan/use-assignment/">Use</a></div>
-                <div class="col-sm-4 nopadding navigation-cell section-start"><a href="#/developing-a-plan/starting-an-assignment/" title="starting an assignment">Start</a></div>
+                <div class="col-sm-4 nopadding navigation-cell"></div>
                 <div class="col-sm-4 nopadding navigation-cell section-find"><a title="Find Assignment Resources" href="#/developing-a-plan/find-resources/">Find</a></div>
                 <div class="col-sm-4 navigation-cell nopadding navigation-arrow-three"></div>
                 <div class="col-sm-4 nopadding navigation-cell section-evaluate"><a title="Evaluate Assignment" href="#/developing-a-plan/evaluate/">Evaluate</a></div>
                 <div class="col-sm-4 nopadding navigation-cell navigation-arrow-two"></div>
                 <div class="col-sm-12 nopadding navigation-cell-centre"></div>
             </div>
-            <div class="col-sm-offset-0 col-sm-3 col-md-offset-0 col-md-3 col-lg-offset-0 col-lg-3 hidden-xs hidden-sm">
-                <div class="img-software-side"></div>
-            </div>
+
         </div>
 
         <div class="col-xs-12 col-lg-offset-2 col-lg-7 navigation-table hidden-sm hidden-md hidden-lg">                

@@ -1,0 +1,12 @@
+<div class="panel {{panelClass || 'panel-accordion'}}">
+    <div class="accordion-heading" ng-keypress="toggleOpen($event)">
+      <h4 class="accordion-title" ng-click="toggleOpen()">
+        <a href tabindex="0" class="accordion-toggle"  accordion-transclude="heading">
+            <span ng-class="{'text-muted': isDisabled}">{{heading}}</span>
+        </a>
+      </h4>
+    </div>
+    <div class="panel-collapse collapse" collapse="!isOpen">
+            <div class="panel-body" ng-transclude></div>
+    </div>
+</div>

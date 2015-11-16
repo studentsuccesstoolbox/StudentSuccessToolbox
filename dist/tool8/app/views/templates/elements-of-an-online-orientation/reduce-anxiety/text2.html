@@ -1,0 +1,53 @@
+<div class="container shadow">
+
+    <div class="row row spacer-top-3x">   
+        <div class="col-md-12">
+            <ul class="section-nav">
+                <li ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? 'active' : ''" ng-style="{'width':sectionWidthT8}">
+                    <span ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val + '/')" class='title' ng-style="{'color':section.colourActive}">{{section.title}}</span>
+                    <span class='connector-line'>&nbsp;</span>
+                    <span ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val + '/')" class='connector' ng-style="{'background':section.colourActive}">&nbsp;</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row spacer-top-3x">
+        <div class="col-md-offset-2 col-md-8">
+            <div ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? '' : 'hidden'" class="q-head large" ng-style="{'background':section.colourActive}">
+                <h2 ng-if="currentSection.toLowerCase().indexOf(section.val) >= 0" class="text-center nopadding">{{section.title}} / Text #2</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="row spacer-top-4x">
+        <div class="col-xs-12 col-md-offset-1 col-md-10">
+            <div class="quote-light image-right">  
+                <blockquote>                                   
+                    <p class="comment">Looking back to when I started I did feel anxious about starting on the course, about finding out what was expected of me. Was I going to be able to live up to the standards that I set for myself as well as the ones that others expected of me as well. It was hard to find a middle ground where you are comfortable, but it is good now I really do enjoy it. I just had to find out what was expected of me, and to be kind to myself in terms of meeting my own standards.</p>
+                </blockquote>
+                <img class="img-responsive img-rounded" alt="DCU student photo" src="../assets/images/student2.jpg">
+            </div>
+        </div>
+    </div>
+
+    <div class="row spacer-top-4x">
+        <div class="col-xs-12 col-md-offset-1 col-md-10">
+            <div class="quote-light image-right">  
+                <blockquote>                                   
+                    <p class="comment">At the start of the year I didn't know what to expect to be honest with you because it was completely new to me and it was completely different from what I did expect it felt like being dropped in at the deep end, but now it doesn't even seem that big a deal any more you know.  I've been out of school for so long that I was worried that I would stick out like a sore thumb but it was grand I was worrying about nothing. I just needed to make a plan and do the work. It all worked out.</p>
+                </blockquote>
+                <img class="img-responsive img-rounded" alt="DCU student photo" src="../assets/images/student2.jpg">
+            </div>
+        </div>
+    </div>
+
+    <div class="row spacer-top-3x spacer-xs-bottom-3x">
+        <div class="col-md-5">
+            <a href="#/" class="btn btn-info btn-lg btn-block" title="Back to home" aria-label="">Back to home</a>
+        </div>
+        <div ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? '' : 'hidden'" class="col-md-offset-3 col-md-4 spacer-xs-top-3x spacer-md-top-0">
+            <a ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val + '/activity1/')" class="btn btn-default btn-lg btn-block" title="Next" aria-label="Next">Next</a>	
+        </div>
+    </div> 
+</div>

@@ -3,115 +3,131 @@
 ul.section-nav{
     margin-left: 0;
     padding-left: 0;
-}
+    
+    .table{
+        display: table;
+        width:100%;
+        margin: 0;
+    }
+    
+    li{
+        display: block;
+        text-align:center;
+        position: relative;
+        float: left;
+        
+        .title {
+            cursor: pointer;
+            font-size: 16px;
+            font-variant: petite-caps;
+            line-height: 15px;
+            position: relative;
+            text-align: center;
+            z-index: 2;
+            display: table-cell;
+            vertical-align: bottom;
+            height: 40px;
+        }
+        
+        .connector{
+            width: 2em;
+            height: 2em;
+            text-align: center;
+            line-height: 2em;
+            border-radius: 1em;
+            background: $section-nav-feedback-active-color;
+            margin: 5px auto 0;
+            display:block;
+            color: white;
+            position: relative;
+            z-index: 4;
+            cursor: pointer;
+        }
+        
+        .connector-line{
+            content: '';
+            position: absolute;
+            bottom: 1em;
+            left: 50%;
+            width: 100%;
+            height: .2em;
+            background: $section-nav-feedback-active-color;
+        }
+        
+        &:last-child .connector-line{
+            display: none;
+        }
 
-ul.section-nav li{
-    display: inline-block;
-    text-align:center;
-    position: relative;
-
-}
-
-
-ul.section-nav.feedback li.active span.connector{
-    background: $section-nav-feedback-active-color;
-}
-
-ul.section-nav li.active span.title {
-	color: $section-nav-active-color;
-}
-
-ul.section-nav li span.title {
-    cursor: pointer;
-    font-size: 16px;
-    font-variant: petite-caps;
-    height: 20px;
-    line-height: 15px;
-    position: relative;
-    text-align: center;
-    z-index: 2;
-}
-
-ul.section-nav li.active span.title{
-    font-size: 18px;
-    font-weight: bold;
-}
-
-ul.section-nav li.active ~ li span.title{
-  color: #333;
-  cursor: default;
-}
-
-ul.section-nav li span.connector{
-  width: 2em;
-  height: 2em;
-  text-align: center;
-  line-height: 2em;
-  border-radius: 1em;
-  background: $section-nav-feedback-active-color;
-  margin: 5px auto 0;
-  display:block;
-  color: white;
-  position: relative;
-  z-index: 4;
-  cursor: pointer;
-}
-
-ul.section-nav li span.connector-line{
-    content: '';
-    position: absolute;
-    bottom: 1em;
-    left: 50%;
-    width: 100%;
-    height: .2em;
-    background: $section-nav-feedback-active-color;
-}
-
-ul.section-nav li:last-child span.connector-line{
-  display: none;
-}
-
-ul.section-nav li.active span.connector-line{
-  background: $section-nav-color;
-}
-
-ul.section-nav li.active ~ li span.connector-line{
-  background: $section-nav-color;
-}
-
-ul.section-nav li.active span.connector{
-  background: $section-nav-active-color;
-}
-
-ul.section-nav li.active ~ li span.connector{
-  background: $section-nav-color;
-  cursor: default;
-}
-ul.section-nav li.final span.title{
-    color: $section-nav-feedback-active-color;
-}
-ul.section-nav li span.connector-final{
-    display: block;
-    height: 60px;
-    line-height: 60px;
-	position: relative;
-    z-index: 10;
-}
-
-ul.section-nav li.final .fa{
-    bottom: 0;
-    color: $section-nav-final;
-    display: inline-block;
-    font-size: 60px;
-    left: 0;
-    margin-left: auto;
-    margin-right: auto;
-    position: absolute;
-    right: 0;
-}
-
-ul.section-nav li.final.active .fa{
-    color: $section-nav-feedback-active-color;
+        &.active{ 
+            .title {
+                color: $section-nav-active-color;
+                font-size: 18px;
+                font-weight: bold;
+            }
+            
+            ~ li .title{
+                color: #333;
+                cursor: default;
+            }
+            
+            .connector{
+                background: $section-nav-active-color;
+            }
+            
+            ~ li .connector{
+                background: $section-nav-color;
+                cursor: default;
+            }
+            
+            .connector-line{
+                background: $section-nav-color;
+            }
+            
+            ~ li .connector-line{
+                background: $section-nav-color;
+            }
+        }
+        
+        &.final {
+            .title{
+                color: $section-nav-feedback-active-color;
+                height: 30px;
+            }
+            
+            .fa{
+                bottom: 0;
+                color: $section-nav-final;
+                display: inline-block;
+                font-size: 60px;
+                left: 0;
+                margin-left: auto;
+                margin-right: auto;
+                position: absolute;
+                right: 0;
+            }
+            
+            &.active{
+                .fa{
+                    color: $section-nav-feedback-active-color;
+                }
+            }
+        }
+        
+        .connector-final{
+            display: block;
+            height: 60px;
+            line-height: 60px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        
+    }
+    
+    &.feedback li.active .connector{
+        background: $section-nav-feedback-active-color;
+    } 
+    
 }
 
 .fa-check-circle-o:before {
@@ -119,49 +135,49 @@ ul.section-nav li.final.active .fa{
     border-radius: 100%;
 }
 
-ul.section-nav li span.title, ul.section-nav.feedback li span.title{
+ul.section-nav li .title, ul.section-nav.feedback li .title{
     color: $section-nav-feedback-active-color;
 }
 
 
 @media only screen and (max-width:$screen-sm-max) {    
-    ul.section-nav li span.title {
+    ul.section-nav li .title {
 		display: none;
     }
-    ul.section-nav li span.connector {
+    ul.section-nav li .connector {
             border: 5px solid $section-nav-feedback-active-color;
             border-radius: 100%;
             height: 4em;
             width: 4em;
     }
-    ul.section-nav li span.connector-line, ul.section-nav li.active span.connector-line {
+    ul.section-nav li .connector-line, ul.section-nav li.active .connector-line {
             bottom: 1.5em;
             height: 0.8em;
 
     }
-    ul.section-nav li.active ~ li span.connector {
+    ul.section-nav li.active ~ li .connector {
             background: $font-color-dark-bg none repeat scroll 0 0;
             border: 5px solid $section-nav-color;
     }
-    ul.section-nav li.active span.connector {
+    ul.section-nav li.active .connector {
             background: $font-color-dark-bg none repeat scroll 0 0;
             border: 5px solid $section-nav-active-color;
     }
-    span.connector-final .fa.fa-check-circle-o {
+    .connector-final .fa.fa-check-circle-o {
             font-size: 5em!important;
             top: 0;
     }
-    ul.section-nav.feedback li.active span.connector {
+    ul.section-nav.feedback li.active .connector {
             background: $font-color-dark-bg none repeat scroll 0 0;
             border: 5px solid $section-nav-feedback-active-color;
     }
-    ul.section-nav li span.connector-final {
+    ul.section-nav li .connector-final {
             height: 4em;
             line-height: 4em;
             width: 4em;
     }
         
-    ul.section-nav li.active span.connector::after {
+    ul.section-nav li.active .connector::after {
         color: $section-nav-active-color;	
         content: "\f0d8";
         display: block;
@@ -175,7 +191,11 @@ ul.section-nav li span.title, ul.section-nav.feedback li span.title{
         width: 0.8em;
     }
     
-    ul.section-nav.feedback li.active span.connector::after {
+    ul.section-nav.feedback li.active .connector::after {
         color: $primary-color;
+    }
+    
+    ul.section-nav li.final .fa{
+        left:50%;
     }
 }
