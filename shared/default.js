@@ -4,19 +4,26 @@
  * @author Paul Schweppe
  * 
  */
-angular.module('sharedControllers').controller('defaultController', function($scope,$modal) {
+angular.module('sharedControllers').controller('defaultController', function($scope,$modal,$location) {
     
-    
+    $scope.menuClass = function(page) {
+        var current = $location.path().substring(1);
+        return page === current ? "active" : "";
+    };
+  
     /**
      * 
      * @param {string} size Options are lg, sm or blank
      * @param {boolean} errorModal
      * @returns {undefined}
      */
-    $scope.openModal = function(template,size) {
-        
+    $scope.openModal = function(template,size,local) {
+        var templateDir = '../shared/views/partials/modals/';
+        if(local){
+            templateDir = 'app/views/partials/modals/';
+        }
         $modal.open({
-            templateUrl: template?'../shared/views/partials/modals/'+template:'../shared/views/partials/modals/errorModal.html',
+            templateUrl: template?templateDir+template:templateDir+'errorModal.html',
             windowTemplateUrl : '../shared/views/partials/modalWindow.html',
             size: size,
             controller: function($scope, $modalInstance,iconCls){

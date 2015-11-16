@@ -4,7 +4,9 @@
         <div class="col-md-12">
             <ul class="section-nav feedback">
                 <li ng-repeat="section in questionnaire track by $index" ng-class="{'active':$index == currentSectionIndex}" ng-style="{'width':sectionWidth}">
-                    <span class='title' ng-click="jumpTo($index)">{{section.label}}</span>
+                    <span class="table">
+                        <span class='title' ng-click="jumpTo($index)">{{section.label}}</span>
+                    </span>
                     <span class='connector-line'>&nbsp;</span>
                     <span class='connector'ng-click="jumpTo($index)">&nbsp;</span>
                 </li>

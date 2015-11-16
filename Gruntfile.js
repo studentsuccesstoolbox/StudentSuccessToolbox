@@ -14,7 +14,7 @@ module.exports = function(grunt) {
           //separator: ';',
         },
         dist: {
-          src: ['dist/bundle.js', 'libs/jspdf.min.js', 'libs/rzslider.js','shared/decorator.js','shared/sharedControllers.js','shared/default.js'],
+          src: ['dist/bundle.js', 'libs/jspdf.min.js', 'libs/rzslider.js','shared/decorator.js','shared/sharedControllers.js','shared/default.js','shared/directives/staticInclude.js','shared/directives/readmore.js'],
           dest: 'dist/bundle.js'
         }
       },

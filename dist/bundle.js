@@ -58452,9 +58452,8 @@ var sstTool5App = angular.module('sstTool5App', [require('angular-ui-bootstrap')
                         ,'sharedControllers'
                         ]);
 
-require('./filters');
+
 require('./data');
-require('./directives');
 require('./controllers');
 
 /*Route Options*/
@@ -58606,62 +58605,7 @@ sstTool5App.config(["$routeProvider", function($routeProvider) {
         $rootScope.ratings = tool5Rating.ratings;
        
 }]);
-},{"./controllers":89,"./data":90,"./directives":92,"./filters":95,"angular":20,"angular-animate":9,"angular-aria":11,"angular-route":14,"angular-sanitize":16,"angular-ui-bootstrap":17,"jquery":22}],87:[function(require,module,exports){
-/* 
- * Controller for Home Page
- * Not much happening here
- * @author Paul Schweppe
- * 
- */
-angular.module('sstTool5App').controller('defaultController', ["$scope", "$modal", function($scope,$modal) {
-    
-    //Slider Hours translate
-    $scope.translate = function(value){
-        return value;
-    };
-    
-    /**
-     * 
-     * @param {string} size Options are lg, sm or blank
-     * @param {boolean} errorModal
-     * @returns {undefined}
-     */
-    $scope.openModal = function(template,size,$event) {
-        if($event){
-            $event.preventDefault();
-        }
-        $modal.open({
-            templateUrl: template?'app/views/partials/modals/'+template:'app/views/partials/modals/errorModal.html',
-            windowTemplateUrl : 'app/views/partials/modalWindow.html',
-            size: size,
-            controller: ["$scope", "$modalInstance", "iconCls", function($scope, $modalInstance,iconCls){
-		$scope.iconCls = iconCls;
-  
-                $scope.ok = function(){
-                    $modalInstance.close();
-                };
-                $scope.cancel = function(event){
-                    if(event){
-                        event.preventDefault();
-                    }
-                    $modalInstance.dismiss();
-                };
-            }],
-            //Used to pass in values from current scope
-            resolve: {
-                iconCls: function(){
-                        return $scope.iconCls;
-                }
-            }
-        });
-        
-        return false;
-    };
-    
-    
-    
-}]);
-},{}],88:[function(require,module,exports){
+},{"./controllers":88,"./data":89,"angular":20,"angular-animate":9,"angular-aria":11,"angular-route":14,"angular-sanitize":16,"angular-ui-bootstrap":17,"jquery":22}],87:[function(require,module,exports){
 /* 
  * Controller for Home Page
  * Not much happening here
@@ -58673,7 +58617,7 @@ angular.module('sstTool5App').controller('homeController', ["$scope", function($
 }]);
 
 
-},{}],89:[function(require,module,exports){
+},{}],88:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -58682,9 +58626,9 @@ angular.module('sstTool5App').controller('homeController', ["$scope", function($
 'use strict';
  
 require('./home');
-require('./default');
+//require('./default');
 
-},{"./default":87,"./home":88}],90:[function(require,module,exports){
+},{"./home":87}],89:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -58693,7 +58637,7 @@ require('./default');
 'use strict';
  
 require('./tool5Rating');
-},{"./tool5Rating":91}],91:[function(require,module,exports){
+},{"./tool5Rating":90}],90:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -58799,144 +58743,7 @@ tool5Rating = {
             }]
     }
 };
-},{}],92:[function(require,module,exports){
-arguments[4][4][0].apply(exports,arguments)
-},{"./readmore":93,"dup":4}],93:[function(require,module,exports){
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Created by Joyce Cam on 30/12/2014.
- *
- * Simple and easy-to-implement angular read more directive.
- *
- */
- 
-angular.module('sstTool5App').directive('readMore', function() {
-  return {
-    restrict: 'A',
-    transclude: true,
-    replace: true,
-    template: '<p></p>',
-    scope: {
-      moreText: '@',
-      lessText: '@',
-      words: '@',
-      ellipsis: '@',
-      char: '@',
-      limit: '@',
-      content: '@'
-    },
-    link: function(scope, elem, attr, ctrl, transclude) {
-      /*var moreText = angular.isUndefined(scope.moreText) ? ' <a class="read-more">Read More...</a>' : ' <a class="read-more">' + scope.moreText + '</a>',
-        lessText = angular.isUndefined(scope.lessText) ? ' <a class="read-less">Less ^</a>' : ' <a class="read-less">' + scope.lessText + '</a>',
-        ellipsis = angular.isUndefined(scope.ellipsis) ? '' : scope.ellipsis,
-        limit = angular.isUndefined(scope.limit) ? 150 : scope.limit;*/
-
-    var $moreBtn = angular.isUndefined(scope.moreText) ? $('<span class="more-btn"><a class="btn btn-link read-more">more</a></span>') : '<a class="read-more">' + scope.moreText + '</a>',
-        $lessBtn = angular.isUndefined(scope.lessText) ? $('<span class="more-btn"><a class="btn btn-link read-less">less</a></span') : ' <a class="read-less">' + scope.lessText + '</a>',
-        $ellipsis = angular.isUndefined(scope.ellipsis) ? '' : $('<span class="read-ellipsis">'+scope.ellipsis+'</span>'),
-        limit = angular.isUndefined(scope.limit) ? 150 : scope.limit;
-
-      attr.$observe('content', function(str) {
-        readmore(str);
-      });
-
-      transclude(scope.$parent, function(clone, scope) {
-        readmore(clone.text().trim());
-      });
-
-      function readmore(text) {
-
-        var text = text,
-          orig = text,
-          regex = /\s+/gi,
-          charCount = text.length,
-          wordCount = text.trim().replace(regex, ' ').split(' ').length,
-          countBy = 'char',
-          count = charCount,
-          foundWords = [],
-          markup = text,
-          more = '';
-
-        if (!angular.isUndefined(attr.words)) {
-          countBy = 'words';
-          count = wordCount;
-        }
-
-        if (countBy === 'words') { // Count words
-
-          foundWords = text.split(/\s+/);
-
-          if (foundWords.length > limit) {
-            text = foundWords.slice(0, limit).join(' ')
-            more = foundWords.slice(limit, count).join(' ');
-          }else{
-              elem.append(text);
-              return;
-          }
-
-        } else { // Count characters
-
-          if (count > limit) {
-            text = orig.slice(0, limit);
-            more = orig.slice(limit, count);
-          }else{
-               elem.append(text);
-              return;
-          }
-          
-
-        }
-        
-        var $moreContainer = $('<span class="more-text"></span').append(more);
-            
-        $lessBtn.find('.read-less').on('click', function() {
-            $moreBtn.find('.read-more').show();
-            $moreContainer.hide().removeClass('show');
-            if($ellipsis){
-                $ellipsis.show();
-            }
-        });
-
-        $moreContainer.append($lessBtn);
-
-        $moreBtn.find('.read-more').on('click', function() {
-            $(this).hide();
-            $moreContainer.addClass('show').slideDown();
-            if($ellipsis){
-                $ellipsis.hide();
-            }
-        });
-
-        elem.append(text)
-                .append($ellipsis)
-                .append($moreBtn)
-                .append($moreContainer);
-
-      }
-    }
-  };
-});
-
-
-},{}],94:[function(require,module,exports){
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-angular.module('sstTool5App').filter('encodeURIComponent', function() {
-    return window.encodeURIComponent;
-});
-
-
-},{}],95:[function(require,module,exports){
-arguments[4][7][0].apply(exports,arguments)
-},{"./encodeURIComponent":94,"dup":7}],96:[function(require,module,exports){
+},{}],91:[function(require,module,exports){
 /**
  * Sudent Success Toolbox - Tool 2
  * The objective of this tool app, is to help prospective students think about the amount 
@@ -59109,7 +58916,7 @@ sstTool8App.config(["$routeProvider", function ($routeProvider) {
                 controller: 'defaultController'
             });
 }]);
-},{"./controllers":99,"./data":103,"./directives":106,"./filters":109,"./services":111,"angular":20,"angular-animate":9,"angular-aria":11,"angular-route":14,"angular-sanitize":16,"angular-ui-bootstrap":17,"jquery":22}],97:[function(require,module,exports){
+},{"./controllers":94,"./data":98,"./directives":101,"./filters":104,"./services":106,"angular":20,"angular-animate":9,"angular-aria":11,"angular-route":14,"angular-sanitize":16,"angular-ui-bootstrap":17,"jquery":22}],92:[function(require,module,exports){
 /* 
  * Controller for Home Page
  * Not much happening here
@@ -59237,7 +59044,7 @@ angular.module('sstTool8App').controller('defaultController', ["$scope", "$modal
 
 
 }]);
-},{}],98:[function(require,module,exports){
+},{}],93:[function(require,module,exports){
 /* 
  * Controller for Home Page
  * Not much happening here
@@ -59249,7 +59056,7 @@ angular.module('sstTool8App').controller('homeController', ["$scope", function($
 }]);
 
 
-},{}],99:[function(require,module,exports){
+},{}],94:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -59262,7 +59069,7 @@ require('./default');
 require('./questionnaireT8');
 require('./rate');
 
-},{"./default":97,"./home":98,"./questionnaireT8":100,"./rate":101}],100:[function(require,module,exports){
+},{"./default":92,"./home":93,"./questionnaireT8":95,"./rate":96}],95:[function(require,module,exports){
 /* 
  * Controller for Questionaire
  *
@@ -59292,7 +59099,7 @@ angular.module('sstTool8App').controller('questionnaireT8Controller',["$scope", 
 
 
 
-},{}],101:[function(require,module,exports){
+},{}],96:[function(require,module,exports){
 /* 
  * Controller for Home Page
  * Not much happening here
@@ -59310,7 +59117,7 @@ angular.module('sstTool8App').controller('rateController', ["$scope", function($
 }]);
 
 
-},{}],102:[function(require,module,exports){
+},{}],97:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -59375,7 +59182,7 @@ areasViewedT8 =
         ]
 
 
-},{}],103:[function(require,module,exports){
+},{}],98:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -59385,7 +59192,7 @@ areasViewedT8 =
  
 require('./areasViewed');
 require('./tool8Questionnaire');
-},{"./areasViewed":102,"./tool8Questionnaire":104}],104:[function(require,module,exports){
+},{"./areasViewed":97,"./tool8Questionnaire":99}],99:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -59678,11 +59485,11 @@ tool8Questionnaire = {
         ]
     }
 };
-},{}],105:[function(require,module,exports){
+},{}],100:[function(require,module,exports){
 arguments[4][78][0].apply(exports,arguments)
-},{"dup":78}],106:[function(require,module,exports){
+},{"dup":78}],101:[function(require,module,exports){
 arguments[4][79][0].apply(exports,arguments)
-},{"./angular.audio":105,"./readmore":107,"dup":79}],107:[function(require,module,exports){
+},{"./angular.audio":100,"./readmore":102,"dup":79}],102:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -59804,7 +59611,7 @@ angular.module('sstTool8App').directive('readMore', function() {
 });
 
 
-},{}],108:[function(require,module,exports){
+},{}],103:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -59815,9 +59622,9 @@ angular.module('sstTool8App').filter('encodeURIComponent', function() {
 });
 
 
-},{}],109:[function(require,module,exports){
+},{}],104:[function(require,module,exports){
 arguments[4][7][0].apply(exports,arguments)
-},{"./encodeURIComponent":108,"dup":7}],110:[function(require,module,exports){
+},{"./encodeURIComponent":103,"dup":7}],105:[function(require,module,exports){
 /**
  * Services for validation and showing any errors in a modal. 
  * Checks that the activity time does not exceed 168.
@@ -59864,7 +59671,7 @@ angular.module('sstTool8App').factory('errorModalService',["$modal", function($m
     return obj;
     
 }]);
-},{}],111:[function(require,module,exports){
+},{}],106:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -59873,7 +59680,7 @@ angular.module('sstTool8App').factory('errorModalService',["$modal", function($m
 'use strict';
  
 require('./errorModal');
-},{"./errorModal":110}]},{},[23,38,57,70,1,86,96]);
+},{"./errorModal":105}]},{},[23,38,57,70,1,86,91]);
 
 /**  
  * jsPDF - PDF Document creation from JavaScript
@@ -61551,19 +61358,26 @@ angular.module('sharedControllers', [])
  * @author Paul Schweppe
  * 
  */
-angular.module('sharedControllers').controller('defaultController', ["$scope", "$modal", function($scope,$modal) {
+angular.module('sharedControllers').controller('defaultController', ["$scope", "$modal", "$location", function($scope,$modal,$location) {
     
-    
+    $scope.menuClass = function(page) {
+        var current = $location.path().substring(1);
+        return page === current ? "active" : "";
+    };
+  
     /**
      * 
      * @param {string} size Options are lg, sm or blank
      * @param {boolean} errorModal
      * @returns {undefined}
      */
-    $scope.openModal = function(template,size) {
-        
+    $scope.openModal = function(template,size,local) {
+        var templateDir = '../shared/views/partials/modals/';
+        if(local){
+            templateDir = 'app/views/partials/modals/';
+        }
         $modal.open({
-            templateUrl: template?'../shared/views/partials/modals/'+template:'../shared/views/partials/modals/errorModal.html',
+            templateUrl: template?templateDir+template:templateDir+'errorModal.html',
             windowTemplateUrl : '../shared/views/partials/modalWindow.html',
             size: size,
             controller: ["$scope", "$modalInstance", "iconCls", function($scope, $modalInstance,iconCls){
@@ -61591,3 +61405,150 @@ angular.module('sharedControllers').controller('defaultController', ["$scope", "
     };
     
 }]);
+/**
+ * Includes a template onto page without creating a new scope.
+ * Supports template markers
+ * 
+ * @author Paul Schweppe
+ * 
+ */
+angular.module('sharedControllers').directive('staticInclude', ["$http", "$templateCache", "$compile", function($http, $templateCache, $compile) {
+    return function(scope, element, attrs) {
+        var templatePath = attrs.staticInclude;
+        var markers = attrs.markers;
+ 
+        $http.get(templatePath, { cache: $templateCache }).success(function(response) {
+            if(markers){
+                //Run string Replace here because angular is crap
+                markers = angular.fromJson(markers)
+                for(var key in markers){
+                    response = response.replace( new RegExp('{{'+key+'}}', 'g'), markers[key]);
+                };
+            }
+             var contents = element.html(response).contents();
+            $compile(contents)(scope);
+        });
+    };
+}]);
+
+
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ * Created by Joyce Cam on 30/12/2014.
+ *
+ * Simple and easy-to-implement angular read more directive.
+ *
+ */
+ 
+angular.module('sharedControllers').directive('readMore', function() {
+  return {
+    restrict: 'A',
+    transclude: true,
+    replace: true,
+    template: '<p></p>',
+    scope: {
+      moreText: '@',
+      lessText: '@',
+      words: '@',
+      ellipsis: '@',
+      char: '@',
+      limit: '@',
+      content: '@'
+    },
+    link: function(scope, elem, attr, ctrl, transclude) {
+      /*var moreText = angular.isUndefined(scope.moreText) ? ' <a class="read-more">Read More...</a>' : ' <a class="read-more">' + scope.moreText + '</a>',
+        lessText = angular.isUndefined(scope.lessText) ? ' <a class="read-less">Less ^</a>' : ' <a class="read-less">' + scope.lessText + '</a>',
+        ellipsis = angular.isUndefined(scope.ellipsis) ? '' : scope.ellipsis,
+        limit = angular.isUndefined(scope.limit) ? 150 : scope.limit;*/
+
+    var $moreBtn = angular.isUndefined(scope.moreText) ? $('<span class="more-btn"><a class="btn btn-link read-more">more</a></span>') : '<a class="read-more">' + scope.moreText + '</a>',
+        $lessBtn = angular.isUndefined(scope.lessText) ? $('<span class="more-btn"><a class="btn btn-link read-less">less</a></span') : ' <a class="read-less">' + scope.lessText + '</a>',
+        $ellipsis = angular.isUndefined(scope.ellipsis) ? '' : $('<span class="read-ellipsis">'+scope.ellipsis+'</span>'),
+        limit = angular.isUndefined(scope.limit) ? 150 : scope.limit;
+
+      attr.$observe('content', function(str) {
+        readmore(str);
+      });
+
+      transclude(scope.$parent, function(clone, scope) {
+        readmore(clone.text().trim());
+      });
+
+      function readmore(text) {
+
+        var text = text,
+          orig = text,
+          regex = /\s+/gi,
+          charCount = text.length,
+          wordCount = text.trim().replace(regex, ' ').split(' ').length,
+          countBy = 'char',
+          count = charCount,
+          foundWords = [],
+          markup = text,
+          more = '';
+
+        if (!angular.isUndefined(attr.words)) {
+          countBy = 'words';
+          count = wordCount;
+        }
+
+        if (countBy === 'words') { // Count words
+
+          foundWords = text.split(/\s+/);
+
+          if (foundWords.length > limit) {
+            text = foundWords.slice(0, limit).join(' ')
+            more = foundWords.slice(limit, count).join(' ');
+          }else{
+              elem.append(text);
+              return;
+          }
+
+        } else { // Count characters
+
+          if (count > limit) {
+            text = orig.slice(0, limit);
+            more = orig.slice(limit, count);
+          }else{
+               elem.append(text);
+              return;
+          }
+          
+
+        }
+        
+        var $moreContainer = $('<span class="more-text"></span').append(more);
+            
+        $lessBtn.find('.read-less').on('click', function() {
+            $moreBtn.find('.read-more').show();
+            $moreContainer.hide().removeClass('show');
+            if($ellipsis){
+                $ellipsis.show();
+            }
+        });
+
+        $moreContainer.append($lessBtn);
+
+        $moreBtn.find('.read-more').on('click', function() {
+            $(this).hide();
+            $moreContainer.addClass('show').slideDown();
+            if($ellipsis){
+                $ellipsis.hide();
+            }
+        });
+
+        elem.append(text)
+                .append($ellipsis)
+                .append($moreBtn)
+                .append($moreContainer);
+
+      }
+    }
+  };
+});
+

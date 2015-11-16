@@ -21,9 +21,8 @@ var sstTool5App = angular.module('sstTool5App', [require('angular-ui-bootstrap')
                         ,'sharedControllers'
                         ]);
 
-require('./filters');
+
 require('./data');
-require('./directives');
 require('./controllers');
 
 /*Route Options*/

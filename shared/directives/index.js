@@ -5,5 +5,4 @@
  */
 'use strict';
  
-require('./home');
-//require('./default');
+require('./readmore');

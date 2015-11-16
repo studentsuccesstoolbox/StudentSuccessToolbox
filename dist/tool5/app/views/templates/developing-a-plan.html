@@ -27,46 +27,87 @@
         
     <div class="row spacer-top-3x">
         <div class="col-md-offset-1 col-md-6"> 
-            <div class="row round-nav">
+            <div class="row round-nav hidden-xs">
                 <div class="round-nav-button-bg"></div>
 
                 <div class="pos-12">
-                    <a href="#/round-nav/others" title="how can help others" ng-class="{'viewed':areasViewed.others}" ng-click="areasViewed.others = true" tabindex="0">
-                       <div class="round-nav-button">
+                    <a href="#/developing-a-plan/assignment-plan/" title="Assignment Plan" ng-class="{'viewed':areasViewed.plan}" ng-click="areasViewed.plan = true" tabindex="0">
+                       <div class="round-nav-button plan">
                            <p>Plan</p>    
                        </div>
                     </a>
                 </div>
                 
+                <div class="pos-2">
+                    <div class="next-arrow">
+                        <img src="../assets/images/arrow.png" alt=""/>
+                    </div>
+                </div>
+                
                 <div class="pos-3">
-                    <a href="#/round-nav/friends" title="how can help friends- button" ng-class="{'viewed':areasViewed.friends}" ng-click="areasViewed.friends = true" tabindex="0">
-                        <div class="round-nav-button ">
+                    <a href="#/developing-a-plan/find-resources/" title="Find Assignment Resources" ng-class="{'viewed':areasViewed.find}" ng-click="areasViewed.find = true" tabindex="0">
+                        <div class="round-nav-button find">
                             <p>Find</p>
                         </div>
                     </a>
                 </div>
                 
+                <div class="pos-4">
+                    <div class="next-arrow">
+                        <img src="../assets/images/arrow.png" alt=""/>
+                    </div>
+                </div>
+                
                 <div class="pos-6">
-                    <a href="#/round-nav/family" title="how can help family- button" ng-class="{'viewed':areasViewed.family}" ng-click="areasViewed.family = true" tabindex="0">
-                        <div class="round-nav-button">
+                    <a href="#/developing-a-plan/evaluate/" title="Evaluate Assignment" ng-class="{'viewed':areasViewed.evaluate}" ng-click="areasViewed.evaluate = true" tabindex="0">
+                        <div class="round-nav-button evaluate">
                             <p>Evaluate</p>
                         </div>
                     </a>
 
                 </div>
+                
+                <div class="pos-8">
+                    <div class="next-arrow">
+                        <img src="../assets/images/arrow.png" alt=""/>
+                    </div>
+                </div>
                         
 
                 <div class="pos-9">
-                    <a href="#/round-nav/other-students" title="how can help students- button" ng-class="{'viewed':areasViewed.students}" ng-click="areasViewed.students = true" tabindex="0">
-                        <div class="round-nav-button">
+                    <a href="#/developing-a-plan/use-assignment/" title="Use Assignment" ng-class="{'viewed':areasViewed.use}" ng-click="areasViewed.use = true" tabindex="0">
+                        <div class="round-nav-button use">
                             <p>Use</p>               
                         </div>
                     </a>
                 </div>
                 
+                <div class="pos-10">
+                    <div class="next-arrow">
+                        <img src="../assets/images/arrow.png" alt=""/>
+                    </div>
+                </div>
+                
             </div>
+            
+            <div class="col-xs-12 navigation-table visible-xs nopadding">                
+                <a href="#/developing-a-plan/assignment-plan/" title="Assignment Plan" class="navigation-cell plan" ng-class="{'viewed':areasViewed.plan}" ng-click="areasViewed.plan = true">
+                    <span>Plan</span>
+                </a>
+                <a title="Find Assignment Resources" href="#/developing-a-plan/find-resources/" class="navigation-cell find" ng-class="{'viewed':areasViewed.find}" ng-click="areasViewed.find = true">
+                    <span>Find</span>
+                </a>
+                <a title="Evaluate Assignment" href="#/developing-a-plan/evaluate/" class="navigation-cell evaluate" ng-class="{'viewed':areasViewed.evaluate}" ng-click="areasViewed.evaluate = true">
+                    <span>Evaluate</span>
+                </a>
+                <a title="Use Assignment" href="#/developing-a-plan/use-assignment/" class="navigation-cell use" ng-class="{'viewed':areasViewed.use}" ng-click="areasViewed.use = true">
+                    <span>Use</span>
+                </a>
+            </div>            
+            
         </div>
-        <div class="col-md-4">
+        <div class="clearfix visible-xs "></div>
+        <div class="col-md-4 spacer-xs-top-3x spacer-md-top-0">
             <div class="quote-light image-top-right">
                 <blockquote class="quote-primary">                                     
                     <p class="comment">Text from tutor</p>
@@ -76,32 +117,5 @@
         </div>
     </div>
             
-    <div class="row spacer-top-3x">
-        <div class="col-offset-md-2 col-md-8">           
-            <div class="colacer-lg-top-md-offset-0 navigation-table hidden-xs">
-                <div class="col-sm-4 navigation-cell nopadding navigation-arrow-four"></div>
-                <div class="col-sm-4 nopadding navigation-cell section-plan"><a href="#/developing-a-plan/assignment-plan/" title="Assignment Plan">Plan</a></div>
-                <div class="col-sm-4 nopadding navigation-cell navigation-arrow-one"></div>
-                <div class="col-sm-4 navigation-cell nopadding section-use"><a title="Use Assignment" href="#/developing-a-plan/use-assignment/">Use</a></div>
-                <div class="col-sm-4 nopadding navigation-cell"></div>
-                <div class="col-sm-4 nopadding navigation-cell section-find"><a title="Find Assignment Resources" href="#/developing-a-plan/find-resources/">Find</a></div>
-                <div class="col-sm-4 navigation-cell nopadding navigation-arrow-three"></div>
-                <div class="col-sm-4 nopadding navigation-cell section-evaluate"><a title="Evaluate Assignment" href="#/developing-a-plan/evaluate/">Evaluate</a></div>
-                <div class="col-sm-4 nopadding navigation-cell navigation-arrow-two"></div>
-                <div class="col-sm-12 nopadding navigation-cell-centre"></div>
-            </div>
-
-        </div>
-
-        <div class="col-xs-12 col-lg-offset-2 col-lg-7 navigation-table hidden-sm hidden-md hidden-lg">                
-            <div class="col-xs-12 nopadding navigation-cell section-start"><a href="#/developing-a-plan/starting-an-assignment/" title="starting an assignment">Start</a></div>
-            <div class="col-xs-12 nopadding navigation-cell section-plan"><a href="#/developing-a-plan/assignment-plan/" title="Assignment Plan">Plan</a></div>
-            <div class="col-xs-12 nopadding navigation-cell section-find"><a title="Find Assignment Resources" href="#/developing-a-plan/find-resources/">Find</a></div>
-            <div class="col-xs-12 nopadding navigation-cell section-evaluate"><a title="Evaluate Assignment" href="#/developing-a-plan/evaluate/">Evaluate</a></div>
-            <div class="col-xs-12 navigation-cell nopadding section-use"><a title="Use Assignment" href="#/developing-a-plan/use-assignment/">Use</a></div>
-        </div>            
-        <div id="triangle" class="hidden-sm hidden-md hidden-lg"></div>
-    </div>
-    <div class="row spacer-bottom-4x"></div>        
-   
+    <div class="row spacer-bottom-4x"></div>           
 </div>

@@ -199,3 +199,61 @@ ul.section-nav li .title, ul.section-nav.feedback li .title{
         left:50%;
     }
 }
+
+//** Tool 5 - Sections */
+ul.section-nav li{
+    
+    &.plan{
+        .title{
+            color: #08a7cd;
+        }
+        .connector {
+            background: #08a7cd;
+        }
+        .connector-line{
+            background: #08a7cd;
+        }
+    }
+    
+    &.find{
+        .title{
+            color: #a5b638;
+        }
+        .connector {
+            background: #a5b638;
+        }
+        .connector-line{
+            background: #a5b638;
+        }
+    }
+    
+    &.evaluate{
+        .title{
+            color: #c87676;
+        }
+        .connector {
+            background: #c87676;
+        }
+        .connector-line{
+            background: #c87676;
+        }
+    }
+    
+    &.use{
+        .title{
+            color: #38b6b2;
+        }
+        .connector {
+            background: #38b6b2;
+        }
+        .connector-line{
+            background: #38b6b2;
+        }
+        
+        &.active .fa {
+            color: #38b6b2;
+        }
+    }
+    
+     
+}

@@ -276,11 +276,16 @@ $round-nav-height:  180px;
  
 }
 
+//** Hack for button */
+ button.navigation-cell span{
+    padding-top: 0;
+}
+
 
 
 
 //** tool5 progress bar
-
+/*
 .section-nav.simple-progress-b li.active.start-active span.title {
     font-size: 2em;
     font-weight: bold;
@@ -401,7 +406,7 @@ $round-nav-height:  180px;
     .section-nav.simple-progress-b li.final {
         margin-top: -3px;
     }
-}
+}*/
 
 
 //** end tool5 progress bar
