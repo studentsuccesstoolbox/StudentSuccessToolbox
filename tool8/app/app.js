@@ -219,10 +219,37 @@ sstTool8App.config(function ($routeProvider) {
                 controller: 'defaultController'
             })
             // socialising section stop
+            // campus tour section start
             .when('/elements-of-an-online-orientation/campus-tour/', {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/campus-tour.html',
                 controller: 'defaultController'
             })
+            .when('/elements-of-an-online-orientation/campus-tour/interactive-map1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/campus-tour/interactive-map1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/campus-tour/interactive-map2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/campus-tour/interactive-map2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/campus-tour/video1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/campus-tour/video1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/campus-tour/video2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/campus-tour/video2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/campus-tour/activity1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/campus-tour/activity1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/campus-tour/online-orientation-summary/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/campus-tour/online-orientation-summary.html',
+                controller: 'defaultController'
+            })
+            // campus tour section stop
+            // study skills section start
             .when('/elements-of-an-online-orientation/study-skills/', {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills.html',
                 controller: 'defaultController'
@@ -243,18 +270,28 @@ sstTool8App.config(function ($routeProvider) {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/text2.html',
                 controller: 'defaultController'
             })
-            .when('/elements-of-an-online-orientation/study-skills/activity1/', {
-                templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/activity1.html',
+            
+            .when('/elements-of-an-online-orientation/study-skills/open-educational-resources1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/open-educational-resources1.html',
                 controller: 'defaultController'
             })
-            .when('/elements-of-an-online-orientation/study-skills/activity2/', {
-                templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/activity2.html',
+            .when('/elements-of-an-online-orientation/study-skills/open-educational-resources2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/open-educational-resources2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/study-skills/open-educational-resources3-social-media/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/open-educational-resources3-social-media.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/study-skills/activity1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/activity1.html',
                 controller: 'defaultController'
             })
             .when('/elements-of-an-online-orientation/study-skills/online-orientation-summary/', {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/online-orientation-summary.html',
                 controller: 'defaultController'
             })
+            // study skills section stop
             .when('/online-orientation-summary/', {
                 templateUrl: 'app/views/templates/online-orientation-summary.html',
                 controller: 'defaultController'

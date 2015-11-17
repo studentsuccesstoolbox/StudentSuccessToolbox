@@ -20,6 +20,8 @@ angular.module('sstTool8App').controller('defaultController', function ($scope, 
     $scope.q_online_orientation_set_expectations = tool8Questionnaire['online-orientation-set-expectations'];
     $scope.q_online_orientation_positiverolemodel = tool8Questionnaire['online-orientation-positiverolemodel'];
     $scope.q_online_orientation_socialising = tool8Questionnaire['online-orientation-socialising'];
+    $scope.q_online_orientation_campustour = tool8Questionnaire['online-orientation-campustour'];
+    $scope.q_online_orientation_studyskills = tool8Questionnaire['online-orientation-studyskills'];
     
     $scope.t8Subsections = areasViewedT8;
 
