@@ -71,6 +71,7 @@ sstTool8App.config(function ($routeProvider) {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation.html',
                 controller: 'defaultController'
             })
+            // reduce anxiety section start
             .when('/elements-of-an-online-orientation/reduce-anxiety/', {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/reduce-anxiety.html',
                 controller: 'defaultController'
@@ -103,10 +104,49 @@ sstTool8App.config(function ($routeProvider) {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/reduce-anxiety/online-orientation-summary.html',
                 controller: 'defaultController'
             })
+            // reduce anxiety section stop
+            // set expectations section start
             .when('/elements-of-an-online-orientation/set-expectations/', {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/set-expectations.html',
                 controller: 'defaultController'
             })
+            .when('/elements-of-an-online-orientation/set-expectations/video1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/set-expectations/video1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/set-expectations/video2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/set-expectations/video2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/set-expectations/text1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/set-expectations/text1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/set-expectations/text2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/set-expectations/text2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/set-expectations/open-educational-resources1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/set-expectations/open-educational-resources1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/set-expectations/open-educational-resources2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/set-expectations/open-educational-resources2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/set-expectations/open-educational-resources3/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/set-expectations/open-educational-resources3.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/set-expectations/activity1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/set-expectations/activity1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/set-expectations/online-orientation-summary/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/set-expectations/online-orientation-summary.html',
+                controller: 'defaultController'
+            })
+            // set expectations section stop
             .when('/elements-of-an-online-orientation/positive-role-model/', {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/positive-role-model.html',
                 controller: 'defaultController'

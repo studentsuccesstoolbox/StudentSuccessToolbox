@@ -288,5 +288,156 @@ tool8Questionnaire = {
                     }]
             }
         ]
+    },
+    'online-orientation-set-expectations': {
+        'label': 'online-orientation-set-expectations'
+        , 'description': 'online-orientation-set-expectations'
+        , 'quotes': [
+        ]
+        , 'questions': [{
+                'toolCategory': '',
+                'question': 'Video/Audio – From institution/Programme Team',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Video/Audio – From graduate/current student',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Text based communication – From institution/Programme Team',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Text based communication – From graduate/current student',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Open Educational Resources',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Online Activity – Virtual Classroom',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Online Activity – Virtual Learning Environment (Discussion Forums)',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Other:',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            }
+        ]
     }
 };

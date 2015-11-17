@@ -7,5 +7,4 @@
  
 require('./home');
 require('./default');
-require('./questionnaireT8');
 require('./rate');
