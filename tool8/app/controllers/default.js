@@ -4,7 +4,7 @@
  * @author Paul Schweppe
  * 
  */
-angular.module('sstTool8App').controller('defaultController', function ($scope, $modal, ngAudio, $location) {
+angular.module('sstTool8App').controller('defaultController', function ($scope, $routeParams,$modal, ngAudio, $location) {
 
     $scope.areasViewedT8 = areasViewedT8;
 

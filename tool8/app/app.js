@@ -65,7 +65,7 @@ sstTool8App.config(function ($routeProvider) {
             })
             .when('/different-options/', {
                 templateUrl: 'app/views/templates/different-options.html',
-                controller: 'questionnaireT8Controller'
+                controller: 'defaultController'
             })
             .when('/elements-of-an-online-orientation/', {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation.html',
