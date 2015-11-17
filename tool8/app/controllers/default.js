@@ -40,7 +40,7 @@ angular.module('sstTool8App').controller('defaultController', function ($scope, 
         question['response'] = option.value;//option.answer;
         question['selected'] = option;
     };
-
+    
     /**
      * Resets the full questionnaire page
      * @returns {undefined}
