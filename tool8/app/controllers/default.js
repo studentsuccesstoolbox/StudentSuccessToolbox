@@ -18,7 +18,9 @@ angular.module('sstTool8App').controller('defaultController', function ($scope, 
     $scope.q_your_online_orientation = tool8Questionnaire['your-online-orientation'];
     $scope.q_online_orientation_anxiety = tool8Questionnaire['online-orientation-anxiety'];
     $scope.q_online_orientation_set_expectations = tool8Questionnaire['online-orientation-set-expectations'];
-
+    $scope.q_online_orientation_positiverolemodel = tool8Questionnaire['online-orientation-positiverolemodel'];
+    $scope.q_online_orientation_socialising = tool8Questionnaire['online-orientation-socialising'];
+    
     $scope.t8Subsections = areasViewedT8;
 
     $scope.sectionWidthT8 = Math.floor((100 / (Object.keys(areasViewedT8).length))) + '%';

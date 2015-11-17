@@ -147,14 +147,78 @@ sstTool8App.config(function ($routeProvider) {
                 controller: 'defaultController'
             })
             // set expectations section stop
+            // positive role model section start
             .when('/elements-of-an-online-orientation/positive-role-model/', {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/positive-role-model.html',
                 controller: 'defaultController'
             })
+            .when('/elements-of-an-online-orientation/positive-role-model/video1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/positive-role-model/video1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/positive-role-model/video2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/positive-role-model/video2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/positive-role-model/text1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/positive-role-model/text1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/positive-role-model/text2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/positive-role-model/text2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/positive-role-model/website/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/positive-role-model/website.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/positive-role-model/activity1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/positive-role-model/activity1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/positive-role-model/activity2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/positive-role-model/activity2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/positive-role-model/online-orientation-summary/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/positive-role-model/online-orientation-summary.html',
+                controller: 'defaultController'
+            })
+            // positive role model section stop
+            // socialising section start
             .when('/elements-of-an-online-orientation/socialising/', {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/socialising.html',
                 controller: 'defaultController'
             })
+            .when('/elements-of-an-online-orientation/socialising/video1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/socialising/video1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/socialising/text1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/socialising/text1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/socialising/social-media/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/socialising/social-media.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/socialising/activity1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/socialising/activity1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/socialising/activity2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/socialising/activity2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/socialising/activity3/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/socialising/activity3.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/socialising/online-orientation-summary/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/socialising/online-orientation-summary.html',
+                controller: 'defaultController'
+            })
+            // socialising section stop
             .when('/elements-of-an-online-orientation/campus-tour/', {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/campus-tour.html',
                 controller: 'defaultController'
