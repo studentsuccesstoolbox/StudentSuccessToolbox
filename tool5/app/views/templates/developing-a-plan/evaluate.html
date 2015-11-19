@@ -35,18 +35,23 @@
     
     <div class="row spacer-top-3x">
         <div class="col-md-offset-1 col-md-5"> 
-            
+            <script type="text/ng-template" id="quotePopoverTemplate.html">
+                <div>vcvcxvcxvcxvcxvcxvxcvcxvxcvcvz</div>
+                <div class="form-group">
+                  <label>Popup Title:sdfs dfasfsdfdfas</label>
+                </div>
+            </script>
             <div class="navigation-table nopadding">                
-                <button popover-placement="right" popover-template="app/views/partials/popover-quote.html" popover="On the Top!" title="" class="navigation-cell" >
+                <button popover-trigger="mouseenter" popover-template="'app/views/partials/popovers/currency-popover-quote.html'"  popover-placement="bottom" popover-class="popover-quote" class="navigation-cell" type="button">
                     <span>Currency</span>
                 </button>
-                <button title="" class="navigation-cell">
+                <button popover-trigger="mouseenter" popover-template="'app/views/partials/popovers/relevance-popover-quote.html'"  popover-placement="bottom" popover-class="popover-quote" class="navigation-cell" type="button">
                     <span>Relevance</span>
                 </button>
-                <button title="" class="navigation-cell">
+                <button popover-trigger="mouseenter" popover-template="'app/views/partials/popovers/authority-popover-quote.html'"  popover-placement="bottom" popover-class="popover-quote" class="navigation-cell" type="button">
                     <span>Authority</span>
                 </button>
-                <button title="" class="navigation-cell use">
+                <button popover-trigger="mouseenter" popover-template="'app/views/partials/popovers/purpose-popover-quote.html'"  popover-placement="bottom" popover-class="popover-quote" class="navigation-cell" type="button">
                     <span>Purpose</span>
                 </button>
             </div>            

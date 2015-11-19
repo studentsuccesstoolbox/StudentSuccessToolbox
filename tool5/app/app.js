@@ -78,18 +78,13 @@ sstTool5App.config(function($routeProvider) {
                 controller: 'defaultController'
     	})
         
-        .when('/submiting/', {
-    		templateUrl: 'app/views/templates/submiting.html',
+        .when('/submitting-the-assignment/', {
+    		templateUrl: 'app/views/templates/submitting-the-assignment.html',
                 controller: 'defaultController'
     	})
         
-        .when('/beginer-library/', {
-    		templateUrl: 'app/views/templates/library/beginer-library.html',
-                controller: 'defaultController'
-    	})
-        
-        .when('/experience-library/', {
-    		templateUrl: 'app/views/templates/library/experience-library.html',
+        .when('/using-the-library/', {
+    		templateUrl: 'app/views/templates/using-the-library.html',
                 controller: 'defaultController'
     	})
         

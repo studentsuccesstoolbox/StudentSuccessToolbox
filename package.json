@@ -24,7 +24,7 @@
     "angular-route": "1.4.*",
     "angular-sanitize": "1.4.*",
     "angular-aria": "1.4.*",
-    "bootstrap": "3.3.*",
+
     "angular-ui-bootstrap": "*",
     "chart.js": "1.0.*",
     "angular-chart.js": "0.8.*"

@@ -283,130 +283,177 @@ $round-nav-height:  180px;
 
 
 
-
-//** tool5 progress bar
-/*
-.section-nav.simple-progress-b li.active.start-active span.title {
-    font-size: 2em;
-    font-weight: bold;
-    color: $primary-color;
+//** Tool 5 what stage are you at */
+.circle-nav-link{
+    border: 4px solid #adadad;
+    border-radius: 100%;
+    display: block; 
+    max-width: 280px;
+    margin: 0 auto;
+    
+    &.red{
+        border: 4px solid #c87676;
+        &:hover, &:active, &:focus {
+            border: 4px solid #af5b5b;
+         }
+    }
+    
+    &.orange{
+        border: 4px solid #a5b638; 
+        &:hover, &:active, &:focus {
+            border: 4px solid #8b9c21;
+         }
+    }
+    
+    &.blue{
+        border: 4px solid #08a7cd ;
+        &:hover, &:active, &:focus {
+            border: 4px solid #00809f;
+         }
+    }
+    
+    &.green{
+        border: 4px solid #38b6b2;
+        &:hover, &:active, &:focus {
+            border: 4px solid #1f9995;
+         }
+    }
+    
 }
 
-.section-nav.simple-progress-b li.active.start-active span.connector {
-    background: $primary-color none repeat scroll 0 0;
+.circle-nav-button {
+    
+    border-radius: 100%;
+    width: $round-nav-width;
+    height: $round-nav-height;
+    z-index: 2;
+    position:relative;
+    text-align: center;
+    background-color: #adadad;
+    box-shadow: 0 0 0 4px #fff inset;
+    transition: all 300ms ease-out 0s;
+    -moz-transition: all 300ms ease-out 0s;
+    -o-transition: all 300ms ease-out 0s;
+    -webkit-transition: all 300ms ease-out 0s;
+    
+    &.responsive{
+        width:100%;
+        height: auto;
+        padding-top: 100%;
+    }
+    
+    &.red{
+        background: #c87676;
+         &:hover, &:active, &:focus {
+            background: #af5b5b;
+         }
+    }
+    &.orange{
+        background: #a5b638;
+        &:hover, &:active, &:focus {
+            background: #8b9c21;
+         }
+    }
+    &.blue{
+        background: #08a7cd;
+        &:hover, &:active, &:focus {
+            background: #00809f;
+         }
+    }
+    &.green{
+        background: #38b6b2;
+        &:hover, &:active, &:focus {
+            background: #1f9995;
+         }
+    }
+    
+    span{
+        @include vertical-align();
+        position: absolute;
+        display: block;
+        text-align: center;
+        width: 100%;
+        color: #fff;
+        font-size: 2.2em;
+        line-height: 1.2em;
+        text-transform: uppercase;
+    }
+    
 }
 
-.section-nav.simple-progress-b li.active.plan-active span.title {
-    font-size: 2em;
-    font-weight: bold;
-    color: $secondary-color;
+
+.navigation-table2 {
+    height: 400px;
 }
 
-.section-nav.simple-progress-b li.active.plan-active span.connector {
-    background: $secondary-color none repeat scroll 0 0;
+.navigation-cell2{
+    border-radius: 100%;
+    box-shadow: 0 0 0 4px #fff inset;
+    clear: both;
+    display: table;
+    overflow: hidden;
+    transition: all 300ms ease-out 0s;
+    height: 55%;
+    padding: 2.3em 0 0;
+    position: relative;
+    z-index: 10;
+    width: 21%;
+    text-align: center;
+    transition: all 300ms ease-out 0s;
+    -moz-transition: all 300ms ease-out 0s;
+    -o-transition: all 300ms ease-out 0s;
+    -webkit-transition: all 300ms ease-out 0s;
 }
 
-.section-nav.simple-progress-b li.active.find-active span.connector {
-    background: #a5b638 none repeat scroll 0 0;
-}
-
-.section-nav.simple-progress-b li.active.find-active span.title {
-    font-size: 2em;
-    font-weight: bold;
-    color: #a5b638;
-}
-
-.section-nav.simple-progress-b li.active.evaluate-active span.connector {
-    background: #c87676 none repeat scroll 0 0;
-}
-
-.section-nav.simple-progress-b li.active.evaluate-active span.title {
-    font-size: 2em;
-    font-weight: bold;
-    color: #c87676;
-}
-
-.section-nav.simple-progress-b li.active.use-active span.connector {
+.section-c-conf {
+    float: right;
+    margin: -1em 0 0;
     background: #38b6b2 none repeat scroll 0 0;
+    border: 4px solid #38b6b2;
+}
+.section-c-begin {
+    clear: right;
+    margin: -4.5em 0 0;
+    background: #c87676 none repeat scroll 0 0;
+    border: 4px solid #c87676;
+}
+.section-s-exp {
+    clear: none;
+    margin: -6em 0 0 2.5em;
+    background: $secondary-color none repeat scroll 0 0;
+    border: 4px solid $secondary-color;
+}
+.section-w-begin {
+    margin: -3.5em 0 0 9em;
+    background: #a5b638 none repeat scroll 0 0;
+    border: 4px solid #a5b638;
 }
 
-.section-nav.simple-progress-b li.active.use-active span.title {
-    font-size: 2em;
-    font-weight: bold;
-    color: #38b6b2;
+.section-c-conf:hover, .section-c-conf:active, .section-c-conf:focus {
+    background: #1f9995 none repeat scroll 0 0;
+    border: 4px solid #1f9995;
+ }
+.section-c-begin:hover, .section-c-begin:active, .section-c-begin:focus {
+    background: #af5b5b none repeat scroll 0 0;
+    border: 4px solid #af5b5b;
+ }
+.section-s-exp:hover, .section-s-exp:active, .section-s-exp:focus {
+    background: #00809f none repeat scroll 0 0;
+    border: 4px solid #00809f;
+ } 
+.section-w-begin:hover, .section-w-begin:active, .section-w-begin:focus {
+    background: #8b9c21 none repeat scroll 0 0;
+    border: 4px solid #8b9c21;
+ }
+
+.navigation-table2 a {
+    color: $font-color-dark-bg;
+    border-radius: 100%;
+    font-size: 2.2em;
+    line-height: 1.2em;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
 }
 
 
-.simple-progress-b .ng-scope.active {
-    margin-top: -2px;
-}
-
-.section-nav.simple-progress-b li span.connector-line {
-    bottom: 0.8em;
-    height: 0.4em;
-}
-
-.section-nav.simple-progress-b li.final {
-    margin-top: -12px;
-}
-
-
-
-@media only screen and (max-width:$screen-md) {
-
-    .section-nav.simple-progress-b li.active.start-active span.connector::after {
-        color: $primary-color;
-    }
-    
-    .section-nav.simple-progress-b li.active.start-active span.connector {
-        background: $font-color-dark-bg none repeat scroll 0 0;
-        border: 5px solid $primary-color;
-    }
-    
-    .section-nav.simple-progress-b li.active.plan-active span.connector::after {
-        color: $primary-color;
-    }
-    
-    .section-nav.simple-progress-b li.active.plan-active span.connector {
-        background: $font-color-dark-bg none repeat scroll 0 0;
-        border: 5px solid $primary-color;
-    }
-    
-    .section-nav.simple-progress-b li.active.find-active span.connector::after {
-        color: $primary-color;
-    }
-    
-    .section-nav.simple-progress-b li.active.find-active span.connector {
-        background: $font-color-dark-bg none repeat scroll 0 0;
-        border: 5px solid $primary-color;
-    }
-    
-    .section-nav.simple-progress-b li.active.evaluate-active span.connector::after {
-        color: $primary-color;
-    }
-    
-    .section-nav.simple-progress-b li.active.evaluate-active span.connector {
-        background: $font-color-dark-bg none repeat scroll 0 0;
-        border: 5px solid $primary-color;
-    }
-    
-    .section-nav.simple-progress-b li.active.use-active span.connector::after {
-        color: $primary-color;
-    }
-    
-    .section-nav.simple-progress-b li.active.use-active span.connector {
-        background: $font-color-dark-bg none repeat scroll 0 0;
-        border: 5px solid $primary-color;
-    }
-
-    .section-nav.simple-progress-b li span.connector-line {
-        bottom: 1.5em;
-        height: 0.8em;
-    }
-    .section-nav.simple-progress-b li.final {
-        margin-top: -3px;
-    }
-}*/
-
-
-//** end tool5 progress bar

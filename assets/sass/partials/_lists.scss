@@ -27,3 +27,70 @@ ul.info-list {
     }
     
 }
+
+ul.hoz-step-listing{
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    
+    @media(min-width:$screen-md-max){
+        margin-top: 8em;
+        margin-bottom: 8em;
+    
+        &:before{
+            content: "\f178";
+            font-family: FontAwesome;
+            @include vertical-align();
+            font-size: 60em;
+            position: absolute;
+            text-align: center;
+            color: #ccc;
+            width: 100%;  
+        }
+    }
+    
+    li{
+        background-color: #1a8099;
+        color: #fff;
+        position: relative;
+        width: 160px;
+        padding: 1em;
+        box-shadow: 3px 2px 4px #cadce0;
+        margin: 0;
+        overflow: hidden;
+        display: inline-block;
+        margin: 6px;
+        height: 150px;
+        border: 4px solid #fff;
+        border-radius: 10px;
+        
+        
+        span.step{
+            @include vertical-align();
+            position:absolute;
+            width: 130px;
+            text-align: center;
+            font-size: 7em;
+            opacity: 0.3;
+        }
+        
+        span{
+            @include vertical-align();
+            display:block;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: 600;
+            
+            a {
+                color: #fff;
+                cursor: pointer;
+                line-height: 1em;
+                font-size: 1.1em;
+                font-weight: 600;
+            }
+        }
+    }
+    
+    
+}
