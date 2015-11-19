@@ -6,6 +6,11 @@
  */
 angular.module('sharedControllers').controller('defaultController', function($scope,$modal,$location) {
     
+    $scope.isTouchDevice = isTouchDevice();
+        console.log('before');
+        console.log($scope.isTouchDevice);
+        console.log('after');
+        
     $scope.menuClass = function(page) {
         var current = $location.path().substring(1);
         return page === current ? "active" : "";

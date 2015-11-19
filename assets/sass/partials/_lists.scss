@@ -94,3 +94,20 @@ ul.hoz-step-listing{
     
     
 }
+
+ul.link-list {
+    
+    list-style: none;
+    
+    li{
+        padding-bottom: 0.3em;
+    }
+    
+    li:before {
+        font-family: 'FontAwesome';
+        content: "\f105";
+        color: #f9a029;
+        font-size: 1.3em;
+        @include vertical-align();
+    }
+}

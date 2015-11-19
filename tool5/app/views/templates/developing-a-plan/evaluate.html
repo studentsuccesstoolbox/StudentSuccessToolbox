@@ -28,6 +28,7 @@
                          in the subject area, is always a good idea when trying to evaluate the quality of 
                          a piece of information. 
                     </p>
+                    <footer>Eamon (Tutor)</footer>
                 </blockquote>
             </div>
         </div>
@@ -42,16 +43,16 @@
                 </div>
             </script>
             <div class="navigation-table nopadding">                
-                <button popover-trigger="mouseenter" popover-template="'app/views/partials/popovers/currency-popover-quote.html'"  popover-placement="bottom" popover-class="popover-quote" class="navigation-cell" type="button">
+                <button popover-trigger="{{isTouchDevice?'click':'mouseenter'}}" popover-template="'app/views/partials/popovers/currency-popover-quote.html'"  popover-placement="bottom" popover-class="popover-quote" class="navigation-cell" type="button">
                     <span>Currency</span>
                 </button>
-                <button popover-trigger="mouseenter" popover-template="'app/views/partials/popovers/relevance-popover-quote.html'"  popover-placement="bottom" popover-class="popover-quote" class="navigation-cell" type="button">
+                <button popover-trigger="{{isTouchDevice?'click':'mouseenter'}}" popover-template="'app/views/partials/popovers/relevance-popover-quote.html'"  popover-placement="bottom" popover-class="popover-quote" class="navigation-cell" type="button">
                     <span>Relevance</span>
                 </button>
-                <button popover-trigger="mouseenter" popover-template="'app/views/partials/popovers/authority-popover-quote.html'"  popover-placement="bottom" popover-class="popover-quote" class="navigation-cell" type="button">
+                <button popover-trigger="{{isTouchDevice?'click':'mouseenter'}}" popover-template="'app/views/partials/popovers/authority-popover-quote.html'"  popover-placement="bottom" popover-class="popover-quote" class="navigation-cell" type="button">
                     <span>Authority</span>
                 </button>
-                <button popover-trigger="mouseenter" popover-template="'app/views/partials/popovers/purpose-popover-quote.html'"  popover-placement="bottom" popover-class="popover-quote" class="navigation-cell" type="button">
+                <button popover-trigger="{{isTouchDevice?'click':'mouseenter'}}" popover-template="'app/views/partials/popovers/purpose-popover-quote.html'"  popover-placement="bottom" popover-class="popover-quote" class="navigation-cell" type="button">
                     <span>Purpose</span>
                 </button>
             </div>            

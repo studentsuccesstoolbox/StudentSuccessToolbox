@@ -61307,6 +61307,8 @@ angular.module('sharedControllers', [])
         //FeedBack Form values
         $scope.feedbackComment = '';
         $scope.feedbackName = '';
+        
+        $scope.isTouchDevice = isTouchDevice();
 
         //Sets scope rating questions
         $scope.ratings = $rootScope.ratings;
@@ -61347,6 +61349,19 @@ angular.module('sharedControllers', [])
 
         };
     }]);
+    
+ function isTouchDevice() {
+        var bool;
+        if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
+          bool = true;
+        } else {
+          var query = ['@media (', prefixes.join('touch-enabled),('), 'heartz', ')', '{#modernizr{top:9px;position:absolute}}'].join('');
+          testStyles(query, function(node) {
+            bool = node.offsetTop === 9;
+          });
+        }
+        return bool;
+ };
 /* 
  * Controller for Home Page
  * Not much happening here
@@ -61355,6 +61370,11 @@ angular.module('sharedControllers', [])
  */
 angular.module('sharedControllers').controller('defaultController', ["$scope", "$modal", "$location", function($scope,$modal,$location) {
     
+    $scope.isTouchDevice = isTouchDevice();
+        console.log('before');
+        console.log($scope.isTouchDevice);
+        console.log('after');
+        
     $scope.menuClass = function(page) {
         var current = $location.path().substring(1);
         return page === current ? "active" : "";

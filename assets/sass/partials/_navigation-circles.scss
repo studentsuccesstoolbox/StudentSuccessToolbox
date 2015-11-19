@@ -319,6 +319,11 @@ $round-nav-height:  180px;
          }
     }
     
+    @media(max-width: $screen-xs-max){
+         border-radius: 52px;
+         margin-bottom: 1em;
+    }
+    
 }
 
 .circle-nav-button {
@@ -377,6 +382,16 @@ $round-nav-height:  180px;
         font-size: 2.2em;
         line-height: 1.2em;
         text-transform: uppercase;
+        padding: 0 5px 0 5px;
+    }
+    
+    @media(max-width: $screen-xs-max){
+         border-radius: 50px;
+         &.responsive{
+            width:100%;
+            height: auto;
+            padding-top: 100px;
+        }
     }
     
 }
