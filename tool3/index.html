@@ -19,6 +19,21 @@
 <!-- apply our angular app -->
 <body ng-app="sstTool3App">
 
+    <div class="container shadow">
+        <header>
+            <div id="header" class="">
+                    <!-- institution logo here -->
+                    <h1 class="header-heading who-can-i-ask hidden-xs">
+                        <span class="a-word">Who</span>
+                        <span class="b-word">can</span> 
+                        <span class="c-word">I ask</span>
+                        <span class="f-word">?</span>
+                    </h1>
+            </div>
+            <h1 class="visible-xs-block mob-heading" >Who can I ask?</h1>
+        </header>
+    </div>
+    
     <!-- inject our views using ng-view -->
     <!-- each angular controller applies a different class here -->
     <div class="page {{ pageClass }}" ng-view autoscroll="true"></div>

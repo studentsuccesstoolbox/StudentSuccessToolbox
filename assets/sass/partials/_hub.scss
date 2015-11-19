@@ -2,6 +2,8 @@
 
 .hub-nav {
     position:relative;
+    max-width: 600px;
+    margin: 0 auto;
 
     a {
         line-height: inherit;
@@ -11,11 +13,7 @@
             color:transparent;
         }
     }
-    
-    @media(max-width:$screen-sm-max){
-        margin-left: -15px;
-        margin-right: -15px;
-    } 
+
 }
 
 .hub-button-bg {
