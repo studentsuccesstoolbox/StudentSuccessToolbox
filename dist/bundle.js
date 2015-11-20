@@ -58304,7 +58304,6 @@ $ = require('jquery');
 
 var angular = require('angular');
 
-
 var sstTool5App = angular.module('sstTool5App', [require('angular-ui-bootstrap')
                         ,require('angular-route')
                         ,require('angular-sanitize')
@@ -61143,13 +61142,13 @@ function throttle(func, wait, options) {
  */
   function Decorate($provide) {
       
-    $provide.decorator('accordionGroupDirective', function($delegate) {
-      var directive = $delegate[0];
+    $provide.decorator('accordionGroupDirective', ['$delegate', function($delegate) {
+        var directive = $delegate[0];
 
-      directive.templateUrl = "../shared/views/partials/accordion/accordion-group.html";
+        directive.templateUrl = "../shared/views/partials/accordion/accordion-group.html";
 
-      return $delegate;
-    });
+        return $delegate;
+    }]);
     
   }
 

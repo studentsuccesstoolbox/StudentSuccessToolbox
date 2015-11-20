@@ -1,0 +1,49 @@
+.carousel {
+    background: #ddd;
+    border-radius: 8px;
+    
+    .quote-slide{
+        font-size: 1.8em;
+        background: #1a8099;
+        border: 1px solid #1a8099;
+        border-radius: 8px;
+        min-height: 300px;
+        padding:1em;
+        margin:1em;
+        color:#fff;
+        font-style: italic;
+        p{
+            margin:10px;
+            &:before {
+                content: "\f10d";
+                font-family: FontAwesome;
+                color: #b9b9b9;
+                font-size: 1.5em;
+                font-style: normal;
+                margin: 0;
+                padding: 0 10px 0 0;
+            }
+            &:after {
+                content: "\f10e";
+                color: #b9b9b9;
+                font-family: FontAwesome;
+                font-size: 1.5em;
+                font-style: normal;
+                margin: 0;
+                padding: 0 0 0 10px;
+            }
+        }
+    }
+    
+    .carousel-control{
+        border-radius: 8px;
+        &.left {
+            @include gradient-horizontal($start-color: rgba(255,255,255,.5), $end-color: rgba(255,255,255,.0001));
+        }
+        &.right {
+            @include gradient-horizontal($start-color: rgba(255,255,255,.0001), $end-color: rgba(255,255,255,.5));
+        }
+    }
+    
+}
+
