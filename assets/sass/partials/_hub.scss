@@ -127,9 +127,11 @@
     &.button-me {
         background-color: #a6a6a6;
         border: medium none;
-        margin-top: -75px;
-        margin-left: -75px;
+        margin-top: -100px;
+        margin-left: -100px;
         margin-right: 0;
+        width: 200px;
+        height: 200px;
 
         p{
             bottom: 0.4em;
@@ -315,6 +317,8 @@
             border: medium none;
             margin-top: -($hub-width / 2);
             margin-left: -($hub-width / 2);
+            width: $hub-width;
+            height: $hub-height;
             
             p{
                 bottom: 0.4em;
@@ -402,6 +406,8 @@
             border: medium none;
             margin-top: -40px;
             margin-left: -40px;
+            width: 80px;
+            height: 80px;
             
             p{
                 bottom: 0.4em;
