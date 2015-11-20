@@ -4,17 +4,26 @@
  * @author Paul Schweppe
  * 
  */
-angular.module('sharedControllers').controller('defaultController', function($scope,$modal,$location) {
+angular.module('sharedControllers').controller('defaultController', function($scope,$modal,$location,$rootScope) {
     
     $scope.isTouchDevice = isTouchDevice();
-        console.log('before');
-        console.log($scope.isTouchDevice);
-        console.log('after');
+    
+    $scope.persona = ($rootScope.personas != undefined)?$rootScope.personas:{'index':0};
+ 
+    $scope.setPersona = function(index){
+        console.log(index);
+        $scope.persona.index = index;
+    };
         
     $scope.menuClass = function(page) {
         var current = $location.path().substring(1);
         return page === current ? "active" : "";
     };
+    
+    $scope.setLocation = function(newLocation){
+        console.log('test');
+        $location = newLocation;
+    }
   
     /**
      * 

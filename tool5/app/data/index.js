@@ -6,3 +6,4 @@
 'use strict';
  
 require('./tool5Rating');
+require('./tool5Personas');

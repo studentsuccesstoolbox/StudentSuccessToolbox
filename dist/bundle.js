@@ -58459,6 +58459,7 @@ sstTool5App.config(["$routeProvider", function($routeProvider) {
 }]).run( ["$rootScope", "$location", function($rootScope, $location) {
         //Get questionnaire data from localstorage
         $rootScope.ratings = tool5Rating.ratings;
+        $rootScope.personas = tool5Personas;
        
 }]);
 },{"./controllers":84,"./data":85,"angular":20,"angular-animate":9,"angular-aria":11,"angular-route":14,"angular-sanitize":16,"angular-ui-bootstrap":17,"jquery":22}],83:[function(require,module,exports){
@@ -58493,7 +58494,13 @@ require('./home');
 'use strict';
  
 require('./tool5Rating');
-},{"./tool5Rating":86}],86:[function(require,module,exports){
+require('./tool5Personas');
+
+},{"./tool5Personas":86,"./tool5Rating":87}],86:[function(require,module,exports){
+tool5Personas = {
+    index: 0
+};
+},{}],87:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -58599,7 +58606,7 @@ tool5Rating = {
             }]
     }
 };
-},{}],87:[function(require,module,exports){
+},{}],88:[function(require,module,exports){
 /**
  * Sudent Success Toolbox - Tool 2
  * The objective of this tool app, is to help prospective students think about the amount 
@@ -58772,7 +58779,7 @@ sstTool8App.config(["$routeProvider", function ($routeProvider) {
                 controller: 'defaultController'
             });
 }]);
-},{"./controllers":90,"./data":94,"./directives":97,"./filters":100,"./services":102,"angular":20,"angular-animate":9,"angular-aria":11,"angular-route":14,"angular-sanitize":16,"angular-ui-bootstrap":17,"jquery":22}],88:[function(require,module,exports){
+},{"./controllers":91,"./data":95,"./directives":98,"./filters":101,"./services":103,"angular":20,"angular-animate":9,"angular-aria":11,"angular-route":14,"angular-sanitize":16,"angular-ui-bootstrap":17,"jquery":22}],89:[function(require,module,exports){
 /* 
  * Controller for Home Page
  * Not much happening here
@@ -58900,7 +58907,7 @@ angular.module('sstTool8App').controller('defaultController', ["$scope", "$modal
 
 
 }]);
-},{}],89:[function(require,module,exports){
+},{}],90:[function(require,module,exports){
 /* 
  * Controller for Home Page
  * Not much happening here
@@ -58912,7 +58919,7 @@ angular.module('sstTool8App').controller('homeController', ["$scope", function($
 }]);
 
 
-},{}],90:[function(require,module,exports){
+},{}],91:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -58925,7 +58932,7 @@ require('./default');
 require('./questionnaireT8');
 require('./rate');
 
-},{"./default":88,"./home":89,"./questionnaireT8":91,"./rate":92}],91:[function(require,module,exports){
+},{"./default":89,"./home":90,"./questionnaireT8":92,"./rate":93}],92:[function(require,module,exports){
 /* 
  * Controller for Questionaire
  *
@@ -58955,7 +58962,7 @@ angular.module('sstTool8App').controller('questionnaireT8Controller',["$scope", 
 
 
 
-},{}],92:[function(require,module,exports){
+},{}],93:[function(require,module,exports){
 /* 
  * Controller for Home Page
  * Not much happening here
@@ -58973,7 +58980,7 @@ angular.module('sstTool8App').controller('rateController', ["$scope", function($
 }]);
 
 
-},{}],93:[function(require,module,exports){
+},{}],94:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -59038,7 +59045,7 @@ areasViewedT8 =
         ]
 
 
-},{}],94:[function(require,module,exports){
+},{}],95:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -59048,7 +59055,7 @@ areasViewedT8 =
  
 require('./areasViewed');
 require('./tool8Questionnaire');
-},{"./areasViewed":93,"./tool8Questionnaire":95}],95:[function(require,module,exports){
+},{"./areasViewed":94,"./tool8Questionnaire":96}],96:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -59341,11 +59348,11 @@ tool8Questionnaire = {
         ]
     }
 };
-},{}],96:[function(require,module,exports){
+},{}],97:[function(require,module,exports){
 arguments[4][74][0].apply(exports,arguments)
-},{"dup":74}],97:[function(require,module,exports){
+},{"dup":74}],98:[function(require,module,exports){
 arguments[4][75][0].apply(exports,arguments)
-},{"./angular.audio":96,"./readmore":98,"dup":75}],98:[function(require,module,exports){
+},{"./angular.audio":97,"./readmore":99,"dup":75}],99:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -59467,7 +59474,7 @@ angular.module('sstTool8App').directive('readMore', function() {
 });
 
 
-},{}],99:[function(require,module,exports){
+},{}],100:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -59478,9 +59485,9 @@ angular.module('sstTool8App').filter('encodeURIComponent', function() {
 });
 
 
-},{}],100:[function(require,module,exports){
+},{}],101:[function(require,module,exports){
 arguments[4][7][0].apply(exports,arguments)
-},{"./encodeURIComponent":99,"dup":7}],101:[function(require,module,exports){
+},{"./encodeURIComponent":100,"dup":7}],102:[function(require,module,exports){
 /**
  * Services for validation and showing any errors in a modal. 
  * Checks that the activity time does not exceed 168.
@@ -59527,7 +59534,7 @@ angular.module('sstTool8App').factory('errorModalService',["$modal", function($m
     return obj;
     
 }]);
-},{}],102:[function(require,module,exports){
+},{}],103:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -59536,7 +59543,7 @@ angular.module('sstTool8App').factory('errorModalService',["$modal", function($m
 'use strict';
  
 require('./errorModal');
-},{"./errorModal":101}]},{},[23,38,57,66,1,82,87]);
+},{"./errorModal":102}]},{},[23,38,57,66,1,82,88]);
 
 /**  
  * jsPDF - PDF Document creation from JavaScript
@@ -61216,30 +61223,113 @@ angular.module('sharedControllers', [])
         if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
           bool = true;
         } else {
+          var prefixes = ' -webkit- -moz- -o- -ms- '.split(' ');
           var query = ['@media (', prefixes.join('touch-enabled),('), 'heartz', ')', '{#modernizr{top:9px;position:absolute}}'].join('');
-          testStyles(query, function(node) {
+          injectElementWithStyles(query, function(node) {
             bool = node.offsetTop === 9;
           });
         }
         return bool;
  };
+ 
+ function injectElementWithStyles(rule, callback, nodes, testnames) {
+    var mod = 'modernizr';
+    var style;
+    var ret;
+    var node;
+    var docOverflow;
+    var div = createElement('div');
+    var body = document.body;
+
+    if (parseInt(nodes, 10)) {
+      // In order not to give false positives we create a node for each test
+      // This also allows the method to scale for unspecified uses
+      while (nodes--) {
+        node = createElement('div');
+        node.id = testnames ? testnames[nodes] : mod + (nodes + 1);
+        div.appendChild(node);
+      }
+    }
+
+    style = createElement('style');
+    style.type = 'text/css';
+    style.id = 's' + mod;
+
+    // IE6 will false positive on some tests due to the style element inside the test div somehow interfering offsetHeight, so insert it into body or fakebody.
+    // Opera will act all quirky when injecting elements in documentElement when page is served as xml, needs fakebody too. #270
+    (!body.fake ? div : body).appendChild(style);
+    body.appendChild(div);
+
+    if (style.styleSheet) {
+      style.styleSheet.cssText = rule;
+    } else {
+      style.appendChild(document.createTextNode(rule));
+    }
+    div.id = mod;
+
+    if (body.fake) {
+      //avoid crashing IE8, if background image is used
+      body.style.background = '';
+      //Safari 5.13/5.1.4 OSX stops loading if ::-webkit-scrollbar is used and scrollbars are visible
+      body.style.overflow = 'hidden';
+      docOverflow = docElement.style.overflow;
+      docElement.style.overflow = 'hidden';
+      docElement.appendChild(body);
+    }
+
+    ret = callback(div, rule);
+    // If this is done after page load we don't want to remove the body so check if body exists
+    if (body.fake) {
+      body.parentNode.removeChild(body);
+      docElement.style.overflow = docOverflow;
+      // Trigger layout so kinetic scrolling isn't disabled in iOS6+
+      docElement.offsetHeight;
+    } else {
+      div.parentNode.removeChild(div);
+    }
+
+    return !!ret;
+
+  }
+  
+  function createElement() {
+    if (typeof document.createElement !== 'function') {
+      // This is the case in IE7, where the type of createElement is "object".
+      // For this reason, we cannot call apply() as Object is not a Function.
+      return document.createElement(arguments[0]);
+    } else if (document.documentElement.nodeName.toLowerCase() === 'svg') {
+      return document.createElementNS.call(document, 'http://www.w3.org/2000/svg', arguments[0]);
+    } else {
+      return document.createElement.apply(document, arguments);
+    }
+  }
+
 /* 
  * Controller for Home Page
  * Not much happening here
  * @author Paul Schweppe
  * 
  */
-angular.module('sharedControllers').controller('defaultController', ["$scope", "$modal", "$location", function($scope,$modal,$location) {
+angular.module('sharedControllers').controller('defaultController', ["$scope", "$modal", "$location", "$rootScope", function($scope,$modal,$location,$rootScope) {
     
     $scope.isTouchDevice = isTouchDevice();
-        console.log('before');
-        console.log($scope.isTouchDevice);
-        console.log('after');
+    
+    $scope.persona = ($rootScope.personas != undefined)?$rootScope.personas:{'index':0};
+ 
+    $scope.setPersona = function(index){
+        console.log(index);
+        $scope.persona.index = index;
+    };
         
     $scope.menuClass = function(page) {
         var current = $location.path().substring(1);
         return page === current ? "active" : "";
     };
+    
+    $scope.setLocation = function(newLocation){
+        console.log('test');
+        $location = newLocation;
+    }
   
     /**
      * 

@@ -167,5 +167,6 @@ sstTool5App.config(function($routeProvider) {
 }).run( function($rootScope, $location) {
         //Get questionnaire data from localstorage
         $rootScope.ratings = tool5Rating.ratings;
+        $rootScope.personas = tool5Personas;
        
 });
