@@ -15,7 +15,7 @@
     <div class="row spacer-top-3x">
         <div class="col-md-offset-2 col-md-8">
             <div ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? '':'hidden'" class="q-head large" ng-style="{'background':section.colourActive}">
-                <h2 ng-if="currentSection.toLowerCase().indexOf(section.val) >= 0" class="text-center nopadding">{{section.title}} / Video #1</h2>
+                <h2 ng-if="currentSection.toLowerCase().indexOf(section.val) >= 0" class="text-center nopadding">{{section.title}} / Text #1</h2>
             </div>
         </div>
     </div>
@@ -23,23 +23,22 @@
     <div class="row spacer-top-3x">
         <div class="col-md-offset-2 col-md-8">
             <div class="row spacer-bottom-2x"></div>
-            <div align="center" class="embed-responsive embed-responsive-16by9">
-                <!--
-                <video autoplay loop controls >
-                    <source src=http://techslides.com/demos/sample-videos/small.mp4 type=video/mp4>
-                </video>
-                -->
-                <iframe class="embed-responsive-item"  src="https://www.youtube.com/embed/yaqe1qesQ8c"></iframe>
-            </div>
+            There are a great number of points that may be presented in terms of setting expectations. This example is specifically related to expectations for online learners and technology:
+            <ul>
+                <li>
+                    As an online learner you have to be able to utilise technology to facilitate your studies, at least to a minimum level. We know that students occupy all points on the spectrum in terms of having or not having experience in using technology. At a minimum you have to be have a computer or have regular access to a computer with a good broadband internet connection, have Microsoft office, be able to use Microsoft word, be able to navigate the internet and use email. From that basic level then these skills will have to be developed over time in order to best facilitate your learning. For anyone who is going to attending tutorials in a virtual classroom you need to have a good headset with microphone and a webcam, and these would also be recommended for all students so that you can speak to one another over the internet if you wish.
+                </li>
+            </ul>
         </div>
-    </div>
+    </div>    
+    
 
     <div class="row spacer-top-3x spacer-xs-bottom-3x">
         <div class="col-md-5">
             <a href="#/" class="btn btn-info btn-lg btn-block" title="Back to home" aria-label="">Back to home</a>
         </div>
         <div ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? '' : 'hidden'" class="col-md-offset-3 col-md-4 spacer-xs-top-3x spacer-md-top-0">
-            <a ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val + '/video2/')" class="btn btn-default btn-lg btn-block" title="Next" aria-label="Next">Next</a>	
+            <a ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val + '/text2/')" class="btn btn-default btn-lg btn-block" title="Next" aria-label="Next">Next</a>	
         </div>
     </div> 
 </div>

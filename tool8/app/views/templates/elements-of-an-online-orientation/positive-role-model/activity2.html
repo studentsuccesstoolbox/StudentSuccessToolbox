@@ -15,7 +15,7 @@
     <div class="row spacer-top-3x">
         <div class="col-md-offset-2 col-md-8">
             <div ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? '':'hidden'" class="q-head large" ng-style="{'background':section.colourActive}">
-                <h2 ng-if="currentSection.toLowerCase().indexOf(section.val) >= 0" class="text-center nopadding">{{section.title}} / Video #1</h2>
+                <h2 ng-if="currentSection.toLowerCase().indexOf(section.val) >= 0" class="text-center nopadding">{{section.title}} / Activity #2</h2>
             </div>
         </div>
     </div>
@@ -23,14 +23,20 @@
     <div class="row spacer-top-3x">
         <div class="col-md-offset-2 col-md-8">
             <div class="row spacer-bottom-2x"></div>
-            <div align="center" class="embed-responsive embed-responsive-16by9">
-                <!--
-                <video autoplay loop controls >
-                    <source src=http://techslides.com/demos/sample-videos/small.mp4 type=video/mp4>
-                </video>
-                -->
-                <iframe class="embed-responsive-item"  src="https://www.youtube.com/embed/yaqe1qesQ8c"></iframe>
-            </div>
+            <ul>
+                <li>These activities can be led by
+                    <ul>
+                        <li>A staff member</li>
+                        <li>Trained student mentors</li>    
+                    </ul>
+                </li>
+                <li>
+                    Virtual Learning Environments – Have a current student/trained student mentor lead a discussion, using the discussion forum, to relay their experience of studying etc., and answer new students’ questions
+                </li>
+                <li>
+                    Virtual Learning Environments – Upload a video of one or more graduates and/or current students talk about their experience of studying etc. for new students to view. Have a related asynchronous discussion forum, or appoint a time for a synchronous chat discussion, where those graduates/students in the video can answer new students’ questions
+                </li>
+            </ul>
         </div>
     </div>
 
@@ -39,7 +45,7 @@
             <a href="#/" class="btn btn-info btn-lg btn-block" title="Back to home" aria-label="">Back to home</a>
         </div>
         <div ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? '' : 'hidden'" class="col-md-offset-3 col-md-4 spacer-xs-top-3x spacer-md-top-0">
-            <a ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val + '/video2/')" class="btn btn-default btn-lg btn-block" title="Next" aria-label="Next">Next</a>	
+            <a ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val + '/online-orientation-summary/')" class="btn btn-default btn-lg btn-block" title="Next" aria-label="Next">Next</a>	
         </div>
     </div> 
 </div>

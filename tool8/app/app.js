@@ -65,12 +65,13 @@ sstTool8App.config(function ($routeProvider) {
             })
             .when('/different-options/', {
                 templateUrl: 'app/views/templates/different-options.html',
-                controller: 'questionnaireT8Controller'
+                controller: 'defaultController'
             })
             .when('/elements-of-an-online-orientation/', {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation.html',
                 controller: 'defaultController'
             })
+            // reduce anxiety section start
             .when('/elements-of-an-online-orientation/reduce-anxiety/', {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/reduce-anxiety.html',
                 controller: 'defaultController'
@@ -103,22 +104,152 @@ sstTool8App.config(function ($routeProvider) {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/reduce-anxiety/online-orientation-summary.html',
                 controller: 'defaultController'
             })
+            // reduce anxiety section stop
+            // set expectations section start
             .when('/elements-of-an-online-orientation/set-expectations/', {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/set-expectations.html',
                 controller: 'defaultController'
             })
+            .when('/elements-of-an-online-orientation/set-expectations/video1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/set-expectations/video1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/set-expectations/video2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/set-expectations/video2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/set-expectations/text1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/set-expectations/text1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/set-expectations/text2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/set-expectations/text2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/set-expectations/open-educational-resources1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/set-expectations/open-educational-resources1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/set-expectations/open-educational-resources2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/set-expectations/open-educational-resources2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/set-expectations/open-educational-resources3/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/set-expectations/open-educational-resources3.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/set-expectations/activity1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/set-expectations/activity1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/set-expectations/online-orientation-summary/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/set-expectations/online-orientation-summary.html',
+                controller: 'defaultController'
+            })
+            // set expectations section stop
+            // positive role model section start
             .when('/elements-of-an-online-orientation/positive-role-model/', {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/positive-role-model.html',
                 controller: 'defaultController'
             })
+            .when('/elements-of-an-online-orientation/positive-role-model/video1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/positive-role-model/video1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/positive-role-model/video2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/positive-role-model/video2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/positive-role-model/text1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/positive-role-model/text1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/positive-role-model/text2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/positive-role-model/text2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/positive-role-model/website/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/positive-role-model/website.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/positive-role-model/activity1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/positive-role-model/activity1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/positive-role-model/activity2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/positive-role-model/activity2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/positive-role-model/online-orientation-summary/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/positive-role-model/online-orientation-summary.html',
+                controller: 'defaultController'
+            })
+            // positive role model section stop
+            // socialising section start
             .when('/elements-of-an-online-orientation/socialising/', {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/socialising.html',
                 controller: 'defaultController'
             })
+            .when('/elements-of-an-online-orientation/socialising/video1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/socialising/video1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/socialising/text1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/socialising/text1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/socialising/social-media/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/socialising/social-media.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/socialising/activity1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/socialising/activity1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/socialising/activity2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/socialising/activity2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/socialising/activity3/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/socialising/activity3.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/socialising/online-orientation-summary/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/socialising/online-orientation-summary.html',
+                controller: 'defaultController'
+            })
+            // socialising section stop
+            // campus tour section start
             .when('/elements-of-an-online-orientation/campus-tour/', {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/campus-tour.html',
                 controller: 'defaultController'
             })
+            .when('/elements-of-an-online-orientation/campus-tour/interactive-map1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/campus-tour/interactive-map1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/campus-tour/interactive-map2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/campus-tour/interactive-map2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/campus-tour/video1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/campus-tour/video1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/campus-tour/video2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/campus-tour/video2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/campus-tour/activity1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/campus-tour/activity1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/campus-tour/online-orientation-summary/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/campus-tour/online-orientation-summary.html',
+                controller: 'defaultController'
+            })
+            // campus tour section stop
+            // study skills section start
             .when('/elements-of-an-online-orientation/study-skills/', {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills.html',
                 controller: 'defaultController'
@@ -139,18 +270,28 @@ sstTool8App.config(function ($routeProvider) {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/text2.html',
                 controller: 'defaultController'
             })
-            .when('/elements-of-an-online-orientation/study-skills/activity1/', {
-                templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/activity1.html',
+            
+            .when('/elements-of-an-online-orientation/study-skills/open-educational-resources1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/open-educational-resources1.html',
                 controller: 'defaultController'
             })
-            .when('/elements-of-an-online-orientation/study-skills/activity2/', {
-                templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/activity2.html',
+            .when('/elements-of-an-online-orientation/study-skills/open-educational-resources2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/open-educational-resources2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/study-skills/open-educational-resources3-social-media/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/open-educational-resources3-social-media.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/study-skills/activity1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/activity1.html',
                 controller: 'defaultController'
             })
             .when('/elements-of-an-online-orientation/study-skills/online-orientation-summary/', {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/online-orientation-summary.html',
                 controller: 'defaultController'
             })
+            // study skills section stop
             .when('/online-orientation-summary/', {
                 templateUrl: 'app/views/templates/online-orientation-summary.html',
                 controller: 'defaultController'

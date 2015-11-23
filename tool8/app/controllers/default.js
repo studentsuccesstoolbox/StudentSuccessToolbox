@@ -4,7 +4,7 @@
  * @author Paul Schweppe
  * 
  */
-angular.module('sstTool8App').controller('defaultController', function ($scope, $modal, ngAudio, $location) {
+angular.module('sstTool8App').controller('defaultController', function ($scope, $routeParams,$modal, ngAudio, $location) {
 
     $scope.areasViewedT8 = areasViewedT8;
 
@@ -17,7 +17,12 @@ angular.module('sstTool8App').controller('defaultController', function ($scope, 
 
     $scope.q_your_online_orientation = tool8Questionnaire['your-online-orientation'];
     $scope.q_online_orientation_anxiety = tool8Questionnaire['online-orientation-anxiety'];
-
+    $scope.q_online_orientation_set_expectations = tool8Questionnaire['online-orientation-set-expectations'];
+    $scope.q_online_orientation_positiverolemodel = tool8Questionnaire['online-orientation-positiverolemodel'];
+    $scope.q_online_orientation_socialising = tool8Questionnaire['online-orientation-socialising'];
+    $scope.q_online_orientation_campustour = tool8Questionnaire['online-orientation-campustour'];
+    $scope.q_online_orientation_studyskills = tool8Questionnaire['online-orientation-studyskills'];
+    
     $scope.t8Subsections = areasViewedT8;
 
     $scope.sectionWidthT8 = Math.floor((100 / (Object.keys(areasViewedT8).length))) + '%';
@@ -39,7 +44,7 @@ angular.module('sstTool8App').controller('defaultController', function ($scope, 
         question['response'] = option.value;//option.answer;
         question['selected'] = option;
     };
-
+    
     /**
      * Resets the full questionnaire page
      * @returns {undefined}
