@@ -1,0 +1,46 @@
+<div class="container shadow">
+
+    <div class="row row spacer-top-3x">   
+        <div class="col-md-12">
+            <ul class="section-nav">
+                <li ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? 'active' : ''" ng-style="{'width':sectionWidthT8}">
+                    <span ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val + '/')" class='title' ng-style="{'color':section.colourActive}">{{section.title}}</span>
+                    <span class='connector-line'>&nbsp;</span>
+                    <span ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val + '/')" class='connector' ng-style="{'background':section.colourActive}">&nbsp;</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row spacer-top-3x">
+        <div class="col-md-offset-2 col-md-8">
+            <div ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? '' : 'hidden'" class="q-head large" ng-style="{'background':section.colourActive}">
+                <h2 ng-if="currentSection.toLowerCase().indexOf(section.val) >= 0" class="text-center nopadding">{{section.title}} / Text #1</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="row spacer-top-3x">
+        <div class="col-md-offset-2 col-md-8">
+            <div class="row spacer-bottom-2x"></div>
+            Most important in an orientation is to focus on key points such that students recognise these as things they need to know about when they meet those points again in the days, weeks and months
+            An example of one key point:
+            <ul>
+                <li> 
+                    Keep an organised set of notes. Keep organised folders or notepads, or files on your computer for the modules you are taking, for as long as you are here and beyond. Of course this implies that you should be taking notes. This is very important. When you are reading materials or in tutorials you should be taking your own notes, otherwise you run the risk of coming back to handouts or learning materials and not remembering what they meant. If you are reading something you shouldn’t just read it and assume that you have now absorbed that material, because you may come back later and find that you have to re-read it again, you should take notes about what you are reading and keep those organised. This will save you a lot of time later on when you need to revise.              
+                </li>
+            </ul>
+
+        </div>
+    </div>    
+
+
+    <div class="row spacer-top-3x spacer-xs-bottom-3x">
+        <div class="col-md-5">
+            <a href="#/" class="btn btn-info btn-lg btn-block" title="Back to home" aria-label="">Back to home</a>
+        </div>
+        <div ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? '' : 'hidden'" class="col-md-offset-3 col-md-4 spacer-xs-top-3x spacer-md-top-0">
+            <a ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val + '/text2/')" class="btn btn-default btn-lg btn-block" title="Next" aria-label="Next">Next</a>	
+        </div>
+    </div> 
+</div>

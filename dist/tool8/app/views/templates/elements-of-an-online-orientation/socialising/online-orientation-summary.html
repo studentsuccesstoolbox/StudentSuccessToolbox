@@ -1,0 +1,98 @@
+<div class="container shadow">
+
+    <div class="row row spacer-top-3x">   
+        <div class="col-md-12">
+            <ul class="section-nav">
+                <li ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? 'active':''" ng-style="{'width':sectionWidthT8}">
+                    <span ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val+'/')" class='title' ng-style="{'color':section.colourActive}">{{section.title}}</span>
+                    <span class='connector-line'>&nbsp;</span>
+                    <span ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val+'/')" class='connector' ng-style="{'background':section.colourActive}">&nbsp;</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+        
+    <div class="row spacer-top-3x">
+        <div class="col-md-offset-2 col-md-8">
+            <div ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? '':'hidden'" class="q-head large" ng-style="{'background':section.colourActive}">
+                <h2 ng-if="currentSection.toLowerCase().indexOf(section.val) >= 0" class="text-center nopadding">{{section.title}} / Build your Online Orientation</h2>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row spacer-top-3x">
+        <div class="col-xs-4 col-md-4">
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped responsive-utilities">
+                    <thead>
+                        <tr>
+                            <th>
+                                 Your Tools
+                            </th>
+                            <th>
+                                <div class="col-xs-4 green-text"><span class="circle-color green inline">Yes</span></div>
+                                <div class="col-xs-4 red-text"><span class="circle-color red inline">No</span></div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody> 
+                        <tr ng-repeat="question in q_your_online_orientation.questions track by $index">
+                            <th scope="row">{{question.questionSmall}}</th>
+                            <td>
+                                <div class="radio-circle-group">
+                                    <div class="pull-left" ng-repeat="opt in question.options">
+                                       <label for="question-{{$parent.$index}}-{{opt.value}}" class="radio-circle-bg" ng-class="{yes:'green', no:'red'}[opt.value]">
+                                           <input name="questionGroup{{$parent.$index}}" id="question-{{$parent.$index}}-{{opt.value}}" type="radio" class="faq-radio" ng-click="answer(question,opt)" ng-model="question.selected" ng-value="opt">
+                                       </label>
+                                     </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="col-xs-8 col-md-8">
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped responsive-utilities">
+                    <thead>
+                        <tr>
+                            <th>
+                                 What approach(es) will you include?
+                            </th>
+                            <th>
+                                <div class="col-xs-4 green-text"><span class="circle-color green inline">Yes</span></div>
+                                <div class="col-xs-4 red-text"><span class="circle-color red inline">No</span></div>
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>                        
+                        <tr ng-repeat="question in q_online_orientation_socialising.questions track by $index">
+                            <th scope="row">{{question.question}}</th>
+                            <td>
+                                <div class="radio-circle-group">
+                                    <div class="pull-left" ng-repeat="opt in question.options">
+                                       <label for="question1-{{$parent.$index}}-{{opt.value}}" class="radio-circle-bg" ng-class="{yes:'green', no:'red'}[opt.value]">
+                                            <input name="questionGroup1{{$parent.$index}}" id="question1-{{$parent.$index}}-{{opt.value}}" type="radio" class="faq-radio" ng-click="answer(question,opt)" ng-model="question.selected" ng-value="opt">
+                                       </label>
+                                     </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row spacer-top-3x spacer-xs-bottom-3x">
+        <div class="col-md-5">
+            <a href="#/" class="btn btn-info btn-lg btn-block" title="Back to home" aria-label="">Back to home</a>
+        </div>
+        <div ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? '' : 'hidden'" class="col-md-offset-3 col-md-4 spacer-xs-top-3x spacer-md-top-0">
+            <a ng-click="jumpToUrlT8('/elements-of-an-online-orientation/')" class="btn btn-default btn-lg btn-block" title="Next" aria-label="Next">Next</a>	
+        </div>
+    </div> 
+</div>
