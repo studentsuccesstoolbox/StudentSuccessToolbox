@@ -789,17 +789,7 @@ tool8Questionnaire = {
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
-                , options: [{
-                        'label': 'YES'
-                        , 'value': 'yes'
-                        , 'answer': ''
-                        , 'weight': 1
-                    }, {
-                        'label': 'NO'
-                        , 'value': 'no'
-                        , 'answer': ''
-                        , 'weight': 0
-                    }]
+                , options: []
             }
         ]
     },

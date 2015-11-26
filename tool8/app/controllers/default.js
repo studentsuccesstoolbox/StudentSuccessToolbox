@@ -60,6 +60,39 @@ angular.module('sstTool8App').controller('defaultController', function ($scope, 
             $scope.q_online_orientation_anxiety.questions[i].selected = '';
         }
     };
+    
+    /**
+     * Print function: Create Pdf to download
+     */
+    $scope.print = function(){
+        //Pdf Dimesions: A4 (210 x 297)
+        //Margin around page
+        var margin = 15;
+        var doc = new jsPDF();
+        doc.setFont('Helvetica','');
+        doc.setTextColor(8,167,205);
+
+        //Header
+        doc.setFontSize(22);
+        doc.text(margin, margin, 'AReview Your Online Orientation Plan');
+        
+        //Brief Description
+        doc.setFontSize(16);
+        doc.text(margin, 25, 'Here is an overall summary of your results.');
+        
+        // add data here!...
+        var text = 'Here is an overall summary of your results.';
+        var lines = doc.setFontSize(12).splitTextToSize(text, (75 - margin));
+        
+        
+        
+        //Footer place
+        doc.setDrawColor(232,232,232);
+        doc.setFillColor(8, 167, 205);
+        doc.roundedRect(15, 70, (210 - (margin*2)), (5+(lines.length)), 1, 1, 'FD');
+        
+        doc.save('review_your_online_orientation_plan.pdf');
+    }
 
     $scope.resetGatheredData = function () {
         $scope.resetAreasViewedT8();
