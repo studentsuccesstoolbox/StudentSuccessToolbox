@@ -182,16 +182,26 @@
 
                     <tbody>                        
                         <tr ng-repeat="question in q_online_orientation_campustour.questions track by $index">
-                            <th scope="row">{{question.question}}</th>
-                            <td>
+                            <th scope="row" ng-if=" question.options.length > 1">
+                                {{question.question}}
+                            </th>
+                            <td ng-if=" question.options.length > 1">
                                 <div class="radio-circle-group">
-                                    <div class="pull-left" ng-repeat="opt in question.options">
-                                        <label for="question5-{{$parent.$index}}-{{opt.value}}" class="radio-circle-bg" ng-class="{yes:'green', no:'red'}[opt.value]">
-                                            <input name="questionGroup5{{$parent.$index}}" id="question5-{{$parent.$index}}-{{opt.value}}" type="radio" class="faq-radio" ng-click="answer(question, opt)" ng-model="question.selected" ng-value="opt">
+                                    <div class="pull-left" ng-repeat="opt in question.options" >
+                                        <label for="question1-{{$parent.$index}}-{{opt.value}}" class="radio-circle-bg" ng-class="{yes:'green', no:'red'}[opt.value]">
+                                            <input name="questionGroup1{{$parent.$index}}" id="question1-{{$parent.$index}}-{{opt.value}}" type="radio" class="faq-radio" ng-click="answer(question, opt)" ng-model="question.selected" ng-value="opt">
                                         </label>
                                     </div>
                                 </div>
                             </td>
+                            <th colspan="2" scope="row" ng-if=" question.options.length < 1">
+                                {{question.question}}
+                                <div class="pull-right" >
+                                    <label for="question1-{{$parent.$index}}">
+                                        <input name="questionGroup1{{$parent.$index}}" id="question1-{{$parent.$index}}" type="text" ng-blur="answerOther(question)" ng-model="question.selected">
+                                    </label>
+                                </div>
+                            </th>
                         </tr>
                     </tbody>
                 </table>

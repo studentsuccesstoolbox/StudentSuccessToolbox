@@ -46,6 +46,17 @@ angular.module('sstTool8App').controller('defaultController', function ($scope, 
     };
     
     /**
+     * Function for question answer click event.
+     * Sets the select answer for a question.
+     * 
+     * @param object question
+     */
+    $scope.answerOther = function (question) {
+        question['response'] = question.selected;//option.answer;
+        question['selected'] = question.selected;
+    };
+    
+    /**
      * Resets the full questionnaire page
      * @returns {undefined}
      */
