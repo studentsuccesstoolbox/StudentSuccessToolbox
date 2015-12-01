@@ -86,7 +86,7 @@
                                 {{question.question}}
                                 <div class="pull-right" >
                                     <label for="question1-{{$parent.$index}}">
-                                        <input name="questionGroup1{{$parent.$index}}" id="question1-{{$parent.$index}}" type="text" ng-blur="answerOther(question)" ng-model="question.selected">
+                                        <textarea name="questionGroup1{{$parent.$index}}" id="question1-{{$parent.$index}}" type="text" ng-blur="answerOther(question)" ng-model="question.selected"></textarea>
                                     </label>
                                 </div>
                             </th>
