@@ -1,73 +1,68 @@
-Prerequists
-IDE with html 5 support is advised, i'd suggest Netbeans [8 or above]
+Prerequisites
+IDE with html 5 support is advised, I’d suggest Netbeans [8 or above]
 https://nodejs.org
 http://rubyinstaller.org/
 
-node / npm is used as the package management /build tool for the projects, references to the tools included can bve found in the "package.json" file in the project root. relevent project details are stored in the file and relevenat dependancies for both frontend and backend [dev] are referenced.
+Node / npm is used as the package management /build tool for the projects, references to the tools included can bve found in the "package.json" file in the project root. relevant project details are stored in the file and relevant dependencies for both frontend and backend [dev] are referenced.
 
-grunt is used to automate the build tasks, including sass compliation, compression etc... 
+Grunt is used to automate the build tasks, including sass compilation, compression etc... 
 
-sass is the prefered scripting language for css and the complier for it is installed as part of ruby above.
+Sass is the preferred scripting language for css and the complier for it is installed as part of ruby above.
 
 The above tools, and others as required, should be referenced within the IDE under the Tools > Options > HTML5 setting tab
 
-all tools based on angular and bootstap javascript libraries and all applications are built as Single Page Applications and are designed to be stand alone tools.
-
-for more information on angular please refer to...
+All tools based on angular and bootstap javascript libraries and all applications are built as Single Page Applications and are designed to be stand alone tools.
+For more information on angular please refer to...
 https://angularjs.org/ and subsequently..
 https://docs.angularjs.org/api/ng/directive/ngRepeat etc...
 
-an example project has an example of all off the themes and sytling example used in all of the tools and it should be refered to as being the master reference for all other applications.
+An example project has an example of all off the themes and styling example used in all of the tools and it should be refereed to as being the master reference for all other applications.
 
 TOOL8
 index.html 
-contains the relevant references to this tools referenced files as well as the tools app name = "sstTool8App".
-the static headers "<header>" and footers "<footer>" for every page shown on the site is included here.
-the relevent page content is injected into the page between these tags at "<div class="page {{ pageClass }}" ng-view autoscroll="true"></div>"
+Contains the relevant references to this tools referenced files as well as the tools app name = "sstTool8App".
+The static headers "<header>" and footers "<footer>" for every page shown on the site is included here.
+The relevant page content is injected into the page between these tags at "<div class="page {{ pageClass }}" ng-view autoscroll="true"></div>"
 based on the route/path supplied in the url string as defined in the app.js 
 
 app/app.js
-defines the relevant require[d] javascript files to manufacture into the tools "bundle.js" for the as well as the route & controller each referenced path should use.
-note: by convension, including a folder e.g. require('./data'); actually means goto the folder /data, look for the file "index.js" there and include any references it has. So in this case it contains the line, amonst others, require('./areasViewed'); this in turn meeans include the file "areasViewed.js".
+Defines the relevant require[d] javascript files to manufacture into the tools "bundle.js" for the as well as the route & controller each referenced path should use.
+Note: by convention, including a folder e.g. require('./data'); actually means go to the folder /data, look for the file "index.js" there and include any references it has. So in this case it contains the line, amongst others, require('./areasViewed'); this in turn means include the file "areasViewed.js".
 
 relevant files...
 /controllers/default.js
-In this particualar example there is only one controller used as per the "controller: 'defaultController'" line in the app.js
-this controller contains the logic for the questions construct used to store questionaire questions and their user answers along with some other common tool features like pdf print etc...
+In this particular example there is only one controller used as per the "controller: 'defaultController'" line in the app.js
+This controller contains the logic for the questions construct used to store questionnaire questions and their user answers along with some other common tool features like pdf print etc...
 
 /data/tool8Questionnaire.js
-this is the JSON contruct used to store questionaire questions and their user answers
+This is the JSON construct used to store questionnaire questions and their user answers
 
 /views/*.*
-This folder and subsequent subfolder[s] / files represent the actual page content that the user sees when they view a particular page, it is the content that gets injected into the index.html page based on the rules as per the /app/app.js routes directive.
-as an example, if the user goes looking for the page...
+This folder and subsequent sub-folder[s] / files represent the actual page content that the user sees when they view a particular page, it is the content that gets injected into the index.html page based on the rules as per the /app/app.js routes directive.
+
+As an example, if the user goes looking for the page...
 
 Student-Success-Toolbox-comibined/tool8/index.html#/before-we-start/
 
-the app.js is referenced and the pattern matching "/before-we-start/" is found as per...
+The app.js is referenced and the pattern matching "/before-we-start/" is found as per...
 			.when('/before-we-start/', {
                 templateUrl: 'app/views/templates/before-we-start.html',
                 controller: 'defaultController'
             })
-this means when we match the page "/before-we-start/" use the content from the file "app/views/templates/before-we-start.html" and inject it into the relevant place in the index.html, using the controller "defaultController".
+This means when we match the page "/before-we-start/" use the content from the file "app/views/templates/before-we-start.html" and inject it into the relevant place in the index.html, using the controller "defaultController".
 
-The content of the file "app/views/templates/before-we-start.html" is for the most part standard html, with occassional angular directives added as required to render content in a particular way. this is particularily relevant in one of the questionnaire pages, e.g.
+The content of the file "app/views/templates/before-we-start.html" is for the most part standard html, with occasional angular directives added as required to render content in a particular way. This is particularly relevant in one of the questionnaire pages, e.g.
 
 Student-Success-Toolbox-comibined/tool8/index.html#/different-options/
 
-has the line[s] 
+Has the line[s] 
 
 <div ng-repeat="question in q_your_online_orientation.questions track by $index">
 .....
 </div>
 
-meaning that an angular looping directive is being used to loop over the available questions as defined in the "q_your_online_orientation" variable, and subsequently these questions / controls etc.. are displayed.
+Meaning that an angular looping directive is being used to loop over the available questions as defined in the "q_your_online_orientation" variable, and subsequently these questions / controls etc.. are displayed.
 
 for more information on angular please refer to...
 https://angularjs.org/ and subsequently..
 https://docs.angularjs.org/api/ng/directive/ngRepeat etc...
-
-
-
-
-
