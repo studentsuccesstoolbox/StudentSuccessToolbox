@@ -3,18 +3,18 @@
     <div class="row row spacer-top-3x">   
         <div class="col-md-12">
             <ul class="section-nav">
-                <li ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? 'active':''" ng-style="{'width':sectionWidthT8}">
-                    <span ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val+'/')" class='title' ng-style="{'color':section.colourActive}">{{section.title}}</span>
+                <li ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? 'active' : ''" ng-style="{'width':sectionWidthT8}">
+                    <span ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val + '/')" class='title' ng-style="{'color':section.colourActive}">{{section.title}}</span>
                     <span class='connector-line'>&nbsp;</span>
-                    <span ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val+'/')" class='connector' ng-style="{'background':section.colourActive}">&nbsp;</span>
+                    <span ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val + '/')" class='connector' ng-style="{'background':section.colourActive}">&nbsp;</span>
                 </li>
             </ul>
         </div>
     </div>
-        
+
     <div class="row spacer-top-3x">
         <div class="col-md-offset-2 col-md-8">
-            <div ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? '':'hidden'" class="q-head large" ng-style="{'background':section.colourActive}">
+            <div ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? '' : 'hidden'" class="q-head large" ng-style="{'background':section.colourActive}">
                 <h2 ng-if="currentSection.toLowerCase().indexOf(section.val) >= 0" class="text-center nopadding">{{section.title}}</h2>
             </div>
         </div>
@@ -26,7 +26,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-xs-1 text-center nopadding">
-                            
+
                         </div>
                         <div class="col-xs-11">
                             <h2 class="spacer-top">
@@ -67,14 +67,14 @@
                 </div>
             </div>
         </div>
-        
-        
+
+
         <div class="col-xs-12 col-md-6">
             <div class="panel panel-info">
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-xs-1 text-center nopadding">
-                            
+
                         </div>
                         <div class="col-xs-11">
                             <h2 class="spacer-top">
@@ -122,6 +122,47 @@
                             </p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row spacer-top-3x">
+        <div class="col-xs-12 col-md-offset-1 col-md-10 ">
+            <div class="row hub-nav">
+                <div class="hub-button-bg"></div>
+
+                <div class="pos-12">
+                    <a href="#/elements-of-an-online-orientation/positive-role-model/video1/" title="video button" ng-class="{'viewed':areasViewedT8.reduceanxiety}" ng-click="areasViewedT8.reduceanxiety = true">
+                        <div class="hub-button button-others" >
+                            <p>Video</p>
+                            <div class="shadow-container"><div class="transparent-shadow"></div></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="pos-3">
+                    <a href="#/elements-of-an-online-orientation/positive-role-model/text1/" title="text button" ng-class="{'viewed':areasViewedT8.reduceanxiety}" ng-click="areasViewedT8.reduceanxiety = true">
+                        <div class="hub-button button-friends">
+                            <p>Text</p>
+                            <div class="shadow-container"><div class="transparent-shadow"></div></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="pos-6">
+                    <a href="#/elements-of-an-online-orientation/positive-role-model/website/" title="website button" ng-class="{'viewed':areasViewedT8.reduceanxiety}" ng-click="areasViewedT8.reduceanxiety = true">
+                        <div class="hub-button button-friends">
+                            <p>Website</p>
+                            <div class="shadow-container"><div class="transparent-shadow"></div></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="pos-9">
+                    <a href="#/elements-of-an-online-orientation/reduce-anxiety/activity1/" title="activity button" ng-class="{'viewed':areasViewedT8.reduceanxiety}" ng-click="areasViewedT8.reduceanxiety = true">
+                        <div class="hub-button button-family">
+                            <p>Activity</p>
+                            <div class="shadow-container"><div class="transparent-shadow"></div></div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
