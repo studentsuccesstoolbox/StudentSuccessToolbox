@@ -123,50 +123,6 @@
                 </div>
             </div>
         </div>
-        <!--
-        <div class="col-xs-12 col-md-12">
-            <div class="table-responsive">
-                <table class="table table-bordered table-striped responsive-utilities">
-                    <thead>
-                        <tr>
-                            <th>
-                                 What approach(es) will you include?
-                            </th>
-                            <th>
-                                <div class="col-xs-4 green-text"><span class="circle-color green inline">Yes</span></div>
-                                <div class="col-xs-4 red-text"><span class="circle-color red inline">No</span></div>
-                            </th>
-                        </tr>
-                    </thead>
-
-                    <tbody>                        
-                        <tr ng-repeat="question in q_online_orientation_campustour.questions track by $index">
-                            <th scope="row" ng-if=" question.options.length > 1">
-                                {{question.question}}
-                            </th>
-                            <td ng-if=" question.options.length > 1">
-                                <div class="radio-circle-group">
-                                    <div class="pull-left" ng-repeat="opt in question.options" >
-                                        <label for="question1-{{$parent.$index}}-{{opt.value}}" class="radio-circle-bg" ng-class="{yes:'green', no:'red'}[opt.value]">
-                                            <input name="questionGroup1{{$parent.$index}}" id="question1-{{$parent.$index}}-{{opt.value}}" type="radio" class="faq-radio" ng-click="answer(question, opt)" ng-model="question.selected" ng-value="opt">
-                                        </label>
-                                    </div>
-                                </div>
-                            </td>
-                            <th colspan="2" scope="row" ng-if=" question.options.length < 1">
-                                {{question.question}}
-                                <div class="pull-right" >
-                                    <label for="question1-{{$parent.$index}}">
-                                        <textarea name="questionGroup1{{$parent.$index}}" id="question1-{{$parent.$index}}" type="text" ng-blur="answerOther(question)" ng-model="question.selected"></textarea>
-                                    </label>
-                                </div>
-                            </th>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        -->
     </div>
 
     <div class="row spacer-top-3x spacer-xs-bottom-3x">
