@@ -9,9 +9,9 @@
  */
 
 $ = require('jquery');
+global.jQuery = require('jquery');
 
 var angular = require('angular');
-
 
 var sstTool8App = angular.module('sstTool8App', [
     require('angular-ui-bootstrap'),
