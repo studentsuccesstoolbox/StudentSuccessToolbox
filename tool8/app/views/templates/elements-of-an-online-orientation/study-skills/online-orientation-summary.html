@@ -20,65 +20,48 @@
         </div>
     </div>
 
-    <div class="row spacer-top-3x">
-        Your Tools: <input type="checkbox" ng-model="checked" aria-label="Toggle ngHide"><br/>
-        <div class="animate-show" ng-show="checked">
-            <div class="row spacer-top-3x">
-                <div class="col-md-12">
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-xs-12 text-center">
-                                <h2 class="nopadding">Your Tools</h2>
-                            </div>
+    <div class="navmenu navmenu-default navmenu-fixed-left offcanvas">
+        <div class="row spacer-top-3x">
+            <div class="col-md-12">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-12 text-center">
+                            <h2 class="nopadding">Your Tools</h2>
                         </div>
-                    </div>   
+                    </div>
+                </div>   
 
-                    <div ng-repeat="question in q_your_online_orientation.questions track by $index">
-                        <div class="row spacer-top" ng-if="question.toolCategory">
-                            <div class="panel-body">
-                                <div class="row">
-                                    <div class="col-xs-12 col-md-9 question" >
-                                        <span class="hl-secondary large">{{question.toolCategory}}</span>
-                                    </div>
-
-                                    <div class="hidden-sm hidden-xs col-md-3 nopadding">
-                                        <div class="pull-right">
-                                            <span class="circle-color green inline">Yes</span>
-                                            <span class="circle-color red inline">No</span>
+                <div ng-repeat="question in q_your_online_orientation.questions track by $index">
+                    <div class="panel" ng-class-odd="'panel-odd'" ng-class-even="'panel-even'">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-9 question">
+                                    {{question.questionSmall}}
+                                </div>
+                                <div class="col-md-3 nopadding">
+                                    <div class="radio-circle-group">
+                                        <div class="pull-left col-6" ng-repeat="opt in question.options" ng-class="{'active':question.selected.value == opt.value}">
+                                            <label for="question-{{$parent.$index}}-{{opt.value}}" class="radio-circle-bg" ng-class="{yes:'green', notsure:'orange', no:'red'}[opt.value]">
+                                                <input name="questionGroup{{$parent.$index}}" id="question-{{$parent.$index}}-{{opt.value}}" type="radio" class="faq-radio" ng-click="answer(question, opt)" ng-model="question.selected" ng-value="opt">
+                                            </label>
                                         </div>
-                                    </div>
-
-                                    <div class="hidden-lg hidden-md col-xs-12 text-center spacer-top">
-                                        <div class="col-xs-6 nopadding  green-text"><span class="circle-color green">Yes</span><br>I can do this</div>
-                                        <div class="col-xs-6 nopadding  red-text"><span class="circle-color red">No</span><br>I cannot do this</div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="panel" ng-class-odd="'panel-odd'" ng-class-even="'panel-even'">
-                            <div class="panel-body">
-                                <div class="row">
-                                    <div class="col-md-9 question">
-                                        {{question.question}}
-                                    </div>
-                                    <div class="col-md-3 nopadding">
-                                        <div class="radio-circle-group">
-                                            <div class="pull-left col-6" ng-repeat="opt in question.options" ng-class="{'active':question.selected.value == opt.value}">
-                                                <label for="question-{{$parent.$index}}-{{opt.value}}" class="radio-circle-bg" ng-class="{yes:'green', notsure:'orange', no:'red'}[opt.value]">
-                                                    <input name="questionGroup{{$parent.$index}}" id="question-{{$parent.$index}}-{{opt.value}}" type="radio" class="faq-radio" ng-click="answer(question, opt)" ng-model="question.selected" ng-value="opt">
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>                    
-                            </div>
+                            </div>                    
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
+    </div>
 
+    <div>
+        <button class="btn btn-default btn-sm" type="button" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body" aria-label="Toggle slider show hide">
+            Your Tools...
+        </button>
+    </div>
 
+    <div class="row spacer-top-3x">
         <div class="row spacer-top-3x">
             <div class="col-md-12">
                 <div class="panel-body">
