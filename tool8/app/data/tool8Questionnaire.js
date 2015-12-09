@@ -164,6 +164,7 @@ tool8Questionnaire = {
         , 'questions': [{
                 'toolCategory': '',
                 'question': 'Video/Audio – From institution/Programme Team',
+                'yourToolsMatchesQuestionSmall':'Q',
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -182,6 +183,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Video/Audio – From graduate/current student',
+                'yourToolsMatchesQuestionSmall':'Q',
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -200,6 +202,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Text based communication – From institution/Programme Team',
+                'yourToolsMatchesQuestionSmall':'Q',
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -218,6 +221,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Text based communication – From graduate/current student',
+                'yourToolsMatchesQuestionSmall':'Q',
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -236,6 +240,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Classroom',
+                'yourToolsMatchesQuestionSmall':'Virtual Learning Environment (VLE)',
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -254,6 +259,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Learning Environment (Discussion Forums)',
+                'yourToolsMatchesQuestionSmall':'Virtual Learning Environment (VLE)',
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -287,6 +293,7 @@ tool8Questionnaire = {
         , 'questions': [{
                 'toolCategory': '',
                 'question': 'Video/Audio – From institution/Programme Team',
+                'yourToolsMatchesQuestionSmall':'Q',
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -305,6 +312,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Video/Audio – From graduate/current student',
+                'yourToolsMatchesQuestionSmall':'Q',
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -323,6 +331,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Text based communication – From institution/Programme Team',
+                'yourToolsMatchesQuestionSmall':'Q',
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -341,6 +350,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Text based communication – From graduate/current student',
+                'yourToolsMatchesQuestionSmall':'Q',
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -359,6 +369,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Open Educational Resources',
+                'yourToolsMatchesQuestionSmall':'Open Educational Resources',
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -377,6 +388,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Classroom',
+                'yourToolsMatchesQuestionSmall':'Virtual Learning Environment (VLE)',
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -395,6 +407,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Learning Environment (Discussion Forums)',
+                'yourToolsMatchesQuestionSmall':'Virtual Learning Environment (VLE)',
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -428,6 +441,7 @@ tool8Questionnaire = {
         , 'questions': [{
                 'toolCategory': '',
                 'question': 'Video/Audio – From institution/Programme Team',
+                'yourToolsMatchesQuestionSmall':'Q',
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -446,6 +460,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Video/Audio – From graduate/current student',
+                'yourToolsMatchesQuestionSmall':'Q',
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -464,6 +479,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Text based communication – From institution/Programme Team',
+                'yourToolsMatchesQuestionSmall':'Q',
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -482,6 +498,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Text based communication – From graduate/current student',
+                'yourToolsMatchesQuestionSmall':'Q',
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -500,6 +517,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Website – From current students',
+                'yourToolsMatchesQuestionSmall':'Website',
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -518,6 +536,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Classroom',
+                'yourToolsMatchesQuestionSmall':'Virtual Learning Environment (VLE)',
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -536,6 +555,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Learning Environment (Discussion Forums)',
+                'yourToolsMatchesQuestionSmall':'Virtual Learning Environment (VLE)',
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -569,6 +589,7 @@ tool8Questionnaire = {
         , 'questions': [{
                 'toolCategory': '',
                 'question': 'Video/Audio – From institution/Programme Team',
+                'yourToolsMatchesQuestionSmall':'Q',
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -587,6 +608,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Text based communication – From institution/Programme Team',
+                'yourToolsMatchesQuestionSmall':'Q',
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -605,6 +627,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Social Media',
+                'yourToolsMatchesQuestionSmall':'Website Q',
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -623,6 +646,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Classroom',
+                'yourToolsMatchesQuestionSmall':'Virtual Learning Environment (VLE)',
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -641,6 +665,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Learning Environment (Discussion Forums)',
+                'yourToolsMatchesQuestionSmall':'Virtual Learning Environment (VLE)',
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -784,7 +809,8 @@ tool8Questionnaire = {
         , 'questions': [{
                 'toolCategory': '',
                 'question': 'Video/Audio – Existing Institutional Resources and/or Open Educational Resources',
-                'questionSmall': ''
+                'questionSmall': '',
+                'yourToolsMatchesQuestionSmall':'Q'
                 , 'response': ''
                 , selected: ''
                 , options: [{
@@ -802,6 +828,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Video/Audio – From graduate/current student',
+                'yourToolsMatchesQuestionSmall':'Q',
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -820,6 +847,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Text based communication – From institution/Programme Team',
+                'yourToolsMatchesQuestionSmall':'Q',
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -838,6 +866,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Open Educational Resource',
+                'yourToolsMatchesQuestionSmall':'Open Educational Resources',
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -856,6 +885,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Open Educational Resource/Social Media',
+                'yourToolsMatchesQuestionSmall':'Open Educational Resources',
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -874,6 +904,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Classroom',
+                'yourToolsMatchesQuestionSmall':'Virtual Learning Environment (VLE)',
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -892,6 +923,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Learning Environment (Discussion Forums)',
+                'yourToolsMatchesQuestionSmall':'Virtual Learning Environment (VLE)',
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
