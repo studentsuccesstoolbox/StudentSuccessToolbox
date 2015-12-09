@@ -4,7 +4,7 @@
  * @author Paul Schweppe
  * 
  */
-angular.module('sstTool8App').controller('defaultController', function ($scope, $routeParams,$modal, ngAudio, $location) {
+angular.module('sstTool8App').controller('defaultController', function ($scope, $routeParams, $modal, $filter, ngAudio, $location) {
 
     $scope.areasViewedT8 = areasViewedT8;
 
@@ -15,14 +15,15 @@ angular.module('sstTool8App').controller('defaultController', function ($scope, 
         ////});  
     };
 
-    $scope.q_your_online_orientation = tool8Questionnaire['your-online-orientation'];
+    $scope.q_your_online_orientation = tool8Questionnaire['your_online_orientation'];
     $scope.q_online_orientation_anxiety = tool8Questionnaire['online-orientation-anxiety'];
     $scope.q_online_orientation_set_expectations = tool8Questionnaire['online-orientation-set-expectations'];
     $scope.q_online_orientation_positiverolemodel = tool8Questionnaire['online-orientation-positiverolemodel'];
     $scope.q_online_orientation_socialising = tool8Questionnaire['online-orientation-socialising'];
     $scope.q_online_orientation_campustour = tool8Questionnaire['online-orientation-campustour'];
     $scope.q_online_orientation_studyskills = tool8Questionnaire['online-orientation-studyskills'];
-    
+    $scope.optionAwaitingConfirmation = tool8Questionnaire['optionAwaitingConfirmation'];
+
     $scope.t8Subsections = areasViewedT8;
 
     $scope.sectionWidthT8 = Math.floor((100 / (Object.keys(areasViewedT8).length))) + '%';
@@ -41,10 +42,33 @@ angular.module('sstTool8App').controller('defaultController', function ($scope, 
      * @param object option
      */
     $scope.answer = function (question, option) {
-        question['response'] = option.value;//option.answer;
+
+        console.log(question.yourToolsMatchesQuestionSmall);
+
+        try {
+            $scope.q_your_online_orientation.questions.forEach(function (entry) {
+                //console.log(entry.questionSmall);
+
+                if (entry.questionSmall === question.yourToolsMatchesQuestionSmall) {
+                    if (entry.response === 'yes')
+                    {
+                        $scope.optionAwaitingConfirmation = '';
+                    } else
+                    {
+                        tool8Questionnaire.optionAwaitingConfirmation = entry.questionSmall;
+                        $scope.openModal('confirmModal.html');
+                        // see modal below for closing logic!
+                    }
+                }
+            });
+        } catch (e) {
+
+        }
+
+        question['response'] = option.value;
         question['selected'] = option;
     };
-    
+
     /**
      * Function for question answer click event.
      * Sets the select answer for a question.
@@ -55,7 +79,7 @@ angular.module('sstTool8App').controller('defaultController', function ($scope, 
         question['response'] = question.selected;//option.answer;
         question['selected'] = question.selected;
     };
-    
+
     /**
      * Resets the full questionnaire page
      * @returns {undefined}
@@ -71,37 +95,35 @@ angular.module('sstTool8App').controller('defaultController', function ($scope, 
             $scope.q_online_orientation_anxiety.questions[i].selected = '';
         }
     };
-    
+
     /**
      * Print function: Create Pdf to download
      */
-    $scope.print = function(){
+    $scope.print = function () {
         //Pdf Dimesions: A4 (210 x 297)
         //Margin around page
         var margin = 15;
         var doc = new jsPDF();
-        doc.setFont('Helvetica','');
-        doc.setTextColor(8,167,205);
+        doc.setFont('Helvetica', '');
+        doc.setTextColor(8, 167, 205);
 
         //Header
         doc.setFontSize(22);
         doc.text(margin, margin, 'AReview Your Online Orientation Plan');
-        
+
         //Brief Description
         doc.setFontSize(16);
         doc.text(margin, 25, 'Here is an overall summary of your results.');
-        
+
         // add data here!...
         var text = 'Here is an overall summary of your results.';
         var lines = doc.setFontSize(12).splitTextToSize(text, (75 - margin));
-        
-        
-        
+
         //Footer place
-        doc.setDrawColor(232,232,232);
+        doc.setDrawColor(232, 232, 232);
         doc.setFillColor(8, 167, 205);
-        doc.roundedRect(15, 70, (210 - (margin*2)), (5+(lines.length)), 1, 1, 'FD');
-        
+        doc.roundedRect(15, 70, (210 - (margin * 2)), (5 + (lines.length)), 1, 1, 'FD');
+
         doc.save('review_your_online_orientation_plan.pdf');
     }
 
@@ -151,12 +173,43 @@ angular.module('sstTool8App').controller('defaultController', function ($scope, 
                 $scope.iconCls = iconCls;
 
                 $scope.ok = function () {
+
+                    try {
+                        tool8Questionnaire.your_online_orientation.questions.forEach(function (entry) {
+
+                            if (entry.questionSmall === tool8Questionnaire.optionAwaitingConfirmation) {
+                                if (entry.response === 'yes')
+                                {
+
+                                } else
+                                {
+                                    try 
+                                    {
+                                        var matches = $filter('filter')(tool8Questionnaire.your_online_orientation.questions, {questionSmall:tool8Questionnaire.optionAwaitingConfirmation});
+                                    
+                                        var trueObject = matches[0].options[0]; // need to get the proper object with "hash" value - assuming "yes" is always the 1st answer!!!!!
+                                        entry.response = 'yes';
+                                        entry.selected = trueObject;
+                                    } 
+                                    catch (e) 
+                                    {
+                                        console.log("Exception" + e);
+                                    }
+                                }
+                            }
+                        });
+                    } catch (e) {
+
+                    }
+                    tool8Questionnaire.optionAwaitingConfirmation = '';
+
                     $modalInstance.close();
                 };
                 $scope.cancel = function (event) {
                     if (event) {
                         event.preventDefault();
                     }
+                    tool8Questionnaire.optionAwaitingConfirmation = '';
                     $modalInstance.dismiss();
                 };
             },

@@ -5,7 +5,7 @@
  */
 
 tool8Questionnaire = {
-    'your-online-orientation': {
+    'your_online_orientation': {
         'label': 'your online orientation'
         , 'description': 'your online orientation'
         , 'quotes': [
@@ -673,9 +673,29 @@ tool8Questionnaire = {
         ]
         , 'questions': [{
                 'toolCategory': '',
-                'question': 'Video/Audio',
-                'questionSmall': ''
-                , 'response': ''
+                'question': 'Video',
+                'questionSmall': '',
+                'yourToolsMatchesQuestionSmall':'Video',
+                'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Audio',
+                'questionSmall': '',
+                'yourToolsMatchesQuestionSmall':'Audio',
+                'response': ''
                 , selected: ''
                 , options: [{
                         'label': 'YES'
@@ -692,8 +712,9 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Interactive Map',
-                'questionSmall': ''
-                , 'response': ''
+                'questionSmall': '',
+                'yourToolsMatchesQuestionSmall':'Presentation Tools',
+                'response': ''
                 , selected: ''
                 , options: [{
                         'label': 'YES'
@@ -710,8 +731,9 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Classroom',
-                'questionSmall': ''
-                , 'response': ''
+                'questionSmall': '',
+                'yourToolsMatchesQuestionSmall':'Virtual Learning Environment (VLE)',
+                'response': ''
                 , selected: ''
                 , options: [{
                         'label': 'YES'
@@ -728,8 +750,9 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Learning Environment (Discussion Forums)',
-                'questionSmall': ''
-                , 'response': ''
+                'questionSmall': '',
+                'yourToolsMatchesQuestionSmall':'Virtual Learning Environment (VLE)',
+                'response': ''
                 , selected: ''
                 , options: [{
                         'label': 'YES'
@@ -893,5 +916,6 @@ tool8Questionnaire = {
                 , options: []
             }
         ]
-    }
+    },
+    'optionAwaitingConfirmation':''
 };
