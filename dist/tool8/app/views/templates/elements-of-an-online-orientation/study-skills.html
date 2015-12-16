@@ -126,13 +126,55 @@
             </div>
         </div>
     </div>
+    
+    
+    <div class="row spacer-top-3x">
+        <div class="col-xs-12 col-md-offset-1 col-md-10 ">
+            <div class="row hub-nav">
+                <div class="hub-button-bg"></div>
+
+                <div class="pos-12">
+                    <a href="#/elements-of-an-online-orientation/study-skills/video1/" title="video button" ng-class="{'viewed':areasViewedT8.reduceanxiety}" ng-click="areasViewedT8.reduceanxiety = true">
+                        <div class="hub-button button-others" >
+                            <p>Video</p>
+                            <div class="shadow-container"><div class="transparent-shadow"></div></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="pos-3">
+                    <a href="#/elements-of-an-online-orientation/study-skills/text1/" title="text button" ng-class="{'viewed':areasViewedT8.reduceanxiety}" ng-click="areasViewedT8.reduceanxiety = true">
+                        <div class="hub-button button-friends">
+                            <p>Text</p>
+                            <div class="shadow-container"><div class="transparent-shadow"></div></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="pos-6">
+                    <a href="#/elements-of-an-online-orientation/study-skills/open-educational-resources1/" title="Open Educational Resources button" ng-class="{'viewed':areasViewedT8.reduceanxiety}" ng-click="areasViewedT8.reduceanxiety = true">
+                        <div class="hub-button button-friends">
+                            <p>Open Educational Resources</p>
+                            <div class="shadow-container"><div class="transparent-shadow"></div></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="pos-9">
+                    <a href="#/elements-of-an-online-orientation/study-skills/activity1/" title="activity button" ng-class="{'viewed':areasViewedT8.reduceanxiety}" ng-click="areasViewedT8.reduceanxiety = true">
+                        <div class="hub-button button-family">
+                            <p>Activity</p>
+                            <div class="shadow-container"><div class="transparent-shadow"></div></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="row spacer-top-3x spacer-xs-bottom-3x">
         <div class="col-md-5">
             <a href="#/" class="btn btn-info btn-lg btn-block" title="Back to home" aria-label="">Back to home</a>
         </div>
         <div ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? '' : 'hidden'" class="col-md-offset-3 col-md-4 spacer-xs-top-3x spacer-md-top-0">
-            <a ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val + '/page1/')" class="btn btn-default btn-lg btn-block" title="Next" aria-label="Next">Next</a>	
+            <a ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val + '/video1/')" class="btn btn-default btn-lg btn-block" title="Next" aria-label="Next">Next</a>	
         </div>
     </div> 
 </div>

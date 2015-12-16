@@ -1,0 +1,45 @@
+<div class="container shadow">
+
+    <div class="row row spacer-top-3x">   
+        <div class="col-md-12">
+            <ul class="section-nav">
+                <li ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? 'active':''" ng-style="{'width':sectionWidthT8}">
+                    <span ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val+'/')" class='title' ng-style="{'color':section.colourActive}">{{section.title}}</span>
+                    <span class='connector-line'>&nbsp;</span>
+                    <span ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val+'/')" class='connector' ng-style="{'background':section.colourActive}">&nbsp;</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+        
+    <div class="row spacer-top-3x">
+        <div class="col-md-offset-2 col-md-8">
+            <div ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? '':'hidden'" class="q-head large" ng-style="{'background':section.colourActive}">
+                <h2 ng-if="currentSection.toLowerCase().indexOf(section.val) >= 0" class="text-center nopadding">{{section.title}} / Open Educational Resources #2</h2>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row spacer-top-3x">
+        <div class="col-md-offset-2 col-md-8">
+            <div class="row spacer-bottom-2x"></div>
+            The Who can I ask tool, produced by the Student Success Toolbox project, helps students to think about who they might ask for support in order to help them successfully complete their studies. It offers some advice on how others might support the student, and also on how students might deal with a lack of support. This resource is shared through a Creative Commons CC BY (attribution) licence.
+        </div>
+    </div> 
+    
+    <div class="row spacer-top-3x">
+        <div class="col-md-offset-2 col-md-8">
+            <div class="row spacer-bottom-2x"></div>
+            IMAGE OF THE LOCAL IMPLEMENTATION OF THE TOOL HERE!
+        </div>
+    </div> 
+
+    <div class="row spacer-top-3x spacer-xs-bottom-3x">
+        <div class="col-md-5">
+            <a href="#/" class="btn btn-info btn-lg btn-block" title="Back to home" aria-label="">Back to home</a>
+        </div>
+        <div ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? '' : 'hidden'" class="col-md-offset-3 col-md-4 spacer-xs-top-3x spacer-md-top-0">
+            <a ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val + '/open-educational-resources3/')" class="btn btn-default btn-lg btn-block" title="Next" aria-label="Next">Next</a>	
+        </div>
+    </div> 
+</div>

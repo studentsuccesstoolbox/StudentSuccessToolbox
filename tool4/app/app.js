@@ -12,7 +12,6 @@ $ = require('jquery');
 
 var angular = require('angular');
 
-
 var sstTool4App = angular.module('sstTool4App', [require('angular-ui-bootstrap')
                         ,require('angular-route')
                         ,require('angular-sanitize')

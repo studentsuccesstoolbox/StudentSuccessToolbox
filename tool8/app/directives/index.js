@@ -5,5 +5,5 @@
  */
 'use strict';
  
-require('./readmore');
 require('./angular.audio');
+require('./navigation');

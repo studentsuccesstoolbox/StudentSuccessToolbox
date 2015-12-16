@@ -2,13 +2,7 @@
 
     <div class="row row spacer-top-3x">   
         <div class="col-md-12">
-            <ul class="section-nav">
-                <li ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? 'active':''" ng-style="{'width':sectionWidthT8}">
-                    <span ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val+'/')" class='title' ng-style="{'color':section.colourActive}">{{section.title}}</span>
-                    <span class='connector-line'>&nbsp;</span>
-                    <span ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val+'/')" class='connector' ng-style="{'background':section.colourActive}">&nbsp;</span>
-                </li>
-            </ul>
+            <tool8-nav></tool8-nav>
         </div>
     </div>
         
@@ -127,46 +121,60 @@
         </div>
     </div>
     
-    
     <div class="row spacer-top-3x">
-        <div class="col-xs-12 col-md-offset-1 col-md-10 ">
-            <div class="row hub-nav">
-                <div class="hub-button-bg"></div>
+        <div class="col-xs-12 text-center">
+            <h2>Delivery Methods:</h2>
+        </div>
+    </div>
 
-                <div class="pos-12">
+    <div class="row spacer-top">
+        <div class="col-xs-12 col-md-offset-3 col-md-6 ft-size-1_4x">
+            
+            <div class="row round-nav2">
+                <div class="round-nav-grey-bg"><div class="inner-white"></div></div>
+
+                <div class="pos pos-12">
                     <a href="#/elements-of-an-online-orientation/study-skills/video1/" title="video button" ng-class="{'viewed':areasViewedT8.reduceanxiety}" ng-click="areasViewedT8.reduceanxiety = true">
-                        <div class="hub-button button-others" >
-                            <p>Video</p>
-                            <div class="shadow-container"><div class="transparent-shadow"></div></div>
-                        </div>
+                       <div class="round-nav-button small video light-gray">
+                           <p>Video</p>    
+                       </div>
                     </a>
                 </div>
-                <div class="pos-3">
-                    <a href="#/elements-of-an-online-orientation/study-skills/text1/" title="text button" ng-class="{'viewed':areasViewedT8.reduceanxiety}" ng-click="areasViewedT8.reduceanxiety = true">
-                        <div class="hub-button button-friends">
-                            <p>Text</p>
-                            <div class="shadow-container"><div class="transparent-shadow"></div></div>
-                        </div>
-                    </a>
-                </div>
-                <div class="pos-6">
-                    <a href="#/elements-of-an-online-orientation/study-skills/open-educational-resources1/" title="Open Educational Resources button" ng-class="{'viewed':areasViewedT8.reduceanxiety}" ng-click="areasViewedT8.reduceanxiety = true">
-                        <div class="hub-button button-friends">
-                            <p>Open Educational Resources</p>
-                            <div class="shadow-container"><div class="transparent-shadow"></div></div>
-                        </div>
-                    </a>
-                </div>
-                <div class="pos-9">
+
+
+                <div class="pos pos-3">
                     <a href="#/elements-of-an-online-orientation/study-skills/activity1/" title="activity button" ng-class="{'viewed':areasViewedT8.reduceanxiety}" ng-click="areasViewedT8.reduceanxiety = true">
-                        <div class="hub-button button-family">
+                        <div class="round-nav-button small activity light-gray">
                             <p>Activity</p>
-                            <div class="shadow-container"><div class="transparent-shadow"></div></div>
                         </div>
                     </a>
                 </div>
+                
+                <div class="pos pos-6">
+                    <a href="#/elements-of-an-online-orientation/study-skills/open-educational-resources1/" title="Open Educational Resources button" ng-class="{'viewed':areasViewedT8.reduceanxiety}" ng-click="areasViewedT8.reduceanxiety = true">
+                        <div class="round-nav-button small activity light-gray">
+                            <p>Open Educational Resources</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="pos pos-9">
+                    <a href="#/elements-of-an-online-orientation/study-skills/text1/" title="text button" ng-class="{'viewed':areasViewedT8.reduceanxiety}" ng-click="areasViewedT8.reduceanxiety = true">
+                        <div class="round-nav-button small text light-gray">
+                            <p>Text</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="pos pos-center">
+                    <div class="round-nav-button blue small nohover">
+                        <p>Study Skills</p>
+                    </div>
+                </div>
+                
             </div>
         </div>
+            
     </div>
 
     <div class="row spacer-top-3x spacer-xs-bottom-3x">

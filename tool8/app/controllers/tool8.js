@@ -4,7 +4,7 @@
  * @author Paul Schweppe
  * 
  */
-angular.module('sstTool8App').controller('defaultController', function ($scope, $routeParams, $modal, $filter, ngAudio, $location) {
+angular.module('sstTool8App').controller('tool8Controller', function ($scope, $routeParams, $modal, $filter, ngAudio, $location) {
 
     $scope.areasViewedT8 = areasViewedT8;
 
@@ -25,7 +25,8 @@ angular.module('sstTool8App').controller('defaultController', function ($scope, 
     $scope.optionAwaitingConfirmation = tool8Questionnaire['optionAwaitingConfirmation'];
 
     $scope.t8Subsections = areasViewedT8;
-
+console.log(areasViewedT8);
+console.log(Object.keys(areasViewedT8).length);
     $scope.sectionWidthT8 = Math.floor((100 / (Object.keys(areasViewedT8).length))) + '%';
 
     $scope.currentSection = $location.path();

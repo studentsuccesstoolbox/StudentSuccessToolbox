@@ -5,6 +5,4 @@
  */
 'use strict';
  
-require('./home');
-require('./default');
-require('./rate');
+require('./tool8');
