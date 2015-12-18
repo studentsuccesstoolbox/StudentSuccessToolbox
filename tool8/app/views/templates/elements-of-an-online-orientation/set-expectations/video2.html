@@ -8,9 +8,17 @@
         
     <div class="row spacer-top-3x">
         <div class="col-md-offset-2 col-md-8">
-            <div ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? '':'hidden'" class="q-head large" ng-style="{'background':section.colourActive}">
-                <h2 ng-if="currentSection.toLowerCase().indexOf(section.val) >= 0" class="text-center nopadding">{{section.title}} / Video #2</h2>
+            <div class="q-head large red" >
+                <h2 class="text-center nopadding">Set Expectations - Video 2</h2>
             </div>
+        </div>
+    </div>
+    
+    <ng-include src="'app/views/partials/widgets/setExpectationsSectionNav.html'"></ng-include>
+
+   <div class="row spacer-top">
+        <div class="col-xs-12">
+           <h2 class="text-center nopadding">Graduate & Current Online Tutor/Writer</h2>
         </div>
     </div>
 

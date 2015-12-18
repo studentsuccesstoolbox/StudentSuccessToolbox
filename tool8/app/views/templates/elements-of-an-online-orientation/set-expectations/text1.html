@@ -8,24 +8,44 @@
         
     <div class="row spacer-top-3x">
         <div class="col-md-offset-2 col-md-8">
-            <div ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? '':'hidden'" class="q-head large" ng-style="{'background':section.colourActive}">
-                <h2 ng-if="currentSection.toLowerCase().indexOf(section.val) >= 0" class="text-center nopadding">{{section.title}} / Text #1</h2>
+            <div class="q-head large red" >
+                <h2 class="text-center nopadding">Set Expectations - Text 1</h2>
             </div>
         </div>
     </div>
     
-    <div class="row spacer-top-3x">
-        <div class="col-md-offset-2 col-md-8">
-            <div class="row spacer-bottom-2x"></div>
-            There are a great number of points that may be presented in terms of setting expectations. This example is specifically related to expectations for online learners and technology:
-            <ul>
-                <li>
-                    As an online learner you have to be able to utilise technology to facilitate your studies, at least to a minimum level. We know that students occupy all points on the spectrum in terms of having or not having experience in using technology. At a minimum you have to be have a computer or have regular access to a computer with a good broadband internet connection, have Microsoft office, be able to use Microsoft word, be able to navigate the internet and use email. From that basic level then these skills will have to be developed over time in order to best facilitate your learning. For anyone who is going to attending tutorials in a virtual classroom you need to have a good headset with microphone and a webcam, and these would also be recommended for all students so that you can speak to one another over the internet if you wish.
-                </li>
-            </ul>
+    <ng-include src="'app/views/partials/widgets/setExpectationsSectionNav.html'"></ng-include>
+    
+    
+    <div class="row spacer-top">
+        <div class="col-md-offset-1 col-md-10">
+            <div class="panel panel-info">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-1 text-center nopadding">
+                            <i class="fa fa-file-text-o fa-5x"></i>
+                        </div>
+                        <div class="col-xs-11">
+                            <h2 class="spacer-top">
+                                There are a great number of points that may be presented in terms of setting expectations. This example is specifically related to expectations for online learners and technology:
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-1 text-center nopadding">
+                            
+                        </div>
+                        <div class="col-xs-11">
+                            <p>
+                                As an online learner you have to be able to utilise technology to facilitate your studies, at least to a minimum level. We know that students occupy all points on the spectrum in terms of having or not having experience in using technology. At a minimum you have to be have a computer or have regular access to a computer with a good broadband internet connection, have Microsoft office, be able to use Microsoft word, be able to navigate the internet and use email. From that basic level then these skills will have to be developed over time in order to best facilitate your learning. For anyone who is going to attending tutorials in a virtual classroom you need to have a good headset with microphone and a webcam, and these would also be recommended for all students so that you can speak to one another over the internet if you wish.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>    
-    
+
 
     <div class="row spacer-top-3x spacer-xs-bottom-3x">
         <div class="col-md-5">

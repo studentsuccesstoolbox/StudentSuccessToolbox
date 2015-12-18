@@ -293,12 +293,12 @@ sstTool8App.config(function ($routeProvider) {
                 controller: 'tool8Controller'
             })
             // study skills section stop
-            .when('/online-orientation-summary/', {
-                templateUrl: 'app/views/templates/online-orientation-summary.html',
+            .when('/elements-of-an-online-orientation/online-orientation-summary/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/online-orientation-summary.html',
                 controller: 'tool8Controller'
             })
-            .when('/review-your-online-orientation-plan/', {
-                templateUrl: 'app/views/templates/review-your-online-orientation-plan.html',
+            .when('/elements-of-an-online-orientation/review-your-online-orientation-plan/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/review-your-online-orientation-plan.html',
                 controller: 'tool8Controller'
             })
 

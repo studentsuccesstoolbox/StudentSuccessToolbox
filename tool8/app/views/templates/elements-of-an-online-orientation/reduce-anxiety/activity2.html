@@ -8,33 +8,67 @@
         
     <div class="row spacer-top-3x">
         <div class="col-md-offset-2 col-md-8">
-            <div ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? '':'hidden'" class="q-head large" ng-style="{'background':section.colourActive}">
-                <h2 ng-if="currentSection.toLowerCase().indexOf(section.val) >= 0" class="text-center nopadding">{{section.title}} / Activity #2</h2>
+            <div class="q-head large green" >
+                <h2 class="text-center nopadding">Reduce Anxiety (‘Entry Shock’ ) Activity 2</h2>
             </div>
         </div>
     </div>
     
-    <div class="row spacer-top-3x">
-        <div class="col-md-offset-2 col-md-8">
-            <div class="row spacer-bottom-2x"></div>
-            Activity 2 – Address Typical Anxieties
-            <ul>
-                <li>Activities can also directly address the anxieties that flexible learners will typically have. Some examples:
-                    <ul>
-                        <li>Virtual Classroom – Ask students to send a private chat message (to you, the facilitator) about what is making them anxious. Speak to these or paste some of them into the main window/whiteboard so that the new students can see that the fears they have are shared by others. Also address how to deal with those anxieties.</li>
-                        <li>Virtual Learning Environments – Lead a discussion, using the discussion forum, to address typical anxieties and give a space for students to ask questions relating to the programme, how to study etc. Also address how to deal with those anxieties.</li>
-                    </ul>
-                </li>
-            </ul>
+    <ng-include src="'app/views/partials/widgets/anxietySectionNav.html'"></ng-include>
+    
+    <div class="row spacer-top">
+         <div class="col-xs-12">
+            <h2 class="text-center nopadding">Address Typical Anxieties</h2>
+         </div>
+     </div>
+    
+    <div class="row spacer-top">
+        <div class="col-md-offset-1 col-md-10">
+            <div class="panel panel-info">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-1 text-center nopadding">
+                                <i class="fa fa-cogs fa-5x"></i>
+                            </div>
+                            <div class="col-xs-11">
+                                <h2 class="spacer-top">
+                                   Activities can also directly address the anxieties that flexible learners will typically have. Some examples:
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-1 text-center nopadding">
+                                <i class="fa fa-check fa-2x"></i>
+                            </div>
+                            <div class="col-xs-11">
+                                <p class="spacer-top-halfx">
+                                    Virtual Classroom – Ask students to send a private chat message (to you, the facilitator) about what is making them anxious. Speak to these or paste some of them into the main window/whiteboard so that the new students can see that the fears they have are shared by others. Also address how to deal with those anxieties.                                
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-1 text-center nopadding">
+                                <i class="fa fa-check fa-2x"></i>
+                            </div>
+                            <div class="col-xs-11">
+                                <p class="spacer-top-halfx">
+                                   Virtual Learning Environments – Lead a discussion, using the discussion forum, to address typical anxieties and give a space for students to ask questions relating to the programme, how to study etc. Also address how to deal with those anxieties.
+                                </p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
         </div>
     </div>
 
-    <div class="row spacer-top-3x spacer-xs-bottom-3x">
-        <div class="col-md-5">
-            <a href="#/" class="btn btn-info btn-lg btn-block" title="Back to home" aria-label="">Back to home</a>
+    <div class="row spacer-top-3x">                
+        <div class="col-md-4">
+            <a class="btn btn-info btn-lg btn-block" aria-label="" title="Back to Reduce Anxiety Activity 1" href="#elements-of-an-online-orientation/reduce-anxiety/activity1/">Back</a>
         </div>
-        <div ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? '' : 'hidden'" class="col-md-offset-3 col-md-4 spacer-xs-top-3x spacer-md-top-0">
-            <a ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val + '/online-orientation-summary/')" class="btn btn-default btn-lg btn-block" title="Next" aria-label="Next">Next</a>	
+        <div class="col-md-offset-4 col-md-4 spacer-xs-top spacer-md-top-0">
+            <a class="btn btn-default btn-lg btn-block" aria-label="" title="Reduce Anxiety Build your Online Orientation" href="#/elements-of-an-online-orientation/reduce-anxiety/online-orientation-summary/">Next</a> 
         </div>
-    </div> 
+    </div>   
+    <div class="row spacer-bottom-4x"></div>
 </div>

@@ -257,3 +257,13 @@ ul.section-nav li{
     
      
 }
+
+/* Tool8 nav*/
+.section-title{
+    min-width: 160px;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+    color: #fff;
+    background-color: #337ab7;
+}

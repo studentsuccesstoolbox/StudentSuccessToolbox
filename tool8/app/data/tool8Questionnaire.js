@@ -156,7 +156,7 @@ tool8Questionnaire = {
             }
         ]
     },
-    'online-orientation-anxiety': {
+    'online_orientation_anxiety': {
         'label': 'online-orientation-anxiety'
         , 'description': 'online-orientation-anxiety'
         , 'quotes': [
@@ -274,18 +274,11 @@ tool8Questionnaire = {
                         , 'answer': ''
                         , 'weight': 0
                     }]
-            },
-            {
-                'toolCategory': '',
-                'question': 'Other:',
-                'questionSmall': ''
-                , 'response': ''
-                , selected: ''
-                , options: []
             }
         ]
+        ,userOptions: []
     },
-    'online-orientation-set-expectations': {
+    'online_orientation_set_expectations': {
         'label': 'online-orientation-set-expectations'
         , 'description': 'online-orientation-set-expectations'
         , 'quotes': [
@@ -422,18 +415,11 @@ tool8Questionnaire = {
                         , 'answer': ''
                         , 'weight': 0
                     }]
-            },
-            {
-                'toolCategory': '',
-                'question': 'Other:',
-                'questionSmall': ''
-                , 'response': ''
-                , selected: ''
-                , options: []
             }
         ]
+        ,userOptions: []
     },
-    'online-orientation-positiverolemodel': {
+    'online_orientation_positiverolemodel': {
         'label': 'online-orientation-positiverolemodel'
         , 'description': 'online-orientation-positiverolemodel'
         , 'quotes': [
@@ -570,18 +556,11 @@ tool8Questionnaire = {
                         , 'answer': ''
                         , 'weight': 0
                     }]
-            },
-            {
-                'toolCategory': '',
-                'question': 'Other:',
-                'questionSmall': ''
-                , 'response': ''
-                , selected: ''
-                , options: []
             }
         ]
+        ,userOptions: []
     },
-    'online-orientation-socialising': {
+    'online_orientation_socialising': {
         'label': 'online-orientation-socialising'
         , 'description': 'online-orientation-socialising'
         , 'quotes': [
@@ -680,18 +659,11 @@ tool8Questionnaire = {
                         , 'answer': ''
                         , 'weight': 0
                     }]
-            },
-            {
-                'toolCategory': '',
-                'question': 'Other:',
-                'questionSmall': ''
-                , 'response': ''
-                , selected: ''
-                , options: []
             }
         ]
+        ,userOptions: []
     },
-    'online-orientation-campustour': {
+    'online_orientation_campustour': {
         'label': 'online-orientation-campustour'
         , 'description': 'online-orientation-campustour'
         , 'quotes': [
@@ -790,18 +762,11 @@ tool8Questionnaire = {
                         , 'answer': ''
                         , 'weight': 0
                     }]
-            },
-            {
-                'toolCategory': '',
-                'question': 'Other:',
-                'questionSmall': ''
-                , 'response': ''
-                , selected: ''
-                , options: []
             }
         ]
+        ,userOptions: []
     },
-    'online-orientation-studyskills': {
+    'online_orientation_studyskills': {
         'label': 'online-orientation-studyskills'
         , 'description': 'online-orientation-studyskills'
         , 'quotes': [
@@ -938,16 +903,9 @@ tool8Questionnaire = {
                         , 'answer': ''
                         , 'weight': 0
                     }]
-            },
-            {
-                'toolCategory': '',
-                'question': 'Other:',
-                'questionSmall': ''
-                , 'response': ''
-                , selected: ''
-                , options: []
             }
         ]
+        ,userOptions: []
     },
     'optionAwaitingConfirmation':''
 };

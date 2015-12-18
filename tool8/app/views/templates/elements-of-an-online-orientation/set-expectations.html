@@ -8,11 +8,13 @@
 
     <div class="row spacer-top-3x">
         <div class="col-md-offset-2 col-md-8">
-            <div ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? '' : 'hidden'" class="q-head large" ng-style="{'background':section.colourActive}">
-                <h2 ng-if="currentSection.toLowerCase().indexOf(section.val) >= 0" class="text-center nopadding">{{section.title}}</h2>
+            <div class="q-head large red" >
+                <h2 class="text-center nopadding">Set Expectations</h2>
             </div>
         </div>
     </div>
+    
+    <ng-include src="'app/views/partials/widgets/setExpectationsSectionNav.html'"></ng-include>
 
     <div class="row spacer-top-3x">
         <div class="col-xs-12 col-md-6">
@@ -148,7 +150,7 @@
                 <div class="round-nav-grey-bg"><div class="inner-white"></div></div>
 
                 <div class="pos pos-12">
-                    <a href="#/elements-of-an-online-orientation/set-expectations/video1/" title="video button" ng-class="{'viewed':areasViewedT8.reduceanxiety}" ng-click="areasViewedT8.reduceanxiety = true">
+                    <a href="#/elements-of-an-online-orientation/set-expectations/video1/" title="video button" >
                        <div class="round-nav-button small video light-gray">
                            <p>Video</p>    
                        </div>
@@ -157,7 +159,7 @@
 
 
                 <div class="pos pos-3">
-                    <a href="#/elements-of-an-online-orientation/set-expectations/activity1/" title="activity button" ng-class="{'viewed':areasViewedT8.reduceanxiety}" ng-click="areasViewedT8.reduceanxiety = true">
+                    <a href="#/elements-of-an-online-orientation/set-expectations/activity1/" title="activity button" >
                         <div class="round-nav-button small activity light-gray">
                             <p>Activity</p>
                         </div>
@@ -165,15 +167,15 @@
                 </div>
                 
                 <div class="pos pos-6">
-                    <a href="#/elements-of-an-online-orientation/set-expectations/open-educational-resources1/" title="Open Educational Resources button" ng-class="{'viewed':areasViewedT8.reduceanxiety}" ng-click="areasViewedT8.reduceanxiety = true">
-                        <div class="round-nav-button small activity light-gray">
-                            <p>Open Educational Resources</p>
+                    <a href="#/elements-of-an-online-orientation/set-expectations/open-educational-resources1/" title="Open Educational Resources button" >
+                        <div class="round-nav-button small education light-gray">
+                            <p class="ft-size-1_4x">Open Educational Resources</p>
                         </div>
                     </a>
                 </div>
 
                 <div class="pos pos-9">
-                    <a href="#/elements-of-an-online-orientation/set-expectations/text1/" title="text button" ng-class="{'viewed':areasViewedT8.reduceanxiety}" ng-click="areasViewedT8.reduceanxiety = true">
+                    <a href="#/elements-of-an-online-orientation/set-expectations/text1/" title="text button" >
                         <div class="round-nav-button small text light-gray">
                             <p>Text</p>
                         </div>
@@ -181,8 +183,8 @@
                 </div>
                 
                 <div class="pos pos-center">
-                    <div class="round-nav-button red small nohover">
-                        <p>Set Expectations</p>
+                    <div class="round-nav-button red small nohover ">
+                        <p class="ft-size-1_4x">Set Expectations</p>
                     </div>
                 </div>
                 

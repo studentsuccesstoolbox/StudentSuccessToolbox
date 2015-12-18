@@ -1,0 +1,34 @@
+<div class="navmenu navmenu-default navmenu-fixed-left offcanvas">
+    <div class="row spacer-top-3x">
+        <div class="col-md-12">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <h2 class="nopadding">Your Tools</h2>
+                    </div>
+                </div>
+            </div>   
+
+            <div ng-repeat="question in questionnaireTool8.your_online_orientation.questions track by $index">
+                <div class="panel" ng-class-odd="'panel-odd'" ng-class-even="'panel-even'">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-8 question">
+                                {{question.questionSmall}}
+                            </div>
+                            <div class="col-md-4 nopadding">
+                                <div class="radio-circle-group">
+                                    <div class="pull-left col-6" ng-repeat="opt in question.options" ng-class="{'active':question.selected.value == opt.value}">
+                                        <label for="question-{{$parent.$index}}-{{opt.value}}" class="radio-circle-bg" ng-class="{yes:'green', notsure:'orange', no:'red'}[opt.value]">
+                                            <input name="questionGroup{{$parent.$index}}" id="question-{{$parent.$index}}-{{opt.value}}" type="radio" class="faq-radio" ng-click="answer(question, opt)" ng-model="question.selected" ng-value="opt">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

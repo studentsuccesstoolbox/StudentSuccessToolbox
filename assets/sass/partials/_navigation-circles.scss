@@ -594,6 +594,11 @@ $round-nav-height:  180px;
             border: 4px solid #AFAFAF;
          }
          
+         &.orange{
+            background: #F9A02A;
+            border: 4px solid #F9A02A;
+         }
+         
          &.video:after{
                 content: "\f16a";
                 font: normal normal normal 14px/1 FontAwesome;
@@ -609,7 +614,7 @@ $round-nav-height:  180px;
          }
          
          &.activity:after{
-                content: "\f080";
+                content: "\f085";
                 font: normal normal normal 14px/1 FontAwesome;
                 font-size: 8em;
                 text-rendering: auto;
@@ -636,10 +641,49 @@ $round-nav-height:  180px;
                 opacity: 0.5;
          }
          
-         &.orange{
-            background: #F9A02A;
-            border: 4px solid #F9A02A;
+         &.website:after{
+                content: "\f0ac";
+                font: normal normal normal 14px/1 FontAwesome;
+                font-size: 7em;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                bottom: 0px;
+                left: -20px;
+                position: absolute;
+                color: #F1F1F1;
+                opacity: 0.5;
          }
+         
+         &.education:after{
+                content: "\f19d";
+                font: normal normal normal 14px/1 FontAwesome;
+                font-size: 7em;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                bottom: 0px;
+                left: -20px;
+                position: absolute;
+                color: #F1F1F1;
+                opacity: 0.5;
+         }
+         
+          &.map:after{
+                content: "\f279";
+                font: normal normal normal 14px/1 FontAwesome;
+                font-size: 7em;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                bottom: 0px;
+                left: -20px;
+                position: absolute;
+                color: #F1F1F1;
+                opacity: 0.5;
+         }
+         
+         
          
          &:not(.nohover):hover{
 		background: #08a7cd;
@@ -665,6 +709,7 @@ $round-nav-height:  180px;
            width: 160px;
            height: 160px;
            margin-left: -(160px / 2);
+           
          }
     }
     

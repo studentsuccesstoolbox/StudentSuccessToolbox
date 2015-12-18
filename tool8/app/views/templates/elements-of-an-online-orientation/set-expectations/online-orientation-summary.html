@@ -8,106 +8,39 @@
 
     <div class="row spacer-top-3x">
         <div class="col-md-offset-2 col-md-8">
-            <div ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? '' : 'hidden'" class="q-head large" ng-style="{'background':section.colourActive}">
-                <h2 ng-if="currentSection.toLowerCase().indexOf(section.val) >= 0" class="text-center nopadding">{{section.title}} / Build your Online Orientation</h2>
+            <div class="q-head large red" >
+                <h2 class="text-center nopadding">Set Expectations - Build your Online Orientation</h2>
             </div>
         </div>
     </div>
+    
+    <ng-include src="'app/views/partials/widgets/yourToolsOffCanvas.html'"></ng-include>
+    
+    <ng-include src="'app/views/partials/widgets/setExpectationsSectionNav.html'"></ng-include>
 
-    <div class="navmenu navmenu-default navmenu-fixed-left offcanvas">
-        <div class="row spacer-top-3x">
-            <div class="col-md-12">
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-xs-12 text-center">
-                            <h2 class="nopadding">Your Tools</h2>
-                        </div>
-                    </div>
-                </div>   
-
-                <div ng-repeat="question in q_your_online_orientation.questions track by $index">
-                    <div class="panel" ng-class-odd="'panel-odd'" ng-class-even="'panel-even'">
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-md-9 question">
-                                    {{question.questionSmall}}
-                                </div>
-                                <div class="col-md-3 nopadding">
-                                    <div class="radio-circle-group">
-                                        <div class="pull-left col-6" ng-repeat="opt in question.options" ng-class="{'active':question.selected.value == opt.value}">
-                                            <label for="question-{{$parent.$index}}-{{opt.value}}" class="radio-circle-bg" ng-class="{yes:'green', notsure:'orange', no:'red'}[opt.value]">
-                                                <input name="questionGroup{{$parent.$index}}" id="question-{{$parent.$index}}-{{opt.value}}" type="radio" class="faq-radio" ng-click="answer(question, opt)" ng-model="question.selected" ng-value="opt">
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>                    
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="row spacer-top">
+        <div class="col-xs-12 text-center">
+            <h2 class="nopadding">What approach(es) will you include?</h2>
+        </div>
+        <div class="col-xs-12">
+            <button data-toggle="offcanvas" data-target=".navmenu" data-canvas="body" aria-label="Toggle slider show hide" class="btn btn-link ft-size-1_8x primary">
+                <span class="hl-secondary"><i class="fa fa-wrench"></i>Your Tools</span>
+            </button>
         </div>
     </div>
+    
+    <online-orientation data="questionnaireTool8.online_orientation_set_expectations"></online-orientation>
+    
 
-    <div>
-        <button class="btn btn-default btn-sm" type="button" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body" aria-label="Toggle slider show hide">
-            Your Tools...
-        </button>
-    </div>
 
-    <div class="row spacer-top-3x">
-        <div class="row spacer-top-3x">
-            <div class="col-md-12">
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-xs-12 text-center">
-                            <h2 class="nopadding">What approach(es) will you include?</h2>
-                        </div>
-                    </div>
-                </div>
-                <!-- </div> -->
 
-                <div ng-repeat="question in q_online_orientation_set_expectations.questions track by $index">
-
-                    <div class="panel" ng-class-odd="'panel-odd'" ng-class-even="'panel-even'">
-                        <div class="panel-body">
-                            <div class="row">
-                                <div ng-if=" question.options.length > 1" class="col-md-9 question">
-                                    {{question.question}}
-                                </div>
-                                <div ng-if=" question.options.length > 1" class="col-md-3 nopadding">
-                                    <div class="radio-circle-group">
-                                        <div class="pull-left col-6" ng-repeat="opt in question.options" ng-class="{'active':question.selected.value == opt.value}">
-                                            <label for="question1-{{$parent.$index}}-{{opt.value}}" class="radio-circle-bg" ng-class="{yes:'green', notsure:'orange', no:'red'}[opt.value]">
-                                                <input name="questionGroup1{{$parent.$index}}" id="question1-{{$parent.$index}}-{{opt.value}}" type="radio" class="faq-radio" ng-click="answer(question, opt)" ng-model="question.selected" ng-value="opt">
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div ng-if=" question.options.length < 1" class="col-md-6 question">
-                                    {{question.question}}
-                                </div>
-                                <div ng-if=" question.options.length < 1" class="col-md-6 nopadding">
-                                    <div class="pull-right">
-                                        <label for="question1-{{$parent.$index}}-{{opt.value}}">
-                                            <textarea name="questionGroup1{{$parent.$index}}" id="question1-{{$parent.$index}}-{{opt.value}}" type="text" ng-blur="answerOther(question)" ng-model="question.selected"></textarea>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>                    
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="row spacer-top-3x">                
+        <div class="col-md-4">
+            <a class="btn btn-info btn-lg btn-block" aria-label="" title="Back to Reduce Anxiety Activity 2" href="#elements-of-an-online-orientation/reduce-anxiety/activity2/">Back</a>
+        </div>
+        <div class="col-md-offset-4 col-md-4 spacer-xs-top spacer-md-top-0">
+            <a class="btn btn-default btn-lg btn-block" aria-label="" title="Set Expectations" href="#/elements-of-an-online-orientation/set-expectations/">Next</a> 
         </div>
     </div>   
-
-    <div class="row spacer-top-3x spacer-xs-bottom-3x">
-        <div class="col-md-5">
-            <a href="#/" class="btn btn-info btn-lg btn-block" title="Back to home" aria-label="">Back to home</a>
-        </div>
-        <div ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? '' : 'hidden'" class="col-md-offset-3 col-md-4 spacer-xs-top-3x spacer-md-top-0">
-            <a ng-click="jumpToUrlT8('/elements-of-an-online-orientation/')" class="btn btn-default btn-lg btn-block" title="Next" aria-label="Next">Next</a>	
-        </div>
-    </div> 
+    <div class="row spacer-bottom-4x"></div>
 </div>

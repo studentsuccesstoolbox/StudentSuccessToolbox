@@ -15,18 +15,20 @@ angular.module('sstTool8App').controller('tool8Controller', function ($scope, $r
         ////});  
     };
 
-    $scope.q_your_online_orientation = tool8Questionnaire['your_online_orientation'];
-    $scope.q_online_orientation_anxiety = tool8Questionnaire['online-orientation-anxiety'];
-    $scope.q_online_orientation_set_expectations = tool8Questionnaire['online-orientation-set-expectations'];
+    $scope.questionnaireTool8 = tool8Questionnaire;
+    $scope.addOtherValue = '';
+    
+    $scope.q_your_online_orientation = tool8Questionnaire['your-online-orientation'];
+    //$scope.q_online_orientation_anxiety = tool8Questionnaire['online-orientation-anxiety'];
+    /*$scope.q_online_orientation_set_expectations = tool8Questionnaire['online-orientation-set-expectations'];
     $scope.q_online_orientation_positiverolemodel = tool8Questionnaire['online-orientation-positiverolemodel'];
     $scope.q_online_orientation_socialising = tool8Questionnaire['online-orientation-socialising'];
     $scope.q_online_orientation_campustour = tool8Questionnaire['online-orientation-campustour'];
     $scope.q_online_orientation_studyskills = tool8Questionnaire['online-orientation-studyskills'];
-    $scope.optionAwaitingConfirmation = tool8Questionnaire['optionAwaitingConfirmation'];
+    $scope.optionAwaitingConfirmation = tool8Questionnaire['optionAwaitingConfirmation'];*/
 
     $scope.t8Subsections = areasViewedT8;
-console.log(areasViewedT8);
-console.log(Object.keys(areasViewedT8).length);
+
     $scope.sectionWidthT8 = Math.floor((100 / (Object.keys(areasViewedT8).length))) + '%';
 
     $scope.currentSection = $location.path();
@@ -79,6 +81,30 @@ console.log(Object.keys(areasViewedT8).length);
     $scope.answerOther = function (question) {
         question['response'] = question.selected;//option.answer;
         question['selected'] = question.selected;
+    };
+    
+    $scope.addOption = function(questionnaireSection){
+        if($scope.addOtherValue){
+            
+            var newOption = {value:$scope.addOtherValue};
+            questionnaireSection.userOptions.push(newOption);
+        }
+    };
+    
+    $scope.deleteOption = function(questionnaireSection,index){
+        if(index < questionnaireSection.userOptions.length){
+            questionnaireSection.userOptions.splice(index,1);
+        }
+    };
+    
+    $scope.isPathActive = function (path) {
+        //console.log($location.path().substr(0, path.length));
+        //console.log(path);
+        if ($location.path().substr(0, path.length) === path) {
+          return true;
+        } else {
+          return false;
+        }
     };
 
     /**

@@ -58901,12 +58901,12 @@ sstTool8App.config(["$routeProvider", function ($routeProvider) {
                 controller: 'tool8Controller'
             })
             // study skills section stop
-            .when('/online-orientation-summary/', {
-                templateUrl: 'app/views/templates/online-orientation-summary.html',
+            .when('/elements-of-an-online-orientation/online-orientation-summary/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/online-orientation-summary.html',
                 controller: 'tool8Controller'
             })
-            .when('/review-your-online-orientation-plan/', {
-                templateUrl: 'app/views/templates/review-your-online-orientation-plan.html',
+            .when('/elements-of-an-online-orientation/review-your-online-orientation-plan/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/review-your-online-orientation-plan.html',
                 controller: 'tool8Controller'
             })
 
@@ -58922,7 +58922,7 @@ sstTool8App.config(["$routeProvider", function ($routeProvider) {
        
 }]);
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./controllers":89,"./data":92,"./directives":95,"./filters":98,"./services":100,"angular":20,"angular-animate":9,"angular-aria":11,"angular-route":14,"angular-sanitize":16,"angular-ui-bootstrap":17,"jquery":22}],89:[function(require,module,exports){
+},{"./controllers":89,"./data":92,"./directives":95,"./filters":100,"./services":102,"angular":20,"angular-animate":9,"angular-aria":11,"angular-route":14,"angular-sanitize":16,"angular-ui-bootstrap":17,"jquery":22}],89:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -58950,18 +58950,20 @@ angular.module('sstTool8App').controller('tool8Controller', ["$scope", "$routePa
         ////});  
     };
 
-    $scope.q_your_online_orientation = tool8Questionnaire['your_online_orientation'];
-    $scope.q_online_orientation_anxiety = tool8Questionnaire['online-orientation-anxiety'];
-    $scope.q_online_orientation_set_expectations = tool8Questionnaire['online-orientation-set-expectations'];
+    $scope.questionnaireTool8 = tool8Questionnaire;
+    $scope.addOtherValue = '';
+    
+    $scope.q_your_online_orientation = tool8Questionnaire['your-online-orientation'];
+    //$scope.q_online_orientation_anxiety = tool8Questionnaire['online-orientation-anxiety'];
+    /*$scope.q_online_orientation_set_expectations = tool8Questionnaire['online-orientation-set-expectations'];
     $scope.q_online_orientation_positiverolemodel = tool8Questionnaire['online-orientation-positiverolemodel'];
     $scope.q_online_orientation_socialising = tool8Questionnaire['online-orientation-socialising'];
     $scope.q_online_orientation_campustour = tool8Questionnaire['online-orientation-campustour'];
     $scope.q_online_orientation_studyskills = tool8Questionnaire['online-orientation-studyskills'];
-    $scope.optionAwaitingConfirmation = tool8Questionnaire['optionAwaitingConfirmation'];
+    $scope.optionAwaitingConfirmation = tool8Questionnaire['optionAwaitingConfirmation'];*/
 
     $scope.t8Subsections = areasViewedT8;
-console.log(areasViewedT8);
-console.log(Object.keys(areasViewedT8).length);
+
     $scope.sectionWidthT8 = Math.floor((100 / (Object.keys(areasViewedT8).length))) + '%';
 
     $scope.currentSection = $location.path();
@@ -59014,6 +59016,30 @@ console.log(Object.keys(areasViewedT8).length);
     $scope.answerOther = function (question) {
         question['response'] = question.selected;//option.answer;
         question['selected'] = question.selected;
+    };
+    
+    $scope.addOption = function(questionnaireSection){
+        if($scope.addOtherValue){
+            
+            var newOption = {value:$scope.addOtherValue};
+            questionnaireSection.userOptions.push(newOption);
+        }
+    };
+    
+    $scope.deleteOption = function(questionnaireSection,index){
+        if(index < questionnaireSection.userOptions.length){
+            questionnaireSection.userOptions.splice(index,1);
+        }
+    };
+    
+    $scope.isPathActive = function (path) {
+        //console.log($location.path().substr(0, path.length));
+        //console.log(path);
+        if ($location.path().substr(0, path.length) === path) {
+          return true;
+        } else {
+          return false;
+        }
     };
 
     /**
@@ -59224,6 +59250,13 @@ areasViewedT8 =
                 title: "Study Skills",
                 colourActive : "#09a7ce",
                 colourInActive : ""
+            },
+            "full-summary": {
+                val: "online-orientation-summary",
+                viewed: false,
+                title: "Summary",
+                colourActive : "#09a7ce",
+                colourInActive : ""
             }
         }
 
@@ -59397,7 +59430,7 @@ tool8Questionnaire = {
             }
         ]
     },
-    'online-orientation-anxiety': {
+    'online_orientation_anxiety': {
         'label': 'online-orientation-anxiety'
         , 'description': 'online-orientation-anxiety'
         , 'quotes': [
@@ -59515,18 +59548,11 @@ tool8Questionnaire = {
                         , 'answer': ''
                         , 'weight': 0
                     }]
-            },
-            {
-                'toolCategory': '',
-                'question': 'Other:',
-                'questionSmall': ''
-                , 'response': ''
-                , selected: ''
-                , options: []
             }
         ]
+        ,userOptions: []
     },
-    'online-orientation-set-expectations': {
+    'online_orientation_set_expectations': {
         'label': 'online-orientation-set-expectations'
         , 'description': 'online-orientation-set-expectations'
         , 'quotes': [
@@ -59663,18 +59689,11 @@ tool8Questionnaire = {
                         , 'answer': ''
                         , 'weight': 0
                     }]
-            },
-            {
-                'toolCategory': '',
-                'question': 'Other:',
-                'questionSmall': ''
-                , 'response': ''
-                , selected: ''
-                , options: []
             }
         ]
+        ,userOptions: []
     },
-    'online-orientation-positiverolemodel': {
+    'online_orientation_positiverolemodel': {
         'label': 'online-orientation-positiverolemodel'
         , 'description': 'online-orientation-positiverolemodel'
         , 'quotes': [
@@ -59811,18 +59830,11 @@ tool8Questionnaire = {
                         , 'answer': ''
                         , 'weight': 0
                     }]
-            },
-            {
-                'toolCategory': '',
-                'question': 'Other:',
-                'questionSmall': ''
-                , 'response': ''
-                , selected: ''
-                , options: []
             }
         ]
+        ,userOptions: []
     },
-    'online-orientation-socialising': {
+    'online_orientation_socialising': {
         'label': 'online-orientation-socialising'
         , 'description': 'online-orientation-socialising'
         , 'quotes': [
@@ -59921,18 +59933,11 @@ tool8Questionnaire = {
                         , 'answer': ''
                         , 'weight': 0
                     }]
-            },
-            {
-                'toolCategory': '',
-                'question': 'Other:',
-                'questionSmall': ''
-                , 'response': ''
-                , selected: ''
-                , options: []
             }
         ]
+        ,userOptions: []
     },
-    'online-orientation-campustour': {
+    'online_orientation_campustour': {
         'label': 'online-orientation-campustour'
         , 'description': 'online-orientation-campustour'
         , 'quotes': [
@@ -60031,18 +60036,11 @@ tool8Questionnaire = {
                         , 'answer': ''
                         , 'weight': 0
                     }]
-            },
-            {
-                'toolCategory': '',
-                'question': 'Other:',
-                'questionSmall': ''
-                , 'response': ''
-                , selected: ''
-                , options: []
             }
         ]
+        ,userOptions: []
     },
-    'online-orientation-studyskills': {
+    'online_orientation_studyskills': {
         'label': 'online-orientation-studyskills'
         , 'description': 'online-orientation-studyskills'
         , 'quotes': [
@@ -60179,16 +60177,9 @@ tool8Questionnaire = {
                         , 'answer': ''
                         , 'weight': 0
                     }]
-            },
-            {
-                'toolCategory': '',
-                'question': 'Other:',
-                'questionSmall': ''
-                , 'response': ''
-                , selected: ''
-                , options: []
             }
         ]
+        ,userOptions: []
     },
     'optionAwaitingConfirmation':''
 };
@@ -60204,7 +60195,32 @@ arguments[4][74][0].apply(exports,arguments)
  
 require('./angular.audio');
 require('./navigation');
-},{"./angular.audio":94,"./navigation":96}],96:[function(require,module,exports){
+require('./onlineOrientation');
+require('./isActiveNav');
+
+},{"./angular.audio":94,"./isActiveNav":96,"./navigation":97,"./onlineOrientation":98}],96:[function(require,module,exports){
+
+angular.module('sstTool8App')
+        .directive('isActiveNav', [ '$location', function($location) {
+            return {
+             restrict: 'A',
+             link: function(scope, element) {
+               scope.location = $location;
+               scope.$watch('location.path()', function(currentPath) {
+                   console.log(element);
+
+                 if('#' + currentPath === element[0].attributes['href'].nodeValue) {
+                   element.parent().addClass('active');
+                 } else {
+                   element.parent().removeClass('active');
+                 }
+               });
+             }
+             };
+}]);
+
+
+},{}],97:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -60220,7 +60236,45 @@ angular.module('sstTool8App')
         templateUrl: 'app/views/partials/widgets/navigation.html'
       };
     });
-},{}],97:[function(require,module,exports){
+},{}],98:[function(require,module,exports){
+
+angular.module('sstTool8App')
+    .directive('onlineOrientation', function(){
+      return {
+        restrict: 'E',
+        //scope: false,
+        scope: { data: '=data' },
+        templateUrl: 'app/views/partials/widgets/onlineOrientation.html',
+        controller: ["$scope", function($scope) {
+        {
+
+           $scope.addOption = function(questionnaireSection){
+                if($scope.addOtherValue){
+
+                    var newOption = {value:$scope.addOtherValue};
+                    questionnaireSection.userOptions.push(newOption);
+                }
+            };
+
+            $scope.deleteOption = function(questionnaireSection,index){
+                if(index < questionnaireSection.userOptions.length){
+                    questionnaireSection.userOptions.splice(index,1);
+                }
+            };
+        }
+        /*compile: function (tElement, tAttrs) {
+            // this is link function
+            return function (scope) {
+                scope.approaches = tAttrs.data;
+            };            
+        }*/
+      }]
+    };
+});
+
+
+
+},{}],99:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -60231,9 +60285,9 @@ angular.module('sstTool8App').filter('encodeURIComponent', function() {
 });
 
 
-},{}],98:[function(require,module,exports){
+},{}],100:[function(require,module,exports){
 arguments[4][7][0].apply(exports,arguments)
-},{"./encodeURIComponent":97,"dup":7}],99:[function(require,module,exports){
+},{"./encodeURIComponent":99,"dup":7}],101:[function(require,module,exports){
 /**
  * Services for validation and showing any errors in a modal. 
  * Checks that the activity time does not exceed 168.
@@ -60280,7 +60334,7 @@ angular.module('sstTool8App').factory('errorModalService',["$modal", function($m
     return obj;
     
 }]);
-},{}],100:[function(require,module,exports){
+},{}],102:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -60289,7 +60343,7 @@ angular.module('sstTool8App').factory('errorModalService',["$modal", function($m
 'use strict';
  
 require('./errorModal');
-},{"./errorModal":99}]},{},[23,38,57,66,1,82,88]);
+},{"./errorModal":101}]},{},[23,38,57,66,1,82,88]);
 
 /**  
  * jsPDF - PDF Document creation from JavaScript

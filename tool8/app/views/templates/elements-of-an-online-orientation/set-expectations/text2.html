@@ -8,9 +8,17 @@
 
     <div class="row spacer-top-3x">
         <div class="col-md-offset-2 col-md-8">
-            <div ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? '' : 'hidden'" class="q-head large" ng-style="{'background':section.colourActive}">
-                <h2 ng-if="currentSection.toLowerCase().indexOf(section.val) >= 0" class="text-center nopadding">{{section.title}} / Text #2</h2>
+            <div class="q-head large red" >
+                <h2 class="text-center nopadding">Set Expectations - Text 2</h2>
             </div>
+        </div>
+    </div>
+    
+    <ng-include src="'app/views/partials/widgets/setExpectationsSectionNav.html'"></ng-include>
+    
+    <div class="row spacer-top">
+        <div class="col-xs-12">
+           <h2 class="text-center nopadding">From Graduates/Current Students</h2>
         </div>
     </div>
 
@@ -19,6 +27,7 @@
             <div class="quote-light image-right">  
                 <blockquote>                                   
                     <p class="comment">You have to be realistic  from the outset and make out a proper plan. I think if at all possible to keep on top of things throughout the year and to take good summary notes as you go along so as you don’t have to reread the text towards exam times. Basically, keep your studies and course work evenly spaced rather than leaving things to the last minute, which is what I did!</p>
+                    <footer>John (Student/Graduate)</footer>
                 </blockquote>
                 <img class="img-responsive img-rounded" alt="DCU student photo" src="../assets/images/student2.jpg">
             </div>

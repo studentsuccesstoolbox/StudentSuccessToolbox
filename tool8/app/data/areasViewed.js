@@ -58,6 +58,13 @@ areasViewedT8 =
                 title: "Study Skills",
                 colourActive : "#09a7ce",
                 colourInActive : ""
+            },
+            "full-summary": {
+                val: "online-orientation-summary",
+                viewed: false,
+                title: "Summary",
+                colourActive : "#09a7ce",
+                colourInActive : ""
             }
         }
 
