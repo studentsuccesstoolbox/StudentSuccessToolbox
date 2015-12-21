@@ -8,32 +8,54 @@
         
     <div class="row spacer-top-3x">
         <div class="col-md-offset-2 col-md-8">
-            <div ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? '':'hidden'" class="q-head large" ng-style="{'background':section.colourActive}">
-                <h2 ng-if="currentSection.toLowerCase().indexOf(section.val) >= 0" class="text-center nopadding">{{section.title}} / Video #2</h2>
+            <div class="q-head large dark-blue" >
+                <h2 class="text-center nopadding">Campus Tour - Video 2</h2>
             </div>
         </div>
     </div>
 
+    <ng-include src="'app/views/partials/widgets/campusTourSectionNav.html'"></ng-include>
+
+    <div class="row spacer-top">
+         <div class="col-xs-12">
+            <h2 class="text-center nopadding">Virtual</h2>
+         </div>
+     </div>
+    
     <div class="row spacer-top-3x">
         <div class="col-md-offset-2 col-md-8">
-            <div class="row spacer-bottom-2x"></div>
-            <div align="center" class="embed-responsive embed-responsive-16by9">
-                <!--
-                <video autoplay loop controls >
-                    <source src=http://techslides.com/demos/sample-videos/small.mp4 type=video/mp4>
-                </video>
-                -->
-                <iframe class="embed-responsive-item"  src="https://www.youtube.com/embed/yaqe1qesQ8c"></iframe>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="thumbnail">
+                        <div align="center" class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item"  src="https://www.youtube.com/embed/yaqe1qesQ8c"></iframe>
+                        </div>
+                        <div class="caption">
+                            <h4 class="text-center">Excerpt from a recorded orientation session for Online Learners in Dublin City University </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="thumbnail">
+                        <div align="center" class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item"  src="https://www.youtube.com/embed/yaqe1qesQ8c"></iframe>
+                        </div>
+                        <div class="caption">
+                            <h4 class="text-center">Orientation to IT Sligo’s Online Programmes</h4>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     
-    <div class="row spacer-top-3x spacer-xs-bottom-3x">
-        <div class="col-md-5">
-            <a href="#/" class="btn btn-info btn-lg btn-block" title="Back to home" aria-label="">Back to home</a>
+    <div class="row spacer-top-3x">                
+        <div class="col-md-4">
+            <a class="btn btn-info btn-lg btn-block" aria-label="" title="Back to Video 1" href="#/elements-of-an-online-orientation/campus-tour/video1">Back</a>
         </div>
-        <div ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? '' : 'hidden'" class="col-md-offset-3 col-md-4 spacer-xs-top-3x spacer-md-top-0">
-            <a ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val + '/activity1/')" class="btn btn-default btn-lg btn-block" title="Next" aria-label="Next">Next</a>	
+        <div class="col-md-offset-4 col-md-4 spacer-xs-top spacer-md-top-0">
+            <a class="btn btn-default btn-lg btn-block" aria-label="" title="Campus Tour Activity 1" href="#/elements-of-an-online-orientation/campus-tour/activity1/">Next</a> 
         </div>
-    </div> 
+    </div>   
+    <div class="row spacer-bottom-4x"></div>
 </div>
