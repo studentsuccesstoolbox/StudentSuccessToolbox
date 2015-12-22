@@ -8,13 +8,16 @@ angular.module('sstTool8App')
         templateUrl: 'app/views/partials/widgets/onlineOrientation.html',
         controller: function($scope) {
 
-           $scope.uniqueId = $scope.data.label;
+           $scope.uniqueId = $scope.data.id;
+
+           $scope.evenQuestions = ($scope.data.questions.length%2 === 0)?true:false;
            
            $scope.addOption = function(questionnaireSection){
                 if($scope.addOtherValue){
 
                     var newOption = {value:$scope.addOtherValue};
                     questionnaireSection.userOptions.push(newOption);
+                    $scope.addOtherValue = '';
                 }
             };
 

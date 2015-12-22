@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div ng-repeat="userOption in data.userOptions track by $index">
-                <div class="panel" ng-class-odd="'panel-odd'" ng-class-even="'panel-even'">
+                <div class="panel" ng-class-odd="evenQuestions?'panel-odd':'panel-even'" ng-class-even="evenQuestions?'panel-even':'panel-odd'">
                     <div class="panel-body">
                         <div class="row">
                             <div  class="col-md-9 question">
@@ -49,9 +49,9 @@
                  </div>
                 <div class="panel-body">
                     <div class="form-group">
-                        <label for="addoptionvalue" class="ft-size-1_2x">To add other data that are not list above fill in the text field below and click the add button</label>
+                        <label for="{{uniqueId}}addoptionvalue" class="ft-size-1_2x">To add other data that are not list above fill in the text field below and click the add button</label>
 
-                        <textarea name="addoptionvalue" id="addoptionvalue" type="text" ng-model="addOtherValue" class="form-control"></textarea>
+                        <textarea name="{{uniqueId}}addoptionvalue" id="{{uniqueId}}addoptionvalue" type="text" ng-model="addOtherValue" class="form-control"></textarea>
                     </div>
                     <button type="button" class="btn btn-default pull-right btn-xs" ng-click="addOption(data)">Add</button>
                 </div>

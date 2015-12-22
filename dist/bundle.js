@@ -58987,11 +58987,93 @@ angular.module('sstTool8App').controller('tool8Controller', ["$scope", "$routePa
         // add data here!...
         var text = 'Here is an overall summary of your results.';
         var lines = doc.setFontSize(12).splitTextToSize(text, (75 - margin));
+        
+        //Starting Y postion of Questions
+        var startPostionY = 40;
+        
+        for (var key in tool8Questionnaire) {
+            if (tool8Questionnaire.hasOwnProperty(key)) {
+                var section = tool8Questionnaire[key];
+                
+                // Section Header
+                doc.setFontSize(22);
+                doc.setTextColor(8,167,205); //#08a7cd
+                doc.text((margin+10), startPostionY+5, section.label);
+                startPostionY += 15;
+                
+                if(startPostionY > (297 - margin)){
+                    doc.addPage();
+                    startPostionY = margin;
+                }
+                
+                //Section questions feedback
+                doc.setTextColor(73,73,73);
+                var questionLineWidth = 7;
+                for (var i = 0; i < section.questions.length; i++) {
 
-        //Footer place
-        doc.setDrawColor(232, 232, 232);
-        doc.setFillColor(8, 167, 205);
-        doc.roundedRect(15, 70, (210 - (margin * 2)), (5 + (lines.length)), 1, 1, 'FD');
+                    var answerLines = doc.setFontSize(12).splitTextToSize(section.questions[i].question, (170 - ((margin*2)+10)));
+
+                    var qh = (questionLineWidth * answerLines.length);
+                    var nextPostionY = startPostionY +(qh);
+                    if(nextPostionY > 297 - margin){
+                        doc.addPage();
+                        startPostionY = margin;
+                        nextPostionY = startPostionY +(qh);
+                    }
+                    if(i % 2 == 0){
+                        // Summary Container
+                        doc.setDrawColor(232,232,232);
+                        doc.setFillColor(238, 238, 238);
+                        doc.roundedRect(margin, startPostionY -5, (210 - (margin*2)), (qh), 2, 2, 'FD');
+                    }
+
+                    //Question Text
+                    doc.text((margin+5), startPostionY, answerLines);
+
+                    //Answer Text
+                    var answer = 'Not Answered ';
+                    if(section.questions[i].selected){ 
+                        answer = section.questions[i].selected.label;
+                    }
+                    doc.text((165), startPostionY, answer);
+
+                    startPostionY += qh;                        
+
+                }
+                
+                //User custom options
+                if(section.userOptions){
+                    for (var i = 0; i < section.userOptions.length; i++) {
+                        var answerLines = doc.setFontSize(12).splitTextToSize(section.userOptions[i].value, (170 - ((margin*2)+10)));
+                        var qh = (questionLineWidth * answerLines.length);
+                        var nextPostionY = startPostionY +(qh);
+                        if(nextPostionY > 297 - margin){
+                            doc.addPage();
+                            startPostionY = margin;
+                            nextPostionY = startPostionY +(qh);
+                        }
+                        if(i % 2 == 0){
+                            // Summary Container
+                            doc.setDrawColor(232,232,232);
+                            doc.setFillColor(238, 238, 238);
+                            doc.roundedRect(margin, startPostionY -5, (210 - (margin*2)), (qh), 2, 2, 'FD');
+                        }
+
+                        //Question Text
+                        doc.text((margin+5), startPostionY, answerLines);
+
+                        //Answer Text
+                        var answer = 'Yes';
+                        doc.text((165), startPostionY, answer);
+
+                        startPostionY += qh;                   
+                    }
+                }
+   
+            }
+          }
+
+        
 
         doc.save('review_your_online_orientation_plan.pdf');
     };
@@ -59157,9 +59239,9 @@ require('./tool8Rating');
 
 tool8Questionnaire = {
     'your_online_orientation': {
-        'label': 'your online orientation'
-        , 'description': 'your online orientation'
-        , 'quotes': [
+        'label': 'Your Tools'
+        ,'id': 'your-online-orientation'
+        ,'quotes': [
         ]
         , 'questions': [{
                 'id':'vle',
@@ -59316,8 +59398,8 @@ tool8Questionnaire = {
         ]
     },
     'online_orientation_anxiety': {
-        'label': 'online-orientation-anxiety'
-        , 'description': 'online-orientation-anxiety'
+        'label': 'Anxiety'
+        , 'id': 'online-orientation-anxiety'
         , 'quotes': [
         ]
         , 'questions': [{
@@ -59438,8 +59520,8 @@ tool8Questionnaire = {
         ,userOptions: []
     },
     'online_orientation_set_expectations': {
-        'label': 'online-orientation-set-expectations'
-        , 'description': 'online-orientation-set-expectations'
+        'label': 'Set Expectations'
+        , 'id': 'online-orientation-set-expectations'
         , 'quotes': [
         ]
         , 'questions': [{
@@ -59579,8 +59661,8 @@ tool8Questionnaire = {
         ,userOptions: []
     },
     'online_orientation_positiverolemodel': {
-        'label': 'online-orientation-positiverolemodel'
-        , 'description': 'online-orientation-positiverolemodel'
+        'label': 'Positive Role Model'
+        , 'id': 'online-orientation-positiverolemodel'
         , 'quotes': [
         ]
         , 'questions': [{
@@ -59720,8 +59802,8 @@ tool8Questionnaire = {
         ,userOptions: []
     },
     'online_orientation_socialising': {
-        'label': 'online-orientation-socialising'
-        , 'description': 'online-orientation-socialising'
+        'label': 'Socialising'
+        , 'id': 'online-orientation-socialising'
         , 'quotes': [
         ]
         , 'questions': [{
@@ -59823,8 +59905,8 @@ tool8Questionnaire = {
         ,userOptions: []
     },
     'online_orientation_campustour': {
-        'label': 'online-orientation-campustour'
-        , 'description': 'online-orientation-campustour'
+        'label': 'Campus Tour'
+        , 'id': 'online-orientation-campustour'
         , 'quotes': [
         ]
         , 'questions': [{
@@ -59926,8 +60008,8 @@ tool8Questionnaire = {
         ,userOptions: []
     },
     'online_orientation_studyskills': {
-        'label': 'online-orientation-studyskills'
-        , 'description': 'online-orientation-studyskills'
+        'label': 'Study Skills'
+        , 'id': 'online-orientation-studyskills'
         , 'quotes': [
         ]
         , 'questions': [{
@@ -60236,13 +60318,16 @@ angular.module('sstTool8App')
         templateUrl: 'app/views/partials/widgets/onlineOrientation.html',
         controller: ["$scope", function($scope) {
 
-           $scope.uniqueId = $scope.data.label;
+           $scope.uniqueId = $scope.data.id;
+
+           $scope.evenQuestions = ($scope.data.questions.length%2 === 0)?true:false;
            
            $scope.addOption = function(questionnaireSection){
                 if($scope.addOtherValue){
 
                     var newOption = {value:$scope.addOtherValue};
                     questionnaireSection.userOptions.push(newOption);
+                    $scope.addOtherValue = '';
                 }
             };
 

@@ -52,11 +52,93 @@ angular.module('sstTool8App').controller('tool8Controller', function ($scope, $r
         // add data here!...
         var text = 'Here is an overall summary of your results.';
         var lines = doc.setFontSize(12).splitTextToSize(text, (75 - margin));
+        
+        //Starting Y postion of Questions
+        var startPostionY = 40;
+        
+        for (var key in tool8Questionnaire) {
+            if (tool8Questionnaire.hasOwnProperty(key)) {
+                var section = tool8Questionnaire[key];
+                
+                // Section Header
+                doc.setFontSize(22);
+                doc.setTextColor(8,167,205); //#08a7cd
+                doc.text((margin+10), startPostionY+5, section.label);
+                startPostionY += 15;
+                
+                if(startPostionY > (297 - margin)){
+                    doc.addPage();
+                    startPostionY = margin;
+                }
+                
+                //Section questions feedback
+                doc.setTextColor(73,73,73);
+                var questionLineWidth = 7;
+                for (var i = 0; i < section.questions.length; i++) {
 
-        //Footer place
-        doc.setDrawColor(232, 232, 232);
-        doc.setFillColor(8, 167, 205);
-        doc.roundedRect(15, 70, (210 - (margin * 2)), (5 + (lines.length)), 1, 1, 'FD');
+                    var answerLines = doc.setFontSize(12).splitTextToSize(section.questions[i].question, (170 - ((margin*2)+10)));
+
+                    var qh = (questionLineWidth * answerLines.length);
+                    var nextPostionY = startPostionY +(qh);
+                    if(nextPostionY > 297 - margin){
+                        doc.addPage();
+                        startPostionY = margin;
+                        nextPostionY = startPostionY +(qh);
+                    }
+                    if(i % 2 == 0){
+                        // Summary Container
+                        doc.setDrawColor(232,232,232);
+                        doc.setFillColor(238, 238, 238);
+                        doc.roundedRect(margin, startPostionY -5, (210 - (margin*2)), (qh), 2, 2, 'FD');
+                    }
+
+                    //Question Text
+                    doc.text((margin+5), startPostionY, answerLines);
+
+                    //Answer Text
+                    var answer = 'Not Answered ';
+                    if(section.questions[i].selected){ 
+                        answer = section.questions[i].selected.label;
+                    }
+                    doc.text((165), startPostionY, answer);
+
+                    startPostionY += qh;                        
+
+                }
+                
+                //User custom options
+                if(section.userOptions){
+                    for (var i = 0; i < section.userOptions.length; i++) {
+                        var answerLines = doc.setFontSize(12).splitTextToSize(section.userOptions[i].value, (170 - ((margin*2)+10)));
+                        var qh = (questionLineWidth * answerLines.length);
+                        var nextPostionY = startPostionY +(qh);
+                        if(nextPostionY > 297 - margin){
+                            doc.addPage();
+                            startPostionY = margin;
+                            nextPostionY = startPostionY +(qh);
+                        }
+                        if(i % 2 == 0){
+                            // Summary Container
+                            doc.setDrawColor(232,232,232);
+                            doc.setFillColor(238, 238, 238);
+                            doc.roundedRect(margin, startPostionY -5, (210 - (margin*2)), (qh), 2, 2, 'FD');
+                        }
+
+                        //Question Text
+                        doc.text((margin+5), startPostionY, answerLines);
+
+                        //Answer Text
+                        var answer = 'Yes';
+                        doc.text((165), startPostionY, answer);
+
+                        startPostionY += qh;                   
+                    }
+                }
+   
+            }
+          }
+
+        
 
         doc.save('review_your_online_orientation_plan.pdf');
     };

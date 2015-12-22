@@ -6,9 +6,9 @@
 
 tool8Questionnaire = {
     'your_online_orientation': {
-        'label': 'your online orientation'
-        , 'description': 'your online orientation'
-        , 'quotes': [
+        'label': 'Your Tools'
+        ,'id': 'your-online-orientation'
+        ,'quotes': [
         ]
         , 'questions': [{
                 'id':'vle',
@@ -165,8 +165,8 @@ tool8Questionnaire = {
         ]
     },
     'online_orientation_anxiety': {
-        'label': 'online-orientation-anxiety'
-        , 'description': 'online-orientation-anxiety'
+        'label': 'Anxiety'
+        , 'id': 'online-orientation-anxiety'
         , 'quotes': [
         ]
         , 'questions': [{
@@ -287,8 +287,8 @@ tool8Questionnaire = {
         ,userOptions: []
     },
     'online_orientation_set_expectations': {
-        'label': 'online-orientation-set-expectations'
-        , 'description': 'online-orientation-set-expectations'
+        'label': 'Set Expectations'
+        , 'id': 'online-orientation-set-expectations'
         , 'quotes': [
         ]
         , 'questions': [{
@@ -428,8 +428,8 @@ tool8Questionnaire = {
         ,userOptions: []
     },
     'online_orientation_positiverolemodel': {
-        'label': 'online-orientation-positiverolemodel'
-        , 'description': 'online-orientation-positiverolemodel'
+        'label': 'Positive Role Model'
+        , 'id': 'online-orientation-positiverolemodel'
         , 'quotes': [
         ]
         , 'questions': [{
@@ -569,8 +569,8 @@ tool8Questionnaire = {
         ,userOptions: []
     },
     'online_orientation_socialising': {
-        'label': 'online-orientation-socialising'
-        , 'description': 'online-orientation-socialising'
+        'label': 'Socialising'
+        , 'id': 'online-orientation-socialising'
         , 'quotes': [
         ]
         , 'questions': [{
@@ -672,8 +672,8 @@ tool8Questionnaire = {
         ,userOptions: []
     },
     'online_orientation_campustour': {
-        'label': 'online-orientation-campustour'
-        , 'description': 'online-orientation-campustour'
+        'label': 'Campus Tour'
+        , 'id': 'online-orientation-campustour'
         , 'quotes': [
         ]
         , 'questions': [{
@@ -775,8 +775,8 @@ tool8Questionnaire = {
         ,userOptions: []
     },
     'online_orientation_studyskills': {
-        'label': 'online-orientation-studyskills'
-        , 'description': 'online-orientation-studyskills'
+        'label': 'Study Skills'
+        , 'id': 'online-orientation-studyskills'
         , 'quotes': [
         ]
         , 'questions': [{

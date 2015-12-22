@@ -6,7 +6,7 @@
 
 tool8Rating = {
     'ratings' : {
-            'subject' : 'Feedback From Tool 5'
+            'subject' : 'Feedback From Tool 8'
             ,'description' : 'Rating'
             ,'questions' :[{
                 'question':'I found this resource useful'
