@@ -1,14 +1,15 @@
 
 angular.module('sstTool8App')
-    .directive('onlineOrientation', function(){
+    .directive('onlineOrientation', function($modal){
       return {
-        restrict: 'E',
+        restrict: 'AE',
         //scope: false,
-        scope: { data: '=data' },
+        scope: { data: '=data', tools: '=tools'},
         templateUrl: 'app/views/partials/widgets/onlineOrientation.html',
         controller: function($scope) {
-        {
 
+           $scope.uniqueId = $scope.data.label;
+           
            $scope.addOption = function(questionnaireSection){
                 if($scope.addOtherValue){
 
@@ -22,14 +23,86 @@ angular.module('sstTool8App')
                     questionnaireSection.userOptions.splice(index,1);
                 }
             };
+            
+            $scope.answer = function(question, option){
+                if($scope.tools && option.value === 'yes'){
+                    if($scope.toolSelected(question.toolid) === false){
+                            $scope.openConfirmToolModal(question);
+                    }
+                }
+
+                question['response'] = option.value;
+                question['selected'] = option;
+            };
+    
+            $scope.toolSelected = function(toolIds){
+                var toolSelected = false;
+                
+                for(var i = 0; i < toolIds.length; i++){
+                    var toolQuestion = $scope.getToolQuestionById(toolIds[i]);
+                    if(toolQuestion.selected){
+                        if(toolQuestion.selected.value === 'yes'){
+                            toolSelected = true;
+                        }
+                    }
+                }
+ 
+                return toolSelected;
+            };
+    
+            $scope.getToolQuestionById = function(toolId){
+                var toolQuestion = false;
+                for(var i = 0; i <$scope.tools.questions.length; i++){
+                    if($scope.tools.questions[i].id === toolId){
+                        toolQuestion = $scope.tools.questions[i];
+                    }
+                }
+
+                return toolQuestion;
+            };
+            
+            $scope.openConfirmToolModal = function(question) {
+                
+                var modalInstance = $modal.open({
+                    templateUrl: 'app/views/partials/modals/confirmModal.html',
+                    windowTemplateUrl : 'app/views/partials/modalWindow.html',
+                    controller: function($scope, $modalInstance,currentQuestion,toolQuestions){
+                        $scope.currentQuestion = currentQuestion;
+                        $scope.toolQuestions = toolQuestions;
+                        $scope.ok = function(){
+
+                            $.each(toolQuestions,function(key,toolQuestion){
+                                toolQuestion.selected = toolQuestion.options[0];
+                                toolQuestion['response'] = toolQuestion.options[0].value;
+                            });
+                            $modalInstance.close();
+
+                        };
+
+                        $scope.cancel = function(event){
+                            if(event){
+                                event.preventDefault();
+                            }
+                            $modalInstance.dismiss();
+                        };
+                    },
+                    resolve: {
+                        currentQuestion: function(){
+                                return question;
+                        },
+                        toolQuestions: function(){
+                            var toolQuestions = [];
+                            for(var i = 0; i < question.toolid.length; i++){
+                                toolQuestions.push($scope.getToolQuestionById(question.toolid[i]));
+                            }
+
+                            return toolQuestions;
+                        }
+                    }
+                });
+            };
+
         }
-        /*compile: function (tElement, tAttrs) {
-            // this is link function
-            return function (scope) {
-                scope.approaches = tAttrs.data;
-            };            
-        }*/
-      }
     };
 });
 

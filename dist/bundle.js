@@ -58888,8 +58888,8 @@ sstTool8App.config(["$routeProvider", function ($routeProvider) {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/open-educational-resources2.html',
                 controller: 'tool8Controller'
             })
-            .when('/elements-of-an-online-orientation/study-skills/open-educational-resources3-social-media/', {
-                templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/open-educational-resources3-social-media.html',
+            .when('/elements-of-an-online-orientation/study-skills/open-educational-resources3/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/open-educational-resources3.html',
                 controller: 'tool8Controller'
             })
             .when('/elements-of-an-online-orientation/study-skills/activity1/', {
@@ -58917,12 +58917,12 @@ sstTool8App.config(["$routeProvider", function ($routeProvider) {
 
 }]).run( ["$rootScope", "$location", function($rootScope, $location) {
         //Get questionnaire data from localstorage
-        $rootScope.ratings = tool5Rating.ratings;
+        $rootScope.ratings = tool8Rating.ratings;
         $rootScope.personas = tool5Personas;
        
 }]);
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./controllers":89,"./data":92,"./directives":95,"./filters":100,"./services":102,"angular":20,"angular-animate":9,"angular-aria":11,"angular-route":14,"angular-sanitize":16,"angular-ui-bootstrap":17,"jquery":22}],89:[function(require,module,exports){
+},{"./controllers":89,"./data":92,"./directives":96,"./filters":101,"./services":103,"angular":20,"angular-animate":9,"angular-aria":11,"angular-route":14,"angular-sanitize":16,"angular-ui-bootstrap":17,"jquery":22}],89:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -58943,119 +58943,26 @@ angular.module('sstTool8App').controller('tool8Controller', ["$scope", "$routePa
 
     $scope.areasViewedT8 = areasViewedT8;
 
-    $scope.resetAreasViewedT8 = function () {
-        //// ALFR :: rewite this!
-        ////$.each( areasViewedT8, function( key, value ) {
-        ////    areasViewedT8[key] = false;
-        ////});  
-    };
-
     $scope.questionnaireTool8 = tool8Questionnaire;
     $scope.addOtherValue = '';
-    
-    $scope.q_your_online_orientation = tool8Questionnaire['your-online-orientation'];
-    //$scope.q_online_orientation_anxiety = tool8Questionnaire['online-orientation-anxiety'];
-    /*$scope.q_online_orientation_set_expectations = tool8Questionnaire['online-orientation-set-expectations'];
-    $scope.q_online_orientation_positiverolemodel = tool8Questionnaire['online-orientation-positiverolemodel'];
-    $scope.q_online_orientation_socialising = tool8Questionnaire['online-orientation-socialising'];
-    $scope.q_online_orientation_campustour = tool8Questionnaire['online-orientation-campustour'];
-    $scope.q_online_orientation_studyskills = tool8Questionnaire['online-orientation-studyskills'];
-    $scope.optionAwaitingConfirmation = tool8Questionnaire['optionAwaitingConfirmation'];*/
-
-    $scope.t8Subsections = areasViewedT8;
+  
 
     $scope.sectionWidthT8 = Math.floor((100 / (Object.keys(areasViewedT8).length))) + '%';
 
     $scope.currentSection = $location.path();
+    
 
     $scope.jumpToUrlT8 = function (pathToJumpTo) {
         $location.path(pathToJumpTo);
     };
 
-    /**
-     * Function for question answer click event.
-     * Sets the select answer for a question.
-     * 
-     * @param object question
-     * @param object option
-     */
-    $scope.answer = function (question, option) {
-
-        console.log(question.yourToolsMatchesQuestionSmall);
-
-        try {
-            $scope.q_your_online_orientation.questions.forEach(function (entry) {
-                //console.log(entry.questionSmall);
-
-                if (entry.questionSmall === question.yourToolsMatchesQuestionSmall) {
-                    if (entry.response === 'yes')
-                    {
-                        $scope.optionAwaitingConfirmation = '';
-                    } else
-                    {
-                        tool8Questionnaire.optionAwaitingConfirmation = entry.questionSmall;
-                        $scope.openModal('confirmModal.html');
-                        // see modal below for closing logic!
-                    }
-                }
-            });
-        } catch (e) {
-
-        }
-
-        question['response'] = option.value;
-        question['selected'] = option;
-    };
-
-    /**
-     * Function for question answer click event.
-     * Sets the select answer for a question.
-     * 
-     * @param object question
-     */
-    $scope.answerOther = function (question) {
-        question['response'] = question.selected;//option.answer;
-        question['selected'] = question.selected;
-    };
-    
-    $scope.addOption = function(questionnaireSection){
-        if($scope.addOtherValue){
-            
-            var newOption = {value:$scope.addOtherValue};
-            questionnaireSection.userOptions.push(newOption);
-        }
-    };
-    
-    $scope.deleteOption = function(questionnaireSection,index){
-        if(index < questionnaireSection.userOptions.length){
-            questionnaireSection.userOptions.splice(index,1);
-        }
-    };
-    
-    $scope.isPathActive = function (path) {
-        //console.log($location.path().substr(0, path.length));
-        //console.log(path);
-        if ($location.path().substr(0, path.length) === path) {
-          return true;
-        } else {
-          return false;
-        }
-    };
 
     /**
      * Resets the full questionnaire page
      * @returns {undefined}
      */
     $scope.resetQuestionnaireT8 = function () {
-        for (var i = 0; i < $scope.q_your_online_orientation.questions.length; i++) {
-            $scope.q_your_online_orientation.questions[i].response = '';
-            $scope.q_your_online_orientation.questions[i].selected = '';
-        }
-
-        for (var i = 0; i < $scope.q_online_orientation_anxiety.questions.length; i++) {
-            $scope.q_online_orientation_anxiety.questions[i].response = '';
-            $scope.q_online_orientation_anxiety.questions[i].selected = '';
-        }
+        
     };
 
     /**
@@ -59071,7 +58978,7 @@ angular.module('sstTool8App').controller('tool8Controller', ["$scope", "$routePa
 
         //Header
         doc.setFontSize(22);
-        doc.text(margin, margin, 'AReview Your Online Orientation Plan');
+        doc.text(margin, margin, 'Review Your Online Orientation Plan');
 
         //Brief Description
         doc.setFontSize(16);
@@ -59087,12 +58994,8 @@ angular.module('sstTool8App').controller('tool8Controller', ["$scope", "$routePa
         doc.roundedRect(15, 70, (210 - (margin * 2)), (5 + (lines.length)), 1, 1, 'FD');
 
         doc.save('review_your_online_orientation_plan.pdf');
-    }
-
-    $scope.resetGatheredData = function () {
-        $scope.resetAreasViewedT8();
-        $scope.resetQuestionnaireT8();
     };
+
 
     $scope.audio = {
         sound1: ngAudio.load('../assets/audio/audio.mp3'),
@@ -59136,42 +59039,13 @@ angular.module('sstTool8App').controller('tool8Controller', ["$scope", "$routePa
 
                 $scope.ok = function () {
 
-                    try {
-                        tool8Questionnaire.your_online_orientation.questions.forEach(function (entry) {
-
-                            if (entry.questionSmall === tool8Questionnaire.optionAwaitingConfirmation) {
-                                if (entry.response === 'yes')
-                                {
-
-                                } else
-                                {
-                                    try 
-                                    {
-                                        var matches = $filter('filter')(tool8Questionnaire.your_online_orientation.questions, {questionSmall:tool8Questionnaire.optionAwaitingConfirmation});
-                                    
-                                        var trueObject = matches[0].options[0]; // need to get the proper object with "hash" value - assuming "yes" is always the 1st answer!!!!!
-                                        entry.response = 'yes';
-                                        entry.selected = trueObject;
-                                    } 
-                                    catch (e) 
-                                    {
-                                        console.log("Exception" + e);
-                                    }
-                                }
-                            }
-                        });
-                    } catch (e) {
-
-                    }
-                    tool8Questionnaire.optionAwaitingConfirmation = '';
-
                     $modalInstance.close();
                 };
                 $scope.cancel = function (event) {
                     if (event) {
                         event.preventDefault();
                     }
-                    tool8Questionnaire.optionAwaitingConfirmation = '';
+
                     $modalInstance.dismiss();
                 };
             }],
@@ -59185,6 +59059,7 @@ angular.module('sstTool8App').controller('tool8Controller', ["$scope", "$routePa
 
         return false;
     };
+
 
 
 
@@ -59271,7 +59146,9 @@ areasViewedT8 =
  
 require('./areasViewed');
 require('./tool8Questionnaire');
-},{"./areasViewed":91,"./tool8Questionnaire":93}],93:[function(require,module,exports){
+require('./tool8Rating');
+
+},{"./areasViewed":91,"./tool8Questionnaire":93,"./tool8Rating":94}],93:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -59285,6 +59162,7 @@ tool8Questionnaire = {
         , 'quotes': [
         ]
         , 'questions': [{
+                'id':'vle',
                 'toolCategory': 'Location',
                 'question': 'Will you build your online orientation in your institutional Virtual Learning Environment (VLE), e.g. Moodle or Blackboard?',
                 'questionSmall': 'Virtual Learning Environment (VLE)'
@@ -59303,6 +59181,7 @@ tool8Questionnaire = {
                     }]
             },
             {
+                'id':'website',
                 'toolCategory': '',
                 'question': 'Will you build your online orientation within your institutional website?',
                 'questionSmall': 'Website'
@@ -59321,6 +59200,7 @@ tool8Questionnaire = {
                     }]
             }
             , {
+                'id':'video',
                 'toolCategory': 'Technology',
                 'question': 'Do you have access to equipment and software that you can use to produce video content for your online orientation?',
                 'questionSmall': 'Video'
@@ -59339,6 +59219,7 @@ tool8Questionnaire = {
                     }]
             }
             , {
+                'id':'audio',
                 'toolCategory': '',
                 'question': 'Do you have access to equipment and software that you can use to produce audio content for your online orientation?',
                 'questionSmall': 'Audio'
@@ -59357,6 +59238,7 @@ tool8Questionnaire = {
                     }]
             }
             , {
+                'id':'elearning',
                 'toolCategory': '',
                 'question': 'Do you have access to e-learning platform software, e.g. Articulate, that you can use to produce content for your online orientation?',
                 'questionSmall': 'E-learning platform'
@@ -59375,6 +59257,7 @@ tool8Questionnaire = {
                     }]
             }
             , {
+                'id':'presentation',
                 'toolCategory': '',
                 'question': 'Do you have access to presentation tools, e.g. Powerpoint or Prezi, that you can use to produce content for your online orientation?',
                 'questionSmall': 'Presentation Tools'
@@ -59393,6 +59276,7 @@ tool8Questionnaire = {
                     }]
             }
             , {
+                'id':'oer',
                 'toolCategory': 'Existing Resources',
                 'question': 'Can you locate open educational resources that you can use in your online orientation?',
                 'questionSmall': 'Open Educational Resources'
@@ -59411,6 +59295,7 @@ tool8Questionnaire = {
                     }]
             }
             , {
+                'id':'eir',
                 'toolCategory': '',
                 'question': 'Are there existing institutional resources that you can use in you online orientation?',
                 'questionSmall': 'Existing Institutional Resources'
@@ -59438,7 +59323,7 @@ tool8Questionnaire = {
         , 'questions': [{
                 'toolCategory': '',
                 'question': 'Video/Audio – From institution/Programme Team',
-                'yourToolsMatchesQuestionSmall':'Q',
+                'toolid':['video','audio'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -59457,7 +59342,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Video/Audio – From graduate/current student',
-                'yourToolsMatchesQuestionSmall':'Q',
+                'toolid':['video','audio'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -59476,7 +59361,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Text based communication – From institution/Programme Team',
-                'yourToolsMatchesQuestionSmall':'Q',
+                'toolid':['presentation'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -59495,7 +59380,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Text based communication – From graduate/current student',
-                'yourToolsMatchesQuestionSmall':'Q',
+                'toolid':['presentation'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -59514,7 +59399,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Classroom',
-                'yourToolsMatchesQuestionSmall':'Virtual Learning Environment (VLE)',
+                'toolid':['elearning'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -59533,7 +59418,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Learning Environment (Discussion Forums)',
-                'yourToolsMatchesQuestionSmall':'Virtual Learning Environment (VLE)',
+                'toolid':['elearning'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -59560,7 +59445,7 @@ tool8Questionnaire = {
         , 'questions': [{
                 'toolCategory': '',
                 'question': 'Video/Audio – From institution/Programme Team',
-                'yourToolsMatchesQuestionSmall':'Q',
+                'toolid':['video','audio'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -59579,7 +59464,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Video/Audio – From graduate/current student',
-                'yourToolsMatchesQuestionSmall':'Q',
+                'toolid':['video','audio'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -59598,7 +59483,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Text based communication – From institution/Programme Team',
-                'yourToolsMatchesQuestionSmall':'Q',
+                'toolid':['presentation'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -59617,7 +59502,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Text based communication – From graduate/current student',
-                'yourToolsMatchesQuestionSmall':'Q',
+                'toolid':['presentation'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -59636,7 +59521,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Open Educational Resources',
-                'yourToolsMatchesQuestionSmall':'Open Educational Resources',
+                'toolid':['oer'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -59655,7 +59540,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Classroom',
-                'yourToolsMatchesQuestionSmall':'Virtual Learning Environment (VLE)',
+                'toolid':['elearning'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -59674,7 +59559,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Learning Environment (Discussion Forums)',
-                'yourToolsMatchesQuestionSmall':'Virtual Learning Environment (VLE)',
+                'toolid':['elearning'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -59701,7 +59586,7 @@ tool8Questionnaire = {
         , 'questions': [{
                 'toolCategory': '',
                 'question': 'Video/Audio – From institution/Programme Team',
-                'yourToolsMatchesQuestionSmall':'Q',
+                'toolid':['video','audio'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -59720,7 +59605,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Video/Audio – From graduate/current student',
-                'yourToolsMatchesQuestionSmall':'Q',
+                'toolid':['video','audio'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -59739,7 +59624,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Text based communication – From institution/Programme Team',
-                'yourToolsMatchesQuestionSmall':'Q',
+                'toolid':['presentation'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -59758,7 +59643,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Text based communication – From graduate/current student',
-                'yourToolsMatchesQuestionSmall':'Q',
+                'toolid':['presentation'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -59777,7 +59662,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Website – From current students',
-                'yourToolsMatchesQuestionSmall':'Website',
+                'toolid':['website'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -59796,7 +59681,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Classroom',
-                'yourToolsMatchesQuestionSmall':'Virtual Learning Environment (VLE)',
+                'toolid':['elearning'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -59815,7 +59700,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Learning Environment (Discussion Forums)',
-                'yourToolsMatchesQuestionSmall':'Virtual Learning Environment (VLE)',
+                'toolid':['elearning'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -59842,7 +59727,7 @@ tool8Questionnaire = {
         , 'questions': [{
                 'toolCategory': '',
                 'question': 'Video/Audio – From institution/Programme Team',
-                'yourToolsMatchesQuestionSmall':'Q',
+                'toolid':['video','audio'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -59861,7 +59746,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Text based communication – From institution/Programme Team',
-                'yourToolsMatchesQuestionSmall':'Q',
+                'toolid':['presentation'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -59880,7 +59765,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Social Media',
-                'yourToolsMatchesQuestionSmall':'Website Q',
+                'toolid':['website'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -59899,7 +59784,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Classroom',
-                'yourToolsMatchesQuestionSmall':'Virtual Learning Environment (VLE)',
+                'toolid':['elearning'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -59918,7 +59803,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Learning Environment (Discussion Forums)',
-                'yourToolsMatchesQuestionSmall':'Virtual Learning Environment (VLE)',
+                'toolid':['elearning'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -59946,7 +59831,7 @@ tool8Questionnaire = {
                 'toolCategory': '',
                 'question': 'Video',
                 'questionSmall': '',
-                'yourToolsMatchesQuestionSmall':'Video',
+                'toolid':['video'],
                 'response': ''
                 , selected: ''
                 , options: [{
@@ -59965,7 +59850,7 @@ tool8Questionnaire = {
                 'toolCategory': '',
                 'question': 'Audio',
                 'questionSmall': '',
-                'yourToolsMatchesQuestionSmall':'Audio',
+                'toolid':['audio'],
                 'response': ''
                 , selected: ''
                 , options: [{
@@ -59984,7 +59869,7 @@ tool8Questionnaire = {
                 'toolCategory': '',
                 'question': 'Interactive Map',
                 'questionSmall': '',
-                'yourToolsMatchesQuestionSmall':'Presentation Tools',
+                'toolid':['presentation'],
                 'response': ''
                 , selected: ''
                 , options: [{
@@ -60003,7 +59888,7 @@ tool8Questionnaire = {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Classroom',
                 'questionSmall': '',
-                'yourToolsMatchesQuestionSmall':'Virtual Learning Environment (VLE)',
+                'toolid':['elearning'],
                 'response': ''
                 , selected: ''
                 , options: [{
@@ -60022,7 +59907,7 @@ tool8Questionnaire = {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Learning Environment (Discussion Forums)',
                 'questionSmall': '',
-                'yourToolsMatchesQuestionSmall':'Virtual Learning Environment (VLE)',
+                'toolid':['elearning'],
                 'response': ''
                 , selected: ''
                 , options: [{
@@ -60049,7 +59934,7 @@ tool8Questionnaire = {
                 'toolCategory': '',
                 'question': 'Video/Audio – Existing Institutional Resources and/or Open Educational Resources',
                 'questionSmall': '',
-                'yourToolsMatchesQuestionSmall':'Q'
+                'toolid':['video','audio']
                 , 'response': ''
                 , selected: ''
                 , options: [{
@@ -60067,7 +59952,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Video/Audio – From graduate/current student',
-                'yourToolsMatchesQuestionSmall':'Q',
+                'toolid':['video','audio'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -60086,7 +59971,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Text based communication – From institution/Programme Team',
-                'yourToolsMatchesQuestionSmall':'Q',
+                'toolid':['presentation'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -60105,7 +59990,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Open Educational Resource',
-                'yourToolsMatchesQuestionSmall':'Open Educational Resources',
+                'toolid':['oer'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -60124,7 +60009,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Open Educational Resource/Social Media',
-                'yourToolsMatchesQuestionSmall':'Open Educational Resources',
+                'toolid':['oer'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -60143,7 +60028,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Classroom',
-                'yourToolsMatchesQuestionSmall':'Virtual Learning Environment (VLE)',
+                'toolid':['elearning'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -60162,7 +60047,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Learning Environment (Discussion Forums)',
-                'yourToolsMatchesQuestionSmall':'Virtual Learning Environment (VLE)',
+                'toolid':['elearning'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -60180,12 +60065,117 @@ tool8Questionnaire = {
             }
         ]
         ,userOptions: []
-    },
-    'optionAwaitingConfirmation':''
+    }
 };
 },{}],94:[function(require,module,exports){
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+tool8Rating = {
+    'ratings' : {
+            'subject' : 'Feedback From Tool 5'
+            ,'description' : 'Rating'
+            ,'questions' :[{
+                'question':'I found this resource useful'
+                ,'response' : ''
+                ,selected : ''
+                ,options: [{
+                  'label': 'Strongly disagree'
+                  ,'value': 'Strongly disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Disagree'
+                  ,'value': 'Disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Partly agree'
+                  ,'value': 'Partly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Agree'
+                  ,'value': 'Agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Strongly agree'
+                  ,'value': 'Strongly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                }]
+            },
+            {
+                'question':'I felt more prepared than I was before'
+                ,'response' : ''
+                ,selected : ''
+                ,options: [{
+                  'label': 'Strongly disagree'
+                  ,'value': 'Strongly disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Disagree'
+                  ,'value': 'Disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Partly agree'
+                  ,'value': 'Partly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Agree'
+                  ,'value': 'Agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Strongly agree'
+                  ,'value': 'Strongly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                }]
+            }
+            ,{
+                'question':'I will follow some/all of the advice'
+                ,'response' : ''
+                ,selected : ''
+                ,options: [{
+                  'label': 'Strongly disagree'
+                  ,'value': 'Strongly disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Disagree'
+                  ,'value': 'Disagree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Partly agree'
+                  ,'value': 'Partly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Agree'
+                  ,'value': 'Agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                },{
+                  'label': 'Strongly agree'
+                  ,'value': 'Strongly agree'
+                  ,'answer': ''
+                  ,'weight': 0
+                }]
+            }]
+    }
+};
+},{}],95:[function(require,module,exports){
 arguments[4][74][0].apply(exports,arguments)
-},{"dup":74}],95:[function(require,module,exports){
+},{"dup":74}],96:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -60198,7 +60188,7 @@ require('./navigation');
 require('./onlineOrientation');
 require('./isActiveNav');
 
-},{"./angular.audio":94,"./isActiveNav":96,"./navigation":97,"./onlineOrientation":98}],96:[function(require,module,exports){
+},{"./angular.audio":95,"./isActiveNav":97,"./navigation":98,"./onlineOrientation":99}],97:[function(require,module,exports){
 
 angular.module('sstTool8App')
         .directive('isActiveNav', [ '$location', function($location) {
@@ -60207,7 +60197,6 @@ angular.module('sstTool8App')
              link: function(scope, element) {
                scope.location = $location;
                scope.$watch('location.path()', function(currentPath) {
-                   console.log(element);
 
                  if('#' + currentPath === element[0].attributes['href'].nodeValue) {
                    element.parent().addClass('active');
@@ -60220,7 +60209,7 @@ angular.module('sstTool8App')
 }]);
 
 
-},{}],97:[function(require,module,exports){
+},{}],98:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -60236,18 +60225,19 @@ angular.module('sstTool8App')
         templateUrl: 'app/views/partials/widgets/navigation.html'
       };
     });
-},{}],98:[function(require,module,exports){
+},{}],99:[function(require,module,exports){
 
 angular.module('sstTool8App')
-    .directive('onlineOrientation', function(){
+    .directive('onlineOrientation', ["$modal", function($modal){
       return {
-        restrict: 'E',
+        restrict: 'AE',
         //scope: false,
-        scope: { data: '=data' },
+        scope: { data: '=data', tools: '=tools'},
         templateUrl: 'app/views/partials/widgets/onlineOrientation.html',
         controller: ["$scope", function($scope) {
-        {
 
+           $scope.uniqueId = $scope.data.label;
+           
            $scope.addOption = function(questionnaireSection){
                 if($scope.addOtherValue){
 
@@ -60261,20 +60251,92 @@ angular.module('sstTool8App')
                     questionnaireSection.userOptions.splice(index,1);
                 }
             };
-        }
-        /*compile: function (tElement, tAttrs) {
-            // this is link function
-            return function (scope) {
-                scope.approaches = tAttrs.data;
-            };            
-        }*/
-      }]
+            
+            $scope.answer = function(question, option){
+                if($scope.tools && option.value === 'yes'){
+                    if($scope.toolSelected(question.toolid) === false){
+                            $scope.openConfirmToolModal(question);
+                    }
+                }
+
+                question['response'] = option.value;
+                question['selected'] = option;
+            };
+    
+            $scope.toolSelected = function(toolIds){
+                var toolSelected = false;
+                
+                for(var i = 0; i < toolIds.length; i++){
+                    var toolQuestion = $scope.getToolQuestionById(toolIds[i]);
+                    if(toolQuestion.selected){
+                        if(toolQuestion.selected.value === 'yes'){
+                            toolSelected = true;
+                        }
+                    }
+                }
+ 
+                return toolSelected;
+            };
+    
+            $scope.getToolQuestionById = function(toolId){
+                var toolQuestion = false;
+                for(var i = 0; i <$scope.tools.questions.length; i++){
+                    if($scope.tools.questions[i].id === toolId){
+                        toolQuestion = $scope.tools.questions[i];
+                    }
+                }
+
+                return toolQuestion;
+            };
+            
+            $scope.openConfirmToolModal = function(question) {
+                
+                var modalInstance = $modal.open({
+                    templateUrl: 'app/views/partials/modals/confirmModal.html',
+                    windowTemplateUrl : 'app/views/partials/modalWindow.html',
+                    controller: ["$scope", "$modalInstance", "currentQuestion", "toolQuestions", function($scope, $modalInstance,currentQuestion,toolQuestions){
+                        $scope.currentQuestion = currentQuestion;
+                        $scope.toolQuestions = toolQuestions;
+                        $scope.ok = function(){
+
+                            $.each(toolQuestions,function(key,toolQuestion){
+                                toolQuestion.selected = toolQuestion.options[0];
+                                toolQuestion['response'] = toolQuestion.options[0].value;
+                            });
+                            $modalInstance.close();
+
+                        };
+
+                        $scope.cancel = function(event){
+                            if(event){
+                                event.preventDefault();
+                            }
+                            $modalInstance.dismiss();
+                        };
+                    }],
+                    resolve: {
+                        currentQuestion: function(){
+                                return question;
+                        },
+                        toolQuestions: function(){
+                            var toolQuestions = [];
+                            for(var i = 0; i < question.toolid.length; i++){
+                                toolQuestions.push($scope.getToolQuestionById(question.toolid[i]));
+                            }
+
+                            return toolQuestions;
+                        }
+                    }
+                });
+            };
+
+        }]
     };
-});
+}]);
 
 
 
-},{}],99:[function(require,module,exports){
+},{}],100:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -60285,9 +60347,9 @@ angular.module('sstTool8App').filter('encodeURIComponent', function() {
 });
 
 
-},{}],100:[function(require,module,exports){
+},{}],101:[function(require,module,exports){
 arguments[4][7][0].apply(exports,arguments)
-},{"./encodeURIComponent":99,"dup":7}],101:[function(require,module,exports){
+},{"./encodeURIComponent":100,"dup":7}],102:[function(require,module,exports){
 /**
  * Services for validation and showing any errors in a modal. 
  * Checks that the activity time does not exceed 168.
@@ -60334,7 +60396,7 @@ angular.module('sstTool8App').factory('errorModalService',["$modal", function($m
     return obj;
     
 }]);
-},{}],102:[function(require,module,exports){
+},{}],103:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -60343,7 +60405,7 @@ angular.module('sstTool8App').factory('errorModalService',["$modal", function($m
 'use strict';
  
 require('./errorModal');
-},{"./errorModal":101}]},{},[23,38,57,66,1,82,88]);
+},{"./errorModal":102}]},{},[23,38,57,66,1,82,88]);
 
 /**  
  * jsPDF - PDF Document creation from JavaScript

@@ -5,16 +5,18 @@
                 <div class="panel" ng-class-odd="'panel-odd'" ng-class-even="'panel-even'">
                     <div class="panel-body">
                         <div class="row">
-                            <div ng-if=" question.options.length > 1" class="col-md-9 question">
+                            <div class="col-md-9 question">
                                 {{question.question}}
                             </div>
-                            <div ng-if=" question.options.length > 1" class="col-md-3 nopadding">
+                            <div class="col-md-3 nopadding">
                                 <div class="radio-circle-group">
-                                    <div class="pull-left col-6" ng-repeat="opt in question.options" ng-class="{'active':question.selected.value == opt.value}">
-                                        <label for="question1-{{$parent.$index}}-{{opt.value}}" class="radio-circle-bg" ng-class="{yes:'green', notsure:'orange', no:'red'}[opt.value]">
-                                            <input name="questionGroup1{{$parent.$index}}" id="question1-{{$parent.$index}}-{{opt.value}}" type="radio" class="faq-radio" ng-click="answer(question, opt)" ng-model="question.selected" ng-value="opt">
+                                    <div class="pull-left col-6" ng-repeat="opt in question.options track by $index" ng-class="{'active':question.selected.value == opt.value}">
+                                        <label for="{{uniqueId}}-{{$parent.$index}}-{{opt.value}}" class="radio-circle-bg" ng-class="{yes:'green', notsure:'orange', no:'red'}[opt.value]" >
+                                            <input name="{{uniqueId}}Group{{$parent.$index}}" id="{{uniqueId}}-{{$parent.$index}}-{{opt.value}}" type="radio" ng-change="answer(question, opt)" class="faq-radio" ng-model="$parent.question.selected" ng-value="opt">
+                                            
                                         </label>
                                     </div>
+                                    
                                 </div>
                             </div>
                         </div>                    

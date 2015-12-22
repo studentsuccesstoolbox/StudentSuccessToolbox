@@ -280,8 +280,8 @@ sstTool8App.config(function ($routeProvider) {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/open-educational-resources2.html',
                 controller: 'tool8Controller'
             })
-            .when('/elements-of-an-online-orientation/study-skills/open-educational-resources3-social-media/', {
-                templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/open-educational-resources3-social-media.html',
+            .when('/elements-of-an-online-orientation/study-skills/open-educational-resources3/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/open-educational-resources3.html',
                 controller: 'tool8Controller'
             })
             .when('/elements-of-an-online-orientation/study-skills/activity1/', {
@@ -309,7 +309,7 @@ sstTool8App.config(function ($routeProvider) {
 
 }).run( function($rootScope, $location) {
         //Get questionnaire data from localstorage
-        $rootScope.ratings = tool5Rating.ratings;
+        $rootScope.ratings = tool8Rating.ratings;
         $rootScope.personas = tool5Personas;
        
 });
