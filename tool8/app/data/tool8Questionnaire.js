@@ -5,12 +5,13 @@
  */
 
 tool8Questionnaire = {
-    'your-online-orientation': {
-        'label': 'your online orientation'
-        , 'description': 'your online orientation'
-        , 'quotes': [
+    'your_online_orientation': {
+        'label': 'Your Tools'
+        ,'id': 'your-online-orientation'
+        ,'quotes': [
         ]
         , 'questions': [{
+                'id':'vle',
                 'toolCategory': 'Location',
                 'question': 'Will you build your online orientation in your institutional Virtual Learning Environment (VLE), e.g. Moodle or Blackboard?',
                 'questionSmall': 'Virtual Learning Environment (VLE)'
@@ -29,6 +30,7 @@ tool8Questionnaire = {
                     }]
             },
             {
+                'id':'website',
                 'toolCategory': '',
                 'question': 'Will you build your online orientation within your institutional website?',
                 'questionSmall': 'Website'
@@ -47,6 +49,7 @@ tool8Questionnaire = {
                     }]
             }
             , {
+                'id':'video',
                 'toolCategory': 'Technology',
                 'question': 'Do you have access to equipment and software that you can use to produce video content for your online orientation?',
                 'questionSmall': 'Video'
@@ -65,6 +68,7 @@ tool8Questionnaire = {
                     }]
             }
             , {
+                'id':'audio',
                 'toolCategory': '',
                 'question': 'Do you have access to equipment and software that you can use to produce audio content for your online orientation?',
                 'questionSmall': 'Audio'
@@ -83,6 +87,7 @@ tool8Questionnaire = {
                     }]
             }
             , {
+                'id':'elearning',
                 'toolCategory': '',
                 'question': 'Do you have access to e-learning platform software, e.g. Articulate, that you can use to produce content for your online orientation?',
                 'questionSmall': 'E-learning platform'
@@ -101,6 +106,7 @@ tool8Questionnaire = {
                     }]
             }
             , {
+                'id':'presentation',
                 'toolCategory': '',
                 'question': 'Do you have access to presentation tools, e.g. Powerpoint or Prezi, that you can use to produce content for your online orientation?',
                 'questionSmall': 'Presentation Tools'
@@ -119,6 +125,7 @@ tool8Questionnaire = {
                     }]
             }
             , {
+                'id':'oer',
                 'toolCategory': 'Existing Resources',
                 'question': 'Can you locate open educational resources that you can use in your online orientation?',
                 'questionSmall': 'Open Educational Resources'
@@ -137,6 +144,7 @@ tool8Questionnaire = {
                     }]
             }
             , {
+                'id':'eir',
                 'toolCategory': '',
                 'question': 'Are there existing institutional resources that you can use in you online orientation?',
                 'questionSmall': 'Existing Institutional Resources'
@@ -156,14 +164,15 @@ tool8Questionnaire = {
             }
         ]
     },
-    'online-orientation-anxiety': {
-        'label': 'online-orientation-anxiety'
-        , 'description': 'online-orientation-anxiety'
+    'online_orientation_anxiety': {
+        'label': 'Anxiety'
+        , 'id': 'online-orientation-anxiety'
         , 'quotes': [
         ]
         , 'questions': [{
                 'toolCategory': '',
                 'question': 'Video/Audio – From institution/Programme Team',
+                'toolid':['video','audio'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -182,6 +191,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Video/Audio – From graduate/current student',
+                'toolid':['video','audio'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -200,6 +210,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Text based communication – From institution/Programme Team',
+                'toolid':['presentation'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -218,6 +229,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Text based communication – From graduate/current student',
+                'toolid':['presentation'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -236,6 +248,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Classroom',
+                'toolid':['elearning'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -254,24 +267,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Learning Environment (Discussion Forums)',
-                'questionSmall': ''
-                , 'response': ''
-                , selected: ''
-                , options: [{
-                        'label': 'YES'
-                        , 'value': 'yes'
-                        , 'answer': ''
-                        , 'weight': 1
-                    }, {
-                        'label': 'NO'
-                        , 'value': 'no'
-                        , 'answer': ''
-                        , 'weight': 0
-                    }]
-            },
-            {
-                'toolCategory': '',
-                'question': 'Other:',
+                'toolid':['elearning'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -288,15 +284,17 @@ tool8Questionnaire = {
                     }]
             }
         ]
+        ,userOptions: []
     },
-    'online-orientation-set-expectations': {
-        'label': 'online-orientation-set-expectations'
-        , 'description': 'online-orientation-set-expectations'
+    'online_orientation_set_expectations': {
+        'label': 'Set Expectations'
+        , 'id': 'online-orientation-set-expectations'
         , 'quotes': [
         ]
         , 'questions': [{
                 'toolCategory': '',
                 'question': 'Video/Audio – From institution/Programme Team',
+                'toolid':['video','audio'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -315,6 +313,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Video/Audio – From graduate/current student',
+                'toolid':['video','audio'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -333,6 +332,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Text based communication – From institution/Programme Team',
+                'toolid':['presentation'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -351,6 +351,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Text based communication – From graduate/current student',
+                'toolid':['presentation'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -369,6 +370,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Open Educational Resources',
+                'toolid':['oer'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -387,6 +389,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Classroom',
+                'toolid':['elearning'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -405,24 +408,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Learning Environment (Discussion Forums)',
-                'questionSmall': ''
-                , 'response': ''
-                , selected: ''
-                , options: [{
-                        'label': 'YES'
-                        , 'value': 'yes'
-                        , 'answer': ''
-                        , 'weight': 1
-                    }, {
-                        'label': 'NO'
-                        , 'value': 'no'
-                        , 'answer': ''
-                        , 'weight': 0
-                    }]
-            },
-            {
-                'toolCategory': '',
-                'question': 'Other:',
+                'toolid':['elearning'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -439,15 +425,17 @@ tool8Questionnaire = {
                     }]
             }
         ]
+        ,userOptions: []
     },
-    'online-orientation-positiverolemodel': {
-        'label': 'online-orientation-positiverolemodel'
-        , 'description': 'online-orientation-positiverolemodel'
+    'online_orientation_positiverolemodel': {
+        'label': 'Positive Role Model'
+        , 'id': 'online-orientation-positiverolemodel'
         , 'quotes': [
         ]
         , 'questions': [{
                 'toolCategory': '',
                 'question': 'Video/Audio – From institution/Programme Team',
+                'toolid':['video','audio'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -466,6 +454,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Video/Audio – From graduate/current student',
+                'toolid':['video','audio'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -484,6 +473,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Text based communication – From institution/Programme Team',
+                'toolid':['presentation'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -502,6 +492,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Text based communication – From graduate/current student',
+                'toolid':['presentation'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -520,6 +511,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Website – From current students',
+                'toolid':['website'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -538,6 +530,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Classroom',
+                'toolid':['elearning'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -556,24 +549,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Learning Environment (Discussion Forums)',
-                'questionSmall': ''
-                , 'response': ''
-                , selected: ''
-                , options: [{
-                        'label': 'YES'
-                        , 'value': 'yes'
-                        , 'answer': ''
-                        , 'weight': 1
-                    }, {
-                        'label': 'NO'
-                        , 'value': 'no'
-                        , 'answer': ''
-                        , 'weight': 0
-                    }]
-            },
-            {
-                'toolCategory': '',
-                'question': 'Other:',
+                'toolid':['elearning'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -590,15 +566,17 @@ tool8Questionnaire = {
                     }]
             }
         ]
+        ,userOptions: []
     },
-    'online-orientation-socialising': {
-        'label': 'online-orientation-socialising'
-        , 'description': 'online-orientation-socialising'
+    'online_orientation_socialising': {
+        'label': 'Socialising'
+        , 'id': 'online-orientation-socialising'
         , 'quotes': [
         ]
         , 'questions': [{
                 'toolCategory': '',
                 'question': 'Video/Audio – From institution/Programme Team',
+                'toolid':['video','audio'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -617,6 +595,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Text based communication – From institution/Programme Team',
+                'toolid':['presentation'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -635,6 +614,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Social Media',
+                'toolid':['website'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -653,6 +633,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Classroom',
+                'toolid':['elearning'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -671,24 +652,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Learning Environment (Discussion Forums)',
-                'questionSmall': ''
-                , 'response': ''
-                , selected: ''
-                , options: [{
-                        'label': 'YES'
-                        , 'value': 'yes'
-                        , 'answer': ''
-                        , 'weight': 1
-                    }, {
-                        'label': 'NO'
-                        , 'value': 'no'
-                        , 'answer': ''
-                        , 'weight': 0
-                    }]
-            },
-            {
-                'toolCategory': '',
-                'question': 'Other:',
+                'toolid':['elearning'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -705,17 +669,38 @@ tool8Questionnaire = {
                     }]
             }
         ]
+        ,userOptions: []
     },
-    'online-orientation-campustour': {
-        'label': 'online-orientation-campustour'
-        , 'description': 'online-orientation-campustour'
+    'online_orientation_campustour': {
+        'label': 'Campus Tour'
+        , 'id': 'online-orientation-campustour'
         , 'quotes': [
         ]
         , 'questions': [{
                 'toolCategory': '',
-                'question': 'Video/Audio',
-                'questionSmall': ''
-                , 'response': ''
+                'question': 'Video',
+                'questionSmall': '',
+                'toolid':['video'],
+                'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Audio',
+                'questionSmall': '',
+                'toolid':['audio'],
+                'response': ''
                 , selected: ''
                 , options: [{
                         'label': 'YES'
@@ -732,8 +717,9 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Interactive Map',
-                'questionSmall': ''
-                , 'response': ''
+                'questionSmall': '',
+                'toolid':['presentation'],
+                'response': ''
                 , selected: ''
                 , options: [{
                         'label': 'YES'
@@ -750,8 +736,9 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Classroom',
-                'questionSmall': ''
-                , 'response': ''
+                'questionSmall': '',
+                'toolid':['elearning'],
+                'response': ''
                 , selected: ''
                 , options: [{
                         'label': 'YES'
@@ -768,26 +755,9 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Learning Environment (Discussion Forums)',
-                'questionSmall': ''
-                , 'response': ''
-                , selected: ''
-                , options: [{
-                        'label': 'YES'
-                        , 'value': 'yes'
-                        , 'answer': ''
-                        , 'weight': 1
-                    }, {
-                        'label': 'NO'
-                        , 'value': 'no'
-                        , 'answer': ''
-                        , 'weight': 0
-                    }]
-            },
-            {
-                'toolCategory': '',
-                'question': 'Other:',
-                'questionSmall': ''
-                , 'response': ''
+                'questionSmall': '',
+                'toolid':['elearning'],
+                'response': ''
                 , selected: ''
                 , options: [{
                         'label': 'YES'
@@ -802,16 +772,18 @@ tool8Questionnaire = {
                     }]
             }
         ]
+        ,userOptions: []
     },
-    'online-orientation-studyskills': {
-        'label': 'online-orientation-studyskills'
-        , 'description': 'online-orientation-studyskills'
+    'online_orientation_studyskills': {
+        'label': 'Study Skills'
+        , 'id': 'online-orientation-studyskills'
         , 'quotes': [
         ]
         , 'questions': [{
                 'toolCategory': '',
                 'question': 'Video/Audio – Existing Institutional Resources and/or Open Educational Resources',
-                'questionSmall': ''
+                'questionSmall': '',
+                'toolid':['video','audio']
                 , 'response': ''
                 , selected: ''
                 , options: [{
@@ -829,6 +801,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Video/Audio – From graduate/current student',
+                'toolid':['video','audio'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -847,6 +820,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Text based communication – From institution/Programme Team',
+                'toolid':['presentation'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -865,6 +839,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Open Educational Resource',
+                'toolid':['oer'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -883,6 +858,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Open Educational Resource/Social Media',
+                'toolid':['oer'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -901,6 +877,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Classroom',
+                'toolid':['elearning'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -919,24 +896,7 @@ tool8Questionnaire = {
             {
                 'toolCategory': '',
                 'question': 'Online Activity – Virtual Learning Environment (Discussion Forums)',
-                'questionSmall': ''
-                , 'response': ''
-                , selected: ''
-                , options: [{
-                        'label': 'YES'
-                        , 'value': 'yes'
-                        , 'answer': ''
-                        , 'weight': 1
-                    }, {
-                        'label': 'NO'
-                        , 'value': 'no'
-                        , 'answer': ''
-                        , 'weight': 0
-                    }]
-            },
-            {
-                'toolCategory': '',
-                'question': 'Other:',
+                'toolid':['elearning'],
                 'questionSmall': ''
                 , 'response': ''
                 , selected: ''
@@ -953,5 +913,6 @@ tool8Questionnaire = {
                     }]
             }
         ]
+        ,userOptions: []
     }
 };

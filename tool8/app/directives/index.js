@@ -5,5 +5,7 @@
  */
 'use strict';
  
-require('./readmore');
 require('./angular.audio');
+require('./navigation');
+require('./onlineOrientation');
+require('./isActiveNav');

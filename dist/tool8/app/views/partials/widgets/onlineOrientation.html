@@ -1,0 +1,60 @@
+<div class="row spacer-top-3x">
+        <div class="col-md-12">
+
+            <div ng-repeat="question in data.questions track by $index">
+                <div class="panel" ng-class-odd="'panel-odd'" ng-class-even="'panel-even'">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-9 question">
+                                {{question.question}}
+                            </div>
+                            <div class="col-md-3 nopadding">
+                                <div class="radio-circle-group">
+                                    <div class="pull-left col-6" ng-repeat="opt in question.options track by $index" ng-class="{'active':question.selected.value == opt.value}">
+                                        <label for="{{uniqueId}}-{{$parent.$index}}-{{opt.value}}" class="radio-circle-bg" ng-class="{yes:'green', notsure:'orange', no:'red'}[opt.value]" >
+                                            <input name="{{uniqueId}}Group{{$parent.$index}}" id="{{uniqueId}}-{{$parent.$index}}-{{opt.value}}" type="radio" ng-change="answer(question, opt)" class="faq-radio" ng-model="$parent.question.selected" ng-value="opt">
+                                            
+                                        </label>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+            <div ng-repeat="userOption in data.userOptions track by $index">
+                <div class="panel" ng-class-odd="evenQuestions?'panel-odd':'panel-even'" ng-class-even="evenQuestions?'panel-even':'panel-odd'">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div  class="col-md-9 question">
+                                {{userOption.value}}
+                            </div>
+                            <div  class="col-md-3 nopadding">
+                                <button class="btn-link btn pull-right ft-size-1_4x" type="button" ng-click="deleteOption(data,$index)">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+               
+        </div>
+    </div>
+    
+    <div class="row spacer-top-2x">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                 <div class="panel-heading">
+                     <p class="question">Other:<p>
+                 </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label for="{{uniqueId}}addoptionvalue" class="ft-size-1_2x">To add other data that are not list above fill in the text field below and click the add button</label>
+
+                        <textarea name="{{uniqueId}}addoptionvalue" id="{{uniqueId}}addoptionvalue" type="text" ng-model="addOtherValue" class="form-control"></textarea>
+                    </div>
+                    <button type="button" class="btn btn-default pull-right btn-xs" ng-click="addOption(data)">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>

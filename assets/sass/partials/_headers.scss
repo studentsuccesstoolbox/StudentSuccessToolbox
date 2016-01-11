@@ -371,6 +371,51 @@
     }
 }
 
+#header.tool8{
+     background: url("../images/header-tool8.png") no-repeat scroll 0 0;
+     .header-heading {
+        color: #3873b6;
+        font-size: 1em;
+        margin: 0 auto;
+        width: 380px;
+        float: none; 
+        padding-top: 40px;
+     }
+     
+     .line{
+        color: #3873b6;
+        font-size: 3.4em;
+        font-weight: 600;
+        letter-spacing: -3px;
+        line-height: 1em;
+        margin: 0;
+        transform: scale(1, 1.5);
+        text-shadow: 2px 2px #f2f2f2;
+     }
+     
+     .line1{
+
+     }
+     .line2{
+         margin-left: -25px;
+     }
+     
+     .line3{
+          margin-left: 105px;
+     }
+}
+
+#header .example{
+    .word {
+        font-size: 5em;
+        letter-spacing: -2px;
+        font-weight: $bold;
+        margin: 0;
+        transform: scale(1, 1.5);
+        line-height: normal;
+    }
+} 
+
 
 //Mobile Heading
 .mob-heading {

@@ -59,12 +59,14 @@
                 <div class="spacer-xs-top col-xs-12 spacer-md-top-0 col-md-6 s-quote" ng-repeat="quote in q.quotes track by $index">
                     <div class="row">
                         <div class="col-xs-4 s-image">
-                            <img ng-src="{{quote.studentImage}}" class="img-responsive img-rounded" alt="student photo">
+
+                            <img ng-src="{{quote.studentImage}}" class="img-responsive img-rounded" alt="Student photo">
                         </div>
                         <div class="col-xs-8">
                             <blockquote class="simple">
                                 <p class="comment">{{quote.studentQuote}}</p>
-                                <footer class="text-right">{{quote.studentName}}</footer>
+			                   <footer class="text-right">{{quote.studentName}}</footer>
+
                             </blockquote>
                         </div>
                     </div> 

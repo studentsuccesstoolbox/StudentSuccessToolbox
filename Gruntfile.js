@@ -83,7 +83,7 @@ module.exports = function(grunt) {
       'string-replace': {
         dist: {
           files: {
-            'dist/': ['dist/tool1/index.html','dist/tool2/index.html','dist/tool3/index.html','dist/tool4/index.html','dist/tool5/index.html','dist/tool8/index.html']
+            'dist/': ['dist/tool1/index.html','dist/tool2/index.html','dist/tool3/index.html','dist/tool4/index.html','dist/tool5/index.html','dist/tool8/index.html','dist/example/index.html']
           },
           options: {
             replacements: [

@@ -5,3 +5,4 @@ require('./decorator');
 require('./default');
 require('./interceptors');
 require('./sharedControllers');
+require('./directives');

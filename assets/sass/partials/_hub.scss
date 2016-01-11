@@ -230,6 +230,16 @@
     right: 6%;
 }
 
+.pos-3 {
+    position:absolute;
+    top: 38%;
+    right: 15%;
+    .hub-button {
+        margin-left: 0 !important;
+        margin-right: -75px;
+    }
+}
+
 .pos-4 {
     position:absolute;
     bottom: 20%;
@@ -242,10 +252,20 @@
     left: 50%;
 }
 
-.pos-8 {
+.pos-8 { 
     position:absolute;
     bottom: 20%;
     left: 6%;
+    .hub-button {
+        margin-left: 0 !important;
+        margin-right: -75px;
+    }
+}
+
+.pos-9 {
+    position:absolute;
+    bottom: 38%;
+    left: 4%;
     .hub-button {
         margin-left: 0 !important;
         margin-right: -75px;

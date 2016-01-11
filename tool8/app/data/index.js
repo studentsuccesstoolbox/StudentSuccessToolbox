@@ -7,3 +7,4 @@
  
 require('./areasViewed');
 require('./tool8Questionnaire');
+require('./tool8Rating');
