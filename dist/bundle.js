@@ -54384,6 +54384,7 @@ questionnaireTool1 = {
             ,'quotes' : [{
                     'studentImage' : '../assets/images/student1.jpg'
                     ,'studentQuote' : "I found completing a MOOC helped to give me a better idea of what further study might involve"
+                    ,'studentName' : "Rachel"
                 }
             ]
             ,'questions' :[{
@@ -54441,9 +54442,11 @@ questionnaireTool1 = {
             ,'quotes' : [{
                     'studentImage' : '../assets/images/student1.jpg'
                     ,'studentQuote' : "Having the support of my partner and family was essential to my ability to take on further study"
+                    ,'studentName' : "Rachel"
                 },{
                    'studentImage' : '../assets/images/student2.jpg'
                    ,'studentQuote' : "There were times when I needed a bit of head space away from work and household chores to concentrate on my study" 
+                   ,'studentName' : "Michael"
                 }
             ]
             ,'questions' :[{
@@ -54516,9 +54519,11 @@ questionnaireTool1 = {
             ,'quotes' : [{
                     'studentImage' : '../assets/images/student1.jpg'
                     ,'studentQuote' : "Having a clear goal in mind is what got me through my study especially when things got difficult"
+                    ,'studentName' : "Rachel"
                 },{
                    'studentImage' : '../assets/images/student2.jpg'
                    ,'studentQuote' : "It was really helpful calculating just how much free time I had available before committing to further study" 
+                   ,'studentName' : "Michael"
                 }
             ]
             ,'questions' :[{
@@ -54591,9 +54596,11 @@ questionnaireTool1 = {
             ,'quotes' : [{
                     'studentImage' : '../assets/images/student1.jpg'
                     ,'studentQuote' : "I was use to reading lots of books which I believe prepared me well for the demands of further study"
+                    ,'studentName' : "Rachel"
                 },{
                    'studentImage' : '../assets/images/student2.jpg'
                    ,'studentQuote' : "Learning how to successfully navigate myself around the library was one of the most valuable skills I learnt" 
+                   ,'studentName' : "Michael"
                 }
             ]
             ,'questions' :[{
@@ -54686,9 +54693,11 @@ questionnaireTool1 = {
             ,'quotes' : [{
                     'studentImage' : '../assets/images/student1.jpg'
                     ,'studentQuote' : "I found having access to a laptop computer was essential for my study"
+                    ,'studentName' : "Rachel"
                 },{
                    'studentImage' : '../assets/images/student2.jpg'
                    ,'studentQuote' : "Access to the Internet was crucial in order to successfully complete the course" 
+                   ,'studentName' : "Michael"
                 }
             ]
             ,'questions' :[{
@@ -54781,9 +54790,11 @@ questionnaireTool1 = {
             ,'quotes' : [{
                     'studentImage' : '../assets/images/student1.jpg'
                     ,'studentQuote' : "The key to my success was developing a study plan and working to assignment deadlines"
+                    ,'studentName' : "Michael"
                 },{
                    'studentImage' : '../assets/images/student2.jpg'
                    ,'studentQuote' : "You to rise to the challenge of learning new things and sticking with it even the work gets really difficult" 
+                   ,'studentName' : "Michael"
                 }
             ]
             ,'questions' :[{
@@ -58673,12 +58684,13 @@ sstTool8App.config(["$routeProvider", function ($routeProvider) {
             })
             .when('/different-options/', {
                 templateUrl: 'app/views/templates/different-options.html',
-                controller: 'questionnaireT8Controller'
+                controller: 'defaultController'
             })
             .when('/elements-of-an-online-orientation/', {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation.html',
                 controller: 'defaultController'
             })
+            // reduce anxiety section start
             .when('/elements-of-an-online-orientation/reduce-anxiety/', {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/reduce-anxiety.html',
                 controller: 'defaultController'
@@ -58711,22 +58723,152 @@ sstTool8App.config(["$routeProvider", function ($routeProvider) {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/reduce-anxiety/online-orientation-summary.html',
                 controller: 'defaultController'
             })
+            // reduce anxiety section stop
+            // set expectations section start
             .when('/elements-of-an-online-orientation/set-expectations/', {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/set-expectations.html',
                 controller: 'defaultController'
             })
+            .when('/elements-of-an-online-orientation/set-expectations/video1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/set-expectations/video1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/set-expectations/video2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/set-expectations/video2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/set-expectations/text1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/set-expectations/text1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/set-expectations/text2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/set-expectations/text2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/set-expectations/open-educational-resources1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/set-expectations/open-educational-resources1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/set-expectations/open-educational-resources2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/set-expectations/open-educational-resources2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/set-expectations/open-educational-resources3/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/set-expectations/open-educational-resources3.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/set-expectations/activity1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/set-expectations/activity1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/set-expectations/online-orientation-summary/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/set-expectations/online-orientation-summary.html',
+                controller: 'defaultController'
+            })
+            // set expectations section stop
+            // positive role model section start
             .when('/elements-of-an-online-orientation/positive-role-model/', {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/positive-role-model.html',
                 controller: 'defaultController'
             })
+            .when('/elements-of-an-online-orientation/positive-role-model/video1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/positive-role-model/video1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/positive-role-model/video2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/positive-role-model/video2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/positive-role-model/text1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/positive-role-model/text1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/positive-role-model/text2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/positive-role-model/text2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/positive-role-model/website/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/positive-role-model/website.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/positive-role-model/activity1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/positive-role-model/activity1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/positive-role-model/activity2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/positive-role-model/activity2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/positive-role-model/online-orientation-summary/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/positive-role-model/online-orientation-summary.html',
+                controller: 'defaultController'
+            })
+            // positive role model section stop
+            // socialising section start
             .when('/elements-of-an-online-orientation/socialising/', {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/socialising.html',
                 controller: 'defaultController'
             })
+            .when('/elements-of-an-online-orientation/socialising/video1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/socialising/video1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/socialising/text1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/socialising/text1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/socialising/social-media/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/socialising/social-media.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/socialising/activity1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/socialising/activity1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/socialising/activity2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/socialising/activity2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/socialising/activity3/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/socialising/activity3.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/socialising/online-orientation-summary/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/socialising/online-orientation-summary.html',
+                controller: 'defaultController'
+            })
+            // socialising section stop
+            // campus tour section start
             .when('/elements-of-an-online-orientation/campus-tour/', {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/campus-tour.html',
                 controller: 'defaultController'
             })
+            .when('/elements-of-an-online-orientation/campus-tour/interactive-map1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/campus-tour/interactive-map1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/campus-tour/interactive-map2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/campus-tour/interactive-map2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/campus-tour/video1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/campus-tour/video1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/campus-tour/video2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/campus-tour/video2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/campus-tour/activity1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/campus-tour/activity1.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/campus-tour/online-orientation-summary/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/campus-tour/online-orientation-summary.html',
+                controller: 'defaultController'
+            })
+            // campus tour section stop
+            // study skills section start
             .when('/elements-of-an-online-orientation/study-skills/', {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills.html',
                 controller: 'defaultController'
@@ -58747,18 +58889,28 @@ sstTool8App.config(["$routeProvider", function ($routeProvider) {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/text2.html',
                 controller: 'defaultController'
             })
-            .when('/elements-of-an-online-orientation/study-skills/activity1/', {
-                templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/activity1.html',
+            
+            .when('/elements-of-an-online-orientation/study-skills/open-educational-resources1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/open-educational-resources1.html',
                 controller: 'defaultController'
             })
-            .when('/elements-of-an-online-orientation/study-skills/activity2/', {
-                templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/activity2.html',
+            .when('/elements-of-an-online-orientation/study-skills/open-educational-resources2/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/open-educational-resources2.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/study-skills/open-educational-resources3-social-media/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/open-educational-resources3-social-media.html',
+                controller: 'defaultController'
+            })
+            .when('/elements-of-an-online-orientation/study-skills/activity1/', {
+                templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/activity1.html',
                 controller: 'defaultController'
             })
             .when('/elements-of-an-online-orientation/study-skills/online-orientation-summary/', {
                 templateUrl: 'app/views/templates/elements-of-an-online-orientation/study-skills/online-orientation-summary.html',
                 controller: 'defaultController'
             })
+            // study skills section stop
             .when('/online-orientation-summary/', {
                 templateUrl: 'app/views/templates/online-orientation-summary.html',
                 controller: 'defaultController'
@@ -58778,14 +58930,14 @@ sstTool8App.config(["$routeProvider", function ($routeProvider) {
                 controller: 'defaultController'
             });
 }]);
-},{"./controllers":91,"./data":95,"./directives":98,"./filters":101,"./services":103,"angular":20,"angular-animate":9,"angular-aria":11,"angular-route":14,"angular-sanitize":16,"angular-ui-bootstrap":17,"jquery":22}],89:[function(require,module,exports){
+},{"./controllers":91,"./data":94,"./directives":97,"./filters":100,"./services":102,"angular":20,"angular-animate":9,"angular-aria":11,"angular-route":14,"angular-sanitize":16,"angular-ui-bootstrap":17,"jquery":22}],89:[function(require,module,exports){
 /* 
  * Controller for Home Page
  * Not much happening here
  * @author Paul Schweppe
  * 
  */
-angular.module('sstTool8App').controller('defaultController', ["$scope", "$modal", "ngAudio", "$location", function ($scope, $modal, ngAudio, $location) {
+angular.module('sstTool8App').controller('defaultController', ["$scope", "$routeParams", "$modal", "ngAudio", "$location", function ($scope, $routeParams,$modal, ngAudio, $location) {
 
     $scope.areasViewedT8 = areasViewedT8;
 
@@ -58798,7 +58950,12 @@ angular.module('sstTool8App').controller('defaultController', ["$scope", "$modal
 
     $scope.q_your_online_orientation = tool8Questionnaire['your-online-orientation'];
     $scope.q_online_orientation_anxiety = tool8Questionnaire['online-orientation-anxiety'];
-
+    $scope.q_online_orientation_set_expectations = tool8Questionnaire['online-orientation-set-expectations'];
+    $scope.q_online_orientation_positiverolemodel = tool8Questionnaire['online-orientation-positiverolemodel'];
+    $scope.q_online_orientation_socialising = tool8Questionnaire['online-orientation-socialising'];
+    $scope.q_online_orientation_campustour = tool8Questionnaire['online-orientation-campustour'];
+    $scope.q_online_orientation_studyskills = tool8Questionnaire['online-orientation-studyskills'];
+    
     $scope.t8Subsections = areasViewedT8;
 
     $scope.sectionWidthT8 = Math.floor((100 / (Object.keys(areasViewedT8).length))) + '%';
@@ -58820,7 +58977,7 @@ angular.module('sstTool8App').controller('defaultController', ["$scope", "$modal
         question['response'] = option.value;//option.answer;
         question['selected'] = option;
     };
-
+    
     /**
      * Resets the full questionnaire page
      * @returns {undefined}
@@ -58928,40 +59085,9 @@ angular.module('sstTool8App').controller('homeController', ["$scope", function($
  
 require('./home');
 require('./default');
-require('./questionnaireT8');
 require('./rate');
 
-},{"./default":89,"./home":90,"./questionnaireT8":92,"./rate":93}],92:[function(require,module,exports){
-/* 
- * Controller for Questionaire
- *
- * @author Paul Schweppe
- */
-
-// ALFR :: TODO - REMOVE THIS AND HAVE THE DEFAULT SCOPE DEAL WITH IT AS IT IS USED EVEREYWHERE IN THIS TOOL!
-angular.module('sstTool8App').controller('questionnaireT8Controller',["$scope", "$routeParams", "$location", "$modal", function($scope,$routeParams,$location,$modal) {
-    
-    //Sets questionnaire to scope
-    $scope.q_your_online_orientation = tool8Questionnaire['your-online-orientation'];
-        
-    /**
-     * Function for question answer click event.
-     * Sets the select answer for a question.
-     * 
-     * @param object question
-     * @param object option
-     */
-    $scope.answer = function(question,option){
-        question['response'] =  option.value;//option.answer;
-        question['selected'] = option;
-    };
-   
-    
-}]);
-
-
-
-},{}],93:[function(require,module,exports){
+},{"./default":89,"./home":90,"./rate":92}],92:[function(require,module,exports){
 /* 
  * Controller for Home Page
  * Not much happening here
@@ -58979,7 +59105,7 @@ angular.module('sstTool8App').controller('rateController', ["$scope", function($
 }]);
 
 
-},{}],94:[function(require,module,exports){
+},{}],93:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -59044,7 +59170,7 @@ areasViewedT8 =
         ]
 
 
-},{}],95:[function(require,module,exports){
+},{}],94:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -59054,7 +59180,7 @@ areasViewedT8 =
  
 require('./areasViewed');
 require('./tool8Questionnaire');
-},{"./areasViewed":94,"./tool8Questionnaire":96}],96:[function(require,module,exports){
+},{"./areasViewed":93,"./tool8Questionnaire":95}],95:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -59345,13 +59471,678 @@ tool8Questionnaire = {
                     }]
             }
         ]
+    },
+    'online-orientation-set-expectations': {
+        'label': 'online-orientation-set-expectations'
+        , 'description': 'online-orientation-set-expectations'
+        , 'quotes': [
+        ]
+        , 'questions': [{
+                'toolCategory': '',
+                'question': 'Video/Audio – From institution/Programme Team',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Video/Audio – From graduate/current student',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Text based communication – From institution/Programme Team',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Text based communication – From graduate/current student',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Open Educational Resources',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Online Activity – Virtual Classroom',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Online Activity – Virtual Learning Environment (Discussion Forums)',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Other:',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            }
+        ]
+    },
+    'online-orientation-positiverolemodel': {
+        'label': 'online-orientation-positiverolemodel'
+        , 'description': 'online-orientation-positiverolemodel'
+        , 'quotes': [
+        ]
+        , 'questions': [{
+                'toolCategory': '',
+                'question': 'Video/Audio – From institution/Programme Team',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Video/Audio – From graduate/current student',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Text based communication – From institution/Programme Team',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Text based communication – From graduate/current student',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Website – From current students',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Online Activity – Virtual Classroom',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Online Activity – Virtual Learning Environment (Discussion Forums)',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Other:',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            }
+        ]
+    },
+    'online-orientation-socialising': {
+        'label': 'online-orientation-socialising'
+        , 'description': 'online-orientation-socialising'
+        , 'quotes': [
+        ]
+        , 'questions': [{
+                'toolCategory': '',
+                'question': 'Video/Audio – From institution/Programme Team',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Text based communication – From institution/Programme Team',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Social Media',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Online Activity – Virtual Classroom',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Online Activity – Virtual Learning Environment (Discussion Forums)',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Other:',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            }
+        ]
+    },
+    'online-orientation-campustour': {
+        'label': 'online-orientation-campustour'
+        , 'description': 'online-orientation-campustour'
+        , 'quotes': [
+        ]
+        , 'questions': [{
+                'toolCategory': '',
+                'question': 'Video/Audio',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Interactive Map',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Online Activity – Virtual Classroom',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Online Activity – Virtual Learning Environment (Discussion Forums)',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Other:',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            }
+        ]
+    },
+    'online-orientation-studyskills': {
+        'label': 'online-orientation-studyskills'
+        , 'description': 'online-orientation-studyskills'
+        , 'quotes': [
+        ]
+        , 'questions': [{
+                'toolCategory': '',
+                'question': 'Video/Audio – Existing Institutional Resources and/or Open Educational Resources',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Video/Audio – From graduate/current student',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Text based communication – From institution/Programme Team',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Open Educational Resource',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Open Educational Resource/Social Media',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Online Activity – Virtual Classroom',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Online Activity – Virtual Learning Environment (Discussion Forums)',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            },
+            {
+                'toolCategory': '',
+                'question': 'Other:',
+                'questionSmall': ''
+                , 'response': ''
+                , selected: ''
+                , options: [{
+                        'label': 'YES'
+                        , 'value': 'yes'
+                        , 'answer': ''
+                        , 'weight': 1
+                    }, {
+                        'label': 'NO'
+                        , 'value': 'no'
+                        , 'answer': ''
+                        , 'weight': 0
+                    }]
+            }
+        ]
     }
 };
-},{}],97:[function(require,module,exports){
+},{}],96:[function(require,module,exports){
 arguments[4][74][0].apply(exports,arguments)
-},{"dup":74}],98:[function(require,module,exports){
+},{"dup":74}],97:[function(require,module,exports){
 arguments[4][75][0].apply(exports,arguments)
-},{"./angular.audio":97,"./readmore":99,"dup":75}],99:[function(require,module,exports){
+},{"./angular.audio":96,"./readmore":98,"dup":75}],98:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -59473,7 +60264,7 @@ angular.module('sstTool8App').directive('readMore', function() {
 });
 
 
-},{}],100:[function(require,module,exports){
+},{}],99:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -59484,9 +60275,9 @@ angular.module('sstTool8App').filter('encodeURIComponent', function() {
 });
 
 
-},{}],101:[function(require,module,exports){
+},{}],100:[function(require,module,exports){
 arguments[4][7][0].apply(exports,arguments)
-},{"./encodeURIComponent":100,"dup":7}],102:[function(require,module,exports){
+},{"./encodeURIComponent":99,"dup":7}],101:[function(require,module,exports){
 /**
  * Services for validation and showing any errors in a modal. 
  * Checks that the activity time does not exceed 168.
@@ -59533,7 +60324,7 @@ angular.module('sstTool8App').factory('errorModalService',["$modal", function($m
     return obj;
     
 }]);
-},{}],103:[function(require,module,exports){
+},{}],102:[function(require,module,exports){
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -59542,7 +60333,7 @@ angular.module('sstTool8App').factory('errorModalService',["$modal", function($m
 'use strict';
  
 require('./errorModal');
-},{"./errorModal":102}]},{},[23,38,57,66,1,82,88]);
+},{"./errorModal":101}]},{},[23,38,57,66,1,82,88]);
 
 /**  
  * jsPDF - PDF Document creation from JavaScript
