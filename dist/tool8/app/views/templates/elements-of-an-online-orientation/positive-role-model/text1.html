@@ -8,37 +8,75 @@
         
     <div class="row spacer-top-3x">
         <div class="col-md-offset-2 col-md-8">
-            <div ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? '':'hidden'" class="q-head large" ng-style="{'background':section.colourActive}">
-                <h2 ng-if="currentSection.toLowerCase().indexOf(section.val) >= 0" class="text-center nopadding">{{section.title}} / Text #1</h2>
+            <div class="q-head large tangerine" >
+                <h2 class="text-center nopadding">Positive Role Model - Text 1</h2>
             </div>
         </div>
     </div>
+
+    <ng-include src="'app/views/partials/widgets/positiveRoleModelSectionNav.html'"></ng-include>
     
-    <div class="row spacer-top-3x">
-        <div class="col-md-offset-2 col-md-8">
-            <div class="row spacer-bottom-2x"></div>
-            What will facilitate you in getting from 
-this moment in time to a moment in the 
-future where you have successfully 
-completed your studies? The answer is a 
-number of things, but remember that we are 
-not telling you to do these things. All we can 
-do is offer you this advice and tell you that, from our experience and from the best available evidence, doing these things will facilitate your educational success. These are things that successful learners are doing, on the programme that you are beginning.
-<ul>
-    <li>
-        Firstly, you have to organise, you have to manage your time….
-    </li>
-</ul>
+    <div class="row spacer-top">
+         <div class="col-xs-12">
+            <h2 class="text-center nopadding">From Graduate or Current Student Perspective</h2>
+         </div>
+     </div>
+    
+     <div class="row spacer-top">
+        <div class="col-md-offset-1 col-md-10">
+            <div class="panel panel-info">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-1 col-md-1 text-center nopadding">
+                            <i class="fa fa-file-text-o fa-5x"></i>
+                        </div>
+                        <div class="col-xs-11">
+                            <div class="row spacer-top">
+                                <div class="col-md-6">
+                                    <p >
+                                        What will facilitate you in getting from 
+                                        this moment in time to a moment in the 
+                                        future where you have successfully 
+                                        completed your studies? The answer is a 
+                                        number of things, but remember that <strong>we are 
+                                        not telling you to do these things</strong>. All we can 
+                                        do is offer you this advice and tell you that, from our experience and from the 
+                                        best available evidence, doing these things will facilitate your educational success.
+                                        <strong>These are things that successful learners are doing</strong>, on the programme that you are beginning. 
+                                    </p>
+                                </div>
+                                <div class="col-md-6">
+                                    <img src="../assets/images/tool8/graduates.jpg" title="Graduating Students" class="img-responsive img-rounded">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row spacer-top">
+                        <div class="col-xs-1 col-md-1 text-center nopadding">
+                            <i class="fa fa-clock-o fa-5x"></i>
+                        </div>
+                        <div class="col-xs-11">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <p>
+                                        Firstly, you have to organise, you have to manage your time.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>    
-    
 
-    <div class="row spacer-top-3x spacer-xs-bottom-3x">
-        <div class="col-md-5">
-            <a href="#/" class="btn btn-info btn-lg btn-block" title="Back to home" aria-label="">Back to home</a>
+     <div class="row spacer-top-3x">                
+        <div class="col-md-4">
+            <a class="btn btn-info btn-lg btn-block" aria-label="" title="Back to Positive Role Model Video 2" href="#elements-of-an-online-orientation/positive-role-model/video2/">Back</a>
         </div>
-        <div ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? '' : 'hidden'" class="col-md-offset-3 col-md-4 spacer-xs-top-3x spacer-md-top-0">
-            <a ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val + '/text2/')" class="btn btn-default btn-lg btn-block" title="Next" aria-label="Next">Next</a>	
+        <div class="col-md-offset-4 col-md-4 spacer-xs-top spacer-md-top-0">
+            <a class="btn btn-default btn-lg btn-block" aria-label="" title="Positive Role Model Text 2" href="#/elements-of-an-online-orientation/positive-role-model/text2/">Next</a> 
         </div>
-    </div> 
+    </div>   
+    <div class="row spacer-bottom-4x"></div>
 </div>

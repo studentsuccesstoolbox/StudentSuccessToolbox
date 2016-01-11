@@ -13,10 +13,13 @@
 <div class="modal-body error">
     <div class="row spacer-top-2x spacer-bottom">
         <div class="col-md-12 col-lg-12">
-            <div class="alert alert-danger">
+            <div class="alert alert-info">
                 <p>
-                    Confirm Text Here!
+                    Would you like to update your tools with:
                 </p>
+                <ul>
+                    <li ng-repeat="toolQuestion in toolQuestions">{{toolQuestion.questionSmall}}</li>
+                </ul>
             </div>
         </div>
     </div>

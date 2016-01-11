@@ -8,32 +8,59 @@
         
     <div class="row spacer-top-3x">
         <div class="col-md-offset-2 col-md-8">
-            <div ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? '':'hidden'" class="q-head large" ng-style="{'background':section.colourActive}">
-                <h2 ng-if="currentSection.toLowerCase().indexOf(section.val) >= 0" class="text-center nopadding">{{section.title}} / Video #1</h2>
-            </div>
-        </div>
-    </div>
-    
-    <div class="row spacer-top-3x">
-        <div class="col-md-offset-2 col-md-8">
-            <div class="row spacer-bottom-2x"></div>
-            <div align="center" class="embed-responsive embed-responsive-16by9">
-                <!--
-                <video autoplay loop controls >
-                    <source src=http://techslides.com/demos/sample-videos/small.mp4 type=video/mp4>
-                </video>
-                -->
-                <iframe class="embed-responsive-item"  src="https://www.youtube.com/embed/yaqe1qesQ8c"></iframe>
+            <div class="q-head large tangerine" >
+                <h2 class="text-center nopadding">Positive Role Model - Video 1</h2>
             </div>
         </div>
     </div>
 
-    <div class="row spacer-top-3x spacer-xs-bottom-3x">
-        <div class="col-md-5">
-            <a href="#/" class="btn btn-info btn-lg btn-block" title="Back to home" aria-label="">Back to home</a>
-        </div>
-        <div ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? '' : 'hidden'" class="col-md-offset-3 col-md-4 spacer-xs-top-3x spacer-md-top-0">
-            <a ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val + '/video2/')" class="btn btn-default btn-lg btn-block" title="Next" aria-label="Next">Next</a>	
+    <ng-include src="'app/views/partials/widgets/positiveRoleModelSectionNav.html'"></ng-include>
+    
+    <div class="row spacer-top">
+        <div class="col-md-offset-1 col-md-10">
+            <div class="panel panel-info">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-1 text-center nopadding">
+                            <i class="fa fa-youtube-play fa-5x"></i>
+                        </div>
+                        <div class="col-xs-11">
+                            <h2 class="spacer-top">
+                                Excerpt from a recorded orientation session for Online Learners in Dublin City University
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-1 text-center nopadding">
+                            <i class="fa fa-check fa-2x"></i>
+                        </div>
+                        <div class="col-xs-11">
+                            <p class="spacer-top-halfx">
+                                This except frames some academic advice by highlighting that it is what successful students do
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div> 
+    
+    
+    <div class="row spacer-top-3x">
+        <div class="col-md-offset-2 col-md-8">
+            <div align="center" class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item"  src="https://www.youtube.com/embed/yaqe1qesQ8c"></iframe>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row spacer-top-3x">                
+        <div class="col-md-4">
+            <a class="btn btn-info btn-lg btn-block" aria-label="" title="Back to Positive Role Model" href="#elements-of-an-online-orientation/positive-role-model/">Back</a>
+        </div>
+        <div class="col-md-offset-4 col-md-4 spacer-xs-top spacer-md-top-0">
+            <a class="btn btn-default btn-lg btn-block" aria-label="" title="Positive Role Model Video 2" href="#/elements-of-an-online-orientation/positive-role-model/video2/">Next</a> 
+        </div>
+    </div>   
+    <div class="row spacer-bottom-4x"></div>
 </div>

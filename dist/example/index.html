@@ -8,10 +8,10 @@
 	<!-- CSS -->
 	<link rel="stylesheet" href="../assets/css/main.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
+        <title>Design Elements for Student Success Toolbox</title>
         <!-- Latest compiled and minified JavaScript -->
 
-        <script src="../dist/bundle.js"></script>
+        <script src="../bundle.min.js"></script>
         
         <style>
             p > .btn {
@@ -25,6 +25,9 @@
             .panel-shadow{
                 border: 2px solid #ddd;
             }
+            .q-head{
+                margin-bottom: 10px;
+            }
         </style>
  
 </head>
@@ -36,14 +39,11 @@
         <header>
             <div id="header" class="">
                     <!-- institution logo here -->
-                    <h1 class="header-heading who-can-i-ask hidden-xs ">
-                        <span class="word">Who</span>
-                        <span class="word">can</span> 
-                        <span class="word">I ask</span>
-                        <span class="word">?</span>
+                    <h1 class="header-heading example hidden-xs ">
+                        <span class="word">Examples</span>
                     </h1>
             </div>
-            <h1 class="visible-xs-block mob-heading" >Who can I ask?</h1>
+            <h1 class="visible-xs-block mob-heading" >Examples</h1>
         </header>
     </div>
     
@@ -52,7 +52,7 @@
         <div class="row spacer-top-2x">
             <div class="panel panel-details summary">
                 <div class="panel-body">
-                    This is a template showcasing the optional theme stylesheet included in Student Success Toolbox. The 
+                    This is a template showcasing the theme stylesheet included in Student Success Toolbox. The 
                     theme uses <a href="http://getbootstrap.com/">Bootstrap v3</a> and angularjs to create a responsive
                     and interactive theme.
                 </div>
@@ -67,13 +67,156 @@
             <h3>Header 3</h3>
             <h4>Header 4</h4>
             <h5>Header 5</h5>
-            
+         
+        </div>
+        
+        <div class="row spacer-top-2x">
+            <h1>Mobile headers</h1>
+            <hr>
+            <p>Use .mob-heading class for mobile header. This is usually used in conjunction with .visible-xs-block to show only on mobile</p>
             <h1 class="mob-heading" >Header 1 with solid background</h1>
             <h2 class="mob-heading" >Header 2 with solid background</h2>
             <h3 class="mob-heading" >Header 3 with solid background</h3>
             <h4 class="mob-heading" >Header 4 with solid background</h4>
             <h5 class="mob-heading" >Header 5 with solid background</h5>
         </div>
+        
+        <div class="row spacer-top-2x">
+            <h1>Main Header Colours</h1>
+            <hr>
+            <p>Use .q-head class for desktop design. The most popular usage of this is with classes .large and .text-center </p>
+            <h2 class="q-head dark" >Header 2 .dark</h2>
+            <h2 class="q-head active" >Header 2 .active</h2>
+            
+            <h2 class="q-head green" >Header 2 .green</h2>
+            <h2 class="q-head yellow" >Header 2 .yellow</h2>
+            <h2 class="q-head light-blue" >Header 2 .light-blue</h2>
+            <h2 class="q-head tangerine" >Header 2 .tangerine</h2>
+            <h2 class="q-head dark-blue" >Header 2 .dark-blue</h2>
+            <h2 class="q-head red" >Header 2 .red</h2>
+            <h2 class="q-head orange" >Header 2 .orange</h2>
+            <h2 class="q-head large" >Header 2 .large</h2>
+            <h2 class="q-head large text-center" >Header 2 .large .text-center</h2>
+            <div class="q-head ">
+                <h2 class="nopadding text-center small" >Header 2 .small .text-center</h2>
+            </div>
+        </div>
+        
+        <div class="row spacer-top-2x">
+            <h1>Header Banners</h1>
+            <hr />
+            <p>Header banners uses the header class .q-head in a div wrapping the h2 element. </p>
+        </div>
+        
+        <div class="row spacer-top-2x">
+            <div class="col-md-offset-2 col-md-8">
+                <div class="q-head">
+                    <h2 class="nopadding">Banner</h2>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row spacer-top-2x">
+            <div class="col-md-offset-2 col-md-8">
+                <div class="q-head active">
+                    <h2 class="nopadding">Active banner</h2>
+                </div>
+            </div>
+         </div>
+        
+        <div class="row spacer-top-4x">
+            <div class="col-md-offset-2 col-md-8">
+                <div class="q-head">
+                     <span class="icon-badge">
+                        <i class="fa fa-question fa-3x fa-fw"></i>
+                     </span>
+                    <h2 class="nopadding">Banner With icon</h2>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row spacer-top-4x">
+            <div class="col-md-offset-2 col-md-8">
+                <div class="q-head active">
+                     <span class="icon-badge active">
+                        <i class="fa fa-graduation-cap fa-3x fa-fw"></i>
+                     </span>
+                    <h2 class="nopadding">Active banner with icon</h2>
+                </div>
+            </div>
+        </div>  
+        
+        <div class="row spacer-top-4x">
+            <div class="col-md-offset-2 col-md-8">
+                <div class="q-head">
+                     <span class="icon-badge mulit-row">
+                        <i class="fa fa-question fa-3x fa-fw"></i>
+                     </span>
+                    <h2 class="nopadding">Banner With icon and mulitple rows( Icon has a .mulit-row class).
+                        Some extra text to go onto the next line.
+                    </h2>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row spacer-top-4x">
+            <div class="col-md-offset-2 col-md-8">
+                <div class="q-head">
+                     <span class="icon-badge ">
+                        <i class="fa fa-question fa-3x fa-fw"></i>
+                     </span>
+                    <h2 class="nopadding small">
+                        Banner With icon and smaller text with H2 ( H2 has a .small class)
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row spacer-top-4x">
+                <div class="col-md-offset-2 col-md-8">
+                        <div class="q-head large dark">
+                                <h2 class="text-center nopadding">Banner Dark with extra padding</h2>
+                        </div>
+                </div>
+        </div>
+
+        <div class="row spacer-top-4x">
+                <div class="col-md-offset-2 col-md-8">
+                        <div class="q-head large">
+                                <span class="img-badge-right">
+                                        <img class="img-responsive img-rounded hidden-xs" src="../assets/images/friends.jpg" ng-src="../assets/images/friends.jpg" alt="Student friends photo">
+                                </span>
+                                <h2 class="text-center nopadding">Banner with image to right</h2>
+                        </div>
+                </div>
+        </div>
+
+        <div class="row spacer-top-4x">
+                <div class="col-md-offset-2 col-md-8">
+                        <div class="q-head large">
+                                <span class="img-badge-left">
+                                        <img class="img-responsive img-rounded hidden-xs" src="../assets/images/friends.jpg" ng-src="../assets/images/friends.jpg" alt="student friends photo">
+                                </span>
+                                <h2 class="text-center nopadding">Banner with image to left</h2>
+                        </div>
+                </div>
+        </div>
+
+        <div class="row spacer-top-4x">
+                <div class="col-md-offset-2 col-md-8">
+                        <div class="q-head large dark">
+                                <div class="row">
+                                        <div class="hidden-xs hidden-sm col-md-2 col-lg-1">
+                                                <i class="fa fa-users fa-3x h-icon"></i>
+                                        </div>
+                                        <div class="col-md-9 col-lg-10">
+                                                <h2 class="text-center nopadding">Banner dark with internal icon. (.h-icon) need to change icon color </h2>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </div>
+        
         
         <div class="row spacer-top-2x">
             <h1>Buttons</h1>
@@ -319,120 +462,7 @@
                 </div>
             </div>
         </div>
-        <div class="row spacer-top-2x">
-            <h1>Banners</h1>
-            <hr />
-        </div>
-        <div class="row spacer-top-2x">
-            <div class="col-md-offset-2 col-md-8">
-                <div class="q-head">
-                    <h2 class="nopadding">Banner</h2>
-                </div>
-            </div>
-        </div>
-        
-        <div class="row spacer-top-2x">
-            <div class="col-md-offset-2 col-md-8">
-                <div class="q-head active">
-                    <h2 class="nopadding">Active banner</h2>
-                </div>
-            </div>
-         </div>
-        
-        <div class="row spacer-top-4x">
-            <div class="col-md-offset-2 col-md-8">
-                <div class="q-head">
-                     <span class="icon-badge">
-                        <i class="fa fa-question fa-3x fa-fw"></i>
-                     </span>
-                    <h2 class="nopadding">Banner With icon</h2>
-                </div>
-            </div>
-        </div>
-        
-        <div class="row spacer-top-4x">
-            <div class="col-md-offset-2 col-md-8">
-                <div class="q-head active">
-                     <span class="icon-badge active">
-                        <i class="fa fa-graduation-cap fa-3x fa-fw"></i>
-                     </span>
-                    <h2 class="nopadding">Active banner with icon</h2>
-                </div>
-            </div>
-        </div>  
-        
-        <div class="row spacer-top-4x">
-            <div class="col-md-offset-2 col-md-8">
-                <div class="q-head">
-                     <span class="icon-badge mulit-row">
-                        <i class="fa fa-question fa-3x fa-fw"></i>
-                     </span>
-                    <h2 class="nopadding">Banner With icon and mulitple rows( Icon has a .mulit-row class).
-                        Some extra text to go onto the next line.
-                    </h2>
-                </div>
-            </div>
-        </div>
-        
-        <div class="row spacer-top-4x">
-            <div class="col-md-offset-2 col-md-8">
-                <div class="q-head">
-                     <span class="icon-badge ">
-                        <i class="fa fa-question fa-3x fa-fw"></i>
-                     </span>
-                    <h2 class="nopadding small">
-                        Banner With icon and smaller text with H2 ( H2 has a .small class)
-                    </h2>
-                </div>
-            </div>
-        </div>
-
-		<div class="row spacer-top-4x">
-			<div class="col-md-offset-2 col-md-8">
-				<div class="q-head large dark">
-					<h2 class="text-center nopadding">Banner Dark with extra padding</h2>
-				</div>
-			</div>
-		</div>
-
-		<div class="row spacer-top-4x">
-			<div class="col-md-offset-2 col-md-8">
-				<div class="q-head large">
-					<span class="img-badge-right">
-						<img class="img-responsive img-rounded hidden-xs" src="../assets/images/friends.jpg" ng-src="../assets/images/friends.jpg" alt="DCU student friends photo">
-					</span>
-					<h2 class="text-center nopadding">Banner with image to right</h2>
-				</div>
-			</div>
-		</div>
-
-		<div class="row spacer-top-4x">
-			<div class="col-md-offset-2 col-md-8">
-				<div class="q-head large">
-					<span class="img-badge-left">
-						<img class="img-responsive img-rounded hidden-xs" src="../assets/images/friends.jpg" ng-src="../assets/images/friends.jpg" alt="DCU student friends photo">
-					</span>
-					<h2 class="text-center nopadding">Banner with image to left</h2>
-				</div>
-			</div>
-		</div>
-
-		<div class="row spacer-top-4x">
-			<div class="col-md-offset-2 col-md-8">
-				<div class="q-head large dark">
-					<div class="row">
-						<div class="hidden-xs hidden-sm col-md-2 col-lg-1">
-							<i class="fa fa-users fa-3x h-icon"></i>
-						</div>
-						<div class="col-md-9 col-lg-10">
-							<h2 class="text-center nopadding">Banner dark with internal icon. (.h-icon) need to change icon color </h2>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		
+	
         
         <div class="row spacer-top-4x">
             <h1>Badges</h1>
@@ -461,7 +491,7 @@
                 <p>Badge with font awesome icons. Will create more colors</p>
             </div>
             <div class="col-xs-4">
-                <img class="img-responsive img-rounded" alt="DCU student photo" src="../assets/images/student1.jpg">
+                <img class="img-responsive img-rounded" alt="Student photo" src="../assets/images/student1.jpg">
                  <p>Image with rounded border</p>
             </div>
         </div>
@@ -723,12 +753,12 @@
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-xs-4">
-                            <img class="img-responsive img-rounded" alt="DCU student photo" src="../assets/images/student1.jpg">
+                            <img class="img-responsive img-rounded" alt="Student photo" src="../assets/images/student1.jpg">
                         </div>
                         <div class="col-xs-8">
                             <blockquote class="simple">
                                 <p><i class="fa fa-quote-left pull-left fa-2x"></i>I was use to reading lots of books which I believe prepared me well for the demands of further study</p>
-                                <footer class="text-right">Student from <cite title="Source Title">DCU</cite></footer>
+                                <footer class="text-right">Mary <cite title="Source Title">Student</cite></footer>
                             </blockquote>
                         </div>
                     </div> 
@@ -739,7 +769,7 @@
                     <div class="col-md-7">
                             <blockquote class="blockquote-student">
                                <i class="fa fa-quote-left"></i><p>168 I found it's easy to procrastinate with lots of 'free time' so make sure you develop a study plan</p>
-                                    <footer>Student from <cite title="Source Title">DCU</cite></footer>
+                                    <footer>Mary <cite title="Source Title">Student</cite></footer>
                             </blockquote>
                     </div>
                     <div class="col-md-5">
@@ -753,7 +783,7 @@
                         <div class="col-md-7">				
                                 <blockquote class="blockquote-student right">
                                    <i class="fa fa-quote-left"></i><p>I set aside blocks of time for doing study and stuck to them regardless of other distractions</p>
-                                        <footer>Student from <cite title="Source Title">DCU</cite></footer>
+                                        <footer>John <cite title="Source Title">Student</cite></footer>
                                 </blockquote>
                         </div>
                 </div>
@@ -763,7 +793,7 @@
                 <div class="col-xs-12 col-md-6">
                     <div class="quote-primary-image row">
                         <div class="col-xs-offset-6 col-xs-6 col-md-4 nopadding">
-                            <img class="img-responsive img-rounded" alt="DCU student photo" src="../assets/images/student1.jpg">
+                            <img class="img-responsive img-rounded" alt="Student photo" src="../assets/images/student1.jpg">
                         </div>
                         <div class="col-xs-12 col-md-8 nopadding">
                             <blockquote class="quote-primary">                                     
@@ -778,14 +808,14 @@
                         <div class="col-xs-12 col-md-8 nopadding">
                             <blockquote>                                     
                                 <i class="fa fa-quote-left fa-3x"></i>
-                                <p read-more="" limit="82" ellipsis="..." class="ng-isolate-scope">‘I knew nothing about the subject she was studying, but I knew that some of the se<span class="read-ellipsis">...</span><span class="more-btn"><a class="btn btn-link read-more">more</a></span><span class="more-text">ntences in her essay didn’t make sense and some of the bits were really boring and could be changed around, so I told her that’<span class="more-btn"><a class="btn btn-link read-less">less</a></span></span></p>
+                                <p read-more="" limit="82" ellipsis="..." class="ng-isolate-scope">I knew nothing about the subject she was studying, but I knew that some of the se<span class="read-ellipsis">...</span><span class="more-btn"><a class="btn btn-link read-more">more</a></span><span class="more-text">ntences in her essay didn’t make sense and some of the bits were really boring and could be changed around, so I told her that<span class="more-btn"><a class="btn btn-link read-less">less</a></span></span></p>
                                 <p><em><strong>(Mike)</strong></em></p>
 
                             </blockquote>
                             <div class="o-round"></div>
                         </div>
                         <div class="col-xs-6 col-md-4 nopadding">
-                            <img class="img-responsive img-rounded" alt="DCU student photo" src="../assets/images/student2.jpg">
+                            <img class="img-responsive img-rounded" alt="Student photo" src="../assets/images/student2.jpg">
                         </div>
                     </div>
                 </div>
@@ -802,7 +832,7 @@
                             <div class="o-round"></div>
                         </div>
                         <div class="col-xs-3 col-md-4 nopadding">
-                            <img class="img-responsive img-rounded" alt="DCU student photo" src="../assets/images/student2.jpg">
+                            <img class="img-responsive img-rounded" alt="Student photo" src="../assets/images/student2.jpg">
                         </div>
                     </div>
                 </div>
@@ -837,7 +867,7 @@
                             <div class="o-round"></div>
                         </div>
                         <div class="col-xs-3 col-md-4 nopadding">
-                            <img class="img-responsive img-rounded" alt="DCU student photo" src="../assets/images/student2.jpg">
+                            <img class="img-responsive img-rounded" alt="Student photo" src="../assets/images/student2.jpg">
                         </div>
                     </div>
                 </div>
@@ -861,6 +891,7 @@
                     <div class="quote-dark">
                         <blockquote>
                             <p class="comment ">I got advice on what equipment to buy from the computer centre at college, you could also ask at your local computer store.  The telephone provider  that I use advised me on what broadband package was most suitable for me.</p>
+                            <footer>Mary (Student)</footer>
                         </blockquote>
                     </div>
                 </div>
@@ -869,9 +900,10 @@
             <div class="row spacer-top-2x">   
                 <div class="col-xs-12 col-md-offset-1 col-md-10">
                     <div class="quote-dark image-left">
-                        <img class="img-responsive img-rounded" alt="DCU student photo" src="../assets/images/student1.jpg">
+                        <img class="img-responsive img-rounded" alt="Student photo" src="../assets/images/student1.jpg">
                         <blockquote>
                             <p class="comment">Meet some of my fellow students to find out how they used computers for learning and how they got help.</p>
+                            <footer>Mary (Student)</footer>
                         </blockquote>                   
                     </div>
                 </div>
@@ -883,8 +915,9 @@
                         <blockquote>                                     
                             <p class="comment">When I began my course I was given a username and password and an email address.  I was also
                                     introduced to the Virtual Learning Environment or VLE as it’s known.</p>
+                            <footer>Mary (Student)</footer>
                         </blockquote>
-                        <img class="img-responsive img-rounded" alt="DCU student photo" src="../assets/images/student1.jpg">
+                        <img class="img-responsive img-rounded" alt="Student photo" src="../assets/images/student1.jpg">
                     </div>
                 </div>
             </div>
@@ -894,8 +927,9 @@
                     <div class="quote-dark image-top-left">
                         <blockquote>                                     
                             <p class="comment">“I found computer skills essential for learning as  most of my course material is online. When I began I had some knowledge of computer skills but I learned much more as I went along”</p>
+                            <footer>Mary (Student)</footer>
                         </blockquote>
-                        <img class="img-responsive img-rounded" alt="DCU student photo" src="../assets/images/student1.jpg">
+                        <img class="img-responsive img-rounded" alt="Student photo" src="../assets/images/student1.jpg">
                     </div>
                 </div>
             </div>
@@ -905,8 +939,9 @@
                     <div class="quote-dark image-top-right">
                         <blockquote>                                     
                             <p class="comment">“I found computer skills essential for learning as  most of my course material is online. When I began I had some knowledge of computer skills but I learned much more as I went along”</p>
+                            <footer>Mary (Student)</footer>
                         </blockquote>
-                        <img class="img-responsive img-rounded" alt="DCU student photo" src="../assets/images/student1.jpg">
+                        <img class="img-responsive img-rounded" alt="Student photo" src="../assets/images/student1.jpg">
                     </div>
                 </div>
             </div>
@@ -920,6 +955,7 @@
                                     Light comment which is wraped in a link with a <span class="highlight-word">highlighted</span> word.
                                     To highlight a wrap the word in a span tag with the class highlight-word eg &lt;span class=&quot;highlight-word&quot;&gt;&lt;/span&gt;
                                 </p>
+                                <footer>Mary (Student)</footer>
                             </blockquote>
                         </a>
                     </div>
@@ -931,6 +967,7 @@
                     <div class="quote-light">
                         <blockquote>
                             <p class="comment ">I got advice on what equipment to buy from the computer centre at college, you could also ask at your local computer store.  The telephone provider  that I use advised me on what broadband package was most suitable for me.</p>
+                            <footer>Mary (Student)</footer>
                         </blockquote>
                     </div>
                 </div>
@@ -939,9 +976,10 @@
             <div class="row spacer-top-2x">   
                 <div class="col-xs-12 col-md-offset-1 col-md-10">
                     <div class="quote-light image-left">
-                        <img class="img-responsive img-rounded" alt="DCU student photo" src="../assets/images/student1.jpg">
+                        <img class="img-responsive img-rounded" alt="Student photo" src="../assets/images/student1.jpg">
                         <blockquote>
                             <p class="comment">Meet some of my fellow students to find out how they used computers for learning and how they got help.</p>
+                            <footer>Mary (Student)</footer>
                         </blockquote>                   
                     </div>
                 </div>
@@ -953,8 +991,9 @@
                         <blockquote>                                     
                             <p class="comment">When I began my course I was given a username and password and an email address.  I was also
                                     introduced to the Virtual Learning Environment or VLE as it’s known.</p>
+                            <footer>Mary (Student)</footer>
                         </blockquote>
-                        <img class="img-responsive img-rounded" alt="DCU student photo" src="../assets/images/student1.jpg">
+                        <img class="img-responsive img-rounded" alt="Student photo" src="../assets/images/student1.jpg">
                     </div>
                 </div>
             </div>
@@ -964,8 +1003,9 @@
                     <div class="quote-light image-top-left">
                         <blockquote class="quote-primary quote-primary-home">                                     
                             <p class="comment">“I found computer skills essential for learning as  most of my course material is online. When I began I had some knowledge of computer skills but I learned much more as I went along”</p>
+                            <footer>Mary (Student)</footer>
                         </blockquote>
-                        <img class="img-responsive img-rounded" alt="DCU student photo" src="../assets/images/student1.jpg">
+                        <img class="img-responsive img-rounded" alt="Student photo" src="../assets/images/student1.jpg">
                     </div>
                 </div>
             </div>
@@ -975,8 +1015,9 @@
                     <div class="quote-light image-top-right">
                         <blockquote class="quote-primary quote-primary-home">                                     
                             <p class="comment">“I found computer skills essential for learning as  most of my course material is online. When I began I had some knowledge of computer skills but I learned much more as I went along”</p>
+                            <footer>Mary (Student)</footer>
                         </blockquote>
-                        <img class="img-responsive img-rounded" alt="DCU student photo" src="../assets/images/student1.jpg">
+                        <img class="img-responsive img-rounded" alt="Student photo" src="../assets/images/student1.jpg">
                     </div>
                 </div>
             </div>
@@ -990,6 +1031,7 @@
                                     Light comment which is wraped in a link with a <span class="highlight-word">highlighted</span> word.
                                     To highlight a wrap the word in a span tag with the class highlight-word eg &lt;span class=&quot;highlight-word&quot;&gt;&lt;/span&gt;
                                 </p>
+                                <footer>Mary (Student)</footer>
                             </blockquote>
                         </a>
                     </div>
@@ -1215,7 +1257,7 @@
                 </div>
             </div>
         </div>
-         <div class="row spacer-bottom-3x">
+        <div class="row spacer-bottom-3x">
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -1247,26 +1289,375 @@
                 </div>
             </div>
         </div>
+        
+        <div class="row spacer-top-3x">
+            <h1>Custom Tool Elements: Navigation Circles</h1>
+            <hr />
+            <p>The following are navigation designs use to in different tools. They are designed in a circle with elements absolutely positioned in a clock like format.
+            You can position elements using the class .pos-x where x is 1 to 12.</p>
+        </div>
+
+        <div class="row spacer-top">
+            <div class="col-xs-12 col-md-6 ft-size-1_4x">
+                 <h2 class="text-center">Used in Tool 8</h2>
+                <div class="row round-nav2">
+                    <div class="round-nav-grey-bg"><div class="inner-white"></div></div>
+
+                    <div class="pos pos-12">
+                        <a href="#/" title="video button">
+                           <div class="round-nav-button small video light-gray">
+                               <p>Video</p>    
+                           </div>
+                        </a>
+                    </div>
+
+                    <div class="pos pos-4">
+                        <a href="#/" title="activity button">
+                            <div class="round-nav-button small text light-gray">
+                                <p>Text</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="pos pos-8">
+                        <a href="#/" title="text button">
+                            <div class="round-nav-button small activity light-gray">
+                                <p>Activity</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="pos pos-center">
+                        <div class="round-nav-button green small nohover">
+                            <p>Reduce Anxiety</p>
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+            <div class="col-xs-12 col-md-6 ft-size-1_4x">
+                 <h2 class="text-center">Used in Tool 8</h2>
+                <div class="row round-nav2">
+                    <div class="round-nav-grey-bg"><div class="inner-white"></div></div>
+
+                    <div class="pos pos-12">
+                        <a href="#/" title="video button">
+                           <div class="round-nav-button small video light-gray">
+                               <p>Video</p>    
+                           </div>
+                        </a>
+                    </div>
+
+
+                    <div class="pos pos-3">
+                        <a href="#/" title="activity button">
+                            <div class="round-nav-button small activity light-gray">
+                                <p>Activity</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="pos pos-6">
+                        <a href="#/" title="Social Media button">
+                            <div class="round-nav-button small website light-gray">
+                                <p>Social Media / Web</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="pos pos-9">
+                        <a href="#/" title="text button">
+                            <div class="round-nav-button small text light-gray">
+                                <p>Text</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="pos pos-center">
+                        <div class="round-nav-button orange small nohover">
+                            <p class="ft-size-1_6x">Socialising</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row spacer-top-3x">
+            <div class="col-xs-12 col-md-offset-2 col-md-8">
+                <h2 class="text-center">Used in Tool 8</h2>
+                <div class="row round-nav2">
+                    <div class="round-nav-button-bg"><div class="inner-white"></div></div>
+
+                    <div class="pos pos-12">
+                        <a href="#/elements-of-an-online-orientation/reduce-anxiety" title="Reduce Anxiety button" ng-class="{'viewed':areasViewedT8.reduceanxiety.viewed}" ng-click="areasViewedT8.reduceanxiety.viewed = true" tabindex="0">
+                           <div class="round-nav-button green">
+                               <p>Reduce Anxiety</p>    
+                           </div>
+                        </a>
+                    </div>
+
+
+                    <div class="pos pos-2">
+                        <a href="#/elements-of-an-online-orientation/set-expectations" title="set expectations button" ng-class="{'viewed':areasViewedT8.setexpectations.viewed}" ng-click="areasViewedT8.setexpectations.viewed = true" tabindex="0">
+                            <div class="round-nav-button red">
+                                <p>Set Expectations</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="pos pos-4">
+                        <a href="#/elements-of-an-online-orientation/positive-role-model" title="positive role model button" ng-class="{'viewed':areasViewedT8.positiverolemodel.viewed}" ng-click="areasViewedT8.positiverolemodel.viewed = true" tabindex="0">
+                            <div class="round-nav-button tangerine">
+                                <p>Positive Role Model</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="pos pos-6">
+                        <a href="#/elements-of-an-online-orientation/socialising" title="socialising button" ng-class="{'viewed':areasViewedT8.socialising.viewed}" ng-click="areasViewedT8.socialising.viewed = true" tabindex="0">
+                            <div class="round-nav-button orange">
+                                <p>Socialising</p>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <div class="pos pos-8">
+                         <a href="#/elements-of-an-online-orientation/campus-tour" title="Campus Tour button" ng-class="{'viewed':areasViewedT8.campustour.viewed}" ng-click="areasViewedT8.campustour.viewed = true" tabindex="0">
+                            <div class="round-nav-button dark-blue">
+                                <p>Campus Tour</p>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class="pos pos-10">
+                        <a href="#/elements-of-an-online-orientation/study-skills" title="Study Skills button" ng-class="{'viewed':areasViewedT8.studyskills.viewed}" ng-click="areasViewedT8.studyskills.viewed = true" tabindex="0">
+                            <div class="round-nav-button blue">
+                                <p>Study Skills</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="pos pos-center">
+                        <div class="round-nav-button transparent nohover">
+                            <p>Elements of an Online Orientation</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="row spacer-top-3x">
+            <div class="col-xs-12 col-md-6 ">  
+                <h2 class="text-center">Tool 3: Who can I Ask?</h2>
+                <div class="row hub-nav">
+                    <div class="hub-button-bg"></div>
+
+                    <div class="pos-12">
+                        <a href="#/hub/others" title="How can Others help me?" ng-class="{'viewed':areasViewed.others}" ng-click="areasViewed.others = true" tabindex="0">
+                           <div class="hub-button button-others">
+                               <p>Others</p>
+                               <div class="shadow-container"><div class="transparent-shadow"></div></div>
+                           </div>
+                        </a>
+                    </div>
+                    <div class="pos-2">
+                        <a href="#/hub/friends" title="How can My Friends help me?" ng-class="{'viewed':areasViewed.friends}" ng-click="areasViewed.friends = true" tabindex="0">
+                            <div class="hub-button button-friends">
+                                <p>My<br>Friends</p>
+                                <div class="shadow-container"><div class="transparent-shadow"></div></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="pos-4">
+                        <a href="#/hub/family" title="How can My Family help me?" ng-class="{'viewed':areasViewed.family}" ng-click="areasViewed.family = true" tabindex="0">
+                            <div class="hub-button button-family">
+                                <p>My<br>Family</p>
+                                <div class="shadow-container"><div class="transparent-shadow"></div></div>
+                            </div>
+                        </a>
+
+                    </div>
+
+
+                    <div class="pos-6">
+                        <a href="#/hub/other-students" title="How can Other Students help me?" ng-class="{'viewed':areasViewed.students}" ng-click="areasViewed.students = true" tabindex="0">
+                            <div class="hub-button button-students">
+                                <p>Other<br>Students</p>
+                                <div class="shadow-container"><div class="transparent-shadow"></div></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="pos-8">
+                        <a href="#/hub/employer" title="How can My Employer help me?" ng-class="{'viewed':areasViewed.employer}" ng-click="areasViewed.employer = true" tabindex="0">
+                            <div class="hub-button button-employer">
+                                <p>My<br>Employer</p>
+                                <div class="shadow-container"><div class="transparent-shadow"></div></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="pos-10">
+                        <a href="#/hub/university" title="How can My University help me?" ng-class="{'viewed':areasViewed.university}" ng-click="areasViewed.university = true" tabindex="0">
+                            <div class="hub-button button-university">
+                                <p>My<br>University</p>
+                                <div class="shadow-container"><div class="transparent-shadow"></div></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="pos-center">
+                        <div class="hub-button button-me">
+                            <p>Me</p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <h2 class="text-center">Tool 5: My First Assignment</h2>
+                <div class="row round-nav hidden-xs">
+                    <div class="round-nav-button-bg"></div>
+
+                    <div class="pos-12">
+                        <a href="#/developing-a-plan/assignment-plan/" title="Assignment Plan" ng-class="{'viewed':areasViewed.plan}" ng-click="areasViewed.plan = true" tabindex="0">
+                           <div class="round-nav-button plan">
+                               <p>Plan</p>    
+                           </div>
+                        </a>
+                    </div>
+
+                    <div class="pos-2">
+                        <div class="next-arrow">
+                            <img src="../assets/images/arrow.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="pos-3">
+                        <a href="#/developing-a-plan/find-resources/" title="Find Assignment Resources" ng-class="{'viewed':areasViewed.find}" ng-click="areasViewed.find = true" tabindex="0">
+                            <div class="round-nav-button find">
+                                <p>Find</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="pos-4">
+                        <div class="next-arrow">
+                            <img src="../assets/images/arrow.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="pos-6">
+                        <a href="#/developing-a-plan/evaluate/" title="Evaluate Assignment" ng-class="{'viewed':areasViewed.evaluate}" ng-click="areasViewed.evaluate = true" tabindex="0">
+                            <div class="round-nav-button evaluate">
+                                <p>Evaluate</p>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <div class="pos-8">
+                        <div class="next-arrow">
+                            <img src="../assets/images/arrow.png" alt="">
+                        </div>
+                    </div>
+
+
+                    <div class="pos-9">
+                        <a href="#/developing-a-plan/use-assignment/" title="Use Assignment" ng-class="{'viewed':areasViewed.use}" ng-click="areasViewed.use = true" tabindex="0">
+                            <div class="round-nav-button use">
+                                <p>Use</p>               
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="pos-10">
+                        <div class="next-arrow">
+                            <img src="../assets/images/arrow.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-xs-12 navigation-table visible-xs nopadding">                
+                    <a href="#/developing-a-plan/assignment-plan/" title="Assignment Plan" class="navigation-cell plan" ng-class="{'viewed':areasViewed.plan}" ng-click="areasViewed.plan = true" tabindex="0">
+                        <span>Plan</span>
+                    </a>
+                    <a title="Find Assignment Resources" href="#/developing-a-plan/find-resources/" class="navigation-cell find" ng-class="{'viewed':areasViewed.find}" ng-click="areasViewed.find = true" tabindex="0">
+                        <span>Find</span>
+                    </a>
+                    <a title="Evaluate Assignment" href="#/developing-a-plan/evaluate/" class="navigation-cell evaluate" ng-class="{'viewed':areasViewed.evaluate}" ng-click="areasViewed.evaluate = true" tabindex="0">
+                        <span>Evaluate</span>
+                    </a>
+                    <a title="Use Assignment" href="#/developing-a-plan/use-assignment/" class="navigation-cell use" ng-class="{'viewed':areasViewed.use}" ng-click="areasViewed.use = true" tabindex="0">
+                        <span>Use</span>
+                    </a>
+                </div>            
+
+            </div>
+        </div>
+        
     </div>
     
     
     
     <footer class="container shadow">
-            <div class="row">
-                    <div id="footerSocial"><a href="/" title="Institute Facebook Page"><div class="footer-soc fb"></div></a><a href="/" title="Institute Twitter Page"><div class="footer-soc tw"></div></a><a href="/" title="Institute Linkedin Page"><div class="footer-soc ln"></div></a></div>
-                    <div id="footerMenu">
-                            <ul>
-                                    <li><a href="/" title="Leave Feedback">Leave Feedback</a></li>
-                                    <li><a href="/" title="Other Tools">Other Tools</a></li>
-                                    <li><a href="/" title="Visit Us">Visit Us</a></li>
-                                    <li><a href="/" title="Privacy Policy">Privacy Policy</a></li>
-                                    <li><a href="/" title="Terms & Conditions">Terms & Conditions</a></li>
-                            </ul>
+            <div class="tool-footer row">
+
+                <div class="col-md-12">
+                    <div class="footer-menu">
+                        <ul>
+                            <li><a href="/" title="Privacy Policy">Privacy Policy</a></li>
+                            <li><a href="/" title="Terms & Conditions">How to Cite this Tool</a></li>
+                        </ul>
                     </div>
-                    <img src="../assets/images/clock.gif" class="footer-clock" alt="">
-                    <hr>
-                    <img src="../assets/images/institution_logos.png" class="footer-logos" alt="">
+                </div>
+
+                <hr />
+
+                <div class="col-sm-12 col-md-3">
+                    <div class="footer-social">
+                        <a href="/" title="Institute Facebook Page">
+                            <div class="footer-soc "><i class="fa fa-facebook fa-fw"></i></div>
+                        </a>
+                        <a href="/" title="Google hangout Page">
+                            <div class="footer-soc "><i class="fa fa-google-plus fa-fw"></i></div>
+                        </a>
+                        <a href="/" title="Institute Linkedin Page">
+                            <div class="footer-soc "><i class="fa fa-linkedin fa-fw"></i></div>
+                        </a>
+                        <a href="/" title="Institute Twitter Page">
+                            <div class="footer-soc "><i class="fa fa-twitter fa-fw"></i></div>
+                        </a>    
+                    </div> 
+                </div>
+
+                <div class="col-sm-12 visible-sm-block spacer-top"></div>
+
+                <div class="col-sm-4 col-md-3 spacer-xs-top spacer-sm-top-0">
+                    <div class="footer-cc">
+                        <a href=""><img src="../assets/images/by-nc.eu.png" alt="Creative Commons"/></a>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 col-md-3 spacer-xs-top spacer-sm-top-0">
+                    <div class="sst-logo">
+                        <a href=""><img src="../assets/images/logo_white.png" alt="Student Success Toolbox" /></a>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-3 spacer-xs-top spacer-sm-top-0">
+                    <div class="institution-logo">
+                        <a href=""><img src="" alt="Place institution logo here"/></a>
+                    </div>
+                </div>
+
             </div>
-    </footer>	
+        </footer>	
 </body>
 </html>
