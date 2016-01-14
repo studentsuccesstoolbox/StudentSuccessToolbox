@@ -1,0 +1,11 @@
+<ul class="section-nav">
+    <li ng-repeat="section in areasViewedT8" ng-class="currentSection.toLowerCase().indexOf(section.val) >= 0 ? 'active' : ''" ng-style="{'width':sectionWidthT8}">
+        <span class="table">
+            <span ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val + '/')" class='title' ng-style="{'color':section.colourActive}">
+                {{section.title}}
+            </span>
+        </span>
+        <span class='connector-line'>&nbsp;</span>
+        <span ng-click="jumpToUrlT8('/elements-of-an-online-orientation/' + section.val + '/')" class='connector' ng-style="{'background':section.colourActive}">&nbsp;</span>
+    </li>
+</ul>

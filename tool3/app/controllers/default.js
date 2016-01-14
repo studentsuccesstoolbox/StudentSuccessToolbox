@@ -4,7 +4,7 @@
  * @author Paul Schweppe
  * 
  */
-angular.module('sstTool3App').controller('defaultController', function($scope,$modal) {
+angular.module('sstTool3App').controller('defaultController', function($scope,$modal,$location) {
     
     $scope.areasViewed = areasViewed; 
     
@@ -14,7 +14,16 @@ angular.module('sstTool3App').controller('defaultController', function($scope,$m
         });  
     };
     
+    $scope.areasViewedT3 = areasViewedT3;
     
+    $scope.sectionWidthT3 = Math.floor((100 / (Object.keys(areasViewedT3).length))) + '%';
+
+    $scope.currentSection = $location.path();
+    
+
+    $scope.jumpToUrlT8 = function (pathToJumpTo) {
+        $location.path(pathToJumpTo);
+    };
     
     /**
      * 
