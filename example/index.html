@@ -28,6 +28,18 @@
             .q-head{
                 margin-bottom: 10px;
             }
+            .example-spacer{
+                margin-top: 51px;
+            }
+            .section {
+                padding-top: 30px;
+            }
+            
+            @media (max-width: 767px){
+                .visible-xs.collapse {
+                    display: none!important;
+                }
+            }
         </style>
  
 </head>
@@ -35,7 +47,57 @@
 <!-- apply our angular app -->
 <body ng-controller="exampleController as example">
     
-    <div class="container shadow">
+    <header class="navbar navbar-default navbar-fixed-top navbar-inner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-3" ng-click="isCollapsed = !isCollapsed">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand visible-xs" href="#">SST Theme</a>
+            </div>
+            <nav class="hidden-xs">
+                <ul class="nav navbar-nav">
+                    <a href="#top" role="button" class="navbar-brand">
+                        Student Success Toolbox Theme
+                    </a>
+                    <li class="dropdown" dropdown>
+                        <a role="button" class="dropdown-toggle" dropdown-toggle>
+                            Elements <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#el-headers">Headers</a></li>
+                            <li><a href="#el-mobile-headers">Mobile Headers</a></li>
+                            <li><a href="#el-header-colour">Main Header Colours</a></li>
+                            <li><a href="#el-header-banners">Header Banners</a></li>
+                            <li><a href="#el-buttons">Buttons</a></li>
+                            <li><a href="#el-panels">Panels</a></li>
+                            <li><a href="#el-badges">Badges</a></li>
+                            <li><a href="#el-spacers">Spacers</a></li>
+                            <li><a href="#el-quotes">Quotes</a></li>
+                            <li><a href="#el-modal">Modal</a></li>
+                            <li><a href="#el-accordion">Accordion</a></li>
+                            <li><a href="#el-slider">Slider</a></li>
+                            <li><a href="#el-charts">Charts</a></li>
+                            <li><a href="#el-nav-circles">Custom Navigations</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#getting_started">Getting started</a></li>
+                    
+                </ul>
+            </nav>
+            <nav class="visible-xs" collapse="!isCollapsed">
+                <ul class="nav navbar-nav">
+                    <li><a href="#getting_started" ng-click="isCollapsed = !isCollapsed">Getting started</a></li>
+                    <li><a href="#directives_small" ng-click="isCollapsed = !isCollapsed">Elements</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="container shadow example-spacer">
         <header>
             <div id="header" class="">
                     <!-- institution logo here -->
@@ -49,6 +111,30 @@
     
     
     <div class="container shadow">
+        <div class="row">
+            <div class="col-md-12">
+                <section class="panel panel-details summary visible-xs" id="directives_small">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item active"><strong>Elements</strong></a>
+                        <a href="#el-headers"  class="list-group-item list-group-item-success">Headers</a>
+                        <a href="#el-mobile-headers"  class="list-group-item list-group-item-success">Mobile Headers</a>
+                        <a href="#el-header-colour"  class="list-group-item list-group-item-success">Main Header Colours</a>
+                        <a href="#el-header-banners"  class="list-group-item list-group-item-success">Header Banners</a>
+                        <a href="#el-buttons"  class="list-group-item list-group-item-success">Buttons</a>
+                        <a href="#el-panels"  class="list-group-item list-group-item-success">Panels</a>
+                        <a href="#el-badges"  class="list-group-item list-group-item-success">Badges</a>
+                        <a href="#el-spacers"  class="list-group-item list-group-item-success">Spacers</a>
+                        <a href="#el-quotes"  class="list-group-item list-group-item-success">Quotes</a>
+                        <a href="#el-modal"  class="list-group-item list-group-item-success">Modal</a>
+                        <a href="#el-accordion"  class="list-group-item list-group-item-success">Accordion</a>
+                        <a href="#el-slider"  class="list-group-item list-group-item-success">Slider</a>
+                        <a href="#el-charts"  class="list-group-item list-group-item-success">Charts</a>
+                        <a href="#el-nav-circles"  class="list-group-item list-group-item-success">Custom Navigations</a>
+
+                    </div>
+                </section>
+            </div>
+        </div>
         <div class="row spacer-top-2x">
             <div class="panel panel-details summary">
                 <div class="panel-body">
@@ -59,7 +145,20 @@
              </div>
         </div>
         
-        <div class="row spacer-top-2x">
+        <div id="getting-started" class="row spacer-top-2x">
+            <h1>Getting started</h1>
+            <hr>
+            <p>You can download this theme here (Link to theme. Github prefered). To create your own build you will need
+            to intall:</p>
+            <ul>
+                <li><a href="http://sass-lang.com/install" title="Install Sass">Sass</a> - Sass is a preprocessor that adds nested rules, variables, mixins and functions, selector inheritance, and more to CSS. Sass files compile into well-formatted, standard CSS to use in your site or application.</li>
+                <li><a href="http://gruntjs.com/installing-grunt" title="Install Grunt">Grunt</a> - Grunt is a javascript task runner used to automated and perform repetitive tasks like minification, compilation, unit testing and linting.</li>
+                <li><a href="https://nodejs.org/en/download/" title="Install Nodejs">Nodejs</a> - Node.js is an open-source, cross-platform runtime environment for developing server-side web applications.</li>
+                <li><a href="http://blog.npmjs.org/post/85484771375/how-to-install-npm" title="Install npm">NPM</a> - npm is the package manager for javascript.</li>
+            </ul>
+        </div>
+        
+        <div id="el-headers" class="row spacer-top-2x section">
             <h1>Headers</h1>
             <hr>
             <h1>Header 1</h1>
@@ -70,7 +169,7 @@
          
         </div>
         
-        <div class="row spacer-top-2x">
+        <div id="el-mobile-headers" class="row spacer-top-2x section">
             <h1>Mobile headers</h1>
             <hr>
             <p>Use .mob-heading class for mobile header. This is usually used in conjunction with .visible-xs-block to show only on mobile</p>
@@ -81,7 +180,7 @@
             <h5 class="mob-heading" >Header 5 with solid background</h5>
         </div>
         
-        <div class="row spacer-top-2x">
+        <div id="el-header-colour" class="row spacer-top-2x section">
             <h1>Main Header Colours</h1>
             <hr>
             <p>Use .q-head class for desktop design. The most popular usage of this is with classes .large and .text-center </p>
@@ -102,7 +201,7 @@
             </div>
         </div>
         
-        <div class="row spacer-top-2x">
+        <div id="el-header-banners" class="row spacer-top-2x section">
             <h1>Header Banners</h1>
             <hr />
             <p>Header banners uses the header class .q-head in a div wrapping the h2 element. </p>
@@ -218,12 +317,14 @@
         </div>
         
         
-        <div class="row spacer-top-2x">
+        <div id="el-buttons" class="row spacer-top-2x section" >
             <h1>Buttons</h1>
             <hr>
 			<p>
                 <button type="button" class="btn btn-default btn-xlg" aria-label="button">Default</button>
-                <button type="button" class="btn btn-default btn-xlg disabled" aria-label="continue button">Default Disabled</button>
+                <button type="button" class="btn btn-default btn-xlg disabled hidden-xs" aria-label="continue button">Default Disabled</button>
+                <button type="button" class="btn btn-default btn-xlg disabled visible-xs" aria-label="continue button">Default X</button>
+
                 <button type="button" class="btn btn-info btn-xlg" aria-label="continue button">Info</button>
                 <button type="button" class="btn btn-secondary btn-xlg" aria-label="continue button">Secondary</button>
                 <a href="#" class="btn btn-link btn-xlg" aria-label="reset calculator">Link</a>
@@ -258,7 +359,7 @@
             </p>
         </div>
         
-        <div class="row spacer-top-2x">
+        <div id="el-panels" class="row spacer-top-2x section">
             <h1>Panels</h1>
             <div class="col-md-4">
                 <div class="activity-panel">
@@ -464,7 +565,7 @@
         </div>
 	
         
-        <div class="row spacer-top-4x">
+        <div id="el-badges" class="row spacer-top-4x section">
             <h1>Badges</h1>
             <hr />
         </div>
@@ -497,7 +598,7 @@
         </div>
         
         
-       <div class="row spacer-top-3x">
+       <div id="el-spacers" class="row spacer-top-3x section">
             <h1>Spacers</h1>
             <hr />
             <p>Spacers are used to add margins to elements. It used ems so is based on parent size</p>
@@ -667,7 +768,7 @@
             </div>
        </div>
         
-        <div class="row spacer-top-3x">
+        <div id="text-align" class="row spacer-top-3x section">
             <h1>Text Align</h1>
             <hr />
             <p>Text-aligns can be set for each device size.</p>
@@ -732,7 +833,7 @@
               </table>
             </div>
         </div>
-        <div class="row spacer-top-3x">
+        <div id="el-quotes" class="row spacer-top-3x section">
             <h1>Quotes</h1>
             <hr />
             <p>Quotes from students are used extensively in this theme. Below are a number of different 
@@ -1040,7 +1141,7 @@
 
         </div> 
         
-        <div class="row spacer-top-3x">
+        <div id="el-modal" class="row spacer-top-3x section">
             <h1>Modal</h1>
             <hr />
             <p>Modals are handled by <a href="https://angular-ui.github.io/bootstrap/#/modal">angular ui bootstrap library</a></p>
@@ -1053,7 +1154,7 @@
         </div>
         
         
-        <div class="row spacer-top-3x">
+        <div id="el-accordion" class="row spacer-top-3x section">
             
             <h1>Accordion</h1>
             <hr />
@@ -1085,7 +1186,7 @@
             </div>
         </div>
         
-        <div class="row spacer-top-3x">
+        <div id="el-slider" class="row spacer-top-3x section">
             <h1>Slider Control</h1>
             <hr />
             <p>The slider use is a modified version of <a href="https://github.com/rzajac/angularjs-slider">rzslider</a> with better accessibility.
@@ -1191,7 +1292,7 @@
                 </div>
             </div>
         </div>
-        <div class="row spacer-top-3x">
+        <div id="el-charts" class="row spacer-top-3x section">
             <h1>Charts</h1>
             <hr />
             <p>Charts are displayed using <a href="http://www.chartjs.org/" title="Simple, clean and engaging charts for designers and developers">Chart.js</a> with the use of an angular wrapper library call <a href="http://jtblin.github.io/angular-chart.js/" title="Check out angular chart examples and demos">Angular Chart</a> </p>
@@ -1290,7 +1391,7 @@
             </div>
         </div>
         
-        <div class="row spacer-top-3x">
+        <div id="el-nav-circles" class="row spacer-top-3x section">
             <h1>Custom Tool Elements: Navigation Circles</h1>
             <hr />
             <p>The following are navigation designs use to in different tools. They are designed in a circle with elements absolutely positioned in a clock like format.
