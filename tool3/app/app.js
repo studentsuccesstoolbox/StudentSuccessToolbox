@@ -23,6 +23,7 @@ var sstTool3App = angular.module('sstTool3App', [require('angular-ui-bootstrap')
 
 require('./data');
 require('./controllers');
+require('./directives');
 
 /*Route Options*/
 sstTool3App.config(function($routeProvider) {

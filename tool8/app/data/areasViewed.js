@@ -66,5 +66,4 @@ areasViewedT8 =
                 colourActive : "#09a7ce",
                 colourInActive : ""
             }
-        }
-
+        };
