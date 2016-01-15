@@ -19,6 +19,7 @@ questionnaireTool1 = {
             ,'quotes' : [{
                     'studentImage' : '../assets/images/student1.jpg'
                     ,'studentQuote' : "I found completing a MOOC helped to give me a better idea of what further study might involve"
+                    ,'studentName' : "Rachel"
                 }
             ]
             ,'questions' :[{
@@ -76,9 +77,11 @@ questionnaireTool1 = {
             ,'quotes' : [{
                     'studentImage' : '../assets/images/student1.jpg'
                     ,'studentQuote' : "Having the support of my partner and family was essential to my ability to take on further study"
+                    ,'studentName' : "Rachel"
                 },{
                    'studentImage' : '../assets/images/student2.jpg'
                    ,'studentQuote' : "There were times when I needed a bit of head space away from work and household chores to concentrate on my study" 
+                   ,'studentName' : "Michael"
                 }
             ]
             ,'questions' :[{
@@ -151,9 +154,11 @@ questionnaireTool1 = {
             ,'quotes' : [{
                     'studentImage' : '../assets/images/student1.jpg'
                     ,'studentQuote' : "Having a clear goal in mind is what got me through my study especially when things got difficult"
+                    ,'studentName' : "Rachel"
                 },{
                    'studentImage' : '../assets/images/student2.jpg'
                    ,'studentQuote' : "It was really helpful calculating just how much free time I had available before committing to further study" 
+                   ,'studentName' : "Michael"
                 }
             ]
             ,'questions' :[{
@@ -226,9 +231,11 @@ questionnaireTool1 = {
             ,'quotes' : [{
                     'studentImage' : '../assets/images/student1.jpg'
                     ,'studentQuote' : "I was use to reading lots of books which I believe prepared me well for the demands of further study"
+                    ,'studentName' : "Rachel"
                 },{
                    'studentImage' : '../assets/images/student2.jpg'
                    ,'studentQuote' : "Learning how to successfully navigate myself around the library was one of the most valuable skills I learnt" 
+                   ,'studentName' : "Michael"
                 }
             ]
             ,'questions' :[{
@@ -321,9 +328,11 @@ questionnaireTool1 = {
             ,'quotes' : [{
                     'studentImage' : '../assets/images/student1.jpg'
                     ,'studentQuote' : "I found having access to a laptop computer was essential for my study"
+                    ,'studentName' : "Rachel"
                 },{
                    'studentImage' : '../assets/images/student2.jpg'
                    ,'studentQuote' : "Access to the Internet was crucial in order to successfully complete the course" 
+                   ,'studentName' : "Michael"
                 }
             ]
             ,'questions' :[{
@@ -416,9 +425,11 @@ questionnaireTool1 = {
             ,'quotes' : [{
                     'studentImage' : '../assets/images/student1.jpg'
                     ,'studentQuote' : "The key to my success was developing a study plan and working to assignment deadlines"
+                    ,'studentName' : "Michael"
                 },{
                    'studentImage' : '../assets/images/student2.jpg'
                    ,'studentQuote' : "You to rise to the challenge of learning new things and sticking with it even the work gets really difficult" 
+                   ,'studentName' : "Michael"
                 }
             ]
             ,'questions' :[{
