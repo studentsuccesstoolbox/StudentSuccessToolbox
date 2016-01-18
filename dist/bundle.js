@@ -54384,6 +54384,7 @@ questionnaireTool1 = {
             ,'quotes' : [{
                     'studentImage' : '../assets/images/student1.jpg'
                     ,'studentQuote' : "I found completing a MOOC helped to give me a better idea of what further study might involve"
+                    ,'studentName' : "Rachel"
                 }
             ]
             ,'questions' :[{
@@ -54441,9 +54442,11 @@ questionnaireTool1 = {
             ,'quotes' : [{
                     'studentImage' : '../assets/images/student1.jpg'
                     ,'studentQuote' : "Having the support of my partner and family was essential to my ability to take on further study"
+                    ,'studentName' : "Rachel"
                 },{
                    'studentImage' : '../assets/images/student2.jpg'
                    ,'studentQuote' : "There were times when I needed a bit of head space away from work and household chores to concentrate on my study" 
+                   ,'studentName' : "Michael"
                 }
             ]
             ,'questions' :[{
@@ -54516,9 +54519,11 @@ questionnaireTool1 = {
             ,'quotes' : [{
                     'studentImage' : '../assets/images/student1.jpg'
                     ,'studentQuote' : "Having a clear goal in mind is what got me through my study especially when things got difficult"
+                    ,'studentName' : "Rachel"
                 },{
                    'studentImage' : '../assets/images/student2.jpg'
                    ,'studentQuote' : "It was really helpful calculating just how much free time I had available before committing to further study" 
+                   ,'studentName' : "Michael"
                 }
             ]
             ,'questions' :[{
@@ -54591,9 +54596,11 @@ questionnaireTool1 = {
             ,'quotes' : [{
                     'studentImage' : '../assets/images/student1.jpg'
                     ,'studentQuote' : "I was use to reading lots of books which I believe prepared me well for the demands of further study"
+                    ,'studentName' : "Rachel"
                 },{
                    'studentImage' : '../assets/images/student2.jpg'
                    ,'studentQuote' : "Learning how to successfully navigate myself around the library was one of the most valuable skills I learnt" 
+                   ,'studentName' : "Michael"
                 }
             ]
             ,'questions' :[{
@@ -54686,9 +54693,11 @@ questionnaireTool1 = {
             ,'quotes' : [{
                     'studentImage' : '../assets/images/student1.jpg'
                     ,'studentQuote' : "I found having access to a laptop computer was essential for my study"
+                    ,'studentName' : "Rachel"
                 },{
                    'studentImage' : '../assets/images/student2.jpg'
                    ,'studentQuote' : "Access to the Internet was crucial in order to successfully complete the course" 
+                   ,'studentName' : "Michael"
                 }
             ]
             ,'questions' :[{
@@ -54781,9 +54790,11 @@ questionnaireTool1 = {
             ,'quotes' : [{
                     'studentImage' : '../assets/images/student1.jpg'
                     ,'studentQuote' : "The key to my success was developing a study plan and working to assignment deadlines"
+                    ,'studentName' : "Michael"
                 },{
                    'studentImage' : '../assets/images/student2.jpg'
                    ,'studentQuote' : "You to rise to the challenge of learning new things and sticking with it even the work gets really difficult" 
+                   ,'studentName' : "Michael"
                 }
             ]
             ,'questions' :[{
@@ -59075,7 +59086,7 @@ angular.module('sstTool8App').controller('tool8Controller', ["$scope", "$routePa
         var startPostionY = 40;
         
         for (var key in tool8Questionnaire) {
-            if (tool8Questionnaire.hasOwnProperty(key)) {
+            if (tool8Questionnaire.hasOwnProperty(key) && key !== 'your_online_orientation') {
                 var section = tool8Questionnaire[key];
                 
                 // Section Header
@@ -60421,12 +60432,60 @@ angular.module('sstTool8App')
             $scope.answer = function(question, option){
                 if($scope.tools && option.value === 'yes'){
                     if($scope.toolSelected(question.toolid) === false){
-                            $scope.openConfirmToolModal(question);
+                        var toolQuestions = [];
+                        for(var i = 0; i < question.toolid.length; i++){
+                            toolQuestions.push($scope.getToolQuestionById(question.toolid[i]));
+                        }
+                        
+                        $.each(toolQuestions,function(key,toolQuestion){
+                            toolQuestion.selected = toolQuestion.options[0];
+                            toolQuestion['response'] = toolQuestion.options[0].value;
+                        });
+                        //$scope.openConfirmToolModal(question);
+                    }
+                }else if($scope.tools && option.value === 'no'){
+                    if($scope.toolSelected(question.toolid) === true){
+                        var toolQuestions = [];
+                        for(var i = 0; i < question.toolid.length; i++){
+                            toolQuestions.push($scope.getToolQuestionById(question.toolid[i]));
+                        }
+                         $.each(toolQuestions,function(key,toolQuestion){
+                            // console.log(toolQuestion);
+                            if($scope.checkifToolIsSelectedInAnyQuestion(toolQuestion) === false){
+                                toolQuestion.selected = toolQuestion.options[1];
+                                toolQuestion['response'] = toolQuestion.options[1].value;
+                            }
+                        });
                     }
                 }
-
                 question['response'] = option.value;
                 question['selected'] = option;
+            };
+            
+            /**
+             * Checks if any of the questions has an answer yes for a toolid
+             * Used to check if the tool should be set to "no"
+             * 
+             * @param object toolQuestion
+             * @returns {Boolean}
+             */
+            $scope.checkifToolIsSelectedInAnyQuestion = function(toolQuestion){
+                 for (var key in tool8Questionnaire) {
+                    if (tool8Questionnaire.hasOwnProperty(key)) {
+                        var section = tool8Questionnaire[key];
+                        for (var i = 0; i < section.questions.length; i++) {
+                            var question = section.questions[i];
+                            if(question.toolid && (question.toolid.indexOf(toolQuestion.id) >= 0)){
+                                if(question.selected){
+                                    if(question.selected.value == 'yes'){
+                                        return true;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                return false;
             };
     
             $scope.toolSelected = function(toolIds){

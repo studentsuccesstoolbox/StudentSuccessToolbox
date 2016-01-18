@@ -30,12 +30,60 @@ angular.module('sstTool8App')
             $scope.answer = function(question, option){
                 if($scope.tools && option.value === 'yes'){
                     if($scope.toolSelected(question.toolid) === false){
-                            $scope.openConfirmToolModal(question);
+                        var toolQuestions = [];
+                        for(var i = 0; i < question.toolid.length; i++){
+                            toolQuestions.push($scope.getToolQuestionById(question.toolid[i]));
+                        }
+                        
+                        $.each(toolQuestions,function(key,toolQuestion){
+                            toolQuestion.selected = toolQuestion.options[0];
+                            toolQuestion['response'] = toolQuestion.options[0].value;
+                        });
+                        //$scope.openConfirmToolModal(question);
+                    }
+                }else if($scope.tools && option.value === 'no'){
+                    if($scope.toolSelected(question.toolid) === true){
+                        var toolQuestions = [];
+                        for(var i = 0; i < question.toolid.length; i++){
+                            toolQuestions.push($scope.getToolQuestionById(question.toolid[i]));
+                        }
+                         $.each(toolQuestions,function(key,toolQuestion){
+                            // console.log(toolQuestion);
+                            if($scope.checkifToolIsSelectedInAnyQuestion(toolQuestion) === false){
+                                toolQuestion.selected = toolQuestion.options[1];
+                                toolQuestion['response'] = toolQuestion.options[1].value;
+                            }
+                        });
                     }
                 }
-
                 question['response'] = option.value;
                 question['selected'] = option;
+            };
+            
+            /**
+             * Checks if any of the questions has an answer yes for a toolid
+             * Used to check if the tool should be set to "no"
+             * 
+             * @param object toolQuestion
+             * @returns {Boolean}
+             */
+            $scope.checkifToolIsSelectedInAnyQuestion = function(toolQuestion){
+                 for (var key in tool8Questionnaire) {
+                    if (tool8Questionnaire.hasOwnProperty(key)) {
+                        var section = tool8Questionnaire[key];
+                        for (var i = 0; i < section.questions.length; i++) {
+                            var question = section.questions[i];
+                            if(question.toolid && (question.toolid.indexOf(toolQuestion.id) >= 0)){
+                                if(question.selected){
+                                    if(question.selected.value == 'yes'){
+                                        return true;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                return false;
             };
     
             $scope.toolSelected = function(toolIds){

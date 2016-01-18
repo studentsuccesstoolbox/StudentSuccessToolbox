@@ -57,7 +57,7 @@ angular.module('sstTool8App').controller('tool8Controller', function ($scope, $r
         var startPostionY = 40;
         
         for (var key in tool8Questionnaire) {
-            if (tool8Questionnaire.hasOwnProperty(key)) {
+            if (tool8Questionnaire.hasOwnProperty(key) && key !== 'your_online_orientation') {
                 var section = tool8Questionnaire[key];
                 
                 // Section Header
