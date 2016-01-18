@@ -59166,8 +59166,57 @@ angular.module('sstTool8App').controller('tool8Controller', ["$scope", "$routePa
    
             }
           }
+          
+       // Your tools section
+        var section = tool8Questionnaire['your_online_orientation'];
 
+        // Section Header
+        //doc.setFontSize(22);
+        //doc.setTextColor(8,167,205); //#08a7cd
+        //doc.text((margin+10), startPostionY+5, section.label);
+        startPostionY += 5;
         
+        // Section Text
+        doc.setFontSize(14);
+        doc.setTextColor(8,167,205); //#08a7cd
+        doc.text((margin), startPostionY+5, "Based on your chosen approaches we suggest that you will need the following tools:");
+        startPostionY += 15;
+
+        if(startPostionY > (297 - margin)){
+            doc.addPage();
+            startPostionY = margin;
+        }
+
+        //Section questions feedback
+        doc.setTextColor(73,73,73);
+        var questionLineWidth = 7;
+        for (var i = 0; i < section.questions.length; i++) {
+
+            if(section.questions[i].selected && section.questions[i].selected.value === 'yes'){
+                var answerLines = doc.setFontSize(12).splitTextToSize(section.questions[i].questionSmall, (170 - ((margin*2)+10)));
+
+                var qh = (questionLineWidth * answerLines.length);
+                var nextPostionY = startPostionY +(qh);
+                if(nextPostionY > 297 - margin){
+                    doc.addPage();
+                    startPostionY = margin;
+                    nextPostionY = startPostionY +(qh);
+                }
+                if(i % 2 == 0){
+                    // Summary Container
+                    doc.setDrawColor(232,232,232);
+                    doc.setFillColor(238, 238, 238);
+                    doc.roundedRect(margin, startPostionY -5, (210 - (margin*2)), (qh), 2, 2, 'FD');
+                }
+
+                //Question Text
+                doc.text((margin+5), startPostionY, answerLines);
+                
+
+                startPostionY += qh; 
+            }
+
+        }
 
         doc.save('review_your_online_orientation_plan.pdf');
     };
