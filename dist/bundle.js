@@ -55935,56 +55935,56 @@ sstTool3App.config(["$routeProvider", function($routeProvider) {
     	})
         //Friends
         .when('/hub/friends/', {
-    		templateUrl: 'app/views/templates/friends/support.html',
+    		templateUrl: 'app/views/templates/friends/help.html',
                 controller: 'defaultController'
     	})
-        .when('/hub/friends/how-can-they-help/', {
-    		templateUrl: 'app/views/templates/friends/how-can-they-help.html',
+        .when('/hub/friends/support/', {
+    		templateUrl: 'app/views/templates/friends/support.html',
                 controller: 'defaultController'
     	})
         //Family
         .when('/hub/family/', {
-    		templateUrl: 'app/views/templates/family/support.html',
+    		templateUrl: 'app/views/templates/family/help.html',
                 controller: 'defaultController'
     	})
-        .when('/hub/family/how-can-they-help/', {
-    		templateUrl: 'app/views/templates/family/how-can-they-help.html',
+        .when('/hub/family/support/', {
+    		templateUrl: 'app/views/templates/family/support.html',
                 controller: 'defaultController'
     	})
         //Employer
         .when('/hub/employer/', {
-    		templateUrl: 'app/views/templates/employer/support.html',
+    		templateUrl: 'app/views/templates/employer/help.html',
                 controller: 'defaultController'
     	})
-        .when('/hub/employer/how-can-they-help/', {
-    		templateUrl: 'app/views/templates/employer/how-can-they-help.html',
+        .when('/hub/employer/support/', {
+    		templateUrl: 'app/views/templates/employer/support.html',
                 controller: 'defaultController'
     	})
         //University
         .when('/hub/university/', {
-    		templateUrl: 'app/views/templates/university/support.html',
+    		templateUrl: 'app/views/templates/university/help.html',
                 controller: 'defaultController'
     	})
-        .when('/hub/university/how-can-they-help/', {
-    		templateUrl: 'app/views/templates/university/how-can-they-help.html',
+        .when('/hub/university/support/', {
+    		templateUrl: 'app/views/templates/university/support.html',
                 controller: 'defaultController'
     	})
          //Other Students
         .when('/hub/other-students/', {
-    		templateUrl: 'app/views/templates/other-students/support.html',
+    		templateUrl: 'app/views/templates/other-students/help.html',
                 controller: 'defaultController'
     	})
-        .when('/hub/other-students/how-can-they-help/', {
-    		templateUrl: 'app/views/templates/other-students/how-can-they-help.html',
+        .when('/hub/other-students/support/', {
+    		templateUrl: 'app/views/templates/other-students/support.html',
                 controller: 'defaultController'
     	})
         //Others
         .when('/hub/others/', {
-    		templateUrl: 'app/views/templates/others/support.html',
+    		templateUrl: 'app/views/templates/others/help.html',
                 controller: 'defaultController'
     	})
-        .when('/hub/others/how-can-they-help/', {
-    		templateUrl: 'app/views/templates/others/how-can-they-help.html',
+        .when('/hub/others/support/', {
+    		templateUrl: 'app/views/templates/others/support.html',
                 controller: 'defaultController'
     	})
         //Don't want to ask
@@ -56011,6 +56011,10 @@ sstTool3App.config(["$routeProvider", function($routeProvider) {
         .when('/hub/questions/', {
     		templateUrl: 'app/views/templates/questions.html',
                 controller: 'questionsController'
+    	})
+        .when('/finished/', {
+    		templateUrl: 'app/views/templates/finished.html',
+                controller: 'defaultController'
     	})
         ;
 }]).run( ["$rootScope", "$location", function($rootScope, $location) {
