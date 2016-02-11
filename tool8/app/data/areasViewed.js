@@ -17,6 +17,13 @@
 
 areasViewedT8 =
         {
+            "start": {
+                val: "",
+                viewed: false,
+                title: "Start",
+                colourActive : "#09a7ce",
+                //colourInActive : "#ff0"
+            },
             "reduceanxiety": {
                 val: "reduce-anxiety",
                 viewed: false,
@@ -56,13 +63,6 @@ areasViewedT8 =
                 val: "study-skills",
                 viewed: false,
                 title: "Study Skills",
-                colourActive : "#09a7ce",
-                colourInActive : ""
-            },
-            "full-summary": {
-                val: "online-orientation-summary",
-                viewed: false,
-                title: "Summary",
                 colourActive : "#09a7ce",
                 colourInActive : ""
             }

@@ -59313,6 +59313,13 @@ angular.module('sstTool8App').controller('tool8Controller', ["$scope", "$routePa
 
 areasViewedT8 =
         {
+            "start": {
+                val: "",
+                viewed: false,
+                title: "Start",
+                colourActive : "#09a7ce",
+                //colourInActive : "#ff0"
+            },
             "reduceanxiety": {
                 val: "reduce-anxiety",
                 viewed: false,
@@ -59354,14 +59361,14 @@ areasViewedT8 =
                 title: "Study Skills",
                 colourActive : "#09a7ce",
                 colourInActive : ""
-            },
-            "full-summary": {
-                val: "online-orientation-summary",
-                viewed: false,
-                title: "Summary",
-                colourActive : "#09a7ce",
-                colourInActive : ""
-            }
+            }//,
+            //"full-summary": {
+            //    val: "online-orientation-summary",
+            //    viewed: false,
+            //    title: "Summary",
+            //    colourActive : "#09a7ce",
+            //    colourInActive : ""
+            //}
         };
 },{}],94:[function(require,module,exports){
 /* 
