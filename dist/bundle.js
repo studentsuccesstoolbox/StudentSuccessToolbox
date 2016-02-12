@@ -56273,6 +56273,13 @@ areasViewed = {
             };
        
 areasViewedT3 = {
+            "start": {
+                val: "",
+                viewed: false,
+                title: "Start",
+                colourActive : "#f9a029",
+                //colourInActive : "#ff0"
+            },
             "friends": {
                 val: "friends",
                 viewed: false,
