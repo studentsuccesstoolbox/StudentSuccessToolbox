@@ -24,18 +24,17 @@
            margin: 0 auto;
            width: 380px;
            float: none; 
-           padding-top: 40px;
+           padding-top: 30px;
+           padding-left: 40px;
         }
 
         .line{
-           color: #3873b6;
-           font-size: 3.4em;
-           font-weight: 600;
+           color: #08a7cd;
+           font-size: 45px;
+           font-weight: normal;
            letter-spacing: -3px;
            line-height: 1em;
            margin: 0;
-           transform: scale(1, 1.1);
-           text-shadow: 2px 2px #f2f2f2;
            display:block;
         }
 
@@ -43,11 +42,13 @@
 
         }
         .line2{
-            margin-left: -25px;
+            margin-left: 25px;
+            font-size: 85px;
+            text-transform: uppercase; 
         }
 
         .line3{
-             margin-left: 105px;
+            font-size: 85px; 
         }
     }
     &.tool1{
@@ -60,12 +61,12 @@
         background: url("../images/header.jpg") no-repeat scroll 0 0;
     }
     &.tool4{
-        background: url("../images/header-tool4.jpg") no-repeat scroll 0 0;
+        background: url("../images/header-tool8.jpg") no-repeat scroll 0 0;
     }
     &.tool5{
-        background: url("../images/header-tool5.jpg") no-repeat scroll 0 0;
+        background: url("../images/header-tool8.jpg") no-repeat scroll 0 0;
     }
-    &.too8{
+    &.tool8{
         background: url("../images/header-tool8.png") no-repeat scroll 0 0;
     }
 }
