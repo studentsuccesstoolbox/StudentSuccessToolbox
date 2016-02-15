@@ -11,9 +11,9 @@ angular.module('sstTool2App').controller('interpretController', function($scope,
 
     calculateFreeTimeService.calculateTime($scope);
     
-    for(var i = 0; i < interpretFeedback.length; i++){
-        if($scope.freeTime >= interpretFeedback[i].greaterThen){
-            $scope.interpretFeedback = interpretFeedback[i];
+    for(var i = 0; i < tool2InterpretFeedback.length; i++){
+        if($scope.freeTime >= tool2InterpretFeedback[i].greaterThen){
+            $scope.tool2InterpretFeedback = tool2InterpretFeedback[i];
         }
     }
 });

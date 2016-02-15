@@ -54234,7 +54234,7 @@ angular.module('sstTool1App').controller('resultsController', ["$scope", "naviga
         doc.addImage(imgData, 'PNG', margin, 40, (125 - margin), 60);
         
         //Summary Response Text
-        var text = $scope.interpretFeedback.narratorFeedback;
+        var text = $scope.interpretFeedback.narratorFeedback.replace(/(<([^>]+)>)/ig,"");
         var lines = doc.setFontSize(12).splitTextToSize(text, (75 - margin));
         
         // Summary Container
@@ -54355,7 +54355,7 @@ interpretFeedback = [{
               ,'narratorFeedback' : "You have something to think about! In some areas you’re reasonably well placed to take on the challenge of further study but you could do more to enhance your readiness. Explore the resource links on this page and review all of your responses to see where you could enhance your ability to succeed before taking the next step. It may even be better to defer your study plans until your personal circumstances change. But don’t give up on the idea and talk to someone at your preferred institution if you want further advice."
             },{
               'greaterThen': 70
-              ,'narratorFeedback' : "Congratulations! You appear to be well placed to take on the challenge of further study. You may like to explore the resource links on this page and review all of your responses to see if there are any opportunities to enhance your readiness and ability to succeed before taking the next step of registering for a specific programme of study. Best wishes for the future."
+              ,'narratorFeedback' : "<span class='heading-text-big'>Congratulations!</span> You appear to be well placed to take on the challenge of further study. You may like to explore the resource links on this page and review all of your responses to see if there are any opportunities to enhance your readiness and ability to succeed before taking the next step of registering for a specific programme of study. Best wishes for the future."
             }
             
 ];
@@ -55353,9 +55353,9 @@ angular.module('sstTool2App').controller('interpretController', ["$scope", "calc
 
     calculateFreeTimeService.calculateTime($scope);
     
-    for(var i = 0; i < interpretFeedback.length; i++){
-        if($scope.freeTime >= interpretFeedback[i].greaterThen){
-            $scope.interpretFeedback = interpretFeedback[i];
+    for(var i = 0; i < tool2InterpretFeedback.length; i++){
+        if($scope.freeTime >= tool2InterpretFeedback[i].greaterThen){
+            $scope.tool2InterpretFeedback = tool2InterpretFeedback[i];
         }
     }
 }]);
@@ -55507,7 +55507,7 @@ require('./tool2Rating');
  * @author Paul Schweppe
  */
 
-interpretFeedback = [{
+tool2InterpretFeedback = [{
               'greaterThen': 0
               ,'studentImage1' : '../assets/images/student1.jpg'
               ,'studentQuote1' : "You have to be realistic and I only came back to study after giving up some of my other commitments"
