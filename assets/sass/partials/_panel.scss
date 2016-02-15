@@ -4,12 +4,26 @@
 }*/
 
 .activity-panel{
-    background-image: url('../images/text-icons.jpg');
+    background-image: url("../images/hands-icon.jpg");
     background-repeat: no-repeat;
-    background-position: bottom right;
-    min-height: 145px;
+    background-position: 95% 100%;
+    min-height: 120px;
+    background-size: 140px;
     
      p{
+        font-size: 1.5em;
+    } 
+}
+
+.support-panel {
+
+    background-image: url("../images/hands-icon.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: contain;
+    min-height: 100px;
+    
+    p{
         font-size: 1.5em;
     } 
 }
