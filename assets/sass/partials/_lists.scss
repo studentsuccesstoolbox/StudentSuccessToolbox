@@ -111,3 +111,24 @@ ul.link-list {
         @include vertical-align();
     }
 }
+
+ul{
+    &.green li>a{
+        color: #a5b638
+    }
+    &.red li>a{
+        color: #c87676
+    }
+    &.tangerine li>a{
+        color: #38b6b2
+    }
+    &.orange li>a{
+        color: #f9a029
+    }
+    &.dark-blue li>a{
+        color: #3873b6
+    }
+    &.light-blue li>a{
+        color: #08a7cd
+    }
+}

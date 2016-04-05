@@ -17,6 +17,13 @@
 
 areasViewedT8 =
         {
+            "start": {
+                val: "",
+                viewed: false,
+                title: "Start",
+                colourActive : "#09a7ce",
+                //colourInActive : "#ff0"
+            },
             "reduceanxiety": {
                 val: "reduce-anxiety",
                 viewed: false,
@@ -31,7 +38,7 @@ areasViewedT8 =
                 colourActive : "#c77675",
                 //colourInActive : "#f0f"
             },
-            "positive-role-model": {
+            "positiverolemodel": {
                 val: "positive-role-model",
                 viewed: false,
                 title: "Positive Role Model",
@@ -45,24 +52,17 @@ areasViewedT8 =
                 colourActive : "#f9a02a",
                 //colourInActive : "#f00"
             },
-            "campus-tour" :{
+            "campustour" :{
                 val: "campus-tour",
                 viewed: false,
                 title: "Campus Tour",
                 colourActive : "#3873b7",
                 //colourInActive : ""
             },
-            "study-skills": {
+            "studyskills": {
                 val: "study-skills",
                 viewed: false,
                 title: "Study Skills",
-                colourActive : "#09a7ce",
-                colourInActive : ""
-            },
-            "full-summary": {
-                val: "online-orientation-summary",
-                viewed: false,
-                title: "Summary",
                 colourActive : "#09a7ce",
                 colourInActive : ""
             }
