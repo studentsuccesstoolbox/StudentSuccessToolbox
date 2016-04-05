@@ -54234,7 +54234,7 @@ angular.module('sstTool1App').controller('resultsController', ["$scope", "naviga
         doc.addImage(imgData, 'PNG', margin, 40, (125 - margin), 60);
         
         //Summary Response Text
-        var text = $scope.interpretFeedback.narratorFeedback;
+        var text = $scope.interpretFeedback.narratorFeedback.replace(/(<([^>]+)>)/ig,"");
         var lines = doc.setFontSize(12).splitTextToSize(text, (75 - margin));
         
         // Summary Container
@@ -54355,7 +54355,7 @@ interpretFeedback = [{
               ,'narratorFeedback' : "You have something to think about! In some areas you’re reasonably well placed to take on the challenge of further study but you could do more to enhance your readiness. Explore the resource links on this page and review all of your responses to see where you could enhance your ability to succeed before taking the next step. It may even be better to defer your study plans until your personal circumstances change. But don’t give up on the idea and talk to someone at your preferred institution if you want further advice."
             },{
               'greaterThen': 70
-              ,'narratorFeedback' : "Congratulations! You appear to be well placed to take on the challenge of further study. You may like to explore the resource links on this page and review all of your responses to see if there are any opportunities to enhance your readiness and ability to succeed before taking the next step of registering for a specific programme of study. Best wishes for the future."
+              ,'narratorFeedback' : "<span class='heading-text-big'>Congratulations!</span> You appear to be well placed to take on the challenge of further study. You may like to explore the resource links on this page and review all of your responses to see if there are any opportunities to enhance your readiness and ability to succeed before taking the next step of registering for a specific programme of study. Best wishes for the future."
             }
             
 ];
@@ -55353,9 +55353,9 @@ angular.module('sstTool2App').controller('interpretController', ["$scope", "calc
 
     calculateFreeTimeService.calculateTime($scope);
     
-    for(var i = 0; i < interpretFeedback.length; i++){
-        if($scope.freeTime >= interpretFeedback[i].greaterThen){
-            $scope.interpretFeedback = interpretFeedback[i];
+    for(var i = 0; i < tool2InterpretFeedback.length; i++){
+        if($scope.freeTime >= tool2InterpretFeedback[i].greaterThen){
+            $scope.tool2InterpretFeedback = tool2InterpretFeedback[i];
         }
     }
 }]);
@@ -55507,7 +55507,7 @@ require('./tool2Rating');
  * @author Paul Schweppe
  */
 
-interpretFeedback = [{
+tool2InterpretFeedback = [{
               'greaterThen': 0
               ,'studentImage1' : '../assets/images/student1.jpg'
               ,'studentQuote1' : "You have to be realistic and I only came back to study after giving up some of my other commitments"
@@ -55935,56 +55935,56 @@ sstTool3App.config(["$routeProvider", function($routeProvider) {
     	})
         //Friends
         .when('/hub/friends/', {
-    		templateUrl: 'app/views/templates/friends/support.html',
+    		templateUrl: 'app/views/templates/friends/help.html',
                 controller: 'defaultController'
     	})
-        .when('/hub/friends/how-can-they-help/', {
-    		templateUrl: 'app/views/templates/friends/how-can-they-help.html',
+        .when('/hub/friends/support/', {
+    		templateUrl: 'app/views/templates/friends/support.html',
                 controller: 'defaultController'
     	})
         //Family
         .when('/hub/family/', {
-    		templateUrl: 'app/views/templates/family/support.html',
+    		templateUrl: 'app/views/templates/family/help.html',
                 controller: 'defaultController'
     	})
-        .when('/hub/family/how-can-they-help/', {
-    		templateUrl: 'app/views/templates/family/how-can-they-help.html',
+        .when('/hub/family/support/', {
+    		templateUrl: 'app/views/templates/family/support.html',
                 controller: 'defaultController'
     	})
         //Employer
         .when('/hub/employer/', {
-    		templateUrl: 'app/views/templates/employer/support.html',
+    		templateUrl: 'app/views/templates/employer/help.html',
                 controller: 'defaultController'
     	})
-        .when('/hub/employer/how-can-they-help/', {
-    		templateUrl: 'app/views/templates/employer/how-can-they-help.html',
+        .when('/hub/employer/support/', {
+    		templateUrl: 'app/views/templates/employer/support.html',
                 controller: 'defaultController'
     	})
         //University
         .when('/hub/university/', {
-    		templateUrl: 'app/views/templates/university/support.html',
+    		templateUrl: 'app/views/templates/university/help.html',
                 controller: 'defaultController'
     	})
-        .when('/hub/university/how-can-they-help/', {
-    		templateUrl: 'app/views/templates/university/how-can-they-help.html',
+        .when('/hub/university/support/', {
+    		templateUrl: 'app/views/templates/university/support.html',
                 controller: 'defaultController'
     	})
          //Other Students
         .when('/hub/other-students/', {
-    		templateUrl: 'app/views/templates/other-students/support.html',
+    		templateUrl: 'app/views/templates/other-students/help.html',
                 controller: 'defaultController'
     	})
-        .when('/hub/other-students/how-can-they-help/', {
-    		templateUrl: 'app/views/templates/other-students/how-can-they-help.html',
+        .when('/hub/other-students/support/', {
+    		templateUrl: 'app/views/templates/other-students/support.html',
                 controller: 'defaultController'
     	})
         //Others
         .when('/hub/others/', {
-    		templateUrl: 'app/views/templates/others/support.html',
+    		templateUrl: 'app/views/templates/others/help.html',
                 controller: 'defaultController'
     	})
-        .when('/hub/others/how-can-they-help/', {
-    		templateUrl: 'app/views/templates/others/how-can-they-help.html',
+        .when('/hub/others/support/', {
+    		templateUrl: 'app/views/templates/others/support.html',
                 controller: 'defaultController'
     	})
         //Don't want to ask
@@ -56011,6 +56011,10 @@ sstTool3App.config(["$routeProvider", function($routeProvider) {
         .when('/hub/questions/', {
     		templateUrl: 'app/views/templates/questions.html',
                 controller: 'questionsController'
+    	})
+        .when('/finished/', {
+    		templateUrl: 'app/views/templates/finished.html',
+                controller: 'defaultController'
     	})
         ;
 }]).run( ["$rootScope", "$location", function($rootScope, $location) {
@@ -56269,6 +56273,13 @@ areasViewed = {
             };
        
 areasViewedT3 = {
+            "start": {
+                val: "",
+                viewed: false,
+                title: "Start",
+                colourActive : "#f9a029",
+                //colourInActive : "#ff0"
+            },
             "friends": {
                 val: "friends",
                 viewed: false,
@@ -59309,6 +59320,13 @@ angular.module('sstTool8App').controller('tool8Controller', ["$scope", "$routePa
 
 areasViewedT8 =
         {
+            "start": {
+                val: "",
+                viewed: false,
+                title: "Start",
+                colourActive : "#09a7ce",
+                //colourInActive : "#ff0"
+            },
             "reduceanxiety": {
                 val: "reduce-anxiety",
                 viewed: false,
@@ -59323,7 +59341,7 @@ areasViewedT8 =
                 colourActive : "#c77675",
                 //colourInActive : "#f0f"
             },
-            "positive-role-model": {
+            "positiverolemodel": {
                 val: "positive-role-model",
                 viewed: false,
                 title: "Positive Role Model",
@@ -59337,24 +59355,17 @@ areasViewedT8 =
                 colourActive : "#f9a02a",
                 //colourInActive : "#f00"
             },
-            "campus-tour" :{
+            "campustour" :{
                 val: "campus-tour",
                 viewed: false,
                 title: "Campus Tour",
                 colourActive : "#3873b7",
                 //colourInActive : ""
             },
-            "study-skills": {
+            "studyskills": {
                 val: "study-skills",
                 viewed: false,
                 title: "Study Skills",
-                colourActive : "#09a7ce",
-                colourInActive : ""
-            },
-            "full-summary": {
-                val: "online-orientation-summary",
-                viewed: false,
-                title: "Summary",
                 colourActive : "#09a7ce",
                 colourInActive : ""
             }

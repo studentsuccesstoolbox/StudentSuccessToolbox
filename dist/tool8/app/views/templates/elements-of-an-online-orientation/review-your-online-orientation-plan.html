@@ -16,16 +16,10 @@
         </div>
     </div>
     
-    <ng-include src="'app/views/partials/widgets/yourToolsOffCanvas.html'"></ng-include>
     
     <div class="row spacer-top">
         <div class="col-xs-12 text-center">
             <h2 class="nopadding">What approach(es) will you include?</h2>
-        </div>
-        <div class="col-xs-12">
-            <button data-toggle="offcanvas" data-target=".navmenu" data-canvas="body" aria-label="Toggle slider show hide" class="btn btn-link ft-size-1_8x primary">
-                <span class="hl-secondary"><i class="fa fa-wrench"></i>Your Tools</span>
-            </button>
         </div>
     </div>
     
@@ -56,6 +50,42 @@
                     <online-orientation data="questionnaireTool8.online_orientation_studyskills" tools="questionnaireTool8.your_online_orientation" questionId="studyskills"></online-orientation>
                 </accordion-group >
             </accordion>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-xs-12 col-md-10 col-md-offset-1 spacer-xs-top-2x">
+            <div class="panel panel-tip"> 
+                <div class="panel-header row">
+                    <div class="col-xs-12 col-sm-11 col-md-12 nopadding">
+                        <h4 class="text-center">Based on your chosen approaches we suggest that you will need the following tools:</h4>
+                    </div> 
+                </div>
+                <div class="col-sm-12 col-lg-12 panel-body panel-body-spacer">
+                    <ul class="custom-list list-unstyled">
+                        <li ng-repeat="toolQuestions in questionnaireTool8.your_online_orientation.questions track by $index" ng-if="toolQuestions.response=='yes'">
+                            <i class="fa fa-angle-right"></i> {{toolQuestions.questionSmall}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-10 col-md-offset-1 spacer-xs-top-3x">
+            <div class="panel panel-info">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-1 text-center nopadding">
+                            <i class="fa fa-info fa-3x"></i>
+                        </div>
+                        <div class="col-xs-11">
+                            <p>Click on <a  ng-click="print()">DOWNLOAD</a> for a PDF document containing an overall summary of your online orientation plan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </div>
 

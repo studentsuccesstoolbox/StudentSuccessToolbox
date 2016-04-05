@@ -79,7 +79,7 @@ angular.module('sstTool1App').controller('resultsController', function($scope,na
         doc.addImage(imgData, 'PNG', margin, 40, (125 - margin), 60);
         
         //Summary Response Text
-        var text = $scope.interpretFeedback.narratorFeedback;
+        var text = $scope.interpretFeedback.narratorFeedback.replace(/(<([^>]+)>)/ig,"");
         var lines = doc.setFontSize(12).splitTextToSize(text, (75 - margin));
         
         // Summary Container

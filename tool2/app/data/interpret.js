@@ -12,7 +12,7 @@
  * @author Paul Schweppe
  */
 
-interpretFeedback = [{
+tool2InterpretFeedback = [{
               'greaterThen': 0
               ,'studentImage1' : '../assets/images/student1.jpg'
               ,'studentQuote1' : "You have to be realistic and I only came back to study after giving up some of my other commitments"

@@ -20,7 +20,7 @@ interpretFeedback = [{
               ,'narratorFeedback' : "You have something to think about! In some areas you’re reasonably well placed to take on the challenge of further study but you could do more to enhance your readiness. Explore the resource links on this page and review all of your responses to see where you could enhance your ability to succeed before taking the next step. It may even be better to defer your study plans until your personal circumstances change. But don’t give up on the idea and talk to someone at your preferred institution if you want further advice."
             },{
               'greaterThen': 70
-              ,'narratorFeedback' : "Congratulations! You appear to be well placed to take on the challenge of further study. You may like to explore the resource links on this page and review all of your responses to see if there are any opportunities to enhance your readiness and ability to succeed before taking the next step of registering for a specific programme of study. Best wishes for the future."
+              ,'narratorFeedback' : "<span class='heading-text-big'>Congratulations!</span> You appear to be well placed to take on the challenge of further study. You may like to explore the resource links on this page and review all of your responses to see if there are any opportunities to enhance your readiness and ability to succeed before taking the next step of registering for a specific programme of study. Best wishes for the future."
             }
             
 ];
