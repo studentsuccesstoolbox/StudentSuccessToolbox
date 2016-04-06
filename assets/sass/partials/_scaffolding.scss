@@ -166,6 +166,12 @@ h4 {
     box-shadow: 0 0 0 3px #e5e5e5;
 }
 
+//** Box border around image
+.img-box {
+    border: 3px solid $font-color-dark-bg;
+    box-shadow: 0 0 0 3px #e5e5e5;
+}
+
 .highlight-word {
     font-size: 1.4em;
     font-weight: 600;

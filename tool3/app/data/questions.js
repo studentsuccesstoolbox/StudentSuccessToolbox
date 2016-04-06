@@ -62,7 +62,7 @@ questions = [{
             }
         }
     },{
-        question: 'I have no idea how to go about writing an assignment.'
+        question: 'I have no idea how to go about writing an assignment'
         ,answers: {
             friends: {
                 header:'Friends'
@@ -90,7 +90,7 @@ questions = [{
             }
         }
     },{
-        question: 'My assignment is due next week and I’m not sure what I’ve written is ok.'
+        question: 'My assignment is due next week and I’m not sure what I’ve written is ok'
         ,answers: {
             friends: {
                 header:'Friends'
@@ -118,7 +118,7 @@ questions = [{
             }
         }
     },{
-        question: 'I have to work overtime unexpectedly so I just won’t get my assignment done on time.'
+        question: 'I have to work overtime unexpectedly so I just won’t get my assignment done on time'
         ,answers: {
             friends: {
                 header:'Friends'
