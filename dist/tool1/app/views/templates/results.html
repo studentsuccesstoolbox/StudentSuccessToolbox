@@ -1,0 +1,86 @@
+
+<div class="container shadow">
+    <div class="row row spacer-top-3x">
+        <div class="col-md-12">
+            <ul class="section-nav feedback">
+                <li ng-repeat="section in questionnaire track by $index" ng-class="{'active':$index == currentSectionIndex}" ng-style="{'width':sectionWidth}">
+                    <span class='title' ng-click="jumpTo($index)">{{section.label}}</span>
+                    <span class='connector-line'>&nbsp;</span>
+                    <span class='connector' ng-click="jumpTo($index)">&nbsp;</span>
+                </li>
+                <li class="final active" ng-style="{'width':sectionWidth}">
+                    <span class='title'>Overall Readiness</span>
+                    <span class='connector-final'>&nbsp;
+                        <i class='fa fa-check-circle-o'></i>
+                    </span>                    
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row spacer-top-2x">
+        <div class="col-md-offset-2 col-md-8">
+            <div class="q-head active">
+                 <span class="icon-badge active ">
+                    <i class="fa fa-graduation-cap fa-3x fa-fw"></i>
+                </span>
+                <h2 class="nopadding text-center">Overall readiness</h2>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row spacer-top-3x">
+        <div class="col-xs-12">
+            <p class="heading-text">
+                <span class="heading-text-big">Here</span> is an overall summary of your results. You can read this summary and <strong>all</strong> of your feedback by hitting on the <strong>DOWNLOAD</strong> button. Please give us your feedback on the usefulness of this tool by clicking on the <strong>RATE</strong> button. 
+            </p> 
+        </div>
+    </div>
+   <div class="row spacer-top-3x">
+	 <div class="col-md-7 nopadding">  
+		<canvas id="radar" class="chart chart-radar" chart-data="chartData" chart-labels="chartlabels" chart-colours="chartColours"></canvas> 
+	 </div>
+	 <div class="col-md-5 spacer-xs-top-3x spacer-md-top-0"> 
+		 <div class="panel panel-details summary">
+                    <div class="panel-heading">
+                       <h4>Summary</h4>
+                    </div>
+                    <div class="panel-body" ng-bind-html="interpretFeedback.narratorFeedback">
+                       
+                    </div>
+		 </div>
+	 </div> 
+   </div>
+    <div class="row spacer-top-3x">
+        <div class="col-md-12">
+
+            <div class="panel panel-tip"> 
+                <div class="panel-header row">
+                    <div class="col-xs-12 col-sm-11 col-md-12 nopadding">
+                        <h3 class="text-center">Useful Resources</h3>
+                    </div> 
+                </div>
+                <div class="col-sm-12 col-lg-12 panel-body panel-body-spacer">
+                    <p>Here are some links to useful resources that will help you "Get Ready to Study".</p>
+                    <ul class="custom-list list-unstyled">
+                        <li><a href="" title=""><i class="fa fa-angle-right"></i> Resource link here</a> Resource description here.</li>
+                        <li><a href="" title=""><i class="fa fa-angle-right"></i> Resource link here</a> Resource description here.</li>
+                        <li><a href="" title=""><i class="fa fa-angle-right"></i> Resource link here</a> Resource description here.</li>
+                        <li><a href="" title=""><i class="fa fa-angle-right"></i> Resource link here</a> Resource description here.</li>
+                        <li><a href="" title=""><i class="fa fa-angle-right"></i> Resource link here</a> Resource description here.</li>
+                        <li><a href="" title=""><i class="fa fa-angle-right"></i> Resource link here</a> Resource description here.</li>
+                        <li><a href="" title=""><i class="fa fa-angle-right"></i> Resource link here</a> Resource description here.</li>
+                    </ul>
+                </div>
+            </div>
+     
+        </div>
+    </div>     
+    <div class="row spacer-top-3x spacer-bottom-3x">
+        <div class="col-md-4 ">
+             <button type="button" class="btn btn-info btn-lg btn-block" ng-click="print()" aria-label="download results button">Download</button>
+        </div>
+        <div class="col-md-offset-4 col-md-4 spacer-xs-top-3x spacer-md-top-0">
+            <a href="#rate" class="btn btn-default btn-lg btn-block" title="rate our tool">Rate</a>	
+        </div>
+    </div>
+</div>

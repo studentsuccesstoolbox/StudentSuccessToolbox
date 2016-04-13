@@ -1,0 +1,101 @@
+
+<div  class="container shadow">
+    
+    <div class="row spacer-top-3x">
+        <div class="col-md-offset-2 col-md-8">
+            <div class="q-head large">
+                <h2 class="text-center nopadding">{{q.description}}</h2>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row spacer-top-3x hidden-sm hidden-xs">
+        <div class="col-md-offset-2 col-md-8 spacer-xs-top-2x">
+            
+            <div class="panel panel-tip"> 
+                <div class="panel-header row">
+                    <div class="col-xs-12 col-sm-11 col-md-12 nopadding">
+                        <h3 class="text-center">Tick which applies to you:</h3>
+                    </div> 
+                </div>
+                
+                <div class="panel-body">
+                    <p class="col-md-4 green-text text-center">
+                        <span class="circle-color green">Yes</span>
+                        <span> I can do this</span>
+                    </p>
+                    <p class="col-md-4 orange-text text-center">
+                        <span class="circle-color orange">?</span>
+                        <span> I may need help</span>
+                    </p>
+                    <p class="col-md-4 red-text text-center">
+                        <span class="circle-color red">No</span>
+                        <span> I cannot do this</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <div class="row spacer-top-3x">
+        <div class="col-md-12">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-12 col-md-9">
+                        <h2>{{q.label}}</h2>
+                    </div>
+                    <div class="hidden-sm hidden-xs col-md-3 nopadding">
+                        <div class="pull-right">
+                            <span class="circle-color green inline">Yes</span>
+                            <span class="circle-color orange inline">?</span>
+                            <span class="circle-color red inline">No</span>
+                        </div>
+                    </div>
+
+                    <div class="hidden-lg hidden-md col-xs-12 text-center nopadding">
+                        <div class="col-xs-4 nopadding  green-text"><span class="circle-color green">Yes</span><br>I can do this</div>
+                        <div class="col-xs-4 nopadding  orange-text"><span class="circle-color orange">?</span><br>I may need help</div>
+                        <div class="col-xs-4 nopadding  red-text"><span class="circle-color red">No</span><br>I cannot do this</div>
+                    </div>
+
+                </div>
+            </div>   
+
+            <div ng-repeat="question in q.questions track by $index">
+                <div class="panel" ng-class-odd="'panel-odd'" ng-class-even="'panel-even'">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-9 question">
+                                {{question.question}}
+                            </div>
+                            <div class="col-md-3 nopadding">
+                                <div class="radio-circle-group">
+                                    <div class="pull-left" ng-repeat="opt in question.options" ng-class="{'active':question.selected.value==opt.value}">
+                                       <label for="question-{{$parent.$index}}-{{opt.value}}" class="radio-circle-bg" ng-class="{yes:'green', notsure:'orange', no:'red'}[opt.value]">
+                                            <input name="questionGroup{{$parent.$index}}" id="question-{{$parent.$index}}-{{opt.value}}" type="radio" class="faq-radio" ng-click="answer(question,opt)" ng-model="question.selected" ng-value="opt">
+                                       </label>
+                                     </div>
+                                </div>
+                            </div>
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <div class="row spacer-top-3x">                
+        <div class="col-md-4">
+            <a class="btn btn-info btn-lg btn-block" aria-label="" title="check your computer skills" ng-click="back()">Back</a>
+        </div>
+        <div class="col-md-offset-4 col-md-4 spacer-xs-top spacer-md-top-0">
+            <button class="btn btn-default btn-lg btn-block" aria-label="" title="What technology do colleges provide" ng-click="checkQuestionsAnswered(q.questions)?openNext():openModal('questionErrorModal.html')">Next</button> 
+        </div>
+    </div>
+    <div class="row spacer-top spacer-xs-bottom-4x"> 
+        <div class="col-xs-12 col-md-4">
+            <a href="#/" class=" btn btn-nav btn-lg" title="go to home button">Home</a>
+        </div>
+    </div>   
+        
+</div>

@@ -1,0 +1,57 @@
+<div id="chartmenu" >
+
+    <div class="visible-xs-block visible-sm-block row chartnumbers">
+        <div class="col-xs-12 text-center">
+            <div class="total-result"><span class="reset">{{totalTime}}</span><legend>Hours of activities</legend></div>
+            <button type="button" class="visible-xs-block visible-sm-block btn btn-secondary" ng-click="reset()">Reset all</button>
+        </div>	
+    </div>
+	
+    <div class="row chartheading">
+        <div class="col-xs-12">
+            <h2 class="text-center">Your Results</h2>		
+            <p class="hidden-xs hidden-sm">Here is an overall summary of your results for a typical week. Included is the amount of ‘Available time’ you have available for study each week.</p>
+        </div>
+    </div>
+	
+    <div class="row">
+        <div class="col-xs-12 text-center nopadding chartnumbers">
+            <div><span class="reset">168</span><legend>Hours per week</legend></div>
+            <div><span class="reset min">-</span><legend>&nbsp;</legend></div>
+            <div><span class="reset">{{totalTime}}</span><legend>Hours of activities</legend></div>
+            <div><span class="reset min">=</span><legend>&nbsp;</legend></div>
+            <div><span class="reset freeTime">{{freeTime}}</span><legend>Available time</legend></div>
+        </div>		
+    </div>
+	
+    <div class="visible-xs-block visible-sm-block row chartheading spacer-top">
+        <div class="col-xs-12">	
+            <p class="medium">Here is an overall summary of your results for a typical week. Included is the amount of ‘Available time’ you have available for study each week.</p>
+        </div>
+    </div>
+	
+    <div class="visible-xs-block visible-sm-block row charttip">
+        <div class="col-xs-offset-1 col-xs-10">
+            <button type="button" class="btn btn-default btn-block" ng-click="openInterpret()">Next</button> 
+        </div>
+    </div>
+	
+    <div id="chart-block" class="hidden-xs hidden-sm">
+        <canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels" chart-colours="colours">
+        </canvas>
+        <legend>Rollover for details</legend>
+    </div>
+	
+    <div class="hidden-xs hidden-sm row charttip">
+        <div class="col-xs-12">
+            <h2 class="text-center">Your Time</h2>
+            <p>Some of your <strong><em>'available time'</em></strong> may be taken up with illness, family emergencies or unexpected events. 
+                Click “NEXT” for more personalised feedback on the amount of study time you have available according 
+                to your circumstances.
+            </p>
+        </div>
+        <div class="col-xs-offset-6 col-xs-6 spacer-top-2x">
+            <button class="btn btn-default btn-block" ng-click="openInterpret()" aria-label="go to detailed feedback">Next</button> 
+        </div>
+    </div>
+</div>

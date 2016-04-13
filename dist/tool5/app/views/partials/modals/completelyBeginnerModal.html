@@ -1,0 +1,30 @@
+<div class="modal-header">
+    <div class="row nopadding">
+        <div class="col-xs-1">
+                <i class="fa {{iconCls}} fa-2x"></i>
+        </div>
+        <div class="col-xs-10">
+            <label for="name" class="text-center control-label header">Completely Beginner</label>
+        </div>
+    </div>
+    <i ng-click="cancel()" class="fa fa-times fa-1x btn-close"></i>		
+</div>
+
+<div class="modal-body">
+    <div class="row spacer-top-2x spacer-bottom">
+        <div class="col-xs-12">
+             You are a complete beginner at assignments and do not even know where to start.
+        </div>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <div class="row modal-buttons spacer-bottom">
+        <div class="hidden-xs col-sm-8">  
+            <a ng-click="cancel()" class="btn btn-link">Cancel</a>
+        </div>
+        <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-4">
+            <a ng-click="ok();persona=1;" class="btn btn-default btn-md btn-block" href="#/complete-beginner/complete-beginner/" title="Completely Beginner">That's Me!</a>
+        </div>
+    </div>
+</div>

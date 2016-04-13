@@ -1,0 +1,67 @@
+<div class="container shadow">
+    <header>
+        <div id="header" class="tool tool2">
+                <!-- institution logo here -->
+                <h1 class="header-heading your-feedback hidden-xs hidden-sm">
+                    <span class="line line1">Your</span>
+                    <span class="line line2">Feedback</span>
+                </h1>
+        </div>
+        <h1 class="visible-xs-block visible-sm-block mob-heading" >Your feedback</h1>
+    </header>
+</div>
+
+<div class="container shadow">
+    <div class="row spacer-top-3x">
+        <div class="col-md-12 text-center">
+            <h1 class="nopadding">Detailed feedback…</h1>
+        </div>
+    </div>
+    <div class="row spacer-top-3x">
+        <div class="col-md-12">
+            <div class="activity-panel">
+                <i class="fa fa-graduation-cap fa-5x circle pull-left"></i>
+                <p class="" ng-bind-html="tool2InterpretFeedback.narratorFeedback"></p>
+            </div>
+        </div>
+    </div>
+    <div class="row spacer-top-3x">
+        <div class="col-md-12 text-center">
+            <h1 class="nopadding">Student comments…</h1>
+        </div>
+    </div>
+    
+    <div class="row spacer-top-3x">   
+        <div class="col-xs-12 col-md-offset-1 col-md-10">
+            <div class="quote-dark image-left">
+                <img class="img-responsive img-rounded" alt="student photo" ng-src="{{tool2InterpretFeedback.studentImage1}}">
+                <blockquote>
+                    <p class="comment">
+                        {{tool2InterpretFeedback.studentQuote1}}</p>
+                     <footer>Mary</footer>
+                </blockquote>                   
+            </div>
+        </div>
+    </div>
+    
+    <div class="row spacer-top-3x">   
+        <div class="col-xs-12 col-md-offset-1 col-md-10">
+            <div class="quote-light image-right">
+                <img class="img-responsive img-rounded" alt="student photo" ng-src="{{tool2InterpretFeedback.studentImage2}}">
+                <blockquote>
+                    <p class="comment">
+                        {{tool2InterpretFeedback.studentQuote2}}</p>
+                    <footer>John</footer>
+                </blockquote>  
+            </div>
+        </div>
+    </div>
+    
+   
+    <div class="row modal-buttons spacer-top-3x spacer-bottom-3x">
+        <div class="col-xs-offset-1 col-xs-10 col-sm-offset-4 col-sm-4">
+            <a href="#rate" type="button" ng-click="ok()" class="btn btn-default btn-lg btn-block">RATE</a>
+        </div>
+    </div>
+
+</div>

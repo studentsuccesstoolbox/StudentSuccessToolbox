@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>Am I Ready for Study | Student Success Toolbox</title>
+        <meta name="description" content="A quiz that helps a prospective student to take a realistic view on their ability to engage with distance learning" />
+        <meta name="keywords" content="" />
+        <meta name="author" content="National Institute for Digital Learning, Dublin City University" />
+        
+        <meta name="dc.title" content="Am I Ready for Study | Student Success Toolbox" />
+        <meta name="dc.creator" content="National Institute for Digital Learning, Dublin City University" />
+        <meta name="dc.subject" content="A quiz to gauge a prospective students' situation in relation to their work, family and study skills" />
+        <meta name="dc.description" content="A quiz that helps a prospective student to take a realistic view on their ability to engage with distance learning" />
+        <meta name="dc.date" content="2016" />
+        
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic,700,700italic' rel='stylesheet' type='text/css'>		
+	<!-- CSS -->
+	<link rel="stylesheet" href="../assets/css/main.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+
+        <script src="../bundle.min.js"></script>
+ 
+</head>
+
+<!-- apply our angular app -->
+<body ng-app="sstTool1App" data-spy="scroll" data-target=".scrollspy">
+
+    <div class="container shadow">
+        <header>
+            <div id="header" class="tool tool1">
+                    <!-- institution logo here -->
+                    <h1 class="header-heading hidden-sm hidden-sm">
+                        <span class="line line1">Am I Ready for</span>
+                        <span class="line line2">Study?</span> 
+                    </h1>
+            </div>
+            <h1 class="visible-xs-block visible-sm-block mob-heading" >Am I Ready for Study?</h1>
+        </header>
+    </div>
+    
+    <!-- inject our views using ng-view -->
+    <!-- each angular controller applies a different class here -->
+    <div class="page {{ pageClass }}" ng-view autoscroll="true"></div>
+    
+	<footer class="container shadow">
+        <div class="tool-footer row">
+            
+            <div class="col-md-12">
+                <div class="footer-menu">
+                    <ul>
+                        <li><a href="/" title="Privacy Policy">Privacy Policy</a></li>
+                        <li><a href="http://studentsuccess.ie/how-to-cite-a-tool/" title="How to cite one of the Student Success Toolbox project tools">How to Cite this Tool</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr />
+            
+            <div class="col-sm-12 col-md-3">
+                <div class="footer-social">
+                    <a href="/" title="Institute Facebook Page">
+                        <div class="footer-soc "><i class="fa fa-facebook fa-fw"></i></div>
+                    </a>
+                    <a href="/" title="Google hangout Page">
+                        <div class="footer-soc "><i class="fa fa-google-plus fa-fw"></i></div>
+                    </a>
+                    <a href="/" title="Institute Linkedin Page">
+                        <div class="footer-soc "><i class="fa fa-linkedin fa-fw"></i></div>
+                    </a>
+                    <a href="/" title="Institute Twitter Page">
+                        <div class="footer-soc "><i class="fa fa-twitter fa-fw"></i></div>
+                    </a>    
+                </div> 
+            </div>
+            
+            <div class="col-sm-12 visible-sm-block spacer-top"></div>
+            
+            <div class="col-sm-4 col-md-3 spacer-xs-top spacer-sm-top-0">
+                <div class="footer-cc">
+                    <a href="http://creativecommons.org/licenses/by/4.0/legalcode" title="Creative Commons — Attribution 4.0 International — CC BY 4.0"><img src="../assets/images/by.png" alt="Creative Commons"/></a>
+                </div>
+            </div>
+           
+            <div class="col-sm-4 col-md-3 spacer-xs-top spacer-sm-top-0">
+                <div class="sst-logo">
+                    <a href="http://studentsuccess.ie/" title="Student Success Toolbox"><img src="../assets/images/logo_white.png" alt="Student Success Toolbox" /></a>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-3 spacer-xs-top spacer-sm-top-0">
+                <div class="institution-logo">
+                    <a href=""><img src="" alt="Place institution logo here"/></a>
+                </div>
+            </div>
+            
+        </div>
+    </footer>	
+</body>
+</html>

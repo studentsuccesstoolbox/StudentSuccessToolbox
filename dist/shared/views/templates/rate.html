@@ -1,0 +1,81 @@
+
+<div class="container shadow">
+    
+     <div class="row spacer-xs-top-3x">
+        <div class="col-md-offset-1 col-md-10">
+            <div class="q-head dark large">
+                <h2 class="text-center nopadding">How useful was this resource?</h2>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="row spacer-top-3x">
+        <div class="col-md-offset-1 col-md-10">
+            <div class="activity-panel">
+                <p class="heading-text">
+                    <span class="heading-text-big">Please</span> help us improve this resource by ticking the box that represents your level of agreement with the following statements:
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row spacer-top-3x">
+        <div class="col-xs-12">
+            <div class="col-md-offset-5 col-md-7 text-center visible-md-block visible-lg-block">
+                    <label class="col-md-offset-1 col-md-2"><span>Strongly disagree</span></label>
+                    <label class="col-md-2"><span>Disagree</span></label>
+                    <label class="col-md-2"><span>Partly agree</span></label>
+                    <label class="col-md-2"><span>Agree</span></label>
+                    <label class="col-md-2"><span>Strongly agree</span></label>
+            </div>
+        </div>
+        
+        <div class="col-xs-12" ng-repeat="question in ratings.questions track by $index">
+            <div class="panel" ng-class-odd="'panel-odd'" ng-class-even="'panel-even'">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-5 question">
+                            {{question.question}}
+                        </div>
+                        <div class="col-md-7 spacer-xs-top spacer-md-top-0">
+                            <div class="col-xs-1"></div>
+                            <div class="col-xs-2 text-center" ng-repeat="opt in question.options" >
+                               <label class="text-label visible-xs visible-sm">{{opt.label}}</label>
+                               <label for="question-{{$parent.$index}}-{{opt.value}}" class="radio-circle-bg center" ng-class="{'active':question.selected.value==opt.value}">
+                                    <input name="questionGroup{{$parent.$index}}" id="question-{{$parent.$index}}-{{opt.value}}" type="radio" class="" ng-click="answer(question,opt)" ng-model="question.selected" ng-value="opt">
+                               </label>
+                             </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row spacer-xs-top-3x">
+        <div class="col-md-offset-1 col-md-10">
+            <div class="q-head dark large">
+                <h2 class="text-center nopadding">Send us your feedback</h2>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row spacer-top-2x">
+        <div class="col-md-offset-3 col-md-6">
+ 
+                <input id="firstname" type="text" class="form-control" type="text" placeholder="First Name" ng-model="feedbackName">
+                <textarea placeholder="Your comment" ng-model="feedbackComment" class="form-control" rows="8"></textarea>
+     
+        </div>
+    </div>
+    
+    <div class="row buttons spacer-top spacer-bottom-3x">
+            <div class="col-md-offset-3 col-md-6 text-sm-right">
+                <button class="btn btn-default btn-md btn-xs-block" title="Submit  opinion and comments" ng-click="sendFeedback();">
+                    Submit
+                </button>
+            </div>
+    </div>
+    
+</div>

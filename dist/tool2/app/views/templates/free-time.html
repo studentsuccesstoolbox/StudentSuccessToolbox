@@ -1,0 +1,89 @@
+<div class="container shadow">
+    <header>
+        <div id="header" class="tool tool2">
+                <!-- institution logo here -->
+                <h1 class="header-heading enough-time hidden-xs hidden-sm text-center">
+                    <span class="line line1"> Do I Have Enough</span> 
+                    <span class="line line2">Time ?</span> 
+                </h1>
+                </h1>
+        </div>
+        <h1 class="visible-xs-block visible-sm-block mob-heading" >
+            Do I have enough time?
+        </h1>
+    </header>
+</div>
+
+<div class="container shadow">
+    <div class="row spacer-top-3x">
+        <div class="col-md-offset-1 col-md-10">
+            <div class="activity-panel">
+		<p><span class="heading-text-big">Study</span> 
+                    competes for time with friends, family and your work commitments along with household chores, leisure and sleep. 
+                    <strong>Use this calculator</strong> to estimate the amount of time you have available for study on top of an already busy life.
+		</p>
+            </div>
+        </div>
+    </div>
+    <div class="row calc-content spacer-top spacer-bottom-3x">
+        <div class="col-md-8 calc-left">
+            <h2 class="text-center">Allocate Your Time</h2>
+            <div class="st-callout freetime-callout">
+                <div class="row">
+                    <div class="col-xs-12 col-md-3 text-right">
+                            <i class="fa  fa-4x"></i>
+                            <div class="free-t-title">Available time</div>
+                            <div class="title">{{freeTime}} hours</div>
+                    </div>
+                    <div class="col-xs-12 col-md-9">
+                            <rzslider   
+                                    rz-slider-floor="0"
+                                    rz-slider-ceil=168
+                                    rz-slider-model=freeTimeLimited
+                                    rz-slider-translate="translate"
+                                    rz-slider-present-only="true"
+                                    rz-slider-tpl-url="app/views/partials/slider/freetimeslider.html"
+                                    rz-slider-present-only="true"
+                                    class="square"
+                                    ></rzslider>
+                    </div>
+                </div>  
+            </div>
+            
+            <div ng-repeat="n in activityItems track by $index">
+                <div class="st-callout {{n.name}}-callout" ng-class="n.modelValue > 0?'active':''">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-3 text-md-right">
+                            <div class="activity-info">
+                                <i class="fa {{n.clsIcon}} fa-4x"></i>
+                                <div class="hidden-xs hidden-sm title">{{n.header}}</div>
+                                <a href="#free-time" class="visible-xs-inline visible-sm-inline title def-lnk" ng-click="openDefinitionModal($index)" title="opens definition of {{n.header}} dialogue box">{{n.header}}</a>
+                                <div class="second">{{n.modelValue}} hours</div>
+                            </div>
+                            <a class="visible-xs-inline visible-sm-inline modal-lnk" ng-click="openDaysModal($index)" title="opens advanced modal dialogue box">advanced</a>
+
+                        </div>
+                        <div class="col-xs-12 col-md-9">
+                            <rzslider   
+                                rz-slider-floor="0"
+                                rz-slider-ceil=n.sliderMax
+                                rz-slider-model=n.modelValue
+                                rz-slider-translate="translate"
+                                rz-slider-tpl-url="app/views/partials/slider/defaultslider.html"
+                                ></rzslider>
+                            <a href="#free-time" class="hidden-xs hidden-sm modal-lnk pull-left" ng-click="openDefinitionModal($index)" title="opens definition of {{n.header}} dialogue box">Definition of {{n.header}}</a>
+                            <a href="#free-time" class="hidden-xs hidden-sm modal-lnk pull-right" ng-click="openDaysModal($index)" title="opens advanced modal dialogue box">Advanced</a>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            <div class="spacer-bottom text-right">
+                    <a href="#free-time" class="hidden-xs hidden-sm btn btn-link reset" ng-click="reset()" aria-label="reset calculator">Reset all</a>
+            </div>
+        </div>
+        <div class="col-md-4 results">
+            <!-- results -->
+            <div static-include="app/views/partials/sidemenu/results.html"></div>
+        </div>
+    </div>
+</div>

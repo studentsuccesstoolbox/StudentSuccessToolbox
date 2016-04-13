@@ -1,0 +1,1769 @@
+<!DOCTYPE html>
+<html ng-app="sstExampleApp">
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic,700,700italic' rel='stylesheet' type='text/css'>		
+	<!-- CSS -->
+	<link rel="stylesheet" href="../assets/css/main.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <title>Design Elements for Student Success Toolbox</title>
+        <!-- Latest compiled and minified JavaScript -->
+
+        <script src="../bundle.min.js"></script>
+        
+        <style>
+            p > .btn {
+                margin: 5px 5px 0 0;
+            }
+            
+            .grey{
+                background: #ddd;
+            }
+            
+            .panel-shadow{
+                border: 2px solid #ddd;
+            }
+            .q-head{
+                margin-bottom: 10px;
+            }
+            .example-spacer{
+                margin-top: 51px;
+            }
+            .section {
+                padding-top: 30px;
+            }
+            
+            @media (max-width: 767px){
+                .visible-xs.collapse {
+                    display: none!important;
+                }
+            }
+        </style>
+ 
+</head>
+
+<!-- apply our angular app -->
+<body ng-controller="exampleController as example">
+    
+    <header class="navbar navbar-default navbar-fixed-top navbar-inner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-3" ng-click="isCollapsed = !isCollapsed">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand visible-xs" href="#">SST Theme</a>
+            </div>
+            <nav class="hidden-xs">
+                <ul class="nav navbar-nav">
+                    <a href="#top" role="button" class="navbar-brand">
+                        Student Success Toolbox Theme
+                    </a>
+                    <li class="dropdown" dropdown>
+                        <a role="button" class="dropdown-toggle" dropdown-toggle>
+                            Elements <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#el-headers">Headers</a></li>
+                            <li><a href="#el-mobile-headers">Mobile Headers</a></li>
+                            <li><a href="#el-header-colour">Main Header Colours</a></li>
+                            <li><a href="#el-header-banners">Header Banners</a></li>
+                            <li><a href="#el-buttons">Buttons</a></li>
+                            <li><a href="#el-panels">Panels</a></li>
+                            <li><a href="#el-badges">Badges</a></li>
+                            <li><a href="#el-spacers">Spacers</a></li>
+                            <li><a href="#el-quotes">Quotes</a></li>
+                            <li><a href="#el-modal">Modal</a></li>
+                            <li><a href="#el-accordion">Accordion</a></li>
+                            <li><a href="#el-slider">Slider</a></li>
+                            <li><a href="#el-charts">Charts</a></li>
+                            <li><a href="#el-nav-circles">Custom Navigations</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#getting-started">Getting started</a></li>
+                    
+                </ul>
+            </nav>
+            <nav class="visible-xs" collapse="!isCollapsed">
+                <ul class="nav navbar-nav">
+                    <li><a href="#getting-started" ng-click="isCollapsed = !isCollapsed">Getting started</a></li>
+                    <li><a href="#directives_small" ng-click="isCollapsed = !isCollapsed">Elements</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="container shadow example-spacer">
+        <header>
+            <div id="header" class="tool tool3">
+                    <!-- institution logo here -->
+                    <h1 class="header-heading example hidden-xs ">
+                        <span class="line line1">Student Success Toolbox</span>
+                        <span class="line line2">Theme</span>
+                    </h1>
+            </div>
+            <h1 class="visible-xs-block mob-heading" >Student Success Toolbox Theme</h1>
+        </header>
+    </div>
+    
+    
+    <div class="container shadow">
+        <div class="row">
+            <div class="col-md-12">
+                <section class="panel panel-details summary visible-xs" id="directives_small">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item active"><strong>Elements</strong></a>
+                        <a href="#el-headers"  class="list-group-item list-group-item-success">Headers</a>
+                        <a href="#el-mobile-headers"  class="list-group-item list-group-item-success">Mobile Headers</a>
+                        <a href="#el-header-colour"  class="list-group-item list-group-item-success">Main Header Colours</a>
+                        <a href="#el-header-banners"  class="list-group-item list-group-item-success">Header Banners</a>
+                        <a href="#el-buttons"  class="list-group-item list-group-item-success">Buttons</a>
+                        <a href="#el-panels"  class="list-group-item list-group-item-success">Panels</a>
+                        <a href="#el-badges"  class="list-group-item list-group-item-success">Badges</a>
+                        <a href="#el-spacers"  class="list-group-item list-group-item-success">Spacers</a>
+                        <a href="#el-quotes"  class="list-group-item list-group-item-success">Quotes</a>
+                        <a href="#el-modal"  class="list-group-item list-group-item-success">Modal</a>
+                        <a href="#el-accordion"  class="list-group-item list-group-item-success">Accordion</a>
+                        <a href="#el-slider"  class="list-group-item list-group-item-success">Slider</a>
+                        <a href="#el-charts"  class="list-group-item list-group-item-success">Charts</a>
+                        <a href="#el-nav-circles"  class="list-group-item list-group-item-success">Custom Navigations</a>
+
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="row spacer-top-2x">
+            <div class="panel panel-details summary">
+                <div class="panel-body">
+                    This is a template showcasing the theme stylesheet included in Student Success Toolbox. The 
+                    theme uses <a href="http://getbootstrap.com/">Bootstrap v3</a> and angularjs to create a responsive
+                    and interactive theme.
+                </div>
+             </div>
+        </div>
+        
+        <div id="getting-started" class="row spacer-top-2x">
+            <h1>Getting started</h1>
+            <hr>
+            <p>You can download this theme here (Link to theme. Github prefered). To create your own build you will need
+            to intall:</p>
+            <ul>
+                <li><a href="http://sass-lang.com/install" title="Install Sass">Sass</a> - Sass is a preprocessor that adds nested rules, variables, mixins and functions, selector inheritance, and more to CSS. Sass files compile into well-formatted, standard CSS to use in your site or application.</li>
+                <li><a href="http://gruntjs.com/installing-grunt" title="Install Grunt">Grunt</a> - Grunt is a javascript task runner used to automated and perform repetitive tasks like minification, compilation, unit testing and linting.</li>
+                <li><a href="https://nodejs.org/en/download/" title="Install Nodejs">Nodejs</a> - Node.js is an open-source, cross-platform runtime environment for developing server-side web applications.</li>
+                <li><a href="http://blog.npmjs.org/post/85484771375/how-to-install-npm" title="Install npm">NPM</a> - npm is the package manager for javascript.</li>
+            </ul>
+        </div>
+        
+        <div id="el-headers" class="row spacer-top-2x section">
+            <h1>Headers</h1>
+            <hr>
+            <h1>Header 1</h1>
+            <h2>Header 2</h2>
+            <h3>Header 3</h3>
+            <h4>Header 4</h4>
+            <h5>Header 5</h5>
+         
+        </div>
+        
+        <div id="el-mobile-headers" class="row spacer-top-2x section">
+            <h1>Mobile headers</h1>
+            <hr>
+            <p>Use .mob-heading class for mobile header. This is usually used in conjunction with .visible-xs-block to show only on mobile</p>
+            <h1 class="mob-heading" >Header 1 with solid background</h1>
+            <h2 class="mob-heading" >Header 2 with solid background</h2>
+            <h3 class="mob-heading" >Header 3 with solid background</h3>
+            <h4 class="mob-heading" >Header 4 with solid background</h4>
+            <h5 class="mob-heading" >Header 5 with solid background</h5>
+        </div>
+        
+        <div id="el-header-colour" class="row spacer-top-2x section">
+            <h1>Main Header Colours</h1>
+            <hr>
+            <p>Use .q-head class for desktop design. The most popular usage of this is with classes .large and .text-center </p>
+            <h2 class="q-head dark" >Header 2 .dark</h2>
+            <h2 class="q-head active" >Header 2 .active</h2>
+            
+            <h2 class="q-head green" >Header 2 .green</h2>
+            <h2 class="q-head yellow" >Header 2 .yellow</h2>
+            <h2 class="q-head light-blue" >Header 2 .light-blue</h2>
+            <h2 class="q-head tangerine" >Header 2 .tangerine</h2>
+            <h2 class="q-head dark-blue" >Header 2 .dark-blue</h2>
+            <h2 class="q-head red" >Header 2 .red</h2>
+            <h2 class="q-head orange" >Header 2 .orange</h2>
+            <h2 class="q-head large" >Header 2 .large</h2>
+            <h2 class="q-head large text-center" >Header 2 .large .text-center</h2>
+            <div class="q-head ">
+                <h2 class="nopadding text-center small" >Header 2 .small .text-center</h2>
+            </div>
+        </div>
+        
+        <div id="el-header-banners" class="row spacer-top-2x section">
+            <h1>Header Banners</h1>
+            <hr />
+            <p>Header banners uses the header class .q-head in a div wrapping the h2 element. </p>
+        </div>
+        
+        <div class="row spacer-top-2x">
+            <div class="col-md-offset-2 col-md-8">
+                <div class="q-head">
+                    <h2 class="nopadding">Banner</h2>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row spacer-top-2x">
+            <div class="col-md-offset-2 col-md-8">
+                <div class="q-head active">
+                    <h2 class="nopadding">Active banner</h2>
+                </div>
+            </div>
+         </div>
+        
+        <div class="row spacer-top-4x">
+            <div class="col-md-offset-2 col-md-8">
+                <div class="q-head">
+                     <span class="icon-badge">
+                        <i class="fa fa-question fa-3x fa-fw"></i>
+                     </span>
+                    <h2 class="nopadding">Banner With icon</h2>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row spacer-top-4x">
+            <div class="col-md-offset-2 col-md-8">
+                <div class="q-head active">
+                     <span class="icon-badge active">
+                        <i class="fa fa-graduation-cap fa-3x fa-fw"></i>
+                     </span>
+                    <h2 class="nopadding">Active banner with icon</h2>
+                </div>
+            </div>
+        </div>  
+        
+        <div class="row spacer-top-4x">
+            <div class="col-md-offset-2 col-md-8">
+                <div class="q-head">
+                     <span class="icon-badge mulit-row">
+                        <i class="fa fa-question fa-3x fa-fw"></i>
+                     </span>
+                    <h2 class="nopadding">Banner With icon and mulitple rows( Icon has a .mulit-row class).
+                        Some extra text to go onto the next line.
+                    </h2>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row spacer-top-4x">
+            <div class="col-md-offset-2 col-md-8">
+                <div class="q-head">
+                     <span class="icon-badge ">
+                        <i class="fa fa-question fa-3x fa-fw"></i>
+                     </span>
+                    <h2 class="nopadding small">
+                        Banner With icon and smaller text with H2 ( H2 has a .small class)
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row spacer-top-4x">
+                <div class="col-md-offset-2 col-md-8">
+                        <div class="q-head large dark">
+                                <h2 class="text-center nopadding">Banner Dark with extra padding</h2>
+                        </div>
+                </div>
+        </div>
+
+        <div class="row spacer-top-4x">
+                <div class="col-md-offset-2 col-md-8">
+                        <div class="q-head large">
+                                <span class="img-badge-right">
+                                        <img class="img-responsive img-rounded hidden-xs" src="../assets/images/friends.jpg" ng-src="../assets/images/friends.jpg" alt="Student friends photo">
+                                </span>
+                                <h2 class="text-center nopadding">Banner with image to right</h2>
+                        </div>
+                </div>
+        </div>
+
+        <div class="row spacer-top-4x">
+                <div class="col-md-offset-2 col-md-8">
+                        <div class="q-head large">
+                                <span class="img-badge-left">
+                                        <img class="img-responsive img-rounded hidden-xs" src="../assets/images/friends.jpg" ng-src="../assets/images/friends.jpg" alt="student friends photo">
+                                </span>
+                                <h2 class="text-center nopadding">Banner with image to left</h2>
+                        </div>
+                </div>
+        </div>
+
+        <div class="row spacer-top-4x">
+                <div class="col-md-offset-2 col-md-8">
+                        <div class="q-head large dark">
+                                <div class="row">
+                                        <div class="hidden-xs hidden-sm col-md-2 col-lg-1">
+                                                <i class="fa fa-users fa-3x h-icon"></i>
+                                        </div>
+                                        <div class="col-md-9 col-lg-10">
+                                                <h2 class="text-center nopadding">Banner dark with internal icon. (.h-icon) need to change icon color </h2>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </div>
+        
+        
+        <div id="el-buttons" class="row spacer-top-2x section" >
+            <h1>Buttons</h1>
+            <hr>
+			<p>
+                <button type="button" class="btn btn-default btn-xlg" aria-label="button">Default</button>
+                <button type="button" class="btn btn-default btn-xlg disabled hidden-xs" aria-label="continue button">Default Disabled</button>
+                <button type="button" class="btn btn-default btn-xlg disabled visible-xs" aria-label="continue button">Default X</button>
+
+                <button type="button" class="btn btn-info btn-xlg" aria-label="continue button">Info</button>
+                <button type="button" class="btn btn-secondary btn-xlg" aria-label="continue button">Secondary</button>
+                <a href="#" class="btn btn-link btn-xlg" aria-label="reset calculator">Link</a>
+            </p>
+            <p>
+                <button type="button" class="btn btn-default btn-lg" aria-label="button">Default</button>
+                <button type="button" class="btn btn-default btn-lg disabled" aria-label="continue button">Default Disabled</button>
+                <button type="button" class="btn btn-info btn-lg" aria-label="continue button">Info</button>
+                <button type="button" class="btn btn-secondary btn-lg" aria-label="continue button">Secondary</button>
+                <a href="#" class="btn btn-link btn-lg" aria-label="reset calculator">Link</a>
+            </p>
+            <p>
+                <button type="button" class="btn btn-default " aria-label="button">Default</button>
+                <button type="button" class="btn btn-default  disabled" aria-label="continue button">Default Disabled</button>
+                <button type="button" class="btn btn-info " aria-label="continue button">Info</button>
+                <button type="button" class="btn btn-secondary " aria-label="continue button">Secondary</button>
+                <a href="#" class="btn btn-link" aria-label="reset calculator">Link</a>
+            </p>
+            <p>
+                <button type="button" class="btn btn-default btn-sm" aria-label="button">Default</button>
+                <button type="button" class="btn btn-default btn-sm disabled" aria-label="continue button">Default Disabled</button>
+                <button type="button" class="btn btn-info btn-sm" aria-label="continue button">Info</button>
+                <button type="button" class="btn btn-secondary btn-sm" aria-label="continue button">Secondary</button>
+                <a href="#" class="btn btn-link btn-sm" aria-label="reset calculator">Link</a>
+            </p>
+            <p>
+                <button type="button" class="btn btn-default btn-xs" aria-label="button">Default</button>
+                <button type="button" class="btn btn-default btn-xs disabled" aria-label="continue button">Default Disabled</button>
+                <button type="button" class="btn btn-info btn-xs" aria-label="continue button">Info</button>
+                <button type="button" class="btn btn-secondary btn-xs" aria-label="continue button">Secondary</button>
+                <a href="#" class="btn btn-link btn-xs" aria-label="reset calculator">Link</a>
+            </p>
+        </div>
+        
+        <div id="el-panels" class="row spacer-top-2x section">
+            <h1>Panels</h1>
+            <div class="col-md-4">
+                <div class="activity-panel">
+                     <span class="first-word">This</span> Panel is used as a brief description. It has a icon in the bottom right
+                     with a min-height of 145px;
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-odd">
+                    <div class="panel-body">
+                         Panel Odd design. Used in listings like questions                       
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-4">
+                <div class="panel panel-even">
+                    <div class="panel-body">
+                         Panel Even design. Used in listings like questions                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row spacer-top-2x">
+            <div class="col-md-4">
+                <div class="panel panel-details summary">
+                    <div class="panel-heading">
+                       <h4>Panel Header</h4>
+                    </div>
+                    <div class="panel-body">
+                       Panel Body.
+                    </div>
+                 </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="panel panel-info">
+                    <div class="panel-body">
+                        Panel Info design. Used to show extra info. See full example below
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="panel panel-tip"> 
+                    <div class="panel-header row">
+                        <div class="col-xs-2 col-sm-1 nopadding text-center">
+                            <i class="fa fa-lightbulb-o fa-2x"></i>
+                        </div>
+                        <div class="col-xs-10 col-sm-11 nopadding">
+                            <h3>Tip:</h3>
+                        </div> 
+                    </div>
+                    <div class="panel-body">
+                        <p>Panel tip design. Used to show tips
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row spacer-top-2x">
+
+                <div class="panel panel-odd">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="hidden-xs col-sm-1">
+                                    <div class="q-index">18</div>
+                                </div>
+                                <div class="col-xs-12 col-sm-11 question">
+                                    <div class="q-index visible-xs-inline">
+                                        18
+                                    </div>
+                                    Panel Odd design with index number. Used in listings like questions                       
+                            </div>
+                       </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-even">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="hidden-xs col-sm-1">
+                                    <div class="q-index">19</div>
+                                </div>
+                                <div class="col-xs-12 col-sm-11 question">
+                                    <div class="q-index visible-xs-inline">
+                                        19
+                                    </div>
+                                    Panel Even design with index number. Used in listings like questions                       
+                            </div>
+                       </div>
+                    </div>
+                </div>
+        </div>
+        
+        
+        <div class="row spacer-top-2x">
+            <div class="col-md-12">
+                <p>The following is a variation of the Panel odd/even design. It uses two extra classes <code>.flex-font</code> and <code>.q-icon</code>.
+                    <code>.flex-font</code> changes the font color and size while <code>.q-icon</code>. gets added to the font-awesome icons to change their
+                    color.
+                </p>
+                <div class="panel panel-odd flex-font">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-2 col-sm-1 nopadding">
+                                <i class="fa fa-question fa-5x q-icon"></i>
+                            </div>
+                            <div class="col-xs-10 col-sm-11 nopadding">
+                                <p class="highlight"><span class="first-word">Who</span> in your family might support you?</p><p>
+                            </p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-even flex-font">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-2 col-sm-1 nopadding">
+                                <i class="fa fa-question fa-5x q-icon"></i>
+                            </div>
+                            <div class="col-xs-10 col-sm-11 nopadding">
+                                <p class="highlight"><span class="first-word">What </span> is the pay back for them if they support you?</p><p>
+                            </p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-odd flex-font">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-2 col-sm-1 nopadding">
+                                <i class="fa fa-question fa-5x q-icon"></i>
+                            </div>
+                            <div class="col-xs-10 col-sm-11 nopadding">
+                                <p class="highlight"><span class="first-word">If</span> your partner supports you to study now, will you support them to study later?</p><p>
+                            </p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row spacer-top-2x">
+            <div class="col-xs-12">
+                <p>This is an example of an info panel. It used <code>.spacer-top-halfx</code> on the p tags to line up better with icons. 
+                 </p>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <div class="panel panel-info">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-1 text-center nopadding">
+                                <i class="fa fa-info fa-5x"></i>
+                            </div>
+                            <div class="col-xs-11">
+                                <h2 class="spacer-top">
+                                   Sometimes others may not be supportive.
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-1 text-center nopadding">
+                                <i class="fa fa-check fa-2x"></i>
+                            </div>
+                            <div class="col-xs-11">
+                                <p class="spacer-top-halfx">
+                                   They may fear you will be unsuccessful
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-1 text-center nopadding">
+                                <i class="fa fa-check fa-2x"></i>
+                            </div>
+                            <div class="col-xs-11">
+                                <p class="spacer-top-halfx">
+                                   They may fear you will have no time for them
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-1 text-center nopadding">
+                                <i class="fa fa-check fa-2x"></i>
+                            </div>
+                            <div class="col-xs-11">
+                                <p class="spacer-top-halfx">
+                                   They may fear you will move away from them emotionally as you make new friends
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-1 text-center nopadding">
+                                <i class="fa fa-check fa-2x"></i>
+                            </div>
+                            <div class="col-xs-11">
+                                <p class="spacer-top-halfx">
+                                   Employers may fear you will not have enough time for your job
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	
+        
+        <div id="el-badges" class="row spacer-top-4x section">
+            <h1>Badges</h1>
+            <hr />
+        </div>
+        <div class="row spacer-top-2x">
+            <div class="col-xs-4">
+                <span class="icon-badge inline-block">
+                   <i class="fa fa-question fa-5x "></i>
+                </span>
+                <span class="icon-badge inline-block active">
+                   <i class="fa fa-check fa-5x"></i>
+                </span>
+                <span class="icon-badge inline-block">
+                   <i class="fa fa-chrome fa-5x"></i>
+                </span>
+                <span class="icon-badge inline-block active">
+                   <i class="fa fa-anchor fa-5x"></i>
+                </span>
+                <span class="icon-badge inline-block">
+                   <i class="fa fa-cart-plus fa-5x"></i>
+                </span>
+                <span class="icon-badge inline-block active">
+                   <i class="fa fa-download fa-5x"></i>
+                </span>
+                <p>Badge with font awesome icons. Will create more colors</p>
+            </div>
+            <div class="col-xs-4">
+                <img class="img-responsive img-rounded" alt="Student photo" src="../assets/images/student1.jpg">
+                 <p>Image with rounded border</p>
+            </div>
+            <div class="col-xs-4">
+                <img class="img-responsive img-box" alt="Student photo" src="../assets/images/student1.jpg">
+                 <p>Image with square/rectangular border</p>
+            </div>
+        </div>
+        
+        
+       <div id="el-spacers" class="row spacer-top-3x section">
+            <h1>Spacers</h1>
+            <hr />
+            <p>Spacers are used to add margins to elements. It used ems so is based on parent size</p>
+            <h2>Spacer Top classes</h2>
+            <div class="panel-shadow">
+                <div class="row spacer-top">
+                    <div class="col-md-12 grey">.spacer-top (1em)</div>
+                </div>
+                <div class="row spacer-top-2x">
+                    <div class="col-md-12 grey">.spacer-top-2x (2em)</div>
+                </div>
+                <div class="row spacer-top-3x">
+                    <div class="col-md-12 grey">.spacer-top-3x (3em)</div>
+                </div>
+                <div class="row spacer-top-4x">
+                    <div class="col-md-12 grey">.spacer-top-4x (4em)</div>
+                </div>
+            </div>
+            
+     
+            <h3>Available classes</h3>
+            <p>Use a combination of spacer classes to add margin. Spacers spacer-xs-top-* and  spacer-top-* are the same. Use spacer-*-top-0 to remove top margin 
+                for different screen sizes. For example the class <code>&lt;div class=&quot;spacer-xs-top-2x spacer-md-top-0&quot;&gt;&lt;/div&gt;</code> 
+                will have a 2em top margin for small devices and tablets and no margin for Desktops;
+            </p>
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped responsive-utilities">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>
+                      Extra small devices
+                      <small>Phones (&lt;768px)</small>
+                    </th>
+                    <th>
+                      Small devices
+                      <small>Tablets (≥768px)</small>
+                    </th>
+                    <th>
+                      Medium devices
+                      <small>Desktops (≥992px)</small>
+                    </th>
+                    <th>
+                      Large devices
+                      <small>Desktops (≥1200px)</small>
+                    </th>
+                  </tr>
+                </thead>
+                
+                <tbody>
+                  <tr>
+                    <th scope="row"><code>.spacer-xs-top-*</code></th>
+                    <td class="is-visible">Spacer</td>
+                    <td class="is-hidden">Spacer</td>
+                    <td class="is-hidden">Spacer</td>
+                    <td class="is-hidden">Spacer</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>.spacer-sm-top-*</code></th>
+                    <td class="is-hidden">none</td>
+                    <td class="is-visible">Spacer</td>
+                    <td class="is-hidden">Spacer</td>
+                    <td class="is-hidden">Spacer</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>.spacer-md-top-*</code></th>
+                    <td class="is-hidden">None</td>
+                    <td class="is-hidden">None</td>
+                    <td class="is-visible">Spacer</td>
+                    <td class="is-hidden">Spacer</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>.spacer-lg-top-*</code></th>
+                    <td class="is-hidden">None</td>
+                    <td class="is-hidden">None</td>
+                    <td class="is-hidden">None</td>
+                    <td class="is-visible">Spacer</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>* values</code></th>
+                    <td class="" colspan="4">0, 2x, 3x or 4x</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+                
+            <h2>Spacer Bottom classes</h2>
+            <div class="panel-shadow">
+                <div class="row spacer-bottom">
+                    <div class="col-md-12 grey">.spacer-bottom (1em)</div>
+                </div>
+                <div class="row spacer-bottom-2x">
+                    <div class="col-md-12 grey">.spacer-bottom-2x (2em)</div>
+                </div>
+                <div class="row spacer-bottom-3x">
+                    <div class="col-md-12 grey">.spacer-bottom-3x (3em)</div>
+                </div>
+                <div class="row spacer-bottom-4x">
+                    <div class="col-md-12 grey">.spacer-bottom-4x (4em)</div>
+                </div>
+            </div>
+
+            <h3>Available classes</h3>
+                <p>Use a combination of spacer classes to add margin. Spacers spacer-xs-bottom-* and  spacer-bottom-* are the same. Use spacer-*-bottom-0 to remove bottom margin 
+                    for different screen sizes. For example the class <code>&lt;div class=&quot;spacer-xs-bottom-2x spacer-md-bottom-0&quot;&gt;&lt;/div&gt;</code> 
+                    will have a 2em bottom margin for small devices and tablets and no margin for Desktops;
+                </p>
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped responsive-utilities">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>
+                      Extra small devices
+                      <small>Phones (&lt;768px)</small>
+                    </th>
+                    <th>
+                      Small devices
+                      <small>Tablets (≥768px)</small>
+                    </th>
+                    <th>
+                      Medium devices
+                      <small>Desktops (≥992px)</small>
+                    </th>
+                    <th>
+                      Large devices
+                      <small>Desktops (≥1200px)</small>
+                    </th>
+                  </tr>
+                </thead>
+                
+                <tbody>
+                  <tr>
+                    <th scope="row"><code>.spacer-xs-bottom-*</code></th>
+                    <td class="is-visible">Spacer</td>
+                    <td class="is-hidden">Spacer</td>
+                    <td class="is-hidden">Spacer</td>
+                    <td class="is-hidden">Spacer</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>.spacer-sm-bottom-*</code></th>
+                    <td class="is-hidden">none</td>
+                    <td class="is-visible">Spacer</td>
+                    <td class="is-hidden">Spacer</td>
+                    <td class="is-hidden">Spacer</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>.spacer-md-bottom-*</code></th>
+                    <td class="is-hidden">None</td>
+                    <td class="is-hidden">None</td>
+                    <td class="is-visible">Spacer</td>
+                    <td class="is-hidden">Spacer</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>.spacer-lg-bottom-*</code></th>
+                    <td class="is-hidden">None</td>
+                    <td class="is-hidden">None</td>
+                    <td class="is-hidden">None</td>
+                    <td class="is-visible">Spacer</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>* values</code></th>
+                    <td class="" colspan="4">0, 2x, 3x or 4x</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+       </div>
+        
+        <div id="text-align" class="row spacer-top-3x section">
+            <h1>Text Align</h1>
+            <hr />
+            <p>Text-aligns can be set for each device size.</p>
+             <div class="table-responsive">
+              <table class="table table-bordered table-striped responsive-utilities">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>
+                      Extra small devices
+                      <small>Phones (&lt;768px)</small>
+                    </th>
+                    <th>
+                      Small devices
+                      <small>Tablets (≥768px)</small>
+                    </th>
+                    <th>
+                      Medium devices
+                      <small>Desktops (≥992px)</small>
+                    </th>
+                    <th>
+                      Large devices
+                      <small>Desktops (≥1200px)</small>
+                    </th>
+                  </tr>
+                </thead>
+                
+                <tbody>
+                  <tr>
+                    <th scope="row"><code>.text-xs-*</code></th>
+                    <td class="is-visible">Align</td>
+                    <td class="is-hidden">Align</td>
+                    <td class="is-hidden">Align</td>
+                    <td class="is-hidden">Align</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>.text-sm-*</code></th>
+                    <td class="is-hidden">none</td>
+                    <td class="is-visible">Align</td>
+                    <td class="is-hidden">Align</td>
+                    <td class="is-hidden">Align</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>.text-md-*</code></th>
+                    <td class="is-hidden">None</td>
+                    <td class="is-hidden">None</td>
+                    <td class="is-visible">Align</td>
+                    <td class="is-hidden">Align</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>.text-lg-*</code></th>
+                    <td class="is-hidden">None</td>
+                    <td class="is-hidden">None</td>
+                    <td class="is-hidden">None</td>
+                    <td class="is-visible">Align</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>* values</code></th>
+                    <td class="" colspan="4">left, right, center or justify</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+        <div id="el-quotes" class="row spacer-top-3x section">
+            <h1>Quotes</h1>
+            <hr />
+            <p>Quotes from students are used extensively in this theme. Below are a number of different 
+            styles of quotes that can be used.</p>
+            <div class="row spacer-top-2x">
+                <blockquote class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="../assets/images/student.jpg" class="img-responsive" alt="Photo of student Rachel">
+                        </div>
+                        <div class="col-md-9">
+                            <p class="comment">My ability to succeed really depended on finding enough time for study in my busy life...</p>
+                            <p class="author">Rachel</p>
+                        </div>
+                    </div>
+                </blockquote>
+                
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <img class="img-responsive img-rounded" alt="Student photo" src="../assets/images/student1.jpg">
+                        </div>
+                        <div class="col-xs-8">
+                            <blockquote class="simple">
+                                <p><i class="fa fa-quote-left pull-left fa-2x"></i>I was use to reading lots of books which I believe prepared me well for the demands of further study</p>
+                                <footer class="text-right">Mary <cite title="Source Title">Student</cite></footer>
+                            </blockquote>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div class="row student-comments spacer-top-2x">
+                <div class="col-md-12 left">
+                    <div class="col-md-7">
+                            <blockquote class="blockquote-student">
+                               <i class="fa fa-quote-left"></i><p>168 I found it's easy to procrastinate with lots of 'free time' so make sure you develop a study plan</p>
+                                    <footer>Mary <cite title="Source Title">Student</cite></footer>
+                            </blockquote>
+                    </div>
+                    <div class="col-md-5">
+                            <img class="img-responsive pull-right" src="../assets/images/student2.jpg">
+                    </div>
+                </div>
+                <div class="col-md-12 right">
+                        <div class="col-md-5">
+                                <img class="img-responsive pull-left" src="../assets/images/student1.jpg">
+                        </div>
+                        <div class="col-md-7">				
+                                <blockquote class="blockquote-student right">
+                                   <i class="fa fa-quote-left"></i><p>I set aside blocks of time for doing study and stuck to them regardless of other distractions</p>
+                                        <footer>John <cite title="Source Title">Student</cite></footer>
+                                </blockquote>
+                        </div>
+                </div>
+
+            </div>
+            <div class="row spacer-xs-top-2x">
+                <div class="col-xs-12 col-md-6">
+                    <div class="quote-primary-image row">
+                        <div class="col-xs-offset-6 col-xs-6 col-md-4 nopadding">
+                            <img class="img-responsive img-rounded" alt="Student photo" src="../assets/images/student1.jpg">
+                        </div>
+                        <div class="col-xs-12 col-md-8 nopadding">
+                            <blockquote class="quote-primary">                                     
+                                <i class="fa fa-quote-left fa-3x"></i><p class="">‘My friend Mike was a great reader so I asked him to read over my written work’</p>
+                            </blockquote>
+                            <div class="o-round"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <div class="quote-secondary-image row">
+                        <div class="col-xs-12 col-md-8 nopadding">
+                            <blockquote>                                     
+                                <i class="fa fa-quote-left fa-3x"></i>
+                                <p read-more="" limit="82" ellipsis="..." class="ng-isolate-scope">I knew nothing about the subject she was studying, but I knew that some of the se<span class="read-ellipsis">...</span><span class="more-btn"><a class="btn btn-link read-more">more</a></span><span class="more-text">ntences in her essay didn’t make sense and some of the bits were really boring and could be changed around, so I told her that<span class="more-btn"><a class="btn btn-link read-less">less</a></span></span></p>
+                                <p><em><strong>(Mike)</strong></em></p>
+
+                            </blockquote>
+                            <div class="o-round"></div>
+                        </div>
+                        <div class="col-xs-6 col-md-4 nopadding">
+                            <img class="img-responsive img-rounded" alt="Student photo" src="../assets/images/student2.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row spacer-top-3x">
+                <div class="col-xs-12 col-md-offset-6 col-md-6">
+                    <div class="quote-primary-image image-right row">
+                        <div class="col-xs-9 col-md-8 nopadding">
+                            <blockquote class="quote-primary">                                     
+                                <i class="fa fa-quote-left fa-3x"></i>
+                                <p>‘I felt my wife would be very disappointed if she didn’t do well’</p>
+                            </blockquote>
+                            <div class="o-round"></div>
+                        </div>
+                        <div class="col-xs-3 col-md-4 nopadding">
+                            <img class="img-responsive img-rounded" alt="Student photo" src="../assets/images/student2.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row spacer-xs-top-2x">
+                <div class="col-xs-12 col-md-6">
+                    <div class="panel panel-info spacer-top-3x">
+                        <div class="panel-body">
+                            <div class="col-xs-1 text-center nopadding">
+                                <i class="fa fa-info fa-5x"></i>
+                            </div>
+                            <div class="col-xs-11">
+                                <p class="spacer-top">                        
+                                    You may feel you can not talk to your friends or family because they don’t support your decision to study.
+                                </p>
+                                <p>
+                                    This is not an unusual situation. Many students experience this.  
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                    <div class="quote-primary-image image-right row">
+                        <div class="col-xs-9 col-md-8 nopadding">
+                            <blockquote class="quote-primary">                                     
+                                <i class="fa fa-quote-left fa-3x"></i>
+                                <p>‘I felt my wife would be very disappointed if she didn’t do well’</p>
+                            </blockquote>
+                            <div class="o-round"></div>
+                        </div>
+                        <div class="col-xs-3 col-md-4 nopadding">
+                            <img class="img-responsive img-rounded" alt="Student photo" src="../assets/images/student2.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row spacer-xs-top-2x">
+                <div class="col-md-6">
+                    <div class="quote-secondary">
+                        <blockquote>                                     
+                            <i class="fa fa-quote-left fa-3x"></i>
+                            <p read-more="" limit="82" ellipsis="..." class="ng-isolate-scope">‘I decided to start the study group. I didn’t care whether others thought I was a<span class="read-ellipsis">...</span><span class="more-btn"><a class="btn btn-link read-more">more</a></span><span class="more-text">loser or whether no-one joined. I’m too old to worry about things like that. I did it cause I knew it would help me, and maybe others as well.’
+                                (student)<span class="more-btn"><a class="btn btn-link read-less">less</a></span></span></p>
+                        </blockquote>
+                        <div class="o-round"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row spacer-top-2x">
+                <div class="col-xs-12 col-md-offset-1 col-md-10">
+                    <div class="quote-dark">
+                        <blockquote>
+                            <p class="comment ">I got advice on what equipment to buy from the computer centre at college, you could also ask at your local computer store.  The telephone provider  that I use advised me on what broadband package was most suitable for me.</p>
+                            <footer>Mary (Student)</footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row spacer-top-2x">   
+                <div class="col-xs-12 col-md-offset-1 col-md-10">
+                    <div class="quote-dark image-left">
+                        <img class="img-responsive img-rounded" alt="Student photo" src="../assets/images/student1.jpg">
+                        <blockquote>
+                            <p class="comment">Meet some of my fellow students to find out how they used computers for learning and how they got help.</p>
+                            <footer>Mary (Student)</footer>
+                        </blockquote>                   
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row spacer-top-4x">   
+                <div class="col-xs-12 col-md-offset-1 col-md-10">
+                    <div class="quote-dark image-right">
+                        <blockquote>                                     
+                            <p class="comment">When I began my course I was given a username and password and an email address.  I was also
+                                    introduced to the Virtual Learning Environment or VLE as it’s known.</p>
+                            <footer>Mary (Student)</footer>
+                        </blockquote>
+                        <img class="img-responsive img-rounded" alt="Student photo" src="../assets/images/student1.jpg">
+                    </div>
+                </div>
+            </div>
+            
+             <div class="row spacer-top-2x">
+                <div class="col-xs-12 col-md-offset-1 col-md-10">
+                    <div class="quote-dark image-top-left">
+                        <blockquote>                                     
+                            <p class="comment">“I found computer skills essential for learning as  most of my course material is online. When I began I had some knowledge of computer skills but I learned much more as I went along”</p>
+                            <footer>Mary (Student)</footer>
+                        </blockquote>
+                        <img class="img-responsive img-rounded" alt="Student photo" src="../assets/images/student1.jpg">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row spacer-top-2x">
+                <div class="col-xs-12 col-md-offset-1 col-md-10">
+                    <div class="quote-dark image-top-right">
+                        <blockquote>                                     
+                            <p class="comment">“I found computer skills essential for learning as  most of my course material is online. When I began I had some knowledge of computer skills but I learned much more as I went along”</p>
+                            <footer>Mary (Student)</footer>
+                        </blockquote>
+                        <img class="img-responsive img-rounded" alt="Student photo" src="../assets/images/student1.jpg">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row spacer-top-2x">
+                <div class="col-xs-12 col-md-offset-1 col-md-10">
+                    <div class="quote-dark">
+                        <a href="#" title="">
+                            <blockquote>
+                                <p class="comment ">
+                                    Light comment which is wraped in a link with a <span class="highlight-word">highlighted</span> word.
+                                    To highlight a wrap the word in a span tag with the class highlight-word eg &lt;span class=&quot;highlight-word&quot;&gt;&lt;/span&gt;
+                                </p>
+                                <footer>Mary (Student)</footer>
+                            </blockquote>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row spacer-top-2x">
+                <div class="col-xs-12 col-md-offset-1 col-md-10">
+                    <div class="quote-light">
+                        <blockquote>
+                            <p class="comment ">I got advice on what equipment to buy from the computer centre at college, you could also ask at your local computer store.  The telephone provider  that I use advised me on what broadband package was most suitable for me.</p>
+                            <footer>Mary (Student)</footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row spacer-top-2x">   
+                <div class="col-xs-12 col-md-offset-1 col-md-10">
+                    <div class="quote-light image-left">
+                        <img class="img-responsive img-rounded" alt="Student photo" src="../assets/images/student1.jpg">
+                        <blockquote>
+                            <p class="comment">Meet some of my fellow students to find out how they used computers for learning and how they got help.</p>
+                            <footer>Mary (Student)</footer>
+                        </blockquote>                   
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row spacer-top-4x">   
+                <div class="col-xs-12 col-md-offset-1 col-md-10">
+                    <div class="quote-light image-right">
+                        <blockquote>                                     
+                            <p class="comment">When I began my course I was given a username and password and an email address.  I was also
+                                    introduced to the Virtual Learning Environment or VLE as it’s known.</p>
+                            <footer>Mary (Student)</footer>
+                        </blockquote>
+                        <img class="img-responsive img-rounded" alt="Student photo" src="../assets/images/student1.jpg">
+                    </div>
+                </div>
+            </div>
+            
+             <div class="row spacer-top-2x">
+                <div class="col-xs-12 col-md-offset-1 col-md-10">
+                    <div class="quote-light image-top-left">
+                        <blockquote class="quote-primary quote-primary-home">                                     
+                            <p class="comment">“I found computer skills essential for learning as  most of my course material is online. When I began I had some knowledge of computer skills but I learned much more as I went along”</p>
+                            <footer>Mary (Student)</footer>
+                        </blockquote>
+                        <img class="img-responsive img-rounded" alt="Student photo" src="../assets/images/student1.jpg">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row spacer-top-2x">
+                <div class="col-xs-12 col-md-offset-1 col-md-10">
+                    <div class="quote-light image-top-right">
+                        <blockquote class="quote-primary quote-primary-home">                                     
+                            <p class="comment">“I found computer skills essential for learning as  most of my course material is online. When I began I had some knowledge of computer skills but I learned much more as I went along”</p>
+                            <footer>Mary (Student)</footer>
+                        </blockquote>
+                        <img class="img-responsive img-rounded" alt="Student photo" src="../assets/images/student1.jpg">
+                    </div>
+                </div>
+            </div>
+            
+           <div class="row spacer-top-2x">
+                <div class="col-xs-12 col-md-offset-1 col-md-10">
+                    <div class="quote-light">
+                        <a href="#" title="">
+                            <blockquote>
+                                <p class="comment ">
+                                    Light comment which is wraped in a link with a <span class="highlight-word">highlighted</span> word.
+                                    To highlight a wrap the word in a span tag with the class highlight-word eg &lt;span class=&quot;highlight-word&quot;&gt;&lt;/span&gt;
+                                </p>
+                                <footer>Mary (Student)</footer>
+                            </blockquote>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div> 
+        
+        <div id="el-modal" class="row spacer-top-3x section">
+            <h1>Modal</h1>
+            <hr />
+            <p>Modals are handled by <a href="https://angular-ui.github.io/bootstrap/#/modal">angular ui bootstrap library</a></p>
+            <p>
+                <button type="button" class="btn btn-default btn-xs" ng-click="openExampleModal()" aria-label="button">Open Modal</button>
+                <button type="button" class="btn btn-default btn-xs" ng-click="openExampleModal('',true)" aria-label="button">Error Modal</button>
+                <button type="button" class="btn btn-default btn-xs" ng-click="openExampleModal('lg')" aria-label="button">Large Modal</button>
+                <button type="button" class="btn btn-default btn-xs" ng-click="openExampleModal('sm')" aria-label="button">Small Modal</button>
+            </p>
+        </div>
+        
+        
+        <div id="el-accordion" class="row spacer-top-3x section">
+            
+            <h1>Accordion</h1>
+            <hr />
+            <p>
+                The accordion uses the angularjs bootstrap accordion with a custom panel template. Check out accordion options on 
+                the <a href="https://angular-ui.github.io/bootstrap/#/accordion" title="accordion options">angular bootstrap site</a>.
+            </p>
+            <div class="row spacer-top-2x">
+                <div class="col-md-12"> 
+                    <accordion close-others="true">
+                        <accordion-group heading="Internet" is-open="true" template-url="app/views/partials/accordion/accordion-group.html">
+                            Access, find, and retrieve information on the internet (Rollover: The Internet is used to send information between computers and is also known as the world wide web), Access course timetables, news about your modules and course
+                            Find study materials & resources
+                            Send in assignments and collect results online
+                            Use your library services on and off campus
+                        </accordion-group>
+                        <accordion-group heading="Email" template-url="app/views/partials/accordion/accordion-group.html">
+                            Send messages and communicate via email (Rollover : messages sent electronically over the internet) Keep in touch with your lecturers and other students using email
+                            Stay in contact with your department and college
+                        </accordion-group>
+                        <accordion-group heading="Word Processing" template-url="app/views/partials/accordion/accordion-group.html">
+                            Create, store and find information to express ideas and communicate with others. A key skill for learning is word processing  – the most common is Microsoft Word which allows you to write assignments.  
+                        </accordion-group>
+                       <accordion-group heading="File Management" template-url="app/views/partials/accordion/accordion-group.html">
+                           Save, store, organise and backup your work.
+                       </accordion-group>              
+                    </accordion>  
+                </div>
+            </div>
+        </div>
+        
+        <div id="el-slider" class="row spacer-top-3x section">
+            <h1>Slider Control</h1>
+            <hr />
+            <p>The slider use is a modified version of <a href="https://github.com/rzajac/angularjs-slider">rzslider</a> with better accessibility.
+            There are 2 types of slider design. Default which is circle and square. All you need to do is 
+            add a class <code>.square</code> to the slide to make it square. </p>
+
+            <div class="row spacer-top-2x">
+                <div class="col-xs-12 col-md-6">
+                        <rzslider   
+                                rz-slider-floor="0"
+                                rz-slider-ceil=168
+                                rz-slider-model=example2
+                                rz-slider-translate="translate"
+                                rz-slider-tpl-url="app/views/partials/slider/defaultslider.html"
+                                ></rzslider>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                        <rzslider   
+                                rz-slider-floor="0"
+                                rz-slider-ceil=168
+                                rz-slider-model=example1
+                                rz-slider-translate="translate"
+                                rz-slider-tpl-url="app/views/partials/slider/freetimeslider.html"
+                                class="square"
+                                ></rzslider>
+                </div>
+            </div>
+            <p>You can easily change the colors of by setting a border color eg <code>border-color: #f9a029;</code> of <code>.rz-pointer</code>. </p>
+            <div class="row spacer-top-2x">
+                <div class="col-xs-12">
+                    <code>
+                        &lt;style&gt;
+                            .slider-orange .rz-pointer{
+                                border-color: #f9a029;
+                            }
+                        &lt;/style&gt;
+                    </code>
+                    <style>
+                        .slider-orange .rz-pointer{
+                            border-color: #f9a029;
+                        }
+                    </style>
+                </div>
+            </div>
+            <div class="row spacer-top-2x">
+                <div class="col-xs-12 col-md-6">
+                        <rzslider   
+                                rz-slider-floor="0"
+                                rz-slider-ceil=168
+                                rz-slider-model=example2
+                                rz-slider-translate="translate"
+                                rz-slider-tpl-url="app/views/partials/slider/defaultslider.html"
+                                class="slider-orange"
+                                ></rzslider>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                        <rzslider   
+                                rz-slider-floor="0"
+                                rz-slider-ceil=168
+                                rz-slider-model=example1
+                                rz-slider-translate="translate"
+                                rz-slider-tpl-url="app/views/partials/slider/freetimeslider.html"
+                                class="square slider-orange"
+                                ></rzslider>
+                </div>
+            </div>
+            <div class="row spacer-top-2x">
+                <div class="col-xs-12">
+                    <code>
+                        &lt;style&gt;
+                            .slider-blue .rz-pointer{
+                                border-color: #08a7cd;
+                            }
+                        &lt;/style&gt;
+                    </code>
+                    <style>
+                        .slider-blue .rz-pointer{
+                            border-color: #08a7cd;
+                        }
+                    </style>
+                </div>
+            </div>
+            <div class="row spacer-top-2x">
+                <div class="col-xs-12 col-md-6">
+                        <rzslider   
+                                rz-slider-floor="0"
+                                rz-slider-ceil=168
+                                rz-slider-model=example2
+                                rz-slider-translate="translate"
+                                rz-slider-tpl-url="app/views/partials/slider/defaultslider.html"
+                                class="slider-blue"
+                                ></rzslider>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                        <rzslider   
+                                rz-slider-floor="0"
+                                rz-slider-ceil=168
+                                rz-slider-model=example1
+                                rz-slider-translate="translate"
+                                rz-slider-tpl-url="app/views/partials/slider/freetimeslider.html"
+                                class="square slider-blue"
+                                ></rzslider>
+                </div>
+            </div>
+        </div>
+        <div id="el-charts" class="row spacer-top-3x section">
+            <h1>Charts</h1>
+            <hr />
+            <p>Charts are displayed using <a href="http://www.chartjs.org/" title="Simple, clean and engaging charts for designers and developers">Chart.js</a> with the use of an angular wrapper library call <a href="http://jtblin.github.io/angular-chart.js/" title="Check out angular chart examples and demos">Angular Chart</a> </p>
+        </div>
+        <div class="row spacer-bottom-3x">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Pie Chart
+                    </div>
+                    <div class="panel-body">
+                        <canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels" chart-colours="colours">
+                        </canvas>
+                        <div>Rollover for details</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Radar Chart
+                    </div>
+                    <div class="panel-body">
+                        <canvas id="radar" class="chart chart-radar" chart-data="radarData" chart-labels="labels" chart-colours="chartColours" chart-options="chartOptions">
+                        </canvas>
+                        <div>Rollover for details</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row spacer-bottom-3x">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Line Chart
+                    </div>
+                    <div class="panel-body">
+                        <canvas id="line" 
+                                class="chart chart-line" 
+                                chart-data="radarData"
+                                chart-labels="labels" 
+                                chart-legend="true" 
+                                chart-series="series"
+                               >
+                        </canvas>
+                        <div>Rollover for details</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Bar Chart
+                    </div>
+                    <div class="panel-body">
+                        <canvas id="bar" 
+                                class="chart chart-bar"
+                                chart-data="radarData" 
+                                chart-labels="labels">
+                        </canvas>
+                        <div>Rollover for details</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row spacer-bottom-3x">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Doughnut Chart
+                    </div>
+                    <div class="panel-body">
+                       <canvas id="doughnut" class="chart chart-doughnut"
+                            chart-data="data" 
+                            chart-labels="labels"
+                               >
+                        </canvas>
+                        <div>Rollover for details</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Polar Area Chart
+                    </div>
+                    <div class="panel-body">
+                        <canvas id="polar-area" 
+                                class="chart chart-polar-area"
+                                chart-data="data" 
+                                chart-labels="labels">
+                        </canvas>
+                        <div>Rollover for details</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="el-nav-circles" class="row spacer-top-3x section">
+            <h1>Custom Tool Elements: Navigation Circles</h1>
+            <hr />
+            <p>The following are navigation designs use to in different tools. They are designed in a circle with elements absolutely positioned in a clock like format.
+            You can position elements using the class .pos-x where x is 1 to 12.</p>
+        </div>
+
+        <div class="row spacer-top">
+            <div class="col-xs-12 col-md-6 ft-size-1_4x">
+                 <h2 class="text-center">Used in Tool 8</h2>
+                <div class="row round-nav2">
+                    <div class="round-nav-grey-bg"><div class="inner-white"></div></div>
+
+                    <div class="pos pos-12">
+                        <a href="#/" title="video button">
+                           <div class="round-nav-button small video light-gray">
+                               <p>Video</p>    
+                           </div>
+                        </a>
+                    </div>
+
+                    <div class="pos pos-4">
+                        <a href="#/" title="activity button">
+                            <div class="round-nav-button small text light-gray">
+                                <p>Text</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="pos pos-8">
+                        <a href="#/" title="text button">
+                            <div class="round-nav-button small activity light-gray">
+                                <p>Activity</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="pos pos-center">
+                        <div class="round-nav-button green small nohover">
+                            <p>Reduce Anxiety</p>
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+            <div class="col-xs-12 col-md-6 ft-size-1_4x">
+                 <h2 class="text-center">Used in Tool 8</h2>
+                <div class="row round-nav2">
+                    <div class="round-nav-grey-bg"><div class="inner-white"></div></div>
+
+                    <div class="pos pos-12">
+                        <a href="#/" title="video button">
+                           <div class="round-nav-button small video light-gray">
+                               <p>Video</p>    
+                           </div>
+                        </a>
+                    </div>
+
+
+                    <div class="pos pos-3">
+                        <a href="#/" title="activity button">
+                            <div class="round-nav-button small activity light-gray">
+                                <p>Activity</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="pos pos-6">
+                        <a href="#/" title="Social Media button">
+                            <div class="round-nav-button small website light-gray">
+                                <p>Social Media / Web</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="pos pos-9">
+                        <a href="#/" title="text button">
+                            <div class="round-nav-button small text light-gray">
+                                <p>Text</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="pos pos-center">
+                        <div class="round-nav-button orange small nohover">
+                            <p class="ft-size-1_6x">Socialising</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row spacer-top-3x">
+            <div class="col-xs-12 col-md-offset-2 col-md-8">
+                <h2 class="text-center">Used in Tool 8</h2>
+                <div class="row round-nav2">
+                    <div class="round-nav-button-bg"><div class="inner-white"></div></div>
+
+                    <div class="pos pos-12">
+                        <a href="#/elements-of-an-online-orientation/reduce-anxiety" title="Reduce Anxiety button" ng-class="{'viewed':areasViewedT8.reduceanxiety.viewed}" ng-click="areasViewedT8.reduceanxiety.viewed = true" tabindex="0">
+                           <div class="round-nav-button green">
+                               <p>Reduce Anxiety</p>    
+                           </div>
+                        </a>
+                    </div>
+
+
+                    <div class="pos pos-2">
+                        <a href="#/elements-of-an-online-orientation/set-expectations" title="set expectations button" ng-class="{'viewed':areasViewedT8.setexpectations.viewed}" ng-click="areasViewedT8.setexpectations.viewed = true" tabindex="0">
+                            <div class="round-nav-button red">
+                                <p>Set Expectations</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="pos pos-4">
+                        <a href="#/elements-of-an-online-orientation/positive-role-model" title="positive role model button" ng-class="{'viewed':areasViewedT8.positiverolemodel.viewed}" ng-click="areasViewedT8.positiverolemodel.viewed = true" tabindex="0">
+                            <div class="round-nav-button tangerine">
+                                <p>Positive Role Model</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="pos pos-6">
+                        <a href="#/elements-of-an-online-orientation/socialising" title="socialising button" ng-class="{'viewed':areasViewedT8.socialising.viewed}" ng-click="areasViewedT8.socialising.viewed = true" tabindex="0">
+                            <div class="round-nav-button orange">
+                                <p>Socialising</p>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <div class="pos pos-8">
+                         <a href="#/elements-of-an-online-orientation/campus-tour" title="Campus Tour button" ng-class="{'viewed':areasViewedT8.campustour.viewed}" ng-click="areasViewedT8.campustour.viewed = true" tabindex="0">
+                            <div class="round-nav-button dark-blue">
+                                <p>Campus Tour</p>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class="pos pos-10">
+                        <a href="#/elements-of-an-online-orientation/study-skills" title="Study Skills button" ng-class="{'viewed':areasViewedT8.studyskills.viewed}" ng-click="areasViewedT8.studyskills.viewed = true" tabindex="0">
+                            <div class="round-nav-button blue">
+                                <p>Study Skills</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="pos pos-center">
+                        <div class="round-nav-button transparent nohover">
+                            <p>Elements of an Online Orientation</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="row spacer-top-3x">
+            <div class="col-xs-12 col-md-6 ">  
+                <h2 class="text-center">Tool 3: Who can I Ask?</h2>
+                <div class="row hub-nav">
+                    <div class="hub-button-bg"></div>
+
+                    <div class="pos-12">
+                        <a href="#/hub/others" title="How can Others help me?" ng-class="{'viewed':areasViewed.others}" ng-click="areasViewed.others = true" tabindex="0">
+                           <div class="hub-button button-others">
+                               <p>Others</p>
+                               <div class="shadow-container"><div class="transparent-shadow"></div></div>
+                           </div>
+                        </a>
+                    </div>
+                    <div class="pos-2">
+                        <a href="#/hub/friends" title="How can My Friends help me?" ng-class="{'viewed':areasViewed.friends}" ng-click="areasViewed.friends = true" tabindex="0">
+                            <div class="hub-button button-friends">
+                                <p>My<br>Friends</p>
+                                <div class="shadow-container"><div class="transparent-shadow"></div></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="pos-4">
+                        <a href="#/hub/family" title="How can My Family help me?" ng-class="{'viewed':areasViewed.family}" ng-click="areasViewed.family = true" tabindex="0">
+                            <div class="hub-button button-family">
+                                <p>My<br>Family</p>
+                                <div class="shadow-container"><div class="transparent-shadow"></div></div>
+                            </div>
+                        </a>
+
+                    </div>
+
+
+                    <div class="pos-6">
+                        <a href="#/hub/other-students" title="How can Other Students help me?" ng-class="{'viewed':areasViewed.students}" ng-click="areasViewed.students = true" tabindex="0">
+                            <div class="hub-button button-students">
+                                <p>Other<br>Students</p>
+                                <div class="shadow-container"><div class="transparent-shadow"></div></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="pos-8">
+                        <a href="#/hub/employer" title="How can My Employer help me?" ng-class="{'viewed':areasViewed.employer}" ng-click="areasViewed.employer = true" tabindex="0">
+                            <div class="hub-button button-employer">
+                                <p>My<br>Employer</p>
+                                <div class="shadow-container"><div class="transparent-shadow"></div></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="pos-10">
+                        <a href="#/hub/university" title="How can My University help me?" ng-class="{'viewed':areasViewed.university}" ng-click="areasViewed.university = true" tabindex="0">
+                            <div class="hub-button button-university">
+                                <p>My<br>University</p>
+                                <div class="shadow-container"><div class="transparent-shadow"></div></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="pos-center">
+                        <div class="hub-button button-me">
+                            <p>Me</p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <h2 class="text-center">Tool 5: My First Assignment</h2>
+                <div class="row round-nav hidden-xs">
+                    <div class="round-nav-button-bg"></div>
+
+                    <div class="pos-12">
+                        <a href="#/developing-a-plan/assignment-plan/" title="Assignment Plan" ng-class="{'viewed':areasViewed.plan}" ng-click="areasViewed.plan = true" tabindex="0">
+                           <div class="round-nav-button plan">
+                               <p>Plan</p>    
+                           </div>
+                        </a>
+                    </div>
+
+                    <div class="pos-2">
+                        <div class="next-arrow">
+                            <img src="../assets/images/arrow.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="pos-3">
+                        <a href="#/developing-a-plan/find-resources/" title="Find Assignment Resources" ng-class="{'viewed':areasViewed.find}" ng-click="areasViewed.find = true" tabindex="0">
+                            <div class="round-nav-button find">
+                                <p>Find</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="pos-4">
+                        <div class="next-arrow">
+                            <img src="../assets/images/arrow.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="pos-6">
+                        <a href="#/developing-a-plan/evaluate/" title="Evaluate Assignment" ng-class="{'viewed':areasViewed.evaluate}" ng-click="areasViewed.evaluate = true" tabindex="0">
+                            <div class="round-nav-button evaluate">
+                                <p>Evaluate</p>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <div class="pos-8">
+                        <div class="next-arrow">
+                            <img src="../assets/images/arrow.png" alt="">
+                        </div>
+                    </div>
+
+
+                    <div class="pos-9">
+                        <a href="#/developing-a-plan/use-assignment/" title="Use Assignment" ng-class="{'viewed':areasViewed.use}" ng-click="areasViewed.use = true" tabindex="0">
+                            <div class="round-nav-button use">
+                                <p>Use</p>               
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="pos-10">
+                        <div class="next-arrow">
+                            <img src="../assets/images/arrow.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-xs-12 navigation-table visible-xs nopadding">                
+                    <a href="#/developing-a-plan/assignment-plan/" title="Assignment Plan" class="navigation-cell plan" ng-class="{'viewed':areasViewed.plan}" ng-click="areasViewed.plan = true" tabindex="0">
+                        <span>Plan</span>
+                    </a>
+                    <a title="Find Assignment Resources" href="#/developing-a-plan/find-resources/" class="navigation-cell find" ng-class="{'viewed':areasViewed.find}" ng-click="areasViewed.find = true" tabindex="0">
+                        <span>Find</span>
+                    </a>
+                    <a title="Evaluate Assignment" href="#/developing-a-plan/evaluate/" class="navigation-cell evaluate" ng-class="{'viewed':areasViewed.evaluate}" ng-click="areasViewed.evaluate = true" tabindex="0">
+                        <span>Evaluate</span>
+                    </a>
+                    <a title="Use Assignment" href="#/developing-a-plan/use-assignment/" class="navigation-cell use" ng-class="{'viewed':areasViewed.use}" ng-click="areasViewed.use = true" tabindex="0">
+                        <span>Use</span>
+                    </a>
+                </div>            
+
+            </div>
+        </div>
+        
+    </div>
+    
+    
+    
+    <footer class="container shadow">
+            <div class="tool-footer row">
+
+                <div class="col-md-12">
+                    <div class="footer-menu">
+                        <ul>
+                            <li><a href="/" title="Privacy Policy">Privacy Policy</a></li>
+                            <li><a href="/" title="Terms & Conditions">How to Cite this Tool</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr />
+
+                <div class="col-sm-12 col-md-3">
+                    <div class="footer-social">
+                        <a href="/" title="Institute Facebook Page">
+                            <div class="footer-soc "><i class="fa fa-facebook fa-fw"></i></div>
+                        </a>
+                        <a href="/" title="Google hangout Page">
+                            <div class="footer-soc "><i class="fa fa-google-plus fa-fw"></i></div>
+                        </a>
+                        <a href="/" title="Institute Linkedin Page">
+                            <div class="footer-soc "><i class="fa fa-linkedin fa-fw"></i></div>
+                        </a>
+                        <a href="/" title="Institute Twitter Page">
+                            <div class="footer-soc "><i class="fa fa-twitter fa-fw"></i></div>
+                        </a>    
+                    </div> 
+                </div>
+
+                <div class="col-sm-12 visible-sm-block spacer-top"></div>
+
+                <div class="col-sm-4 col-md-3 spacer-xs-top spacer-sm-top-0">
+                    <div class="footer-cc">
+                        <a href=""><img src="../assets/images/by-nc.eu.png" alt="Creative Commons"/></a>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 col-md-3 spacer-xs-top spacer-sm-top-0">
+                    <div class="sst-logo">
+                        <a href=""><img src="../assets/images/logo_white.png" alt="Student Success Toolbox" /></a>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-3 spacer-xs-top spacer-sm-top-0">
+                    <div class="institution-logo">
+                        <a href=""><img src="" alt="Place institution logo here"/></a>
+                    </div>
+                </div>
+
+            </div>
+        </footer>	
+</body>
+</html>

@@ -1,0 +1,153 @@
+
+<div class="container shadow">
+
+    <div class="row spacer-xs-top-3x">
+        <div class="col-md-offset-1 col-md-10">
+            <div class="q-head dark large">
+                <h2 class="text-center nopadding">Common Support Problems</h2>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row spacer-xs-top-4x visible-md-block visible-lg-block">
+        <div class="col-md-offset-1 col-md-10 ">
+            <div class="col-md-4 text-center spacer-top">
+                <h3 class="priority2">Click a question</h3>
+            </div>
+            <div class="col-md-4 text-center block-arrow">
+                <span class="arrow-txt">then</span>
+            </div>
+            <div class="col-md-4 text-center spacer-top">
+                <h3 class="priority2">view answers from</h3>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row spacer-top-3x visible-xs-block visible-sm-block">
+        <h2 class="text-center nopadding">Select a question</h2>
+    </div>
+    
+    <div class="row" id="questions">
+        <div class="col-md-6 spacer-top-2x">       
+            <div class="panel nopadding" ng-repeat="section in questions track by $index" ng-class-odd="'panel-odd'" ng-class-even="'panel-even'">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="radio">
+                            <label for="question{{$index}}" class="question" ng-click="gotoOptions()">
+                                <input name="questionGroup" id="question{{$index}}" type="radio" class="faq-radio" ng-model="$parent.selectedQuestion" ng-value="section">
+                                {{section.question}}
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row spacer-top-3x visible-xs-block visible-sm-block" id="options">
+            <h2 class="text-center nopadding">Select an answer</h2>
+        </div>
+        <div class="col-md-6 spacer-xs-top-2x spacer-md-top-0">    
+           <div class="row hub-nav">
+                <div class="hub-button-bg"></div>
+
+                
+                <div class="pos-12">
+                    <a href="#" title="how can help friends- button" ng-click="setAnswer('friends'); $event.preventDefault();" ng-class="{'active' : selectedAnswer.id == 'friends'}">
+                        <div class="hub-button button-friends">
+                            <p>My<br>Friends</p>
+                            <div class="shadow-container"><div class="transparent-shadow"></div></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="pos-2">
+                    <a href="#y" title="how can help family- button" ng-click="setAnswer('family'); $event.preventDefault();" ng-class="{'active': selectedAnswer.id == 'family'}">
+                        <div class="hub-button button-family">
+                            <p>My<br>Family</p>
+                            <div class="shadow-container"><div class="transparent-shadow"></div></div>
+                        </div>
+                    </a>
+
+                </div>
+                        
+
+                <div class="pos-4">
+                    <a href="#/hub/other-students" title="how can help students" ng-click="setAnswer('students'); $event.preventDefault();" ng-class="{'active': selectedAnswer.id == 'students'}">
+                        <div class="hub-button button-students">
+                            <p>Other<br>Students</p>
+                            <div class="shadow-container"><div class="transparent-shadow"></div></div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="pos-6">
+                    <a href="#/hub/employer" title="how can help employer" ng-click="setAnswer('employer'); $event.preventDefault();" ng-class="{'active': selectedAnswer.id == 'employer'}">
+                        <div class="hub-button button-employer">
+                            <p>My<br>Employer</p>
+                            <div class="shadow-container"><div class="transparent-shadow"></div></div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="pos-8">
+                    <a href="#/hub/university" title="how can help university" ng-click="setAnswer('university'); $event.preventDefault();" ng-class="{'active': selectedAnswer.id == 'university'}">
+                        <div class="hub-button button-university">
+                            <p>My<br>University</p>
+                            <div class="shadow-container"><div class="transparent-shadow"></div></div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="pos-10">
+                    <a href="#" title="how can help others " ng-click="setAnswer('others'); $event.preventDefault();" ng-class="{'active': selectedAnswer.id == 'others'}">
+                       <div class="hub-button button-others" >
+                           <p>Others</p>
+                           <div class="shadow-container"><div class="transparent-shadow"></div></div>
+                       </div>
+                    </a>
+                </div>
+ 
+            </div>
+        </div>
+    </div>      
+    
+    
+    <div class="row" id="answer" >
+        <div ng-show="answer.response">
+            <hr class="spacer-xs-top-3x spacer-xs-bottom-3x">
+
+            <div class="col-md-offset-1 col-md-10" >
+                <div class="panel panel-answer">
+                    <i class="fa fa-times fa-2x btn-close" ng-click="gotoQuestion()" role="button" tabindex="0"></i>
+                    <div class="row spacer-top-2x">
+                        <div class="col-md-offset-3 col-md-7" >
+                            <div class="q-head">
+                                <span class="icon-badge icon-fix hidden-xs">
+                                <i class="fa fa-users fa-3x fa-fw"></i>
+                                </span>
+                                <h2 class="nopadding text-center">{{answer.header}} response</h2>                    
+                            </div>
+                        </div>
+                    </div>
+                     <div class="row spacer-top-2x">
+                        <div class="col-md-offset-1 col-md-10" >  
+                            <p>
+                                {{answer.response}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            
+    <hr class="spacer-xs-top-3x spacer-xs-bottom-3x">
+    
+    <div class="row spacer-xs-bottom-4x">
+        <div class="col-md-5">
+             <a href="#hub" class="btn btn-info  btn-block" title="Back to home" aria-label="">Back to My Support Network</a>
+        </div>
+        <div class="col-md-offset-3 col-md-4">
+            <a href="#/finished/" class="btn btn-default btn-block" title="Back to Rate" aria-label="">Next</a>	
+        </div>
+    </div>
+    
+</div>

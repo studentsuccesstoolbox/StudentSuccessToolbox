@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>Online orientation tool for Flexible Learners | Student Success Toolbox</title>
+        <meta name="description" content="A tool that helps learning institutes such as universities and colleges compile content that will provide an effective online orientation for students, with the aim of setting expectations, reducing anxiety related to starting study, and providing facts about the institute necessary to success" />
+        <meta name="keywords" content="" />
+        <meta name="author" content="National Institute for Digital Learning, Dublin City University" />
+        
+        <meta name="dc.title" content="Online orientation tool for Flexible Learners | Student Success Toolbox" />
+        <meta name="dc.creator" content="National Institute for Digital Learning, Dublin City University" />
+        <meta name="dc.subject" content="Advice on content and approach a learning institute should take when providing an online orientation for new students" />
+        <meta name="dc.description" content="A tool that helps learning institutes such as universities and colleges compile content that will provide an effective online orientation for students, with the aim of setting expectations, reducing anxiety related to starting study, and providing facts about the institute necessary to success" />
+        <meta name="dc.date" content="2016" />
+        
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic,700,700italic' rel='stylesheet' type='text/css'>		
+        <!-- CSS -->	
+        <link rel="stylesheet" href="../assets/css/main.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="../bundle.min.js"></script>
+
+        <!-- added support for slider to show "my tools" component on some pages :: currently only "campus tour" form pages -->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
+
+        <!-- 
+            animation styling and navmenu override for item width!
+            see :: http://plnkr.co/edit/BwTXGqtPaIPacN8grbRj?p=info   
+        -->
+        <style>
+            .animate-show {
+                opacity: 1;
+            }
+
+            .animate-show.ng-hide-add.ng-hide-add-active,
+            .animate-show.ng-hide-remove.ng-hide-remove-active {
+                -webkit-transition: all linear 0.5s;
+                transition: all linear 0.5s;
+            }
+
+            .animate-show.ng-hide {
+                line-height: 0;
+                opacity: 0;
+                padding: 0 10px;
+            }
+            
+            .navmenu-fixed-left{
+                min-width: 320px;
+                width: 40%;
+            }
+        </style>
+    </head>
+
+    <!-- apply our angular app -->
+    <body ng-app="sstTool8App">
+
+        <!-- common header -->
+        <div class="container shadow">
+            <header>
+                <div id="header" class="tool tool8">
+                    <!-- institution logo here -->
+                    <h1 class="header-heading hidden-sm hidden-xs text-center">
+                        <span class="line line1">Online Orientation</span>
+                        <span class="line line1">for Flexible</span>
+                        <span class="line line2 nopadding">Learners</span>
+                    </h1>
+                </div>
+                <h1 class="visible-xs-block visible-sm-block mob-heading" >Online Orientation for Flexible Learners</h1>
+            </header>
+        </div>
+        <!-- common header end -->
+
+        <!-- inject our views using ng-view -->
+        <!-- each angular controller applies a different class here -->
+        <div class="page {{ pageClass}}" ng-view autoscroll="true"></div>
+
+        <footer class="container shadow">
+            <div class="tool-footer row">
+
+                <div class="col-md-12">
+                    <div class="footer-menu">
+                        <ul>
+                            <li><a href="/" title="Privacy Policy">Privacy Policy</a></li>
+                            <li><a href="http://studentsuccess.ie/how-to-cite-a-tool/" title="How to cite one of the Student Success Toolbox project tools">How to Cite this Tool</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr />
+<!--
+                <div class="col-sm-12 col-md-3">
+                    <div class="footer-social">
+                        <a href="/" title="Institute Facebook Page">
+                            <div class="footer-soc "><i class="fa fa-facebook fa-fw"></i></div>
+                        </a>
+                        <a href="/" title="Google hangout Page">
+                            <div class="footer-soc "><i class="fa fa-google-plus fa-fw"></i></div>
+                        </a>
+                        <a href="/" title="Institute Linkedin Page">
+                            <div class="footer-soc "><i class="fa fa-linkedin fa-fw"></i></div>
+                        </a>
+                        <a href="/" title="Institute Twitter Page">
+                            <div class="footer-soc "><i class="fa fa-twitter fa-fw"></i></div>
+                        </a>    
+                    </div> 
+                </div>
+-->
+                <div class="col-sm-12 visible-sm-block spacer-top"></div>
+
+                <div class="col-sm-4 col-md-3 spacer-xs-top spacer-sm-top-0">
+                    <div class="footer-cc">
+                        <a href="http://creativecommons.org/licenses/by/4.0/legalcode" title="Creative Commons — Attribution 4.0 International — CC BY 4.0"><img src="../assets/images/by.png" alt="Creative Commons"/></a>
+                    </div>
+                </div>
+
+                <div class="col-md-offset-6 col-sm-offset-4 col-sm-4 col-md-3 spacer-xs-top spacer-sm-top-0">
+                    <div class="sst-logo">
+                        <a href="http://studentsuccess.ie/" title="Student Success Toolbox"><img src="../assets/images/logo_white.png" alt="Student Success Toolbox" /></a>
+                    </div>
+                </div>
+ <!--               <div class="col-sm-4 col-md-3 spacer-xs-top spacer-sm-top-0">
+                    <div class="institution-logo">
+                        <a href=""><img src="" alt="Place institution logo here"/></a>
+                    </div>
+                </div>
+-->
+            </div>
+        </footer>	
+    </body>
+</html>
