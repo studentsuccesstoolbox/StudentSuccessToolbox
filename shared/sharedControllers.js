@@ -55,7 +55,7 @@ angular.module('sharedControllers', [])
             body += "\nName: "+$scope.feedbackName+"\n";
             body += "\nComment: \n"+$scope.feedbackComment+"\n";
 
-            var $mailTo = 'mailto:info@fluid-rock.com?'
+            var $mailTo = 'mailto:email@email.com?'
                            +'subject='+encodeURIComponent(subject)
                            +'&body='+encodeURIComponent(body);
 
