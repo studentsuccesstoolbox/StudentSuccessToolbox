@@ -425,7 +425,7 @@ questionnaireTool1 = {
             ,'quotes' : [{
                     'studentImage' : '../assets/images/student1.jpg'
                     ,'studentQuote' : "The key to my success was developing a study plan and working to assignment deadlines"
-                    ,'studentName' : "Michael"
+                    ,'studentName' : "Rachel"
                 },{
                    'studentImage' : '../assets/images/student2.jpg'
                    ,'studentQuote' : "You to rise to the challenge of learning new things and sticking with it even the work gets really difficult" 
